@@ -1,3 +1,2 @@
-﻿  Application.cpp
-C:\dev\Independent\IndependentEditor\src\Application.cpp(10,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+﻿  IndependentEditorApp.cpp
   IndependentEditor.vcxproj -> C:\dev\Independent\bin\Debug-x64\IndependentEditor\IndependentEditor.exe
