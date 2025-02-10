@@ -2,9 +2,6 @@
 
 #include "Independent/Core.h"
 
-#include <functional>
-#include <string>
-
 
 namespace Independent {
 

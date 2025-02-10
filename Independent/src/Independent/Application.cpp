@@ -1,3 +1,4 @@
+#include "idpdpch.h"
 #include "Application.h"
 
 #include "Independent/Events/ApplicationEvent.h"

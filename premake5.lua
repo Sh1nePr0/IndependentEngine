@@ -20,6 +20,9 @@ project "Independent"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-intermediate/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "idpdpch.h"
+	pchsource "Independent/src/idpdpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
