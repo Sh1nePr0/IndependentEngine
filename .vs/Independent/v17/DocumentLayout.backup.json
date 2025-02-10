@@ -3,44 +3,36 @@
   "WorkspaceRootPath": "C:\\dev\\Independent\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\dev\\Independent\\premake5.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:premake5.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\dev\\Independent\\GenerateProjects.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GenerateProjects.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AF205AD-C608-0443-0F80-8F647BD5D4CA}|IndependentEditor\\IndependentEditor.vcxproj|C:\\dev\\Independent\\IndependentEditor\\src\\IndependentEditorApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{5AF205AD-C608-0443-0F80-8F647BD5D4CA}|IndependentEditor\\IndependentEditor.vcxproj|solutionrelative:IndependentEditor\\src\\IndependentEditorApp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Log.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\EntryPoint.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\EntryPoint.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\ApplicationEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Events\\ApplicationEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Log.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Core.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\Event.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Events\\Event.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\KeyEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Events\\KeyEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\MouseEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Events\\MouseEvent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,124 +54,107 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GenerateProjects.bat",
-              "DocumentMoniker": "C:\\dev\\Independent\\GenerateProjects.bat",
-              "RelativeDocumentMoniker": "GenerateProjects.bat",
-              "ToolTip": "C:\\dev\\Independent\\GenerateProjects.bat",
-              "RelativeToolTip": "GenerateProjects.bat",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE6SURBVDhPY6AI/P//H8oiHzBWlpfeBxqlAOWTCBgfMJGi2ds3AIUG660sL/n/69cvDLznyJn/uw6dwioHwyC9QBeggqu3HzDsOHiS4d37Dwxv371nWL/9AMO5yzegspgAwwAWJiaGb9\u002B\u002BM5joaTKYGmgxfPv\u002BjYGFBUMZHGDI/Pn7l\u002BH3718Mf//9ZfgHZP/5/Zvhz5\u002B/UFlMgGHAz58/GRiB9IGjpxj2HTnBwAjknDp7HuiSHxAFaADDACNdDYYwPzcGPh4uhr9Am5\u002B9eMrw6Mljho6\u002BiQw3bt6GqkIAnJ4L9HJh8HS2Yfj44SNDW005w4d37xg4ONigsgiAO3SA4OtXYAACVeQWlTKwsjJjTbl4DVBXVWaoKMpnsLG0YOjtaGNQVMBMc8CkXAxMyoxkJuX/D6CMAQMMDABIjqFEM6osUwAAAABJRU5ErkJggg==",
-              "WhenOpened": "2025-02-10T10:24:38.849Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "premake5.lua",
-              "DocumentMoniker": "C:\\dev\\Independent\\premake5.lua",
-              "RelativeDocumentMoniker": "premake5.lua",
-              "ToolTip": "C:\\dev\\Independent\\premake5.lua",
-              "RelativeToolTip": "premake5.lua",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-10T09:50:29.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IndependentEditorApp.cpp",
-              "DocumentMoniker": "C:\\dev\\Independent\\IndependentEditor\\src\\IndependentEditorApp.cpp",
-              "RelativeDocumentMoniker": "IndependentEditor\\src\\IndependentEditorApp.cpp",
-              "ToolTip": "C:\\dev\\Independent\\IndependentEditor\\src\\IndependentEditorApp.cpp",
-              "RelativeToolTip": "IndependentEditor\\src\\IndependentEditorApp.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-10T09:43:47.036Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Log.h",
               "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Log.h",
               "RelativeDocumentMoniker": "Independent\\src\\Independent\\Log.h",
               "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Log.h",
               "RelativeToolTip": "Independent\\src\\Independent\\Log.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-31T15:14:22.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Log.cpp",
-              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Log.cpp",
-              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Log.cpp",
-              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Log.cpp",
-              "RelativeToolTip": "Independent\\src\\Independent\\Log.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-31T15:14:38.696Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EntryPoint.h",
-              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\EntryPoint.h",
-              "RelativeDocumentMoniker": "Independent\\src\\Independent\\EntryPoint.h",
-              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\EntryPoint.h",
-              "RelativeToolTip": "Independent\\src\\Independent\\EntryPoint.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-29T14:00:02.322Z"
+              "WhenOpened": "2025-02-10T18:14:20.557Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Independent.h",
-              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent.h",
-              "RelativeDocumentMoniker": "Independent\\src\\Independent.h",
-              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent.h",
-              "RelativeToolTip": "Independent\\src\\Independent.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-29T13:52:16.69Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "Application.h",
               "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Application.h",
               "RelativeDocumentMoniker": "Independent\\src\\Independent\\Application.h",
               "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Application.h",
               "RelativeToolTip": "Independent\\src\\Independent\\Application.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-29T13:35:13.428Z"
+              "WhenOpened": "2025-02-10T18:12:29.459Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "Application.cpp",
               "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Application.cpp",
               "RelativeDocumentMoniker": "Independent\\src\\Independent\\Application.cpp",
               "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Application.cpp",
               "RelativeToolTip": "Independent\\src\\Independent\\Application.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-29T13:35:27.235Z"
+              "WhenOpened": "2025-02-10T18:12:28.635Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
+              "Title": "Event.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\Event.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Events\\Event.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\Event.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Events\\Event.h",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAADoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-10T16:40:38.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MouseEvent.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\MouseEvent.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Events\\MouseEvent.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\MouseEvent.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Events\\MouseEvent.h",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-10T16:41:06.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationEvent.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\ApplicationEvent.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Events\\ApplicationEvent.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\ApplicationEvent.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Events\\ApplicationEvent.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-10T16:40:58.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "KeyEvent.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\KeyEvent.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Events\\KeyEvent.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Events\\KeyEvent.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Events\\KeyEvent.h",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-10T16:40:49.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Core.h",
               "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Core.h",
               "RelativeDocumentMoniker": "Independent\\src\\Independent\\Core.h",
               "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Core.h",
               "RelativeToolTip": "Independent\\src\\Independent\\Core.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-29T13:34:45.762Z"
+              "WhenOpened": "2025-02-10T17:08:41.924Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -4,6 +4,9 @@
     <Filter Include="Independent">
       <UniqueIdentifier>{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Independent\Events">
+      <UniqueIdentifier>{D71AD668-C3FE-96BE-2C5F-911118628140}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Independent.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Independent\EntryPoint.h">
       <Filter>Independent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Events\ApplicationEvent.h">
+      <Filter>Independent\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Events\Event.h">
+      <Filter>Independent\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Events\KeyEvent.h">
+      <Filter>Independent\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Events\MouseEvent.h">
+      <Filter>Independent\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Independent\Log.h">
       <Filter>Independent</Filter>
