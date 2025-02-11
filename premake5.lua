@@ -11,6 +11,12 @@ workspace "Independent"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution dir)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Independent/vendor/GLFW/include"
+
+include "Independent/vendor/GLFW"
+
 project "Independent"
 	location "Independent"
 	kind "SharedLib"
@@ -32,7 +38,14 @@ project "Independent"
 	includedirs
 	{
 		"%{prj.name}/vendor/spdlog/include",
-		"%{prj.name}/src"
+		"%{prj.name}/src",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
