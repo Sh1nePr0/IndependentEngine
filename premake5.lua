@@ -67,14 +67,17 @@ project "Independent"
 
 	filter "configurations:Debug"
 		defines "IDPD_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "IDPD_Release"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "IDPD_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "IndependentEditor"
@@ -115,12 +118,15 @@ project "IndependentEditor"
 
 	filter "configurations:Debug"
 		defines "IDPD_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "IDPD_Release"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "IDPD_DIST"
+		buildoptions "/MD"
 		optimize "On"

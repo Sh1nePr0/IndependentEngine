@@ -37,6 +37,12 @@
     <ClInclude Include="src\Independent\Events\MouseEvent.h">
       <Filter>Independent\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Independent\Layer.h">
+      <Filter>Independent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\LayerStack.h">
+      <Filter>Independent</Filter>
+    </ClInclude>
     <ClInclude Include="src\Independent\Log.h">
       <Filter>Independent</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Independent\Application.cpp">
+      <Filter>Independent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Independent\Layer.cpp">
+      <Filter>Independent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Independent\LayerStack.cpp">
       <Filter>Independent</Filter>
     </ClCompile>
     <ClCompile Include="src\Independent\Log.cpp">

@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "Independent/Application.h"
+#include "Independent/Layer.h"
 #include "Independent/Log.h"
 
 // --Entry Point-------------------------
