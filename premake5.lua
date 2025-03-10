@@ -14,8 +14,13 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution dir)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Independent/vendor/GLFW/include"
+IncludeDir["Glad"] = "Independent/vendor/Glad/include"
+IncludeDir["ImGui"] = "Independent/vendor/imgui"
 
 include "Independent/vendor/GLFW"
+include "Independent/vendor/Glad"
+include "Independent/vendor/imgui"
+
 
 project "Independent"
 	location "Independent"
@@ -39,12 +44,16 @@ project "Independent"
 	{
 		"%{prj.name}/vendor/spdlog/include",
 		"%{prj.name}/src",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -57,7 +66,8 @@ project "Independent"
 		defines
 		{
 			"IDPD_PLATFORM_WINDOWS",
-			"IDPD_BUILD_DLL"
+			"IDPD_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

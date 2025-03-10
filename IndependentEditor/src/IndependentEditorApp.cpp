@@ -26,6 +26,7 @@ public:
 	IndependentEditor()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverlay(new Independent::ImGuiLayer());
 	}
 
 	~IndependentEditor()

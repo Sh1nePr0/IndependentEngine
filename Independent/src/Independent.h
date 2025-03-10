@@ -7,6 +7,8 @@
 #include "Independent/Layer.h"
 #include "Independent/Log.h"
 
+#include "Independent/ImGui/ImGuiLayer.h"
+
 // --Entry Point-------------------------
 #include "Independent/EntryPoint.h"
 // --------------------------------------
