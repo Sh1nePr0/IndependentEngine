@@ -1,0 +1,15 @@
+#pragma once
+
+//From IDPD3.h mouse button codes
+#define IDPD_MOUSE_BUTTON_1         0
+#define IDPD_MOUSE_BUTTON_2         1
+#define IDPD_MOUSE_BUTTON_3         2
+#define IDPD_MOUSE_BUTTON_4         3
+#define IDPD_MOUSE_BUTTON_5         4
+#define IDPD_MOUSE_BUTTON_6         5
+#define IDPD_MOUSE_BUTTON_7         6
+#define IDPD_MOUSE_BUTTON_8         7
+#define IDPD_MOUSE_BUTTON_LAST      IDPD_MOUSE_BUTTON_8
+#define IDPD_MOUSE_BUTTON_LEFT      IDPD_MOUSE_BUTTON_1
+#define IDPD_MOUSE_BUTTON_RIGHT     IDPD_MOUSE_BUTTON_2
+#define IDPD_MOUSE_BUTTON_MIDDLE    IDPD_MOUSE_BUTTON_3

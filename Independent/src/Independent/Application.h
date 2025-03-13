@@ -7,6 +7,7 @@
 #include "Independent/Events/Event.h"
 #include "Independent/Events/ApplicationEvent.h"
 
+#include "Independent/ImGui/ImGuiLayer.h"
 
 namespace Independent {
 
@@ -31,6 +32,7 @@ namespace Independent {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 	private:

@@ -10,6 +10,10 @@
 	#error Independent only support Windows for now!
 #endif
 
+#ifdef IDPD_DEBUG
+	#define IDPD_ENABLE_ASSERTS
+#endif
+
 #ifdef IDPD_ENABLE_ASSERTS
 	#define IDPD_ASSERT(x, ...) { if(!(x)) { IDPD_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define IDPD_CORE_ASSERT(x, ...) { if(!(x)) { IDPD_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
