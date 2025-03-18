@@ -161,7 +161,9 @@
     <ClInclude Include="src\Independent\LayerStack.h" />
     <ClInclude Include="src\Independent\Log.h" />
     <ClInclude Include="src\Independent\MouseButtonCodes.h" />
+    <ClInclude Include="src\Independent\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Independent\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\idpdpch.h" />
@@ -591,6 +593,7 @@
     <ClCompile Include="src\Independent\Layer.cpp" />
     <ClCompile Include="src\Independent\LayerStack.cpp" />
     <ClCompile Include="src\Independent\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\idpdpch.cpp">
