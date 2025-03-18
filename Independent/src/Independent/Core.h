@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef IDPD_PLATFORM_WINDOWS
+#if IDPD_DYNAMIC_LINK
 	#ifdef IDPD_BUILD_DLL
 		#define INDEPENDENT_API __declspec(dllexport)
 	#else
 		#define INDEPENDENT_API __declspec(dllimport)
 	#endif
+#else
+	#define INDEPENDENT_API
+#endif
 #else
 	#error Independent only support Windows for now!
 #endif

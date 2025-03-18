@@ -27,10 +27,11 @@ group ""
 
 project "Independent"
 	location "Independent"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	cppdialect "C++17"
 	buildoptions "/utf-8"
-	staticruntime "off"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-intermediate/" .. outputdir .. "/%{prj.name}")
@@ -44,6 +45,11 @@ project "Independent"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
+	}
+
+	defines 
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	includedirs
@@ -65,7 +71,6 @@ project "Independent"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 		
 
@@ -76,32 +81,28 @@ project "Independent"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/IndependentEditor/\"")
-		}
-
 	filter "configurations:Debug"
 		defines "IDPD_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "IDPD_Release"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "IDPD_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 project "IndependentEditor"
 	location "IndependentEditor"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
 	buildoptions "/utf-8"
-	staticruntime "off"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-intermediate/" .. outputdir .. "/%{prj.name}")
@@ -122,12 +123,10 @@ project "IndependentEditor"
 
 	links
 	{
-		"Independent",
-		"ImGui"
+		"Independent"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines
@@ -138,14 +137,14 @@ project "IndependentEditor"
 	filter "configurations:Debug"
 		defines "IDPD_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "IDPD_Release"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "IDPD_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
