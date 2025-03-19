@@ -9,6 +9,8 @@
 
 #include "Independent/ImGui/ImGuiLayer.h"
 
+#include "Independent/Renderer/Shader.h"
+
 namespace Independent {
 
 	class INDEPENDENT_API Application
@@ -35,6 +37,11 @@ namespace Independent {
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+
+		unsigned int m_VertexArray;
+		unsigned int m_VertexBuffer;
+		unsigned int m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	private:
 		static Application* s_Instance;
 	};
