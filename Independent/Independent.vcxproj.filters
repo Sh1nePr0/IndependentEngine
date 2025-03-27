@@ -13,8 +13,14 @@
     <Filter Include="src\Independent\ImGui">
       <UniqueIdentifier>{949ADBCC-0007-97C7-C9FA-2E253526B92F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Independent\Renderer">
+      <UniqueIdentifier>{D06802F8-BC8D-5178-E5D8-3608D15C5096}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Platform\OpenGL">
+      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Platform\Windows">
       <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
@@ -87,8 +93,26 @@
     <ClInclude Include="src\Independent\MouseButtonCodes.h">
       <Filter>src\Independent</Filter>
     </ClInclude>
+    <ClInclude Include="src\Independent\Renderer\Buffer.h">
+      <Filter>src\Independent\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Renderer\GraphicsContext.h">
+      <Filter>src\Independent\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Renderer\Renderer.h">
+      <Filter>src\Independent\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Renderer\Shader.h">
+      <Filter>src\Independent\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Independent\Window.h">
       <Filter>src\Independent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Platform\Windows</Filter>
@@ -1353,9 +1377,6 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\Independent\Renderer\GraphicsContext.h" />
-    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="src\Independent\Renderer\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Independent\Application.cpp">
@@ -1376,6 +1397,21 @@
     <ClCompile Include="src\Independent\Log.cpp">
       <Filter>src\Independent</Filter>
     </ClCompile>
+    <ClCompile Include="src\Independent\Renderer\Buffer.cpp">
+      <Filter>src\Independent\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Independent\Renderer\Renderer.cpp">
+      <Filter>src\Independent\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Independent\Renderer\Shader.cpp">
+      <Filter>src\Independent\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1385,7 +1421,5 @@
     <ClCompile Include="src\idpdpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="src\Independent\Renderer\Shader.cpp" />
   </ItemGroup>
 </Project>
