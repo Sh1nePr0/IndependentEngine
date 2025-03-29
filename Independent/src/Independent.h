@@ -4,16 +4,16 @@
 
 #include <stdio.h>
 #include "Independent/Application.h"
-#include "Independent/Layer.h"
-#include "Independent/Log.h"
+#include "Independent/SystemFiles/include/Layer.h"
+#include "Independent/SystemFiles/include/Log.h"
 
-#include "Independent/Input.h"
-#include "Independent/MouseButtonCodes.h"
-#include "Independent/KeyCodes.h"
+#include "Independent/SystemFiles/include/Input.h"
+#include "Independent/SystemFiles/include/MouseButtonCodes.h"
+#include "Independent/SystemFiles/include/KeyCodes.h"
 
-#include "Independent/ImGui/ImGuiLayer.h"
+#include "Independent/SystemFiles/include/ImGui/ImGuiLayer.h"
 
 
 // --Entry Point-------------------------
-#include "Independent/EntryPoint.h"
+#include "Independent/SystemFiles/include/EntryPoint.h"
 // --------------------------------------

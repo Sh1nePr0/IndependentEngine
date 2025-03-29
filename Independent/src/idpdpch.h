@@ -14,7 +14,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Independent/Log.h"
+#include "Independent/SystemFiles/include/Log.h"
 
 #ifdef IDPD_PLATFORM_WINDOWS
 	#include <Windows.h>

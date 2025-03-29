@@ -1,17 +1,17 @@
 #pragma once
 
-#include "Core.h"
+#include "Independent/SystemFiles/include/Core.h"
 
-#include "Window.h"
-#include "Independent/LayerStack.h"
-#include "Independent/Events/Event.h"
-#include "Independent/Events/ApplicationEvent.h"
+#include "Independent/SystemFiles/include/Window.h"
+#include "Independent/SystemFiles/include/LayerStack.h"
+#include "Independent/SystemFiles/include/Events/Event.h"
+#include "Independent/SystemFiles/include/Events/ApplicationEvent.h"
 
-#include "Independent/ImGui/ImGuiLayer.h"
+#include "Independent/SystemFiles/include/ImGui/ImGuiLayer.h"
 
-#include "Independent/Renderer/Shader.h"
-#include "Independent/Renderer/Buffer.h"
-#include "Independent/Renderer/VertexArray.h"
+#include "Render/include/shader/Shader.h"
+#include "Render/include/buffer/Buffer.h"
+#include "Render/include/vertex_array/VertexArray.h"
 
 namespace Independent {
 
