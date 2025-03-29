@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Event.h"
+#include "Independent/Core/include/containers/String.h"
 
 namespace Independent {
 
@@ -25,7 +26,7 @@ namespace Independent {
 
 		inline int GetRepeatCount() const { return m_RepeatCount; }
 
-		std::string ToString() const override
+		String ToString() const override
 		{
 			std::stringstream ss;
 			ss << "KeyPressedEvent: " << m_KeyCode << " (" << m_RepeatCount << " repeats)";
@@ -43,7 +44,7 @@ namespace Independent {
 		KeyReleasedEvent(int keycode)
 			: KeyEvent(keycode) {}
 
-		std::string ToString() const override
+		String ToString() const override
 		{
 			std::stringstream ss;
 			ss << " KeyReleasedEvent: " << m_KeyCode;
@@ -60,7 +61,7 @@ namespace Independent {
 			: KeyEvent(keycode) {
 		}
 
-		std::string ToString() const override
+		String ToString() const override
 		{
 			std::stringstream ss;
 			ss << "KeyTypedEvent: " << m_KeyCode;

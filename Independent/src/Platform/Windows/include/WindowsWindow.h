@@ -2,6 +2,8 @@
 
 #include "Independent/SystemFiles/include/Window.h"
 #include "Independent/Render/include/GraphicsContext.h"
+#include "Independent/Core/include/containers/String.h"
+
 
 #include <GLFW/glfw3.h>
 
@@ -33,7 +35,7 @@ namespace Independent {
 
 		struct WindowData
 		{
-			std::string Title;
+			String Title;
 			unsigned int Width, Height;
 			bool bVSync;
 

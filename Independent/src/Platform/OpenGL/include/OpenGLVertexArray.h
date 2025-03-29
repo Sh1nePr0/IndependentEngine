@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Independent/Render/include/vertex_array/VertexArray.h"
+#include "Independent/Core/include/containers/SharedPtr.h"
+#include "Independent/Core/include/containers/Vector.h"
 
 namespace Independent {
 
@@ -14,15 +16,15 @@ namespace Independent {
 		virtual void Bind() const override;
 		virtual void Unbind() const override;
 
-		virtual void AddVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer) override;
-		virtual void SetIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer) override;
+		virtual void AddVertexBuffer(const SharedPtr<VertexBuffer>& vertexBuffer) override;
+		virtual void SetIndexBuffer(const SharedPtr<IndexBuffer>& indexBuffer) override;
 
-		virtual const std::vector<std::shared_ptr<VertexBuffer>>& GetVertexBuffers() const override { return m_VertexBuffers; }
-		virtual const std::shared_ptr<IndexBuffer>& GetIndexBuffer() const override { return m_IndexBuffer; }
+		virtual const Vector<SharedPtr<VertexBuffer>>& GetVertexBuffers() const override { return m_VertexBuffers; }
+		virtual const SharedPtr<IndexBuffer>& GetIndexBuffer() const override { return m_IndexBuffer; }
 	private:
 		uint32_t m_RendererID;
-		std::vector<std::shared_ptr<VertexBuffer>> m_VertexBuffers;
-		std::shared_ptr<IndexBuffer> m_IndexBuffer;
+		Vector<SharedPtr<VertexBuffer>> m_VertexBuffers;
+		SharedPtr<IndexBuffer> m_IndexBuffer;
 	};
 
 }

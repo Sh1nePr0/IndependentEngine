@@ -3,7 +3,7 @@
 #include "Independent/SystemFiles/include/Core.h"
 #include "Layer.h"
 
-#include <vector>
+#include "Independent/Core/include/containers/Vector.h"
 
 
 namespace Independent {
@@ -19,10 +19,10 @@ namespace Independent {
 		void PopLayer(Layer* layer);
 		void PopOverlay(Layer* overlay);
 
-		std::vector<Layer*>::iterator begin() { return m_Layers.begin(); }
-		std::vector<Layer*>::iterator end() { return m_Layers.end(); }
+		Vector<Layer*>::iterator begin() { return m_Layers.begin(); }
+		Vector<Layer*>::iterator end() { return m_Layers.end(); }
 	private:
-		std::vector<Layer*> m_Layers;
+		Vector<Layer*> m_Layers;
 		unsigned int m_LayerInsertIndex = 0;
 	};
 

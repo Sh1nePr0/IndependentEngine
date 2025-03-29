@@ -4,16 +4,17 @@
 
 #include "Independent/SystemFiles/include/Core.h"
 #include "Independent/SystemFiles/include/Events/Event.h"
+#include "Independent/Core/include/containers/String.h"
 
 namespace Independent {
 
 	struct WindowsProps
 	{
-		std::string Title;
+		String Title;
 		unsigned int Width;
 		unsigned int Height;
 
-		WindowsProps(const std::string& title = "Independent Engine",
+		WindowsProps(const String& title = "Independent Engine",
 					 unsigned int width = 1280,
 					 unsigned int height = 720)
 			:Title(title), Width(width), Height(height)

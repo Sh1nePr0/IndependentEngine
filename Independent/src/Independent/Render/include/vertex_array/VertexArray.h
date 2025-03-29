@@ -2,6 +2,8 @@
 
 #include <memory>
 #include "Independent/Render/include/buffer/Buffer.h"
+#include "Independent/Core/include/containers/Vector.h"
+#include "Independent/Core/include/containers/SharedPtr.h"
 
 namespace Independent {
 
@@ -14,11 +16,11 @@ namespace Independent {
 		virtual void Bind() const = 0;
 		virtual void Unbind() const = 0;
 
-		virtual void AddVertexBuffer(const std::shared_ptr<VertexBuffer>& vertexBuffer) = 0;
-		virtual void SetIndexBuffer(const std::shared_ptr<IndexBuffer>& indexBuffer) = 0;
+		virtual void AddVertexBuffer(const SharedPtr<VertexBuffer>& vertexBuffer) = 0;
+		virtual void SetIndexBuffer(const SharedPtr<IndexBuffer>& indexBuffer) = 0;
 
-		virtual const std::vector<std::shared_ptr<VertexBuffer>>& GetVertexBuffers() const = 0;
-		virtual const std::shared_ptr<IndexBuffer>& GetIndexBuffer() const = 0;
+		virtual const Vector<SharedPtr<VertexBuffer>>& GetVertexBuffers() const = 0;
+		virtual const SharedPtr<IndexBuffer>& GetIndexBuffer() const = 0;
 
 		static VertexArray* Create();
 	};

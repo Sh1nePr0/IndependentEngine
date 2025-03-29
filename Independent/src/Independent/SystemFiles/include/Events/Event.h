@@ -2,7 +2,7 @@
 
 #include "idpdpch.h"
 #include "Independent/SystemFiles/include/Core.h"
-
+#include "Independent/Core/include/containers/String.h"
 
 namespace Independent {
 
@@ -39,7 +39,7 @@ namespace Independent {
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
-		virtual std::string ToString() const { return GetName(); }
+		virtual String ToString() const { return GetName(); }
 
 
 		inline bool IsInCategory(EventCategory category)

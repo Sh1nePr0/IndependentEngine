@@ -3,6 +3,7 @@
 #include "Core.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
+#include "Independent/Core/include/containers/SharedPtr.h"
 
 
 namespace Independent {
@@ -12,11 +13,11 @@ namespace Independent {
 	public:
 		static void Init();
 
-		inline static std::shared_ptr<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
-		inline static std::shared_ptr<spdlog::logger>& GetClientLogger() { return s_ClientLogger; }
+		inline static SharedPtr<spdlog::logger>& GetCoreLogger() { return s_CoreLogger; }
+		inline static SharedPtr<spdlog::logger>& GetClientLogger() { return s_ClientLogger; }
 	private:
-		static std::shared_ptr<spdlog::logger> s_CoreLogger;
-		static std::shared_ptr<spdlog::logger> s_ClientLogger;
+		static SharedPtr<spdlog::logger> s_CoreLogger;
+		static SharedPtr<spdlog::logger> s_ClientLogger;
 	};
 
 }

@@ -7,6 +7,8 @@
 
 #include "Render/include/Renderer.h"
 
+#include "Independent/Core/include/containers/String.h"
+
 namespace Independent {
 
 #define BIND_EVENT_FUNCTION(x) std::bind(&x, this, std::placeholders::_1)\
@@ -18,7 +20,7 @@ namespace Independent {
 		IDPD_CORE_ASSERT(!s_Instance, "Application already exist!");
 		s_Instance = this;
 
-		m_Window =  std::unique_ptr<Window>(Window::Create());
+		m_Window = UniquePtr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FUNCTION(Application::OnEvent));
 
 		m_ImGuiLayer = new ImGuiLayer();
@@ -32,7 +34,7 @@ namespace Independent {
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		std::shared_ptr<VertexBuffer> triangleVBO;
+		SharedPtr<VertexBuffer> triangleVBO;
 		triangleVBO.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		{
@@ -50,7 +52,7 @@ namespace Independent {
 			0, 1 , 2
 		};
 
-		std::shared_ptr<IndexBuffer> triangleIBO;
+		SharedPtr<IndexBuffer> triangleIBO;
 		triangleIBO.reset(IndexBuffer::Create(indices, sizeof(indices)/sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(triangleIBO);
 
@@ -63,7 +65,7 @@ namespace Independent {
 			-0.75f,  0.75f, 0.0f
 		};
 
-		std::shared_ptr<VertexBuffer> squareVBO;
+		SharedPtr<VertexBuffer> squareVBO;
 		squareVBO.reset(VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 
 		{
@@ -80,11 +82,11 @@ namespace Independent {
 			0, 1 , 2 , 2, 3 ,0
 		};
 
-		std::shared_ptr<IndexBuffer> squareIBO;
+		SharedPtr<IndexBuffer> squareIBO;
 		squareIBO.reset(IndexBuffer::Create(squareIndices, sizeof(squareIndices)/sizeof(uint32_t)));
 		m_SquareVAO->SetIndexBuffer(squareIBO);
 
-		std::string vertexSrc = R"(
+		String vertexSrc = R"(
 			#version 330 core
 		
 			layout(location = 0) in vec3 a_Position;
@@ -101,7 +103,7 @@ namespace Independent {
 			}	
 		)";
 
-		std::string fragmentSrc = R"(
+		String fragmentSrc = R"(
 			#version 330 core
 		
 			layout(location = 0) out vec4 color;
@@ -118,7 +120,7 @@ namespace Independent {
 
 		m_Shader.reset(new Shader(vertexSrc, fragmentSrc));
 
-		std::string blueShaderVertexSrc = R"(
+		String blueShaderVertexSrc = R"(
 			#version 330 core
 		
 			layout(location = 0) in vec3 a_Position;
@@ -132,7 +134,7 @@ namespace Independent {
 			}	
 		)";
 
-		std::string blueShaderFragmentSrc = R"(
+		String blueShaderFragmentSrc = R"(
 			#version 330 core
 		
 			layout(location = 0) out vec4 color;

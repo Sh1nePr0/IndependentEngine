@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Event.h"
+#include "Independent/Core/include/containers/String.h"
 
 namespace Independent {
 
@@ -13,7 +14,7 @@ namespace Independent {
 		inline float GetX() const { return m_MouseX; }
 		inline float GetY() const { return m_MouseY; }
 
-		std::string ToString() const override
+		String ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseMovedEvent: " << m_MouseX << ", " << m_MouseY;
@@ -36,7 +37,7 @@ namespace Independent {
 		inline float GetXOffset() const { return m_XOffset; }
 		inline float GetYOffset() const { return m_YOffset; }
 
-		std::string ToString() const override
+		String ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseScrolledEvent: " << GetXOffset() << ", " << GetYOffset();
@@ -68,7 +69,7 @@ namespace Independent {
 		MouseButtonPressedEvent(int button)
 			: MouseButtonEvent(button) {}
 
-		std::string ToString() const override
+		String ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseButtonPressedEvent: " << m_Button;
@@ -85,7 +86,7 @@ namespace Independent {
 			: MouseButtonEvent(button) {
 		}
 
-		std::string ToString() const override
+		String ToString() const override
 		{
 			std::stringstream ss;
 			ss << "MouseButtonReleasedEvent: " << m_Button;

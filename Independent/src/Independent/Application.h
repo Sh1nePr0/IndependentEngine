@@ -13,6 +13,10 @@
 #include "Render/include/buffer/Buffer.h"
 #include "Render/include/vertex_array/VertexArray.h"
 
+#include "Independent/Core/include/containers/UniquePtr.h"
+#include "Independent/Core/include/containers/SharedPtr.h"
+
+
 namespace Independent {
 
 	class INDEPENDENT_API Application
@@ -35,16 +39,16 @@ namespace Independent {
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
-		std::unique_ptr<Window> m_Window;
+		UniquePtr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
+		SharedPtr<Shader> m_Shader;
+		SharedPtr<VertexArray> m_VertexArray;
 
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVAO;
+		SharedPtr<Shader> m_BlueShader;
+		SharedPtr<VertexArray> m_SquareVAO;
 	private:
 		static Application* s_Instance;
 	};

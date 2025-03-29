@@ -148,6 +148,18 @@
   <ItemGroup>
     <ClInclude Include="src\Independent.h" />
     <ClInclude Include="src\Independent\Application.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\Map.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\Pair.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\Queue.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\Set.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\SharedPtr.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\String.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\Tuple.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\UniquePtr.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\UnorderedMap.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\UnorderedSet.h" />
+    <ClInclude Include="src\Independent\Core\include\containers\Vector.h" />
+    <ClInclude Include="src\Independent\Core\include\memory\BaseMemoryResource.h" />
     <ClInclude Include="src\Independent\Render\include\GraphicsContext.h" />
     <ClInclude Include="src\Independent\Render\include\RenderCommand.h" />
     <ClInclude Include="src\Independent\Render\include\Renderer.h" />

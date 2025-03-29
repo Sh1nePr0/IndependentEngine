@@ -1,11 +1,12 @@
 #include "idpdpch.h"
 #include "Independent/Render/include/shader/Shader.h"
+#include "Independent/Core/include/containers/Vector.h"
 
 #include <glad/glad.h>
 
 namespace Independent {
 
-	Shader::Shader(const std::string& vertexSrc, const std::string& fragmentSrc)
+	Shader::Shader(const String& vertexSrc, const String& fragmentSrc)
 	{
 	
 		// Create an empty vertex shader handle
@@ -27,7 +28,7 @@ namespace Independent {
 			glGetShaderiv(vertexShader, GL_INFO_LOG_LENGTH, &maxLength);
 
 			// The maxLength includes the NULL character
-			std::vector<GLchar> infoLog(maxLength);
+			Vector<GLchar> infoLog(maxLength);
 			glGetShaderInfoLog(vertexShader, maxLength, &maxLength, &infoLog[0]);
 
 			// We don't need the shader anymore.
@@ -57,7 +58,7 @@ namespace Independent {
 			glGetShaderiv(fragmentShader, GL_INFO_LOG_LENGTH, &maxLength);
 
 			// The maxLength includes the NULL character
-			std::vector<GLchar> infoLog(maxLength);
+			Vector<GLchar> infoLog(maxLength);
 			glGetShaderInfoLog(fragmentShader, maxLength, &maxLength, &infoLog[0]);
 
 			// We don't need the shader anymore.
@@ -94,7 +95,7 @@ namespace Independent {
 			glGetProgramiv(program, GL_INFO_LOG_LENGTH, &maxLength);
 
 			// The maxLength includes the NULL character
-			std::vector<GLchar> infoLog(maxLength);
+			Vector<GLchar> infoLog(maxLength);
 			glGetProgramInfoLog(program, maxLength, &maxLength, &infoLog[0]);
 
 			// We don't need the program anymore.

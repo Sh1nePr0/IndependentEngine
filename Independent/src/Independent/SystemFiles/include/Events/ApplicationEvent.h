@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Event.h"
-
+#include "Independent/Core/include/containers/String.h"
 
 namespace Independent {
 
@@ -16,7 +16,7 @@ namespace Independent {
 		inline unsigned int GetWidth() const { return m_Width; }
 		inline unsigned int GetHeight() const { return m_Height; }
 
-		std::string ToString() const override
+		String ToString() const override
 		{
 			std::stringstream ss;
 			ss << "WindowResizeEvent: " << m_Width << ", " << m_Height;

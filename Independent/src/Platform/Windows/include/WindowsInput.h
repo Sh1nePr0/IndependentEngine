@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Independent/SystemFiles/include/Input.h"
+#include "Independent/Core/include/containers/Pair.h"
+
 
 namespace Independent {
 
@@ -9,7 +11,7 @@ namespace Independent {
 	protected:
 		virtual bool IsKeyPressedImpl(int keycode) override;
 		virtual bool IsMouseButtonPressedImpl(int button) override;
-		virtual std::pair<float, float> GetMousePositionImpl() override;
+		virtual Pair<float, float> GetMousePositionImpl() override;
 		virtual float GetMouseXImpl() override;
 		virtual float GetMouseYImpl() override;
 	};

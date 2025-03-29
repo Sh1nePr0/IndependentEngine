@@ -1,13 +1,13 @@
 #pragma once
 
-#include <string>
+#include "Independent/Core/include/containers/String.h"
 
 namespace Independent {
 
 	class Shader
 	{
 	public:
-		Shader(const std::string& vertexSrc, const std::string& fragmentSrc);
+		Shader(const String& vertexSrc, const String& fragmentSrc);
 		~Shader();
 
 		void Bind() const;
