@@ -2,6 +2,8 @@
 
 #include "Independent/Core/include/containers/String.h"
 
+#include <glm/glm.hpp>
+
 namespace Independent {
 
 	class Shader
@@ -12,6 +14,8 @@ namespace Independent {
 
 		void Bind() const;
 		void UnBind() const;
+
+		void UploadUniformMat4(const String& name, const glm::mat4& matrix);
 	private:
 		uint32_t m_RendererID;
 	};

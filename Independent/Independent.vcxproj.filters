@@ -7,6 +7,18 @@
     <Filter Include="src\Independent">
       <UniqueIdentifier>{EADDE51E-5669-53E3-5F7A-D6D7CB84AFE3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Independent\Core">
+      <UniqueIdentifier>{824468DF-6ED3-F1A8-17F2-05A40360024F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Independent\Core\include">
+      <UniqueIdentifier>{F5CD2AF7-E188-1AA3-8A40-93ED76DA6433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Independent\Core\include\containers">
+      <UniqueIdentifier>{7AF14481-E680-066C-EF7C-E7835B8B4178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Independent\Core\include\memory">
+      <UniqueIdentifier>{DDB3F7FD-496D-62A8-D2CC-7C823E851818}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Independent\Render">
       <UniqueIdentifier>{19B1D17C-05AB-FACE-EE17-91DFDAB0603B}</UniqueIdentifier>
     </Filter>
@@ -15,6 +27,9 @@
     </Filter>
     <Filter Include="src\Independent\Render\include\buffer">
       <UniqueIdentifier>{15C2090B-8186-08FB-4AEC-38C5B66FA430}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Independent\Render\include\camera">
+      <UniqueIdentifier>{A4D4F80B-1099-F7FB-D9FE-27C645829331}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Independent\Render\include\shader">
       <UniqueIdentifier>{D26FC331-3E34-C221-079A-F2EB731D5E57}</UniqueIdentifier>
@@ -27,6 +42,9 @@
     </Filter>
     <Filter Include="src\Independent\Render\src\buffer">
       <UniqueIdentifier>{B9E332DC-2552-885B-6E3B-435BDAE87DF7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Independent\Render\src\camera">
+      <UniqueIdentifier>{48F621DD-B464-775C-FD4D-325C69FB6CF8}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Independent\Render\src\shader">
       <UniqueIdentifier>{7691EC02-E2FF-4182-2BE9-FC819796371E}</UniqueIdentifier>
@@ -102,6 +120,42 @@
     <ClInclude Include="src\Independent\Application.h">
       <Filter>src\Independent</Filter>
     </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\Map.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\Pair.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\Queue.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\Set.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\SharedPtr.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\String.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\Tuple.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\UniquePtr.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\UnorderedMap.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\UnorderedSet.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\containers\Vector.h">
+      <Filter>src\Independent\Core\include\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\memory\BaseMemoryResource.h">
+      <Filter>src\Independent\Core\include\memory</Filter>
+    </ClInclude>
     <ClInclude Include="src\Independent\Render\include\GraphicsContext.h">
       <Filter>src\Independent\Render\include</Filter>
     </ClInclude>
@@ -116,6 +170,15 @@
     </ClInclude>
     <ClInclude Include="src\Independent\Render\include\buffer\Buffer.h">
       <Filter>src\Independent\Render\include\buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Render\include\camera\CameraBase.h">
+      <Filter>src\Independent\Render\include\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Render\include\camera\CameraManager.h">
+      <Filter>src\Independent\Render\include\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Render\include\camera\OrthographicCamera.h">
+      <Filter>src\Independent\Render\include\camera</Filter>
     </ClInclude>
     <ClInclude Include="src\Independent\Render\include\shader\Shader.h">
       <Filter>src\Independent\Render\include\shader</Filter>
@@ -1456,6 +1519,12 @@
     </ClCompile>
     <ClCompile Include="src\Independent\Render\src\buffer\Buffer.cpp">
       <Filter>src\Independent\Render\src\buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Independent\Render\src\camera\CameraManager.cpp">
+      <Filter>src\Independent\Render\src\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Independent\Render\src\camera\OrthographicCamera.cpp">
+      <Filter>src\Independent\Render\src\camera</Filter>
     </ClCompile>
     <ClCompile Include="src\Independent\Render\src\shader\Shader.cpp">
       <Filter>src\Independent\Render\src\shader</Filter>

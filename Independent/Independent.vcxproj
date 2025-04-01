@@ -165,6 +165,9 @@
     <ClInclude Include="src\Independent\Render\include\Renderer.h" />
     <ClInclude Include="src\Independent\Render\include\RendererAPI.h" />
     <ClInclude Include="src\Independent\Render\include\buffer\Buffer.h" />
+    <ClInclude Include="src\Independent\Render\include\camera\CameraBase.h" />
+    <ClInclude Include="src\Independent\Render\include\camera\CameraManager.h" />
+    <ClInclude Include="src\Independent\Render\include\camera\OrthographicCamera.h" />
     <ClInclude Include="src\Independent\Render\include\shader\Shader.h" />
     <ClInclude Include="src\Independent\Render\include\vertex_array\VertexArray.h" />
     <ClInclude Include="src\Independent\SystemFiles\include\Core.h" />
@@ -613,6 +616,8 @@
     <ClCompile Include="src\Independent\Render\src\Renderer.cpp" />
     <ClCompile Include="src\Independent\Render\src\RendererAPI.cpp" />
     <ClCompile Include="src\Independent\Render\src\buffer\Buffer.cpp" />
+    <ClCompile Include="src\Independent\Render\src\camera\CameraManager.cpp" />
+    <ClCompile Include="src\Independent\Render\src\camera\OrthographicCamera.cpp" />
     <ClCompile Include="src\Independent\Render\src\shader\Shader.cpp" />
     <ClCompile Include="src\Independent\Render\src\vertex_array\VertexArray.cpp" />
     <ClCompile Include="src\Independent\SystemFiles\src\ImGui\ImGuiBuild.cpp" />

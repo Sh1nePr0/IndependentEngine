@@ -9,17 +9,12 @@
 
 #include "Independent/SystemFiles/include/ImGui/ImGuiLayer.h"
 
-#include "Render/include/shader/Shader.h"
-#include "Render/include/buffer/Buffer.h"
-#include "Render/include/vertex_array/VertexArray.h"
-
 #include "Independent/Core/include/containers/UniquePtr.h"
 #include "Independent/Core/include/containers/SharedPtr.h"
 
-
 namespace Independent {
 
-	class INDEPENDENT_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -44,11 +39,6 @@ namespace Independent {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		SharedPtr<Shader> m_Shader;
-		SharedPtr<VertexArray> m_VertexArray;
-
-		SharedPtr<Shader> m_BlueShader;
-		SharedPtr<VertexArray> m_SquareVAO;
 	private:
 		static Application* s_Instance;
 	};

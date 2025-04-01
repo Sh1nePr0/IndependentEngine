@@ -9,6 +9,7 @@
 
 #include "Independent/Core/include/containers/String.h"
 
+
 namespace Independent {
 
 #define BIND_EVENT_FUNCTION(x) std::bind(&x, this, std::placeholders::_1)\
@@ -16,6 +17,7 @@ namespace Independent {
 	Application* Application::s_Instance = nullptr;
 
 	Application::Application()
+		
 	{
 		IDPD_CORE_ASSERT(!s_Instance, "Application already exist!");
 		s_Instance = this;
@@ -25,129 +27,6 @@ namespace Independent {
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
-
-		m_VertexArray.reset(VertexArray::Create());
-
-		float vertices[3 * 7] = {
-			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
-			 0.5f, -0.5f, 0.0f, 0.2f, 0.3f, 0.8f, 1.0f,
-			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
-		};
-
-		SharedPtr<VertexBuffer> triangleVBO;
-		triangleVBO.reset(VertexBuffer::Create(vertices, sizeof(vertices)));
-
-		{
-			BufferLayout triangleVBOLayout = {
-				{ ShaderDataType::Float3, "a_Position" },
-				{ ShaderDataType::Float4, "a_Color"}
-			};
-
-			triangleVBO->SetLayout(triangleVBOLayout);
-		}
-
-		m_VertexArray->AddVertexBuffer(triangleVBO);
-		
-		uint32_t indices[3] = {
-			0, 1 , 2
-		};
-
-		SharedPtr<IndexBuffer> triangleIBO;
-		triangleIBO.reset(IndexBuffer::Create(indices, sizeof(indices)/sizeof(uint32_t)));
-		m_VertexArray->SetIndexBuffer(triangleIBO);
-
-		m_SquareVAO.reset(VertexArray::Create());
-
-		float squareVertices[3 * 4] = {
-			-0.75f, -0.75f, 0.0f,
-			 0.75f, -0.75f, 0.0f,
-			 0.75f,  0.75f, 0.0f,
-			-0.75f,  0.75f, 0.0f
-		};
-
-		SharedPtr<VertexBuffer> squareVBO;
-		squareVBO.reset(VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
-
-		{
-			BufferLayout squareVBOLayout = {
-				{ ShaderDataType::Float3, "a_Position" }
-			};
-
-			squareVBO->SetLayout(squareVBOLayout);
-		}
-
-		m_SquareVAO->AddVertexBuffer(squareVBO);
-
-		uint32_t squareIndices[6] = {
-			0, 1 , 2 , 2, 3 ,0
-		};
-
-		SharedPtr<IndexBuffer> squareIBO;
-		squareIBO.reset(IndexBuffer::Create(squareIndices, sizeof(squareIndices)/sizeof(uint32_t)));
-		m_SquareVAO->SetIndexBuffer(squareIBO);
-
-		String vertexSrc = R"(
-			#version 330 core
-		
-			layout(location = 0) in vec3 a_Position;
-			layout(location = 1) in vec4 a_Color;
-	
-			out vec3 v_Position;
-			out vec4 v_Color;
-	
-			void main()
-			{
-				v_Position = a_Position;
-				v_Color = a_Color;
-				gl_Position = vec4(a_Position, 1.0);
-			}	
-		)";
-
-		String fragmentSrc = R"(
-			#version 330 core
-		
-			layout(location = 0) out vec4 color;
-
-			in vec3 v_Position;
-			in vec4 v_Color;
-	
-			void main()
-			{
-				color = vec4(v_Position * 0.5 + 0.5, 1.0);
-				color = v_Color;	
-			}	
-		)";
-
-		m_Shader.reset(new Shader(vertexSrc, fragmentSrc));
-
-		String blueShaderVertexSrc = R"(
-			#version 330 core
-		
-			layout(location = 0) in vec3 a_Position;
-	
-			out vec3 v_Position;
-	
-			void main()
-			{
-				v_Position = a_Position;
-				gl_Position = vec4(a_Position, 1.0);
-			}	
-		)";
-
-		String blueShaderFragmentSrc = R"(
-			#version 330 core
-		
-			layout(location = 0) out vec4 color;
-
-			in vec3 v_Position;
-	
-			void main()
-			{
-				color = vec4(0.2, 0.3, 0.8, 1.0);
-			}	
-		)";
-
-		m_BlueShader.reset(new Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
 	}
 
 	Application::~Application()
@@ -159,20 +38,6 @@ namespace Independent {
 	{
 		while (m_Running)
 		{
-			RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
-			RenderCommand::Clear();
-
-			Renderer::BeginScene();
-
-			m_BlueShader->Bind();
-			Renderer::Submit(m_SquareVAO);
-
-			m_Shader->Bind();
-			Renderer::Submit(m_VertexArray);
-
-			Renderer::EndScene();
-
-
 			for (Layer* layer : m_LayerStack)
 			{
 				layer->OnUpdate();

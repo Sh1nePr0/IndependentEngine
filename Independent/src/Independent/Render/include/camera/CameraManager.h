@@ -11,8 +11,13 @@ namespace Independent {
 	class CameraManager
 	{
 	public:
-		static void AddCamera(SharedPtr<CameraBase> camera);
-		static void RemoveCamera(SharedPtr<CameraBase> camera);
+		static void AddCamera(const String& name, SharedPtr<CameraBase> camera);
+		static void RemoveCamera(const String& name);
+
+		static void SetActiveCamera(const String& name);
+		static SharedPtr<CameraBase> GetActiveCamera();
+
+		static bool HasCamera(const String& name);
 
 	private:
 		static UnorderedMap<String, SharedPtr<CameraBase>> s_Cameras;
