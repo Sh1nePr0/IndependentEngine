@@ -5,7 +5,7 @@
 
 namespace Independent {
 
-	template <typename... T>
+	template <typename T>
 	using Tuple = std::tuple<T>;
 
 }

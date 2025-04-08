@@ -12,6 +12,8 @@
 #include "Independent/Core/include/containers/UniquePtr.h"
 #include "Independent/Core/include/containers/SharedPtr.h"
 
+#include "Independent/Core/include/utils/Timestep.h"
+
 namespace Independent {
 
 	class Application
@@ -33,12 +35,12 @@ namespace Independent {
 		inline static Application& Get() { return *s_Instance; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
-
+	private:
 		UniquePtr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

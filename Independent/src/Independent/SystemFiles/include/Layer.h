@@ -3,6 +3,7 @@
 #include "Independent/SystemFiles/include/Core.h"
 #include "Independent/SystemFiles/include/Events/Event.h"
 #include "Independent/Core/include/containers/String.h"
+#include "Independent/Core/include/utils/Timestep.h"
 
 namespace Independent {
 
@@ -14,7 +15,7 @@ namespace Independent {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRenderer() {}
 		virtual void OnEvent(Event& event) {}
 

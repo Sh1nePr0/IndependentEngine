@@ -11,10 +11,12 @@ namespace Independent {
 	class Renderer
 	{
 	public:
+		static void Init();
+
 		static void BeginScene(const SharedPtr<CameraBase>& camera);
 		static void EndScene();
 
-		static void Submit(const SharedPtr<Shader>& shader, const SharedPtr<VertexArray>& vertexArray);//, const glm::mat4& transform);
+		static void Submit(const SharedPtr<Shader>& shader, const SharedPtr<VertexArray>& vertexArray, const glm::mat4& transform = glm::mat4(1.0f));//, const glm::mat4& transform);
 
 		inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
 

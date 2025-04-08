@@ -2,13 +2,13 @@
 #include "Application.h"
 
 #include "Independent/SystemFiles/include/Log.h"
-
 #include "Independent/SystemFiles/include/Input.h"
 
 #include "Render/include/Renderer.h"
 
 #include "Independent/Core/include/containers/String.h"
 
+#include <glfw/glfw3.h>
 
 namespace Independent {
 
@@ -25,6 +25,8 @@ namespace Independent {
 		m_Window = UniquePtr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FUNCTION(Application::OnEvent));
 
+		Renderer::Init();
+
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
 	}
@@ -38,9 +40,14 @@ namespace Independent {
 	{
 		while (m_Running)
 		{
+			float time = (float)glfwGetTime(); // TODO: Should be something like Platform::GetTime()
+
+			Timestep timestep = time - m_LastFrameTime; 
+			m_LastFrameTime = time;
+
 			for (Layer* layer : m_LayerStack)
 			{
-				layer->OnUpdate();
+				layer->OnUpdate(timestep);
 			}
 
 			m_ImGuiLayer->Begin();

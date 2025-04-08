@@ -21,6 +21,7 @@
 #include "Independent/Render/include/RenderCommand.h"
 
 #include "Independent/Render/include/shader/Shader.h"
+#include "Independent/Render/include/texture/Texture.h"
 #include "Independent/Render/include/buffer/Buffer.h"
 #include "Independent/Render/include/vertex_array/VertexArray.h"
 
@@ -29,6 +30,8 @@
 // --------------------------------------
 
 // --Core--------------------------------
+#include "Independent/Core/include/utils/Timestep.h"
+
 #include "Independent/Core/include/containers/UniquePtr.h"
 #include "Independent/Core/include/containers/SharedPtr.h"
 // --------------------------------------
