@@ -8,12 +8,8 @@ class ExampleLayer : public Independent::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example")
+		: Layer("Example"), m_CameraController(1280.0f / 720.f, true)
 	{
-		m_Camera = std::make_shared<Independent::OrthographicCamera>(-1.6f, 1.6f, -0.9f, 0.9f);
-
-		m_CameraPosition = { 0.0f, 0.0f, 0.0f };
-
 		m_VertexArray.reset(Independent::VertexArray::Create());
 
 		float vertices[3 * 7] = {
@@ -157,32 +153,14 @@ public:
 
 	void OnUpdate(Independent::Timestep ts) override
 	{
-		if (Independent::Input::IsKeyPressed(IDPD_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-		else if (Independent::Input::IsKeyPressed(IDPD_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
+		// Update 
+		m_CameraController.OnUpdate(ts);
 
-		if (Independent::Input::IsKeyPressed(IDPD_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-		else if (Independent::Input::IsKeyPressed(IDPD_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-
-		if (Independent::Input::IsKeyPressed(IDPD_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-
-		if (Independent::Input::IsKeyPressed(IDPD_KEY_D))
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-
+		// Render
 		Independent::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Independent::RenderCommand::Clear();
 
-		Independent::CameraManager::AddCamera("Ortho", m_Camera);
-		Independent::CameraManager::SetActiveCamera("Ortho");
-
-		m_Camera->SetPosition(m_CameraPosition);
-		m_Camera->SetRotation(m_CameraRotation);
-
-		Independent::Renderer::BeginScene(m_Camera);
+		Independent::Renderer::BeginScene(std::make_shared<Independent::OrthographicCamera>(m_CameraController.GetCamera()));
 		
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -224,9 +202,9 @@ public:
 		ImGui::End();
 	}
 
-	void OnEvent(Independent::Event& event) override
+	void OnEvent(Independent::Event& e) override
 	{
-		
+		m_CameraController.OnEvent(e);
 	}
 
 	
@@ -240,13 +218,7 @@ private:
 
 	Independent::SharedPtr<Independent::Texture2D> m_Texture;
 
-	Independent::SharedPtr<Independent::OrthographicCamera> m_Camera;
-
-	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 3.0f;
-
-	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 180.0f;
+	Independent::OrthographicCameraController m_CameraController;
 
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };

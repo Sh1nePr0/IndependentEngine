@@ -25,8 +25,8 @@
 #include "Independent/Render/include/buffer/Buffer.h"
 #include "Independent/Render/include/vertex_array/VertexArray.h"
 
-#include "Independent/Render/include/camera/CameraManager.h"
 #include "Independent/Render/include/camera/OrthographicCamera.h"
+#include "Independent/Render/include/camera/OrthographicCameraController.h"
 // --------------------------------------
 
 // --Core--------------------------------
