@@ -1,8 +1,11 @@
 #include <Independent.h>
+#include <Independent/SystemFiles/include/EntryPoint.h>
 #include <ImGui/imgui.h>
 
 #include "Platform/OpenGL/include/OpenGLShader.h"
 #include <glm/gtc/type_ptr.hpp>
+
+#include "IndependentEditor2D.h"
 
 class ExampleLayer : public Independent::Layer
 {
@@ -10,7 +13,7 @@ public:
 	ExampleLayer()
 		: Layer("Example"), m_CameraController(1280.0f / 720.f, true)
 	{
-		m_VertexArray.reset(Independent::VertexArray::Create());
+		m_VertexArray = Independent::VertexArray::Create();
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
@@ -19,7 +22,7 @@ public:
 		};
 
 		Independent::SharedPtr<Independent::VertexBuffer> triangleVBO;
-		triangleVBO.reset(Independent::VertexBuffer::Create(vertices, sizeof(vertices)));
+		triangleVBO = Independent::VertexBuffer::Create(vertices, sizeof(vertices));
 
 		{
 			Independent::BufferLayout triangleVBOLayout = {
@@ -37,10 +40,10 @@ public:
 		};
 
 		Independent::SharedPtr<Independent::IndexBuffer> triangleIBO;
-		triangleIBO.reset(Independent::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		triangleIBO = Independent::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(triangleIBO);
 
-		m_SquareVAO.reset(Independent::VertexArray::Create());
+		m_SquareVAO = Independent::VertexArray::Create();
 
 		float squareVertices[5 * 4] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -50,7 +53,7 @@ public:
 		};
 
 		Independent::SharedPtr<Independent::VertexBuffer> squareVBO;
-		squareVBO.reset(Independent::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		squareVBO = Independent::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 
 		{
 			Independent::BufferLayout squareVBOLayout = {
@@ -68,7 +71,7 @@ public:
 		};
 
 		Independent::SharedPtr<Independent::IndexBuffer> squareIBO;
-		squareIBO.reset(Independent::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		squareIBO = Independent::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_SquareVAO->SetIndexBuffer(squareIBO);
 
 		Independent::String vertexSrc = R"(
@@ -228,7 +231,8 @@ class IndependentEditor : public Independent::Application
 public:
 	IndependentEditor()
 	{
-		PushLayer(new ExampleLayer());
+		//PushLayer(new ExampleLayer());
+		PushLayer(new IndependentEditor2D());
 	}
 
 	~IndependentEditor()

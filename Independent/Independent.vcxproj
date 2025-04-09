@@ -161,14 +161,15 @@
     <ClInclude Include="src\Independent\Core\include\containers\Vector.h" />
     <ClInclude Include="src\Independent\Core\include\memory\BaseMemoryResource.h" />
     <ClInclude Include="src\Independent\Core\include\utils\Timestep.h" />
-    <ClInclude Include="src\Independent\Render\include\camera\OrthographicCameraController.h" />
     <ClInclude Include="src\Independent\Render\include\GraphicsContext.h" />
     <ClInclude Include="src\Independent\Render\include\RenderCommand.h" />
     <ClInclude Include="src\Independent\Render\include\Renderer.h" />
+    <ClInclude Include="src\Independent\Render\include\Renderer2D.h" />
     <ClInclude Include="src\Independent\Render\include\RendererAPI.h" />
     <ClInclude Include="src\Independent\Render\include\buffer\Buffer.h" />
     <ClInclude Include="src\Independent\Render\include\camera\CameraBase.h" />
     <ClInclude Include="src\Independent\Render\include\camera\OrthographicCamera.h" />
+    <ClInclude Include="src\Independent\Render\include\camera\OrthographicCameraController.h" />
     <ClInclude Include="src\Independent\Render\include\shader\Shader.h" />
     <ClInclude Include="src\Independent\Render\include\texture\Texture.h" />
     <ClInclude Include="src\Independent\Render\include\vertex_array\VertexArray.h" />
@@ -617,12 +618,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Independent\Application.cpp" />
-    <ClCompile Include="src\Independent\Render\src\camera\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Independent\Render\src\RenderCommand.cpp" />
     <ClCompile Include="src\Independent\Render\src\Renderer.cpp" />
+    <ClCompile Include="src\Independent\Render\src\Renderer2D.cpp" />
     <ClCompile Include="src\Independent\Render\src\RendererAPI.cpp" />
     <ClCompile Include="src\Independent\Render\src\buffer\Buffer.cpp" />
     <ClCompile Include="src\Independent\Render\src\camera\OrthographicCamera.cpp" />
+    <ClCompile Include="src\Independent\Render\src\camera\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Independent\Render\src\shader\Shader.cpp" />
     <ClCompile Include="src\Independent\Render\src\texture\Texture.cpp" />
     <ClCompile Include="src\Independent\Render\src\vertex_array\VertexArray.cpp" />

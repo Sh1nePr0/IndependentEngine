@@ -18,6 +18,7 @@
 
 // --Render------------------------------
 #include "Independent/Render/include/Renderer.h"
+#include "Independent/Render/include/Renderer2D.h"
 #include "Independent/Render/include/RenderCommand.h"
 
 #include "Independent/Render/include/shader/Shader.h"
@@ -34,8 +35,4 @@
 
 #include "Independent/Core/include/containers/UniquePtr.h"
 #include "Independent/Core/include/containers/SharedPtr.h"
-// --------------------------------------
-
-// --Entry Point-------------------------
-#include "Independent/SystemFiles/include/EntryPoint.h"
 // --------------------------------------

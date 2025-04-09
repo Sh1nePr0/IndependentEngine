@@ -12,6 +12,7 @@ namespace Independent {
 	{
 	public:
 		static void Init();
+		static void OnWindowResize(uint32_t width, uint32_t height);
 
 		static void BeginScene(const SharedPtr<CameraBase>& camera);
 		static void EndScene();
@@ -26,6 +27,6 @@ namespace Independent {
 			glm::mat4 ViewProjectionMatrix;
 		};
 
-		static SceneData* s_SceneData;
+		static UniquePtr<SceneData> s_SceneData;
 	};
 }
