@@ -4,14 +4,15 @@
 #include "Independent/Render/include/vertex_array/VertexArray.h"
 #include "Independent/Render/include/shader/Shader.h"
 
-#include "Platform/OpenGL/include/OpenGLShader.h"
+#include <glm/gtc/matrix_transform.hpp>
 
 namespace Independent {
 
 	struct Renderer2DData
 	{
 		SharedPtr<VertexArray> QuadVertexArray;
-		SharedPtr<Shader> FlatColorShader;
+		SharedPtr<Shader> TextureShader;
+		SharedPtr<Texture2D> WhiteTexture;
 	};
 
 	static Renderer2DData* s_Renderer2DData;
@@ -22,11 +23,11 @@ namespace Independent {
 
 		s_Renderer2DData->QuadVertexArray = VertexArray::Create();
 
-		float squareVertices[3 * 4] = {
-			-0.5f, -0.5f, 0.0f,
-			 0.5f, -0.5f, 0.0f,
-			 0.5f,  0.5f, 0.0f,
-			-0.5f,  0.5f, 0.0f
+		float squareVertices[5 * 4] = {
+			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
+			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
+			 0.5f,  0.5f, 0.0f, 1.0f, 1.0f,
+			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
 		SharedPtr<VertexBuffer> squareVBO;
@@ -34,7 +35,8 @@ namespace Independent {
 
 		{
 			BufferLayout squareVBOLayout = {
-				{ ShaderDataType::Float3, "a_Position" }
+				{ ShaderDataType::Float3, "a_Position" },
+				{ ShaderDataType::Float2, "a_TextureCoord" }
 			};
 
 			squareVBO->SetLayout(squareVBOLayout);
@@ -50,7 +52,13 @@ namespace Independent {
 		squareIBO = IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		s_Renderer2DData->QuadVertexArray->SetIndexBuffer(squareIBO);
 
-		s_Renderer2DData->FlatColorShader = Shader::Create("assets/shaders/FlatColor.glsl");
+		s_Renderer2DData->WhiteTexture = Texture2D::Create(1, 1);
+		uint32_t whiteTextureData = 0xffffffff;
+		s_Renderer2DData->WhiteTexture->SetData(&whiteTextureData, sizeof(uint32_t));
+
+		s_Renderer2DData->TextureShader = Shader::Create("assets/shaders/Texture.glsl");
+		s_Renderer2DData->TextureShader->Bind();
+		s_Renderer2DData->TextureShader->SetInt("u_Texture", 0);
 	}
 
 	void Renderer2D::Shutdown()
@@ -60,9 +68,8 @@ namespace Independent {
 
 	void Renderer2D::BeginScene(const SharedPtr<CameraBase>& camera)
 	{
-		std::dynamic_pointer_cast<OpenGLShader>(s_Renderer2DData->FlatColorShader)->Bind();
-		std::dynamic_pointer_cast<OpenGLShader>(s_Renderer2DData->FlatColorShader)->UploadUniformMat4("u_ViewProjection", camera->GetViewProjectionMatrix());
-		std::dynamic_pointer_cast<OpenGLShader>(s_Renderer2DData->FlatColorShader)->UploadUniformMat4("u_Transform", glm::mat4(1.0f));
+		s_Renderer2DData->TextureShader->Bind();
+		s_Renderer2DData->TextureShader->SetMat4("u_ViewProjection", camera->GetViewProjectionMatrix());
 	}
 
 	void Renderer2D::EndScene()
@@ -77,8 +84,30 @@ namespace Independent {
 
 	void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
 	{
-		std::dynamic_pointer_cast<OpenGLShader>(s_Renderer2DData->FlatColorShader)->Bind();
-		std::dynamic_pointer_cast<OpenGLShader>(s_Renderer2DData->FlatColorShader)->UploadUniformFloat4("u_Color", color);
+		s_Renderer2DData->TextureShader->SetFloat4("u_Color", color);
+		s_Renderer2DData->WhiteTexture->Bind();
+		
+		glm::mat4 transform = glm::translate(glm::mat4(1.0f), position) *
+			glm::scale(glm::mat4(1.0f), {size.x, size.y, 1.0f});
+		s_Renderer2DData->TextureShader->SetMat4("u_Transform", transform);
+
+		s_Renderer2DData->QuadVertexArray->Bind();
+		RenderCommand::DrawIndexed(s_Renderer2DData->QuadVertexArray);
+	}
+
+	void Renderer2D::DrawQuad(const glm::vec2& position, const glm::vec2& size, const SharedPtr<Texture2D>& texture)
+	{
+		DrawQuad({ position.x, position.y, 0.0f }, size, texture);
+	}
+
+	void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const SharedPtr<Texture2D>& texture)
+	{
+		s_Renderer2DData->TextureShader->SetFloat4("u_Color", glm::vec4(1.0f));
+		texture->Bind();
+
+		glm::mat4 transform = glm::translate(glm::mat4(1.0f), position) *
+			glm::scale(glm::mat4(1.0f), { size.x, size.y, 1.0f });
+		s_Renderer2DData->TextureShader->SetMat4("u_Transform", transform);
 
 		s_Renderer2DData->QuadVertexArray->Bind();
 		RenderCommand::DrawIndexed(s_Renderer2DData->QuadVertexArray);

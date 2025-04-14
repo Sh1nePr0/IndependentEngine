@@ -4,6 +4,7 @@
 #include "Independent/Core/include/containers/SharedPtr.h"
 #include "Independent/Core/include/containers/UnorderedMap.h"
 
+#include <glm/glm.hpp>
 
 namespace Independent {
 
@@ -17,6 +18,11 @@ namespace Independent {
 
 		//TODO: include this function when created complex material system
 		//virtual void UploadUniformBuffer() = 0;
+
+		virtual void SetInt(const String& name, int value) = 0;
+		virtual void SetFloat3(const String& name, const glm::vec3& value) = 0;
+		virtual void SetFloat4(const String& name, const glm::vec4& value) = 0;
+		virtual void SetMat4(const String& name, const glm::mat4& value) = 0;
 
 		virtual const String& GetName() const = 0;
 

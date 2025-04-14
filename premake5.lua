@@ -1,6 +1,6 @@
 workspace "Independent"
 	architecture "x64"
-	startproject "IndependentEditor"
+	startproject "TestingProject"
 
 	configurations
 	{
@@ -100,8 +100,8 @@ project "Independent"
 		runtime "Release"
 		optimize "on"
 
-project "IndependentEditor"
-	location "IndependentEditor"
+project "TestingProject"
+	location "TestingProject"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"

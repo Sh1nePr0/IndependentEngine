@@ -180,6 +180,9 @@
     <ClInclude Include="src\Independent\Render\include\Renderer.h">
       <Filter>src\Independent\Render\include</Filter>
     </ClInclude>
+    <ClInclude Include="src\Independent\Render\include\Renderer2D.h">
+      <Filter>src\Independent\Render\include</Filter>
+    </ClInclude>
     <ClInclude Include="src\Independent\Render\include\RendererAPI.h">
       <Filter>src\Independent\Render\include</Filter>
     </ClInclude>
@@ -1539,6 +1542,9 @@
       <Filter>src\Independent\Render\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Independent\Render\src\Renderer.cpp">
+      <Filter>src\Independent\Render\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Independent\Render\src\Renderer2D.cpp">
       <Filter>src\Independent\Render\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Independent\Render\src\RendererAPI.cpp">

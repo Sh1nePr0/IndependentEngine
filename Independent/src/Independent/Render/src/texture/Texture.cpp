@@ -6,6 +6,18 @@
 
 namespace Independent {
 
+	SharedPtr<Texture2D> Texture2D::Create(uint32_t width, uint32_t height)
+	{
+		switch (Renderer::GetAPI())
+		{
+		case RendererAPI::API::None:     IDPD_CORE_ASSERT(false, "RendererAPI::None is currrently not supported"); return nullptr;
+		case RendererAPI::API::OpenGL:   return std::make_shared<OpenGLTexture2D>(width, height);
+		}
+
+		IDPD_CORE_ASSERT(false, "Unknown RendereAPI");
+		return nullptr;
+	}
+
 	SharedPtr<Texture2D> Texture2D::Create(const String& path)
 	{
 		switch (Renderer::GetAPI())

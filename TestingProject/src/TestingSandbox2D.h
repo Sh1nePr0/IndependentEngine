@@ -3,11 +3,11 @@
 #include <Independent.h>
 
 
-class IndependentEditor2D : public Independent::Layer
+class TestingSandbox2D : public Independent::Layer
 {
 public:
-	IndependentEditor2D();
-	virtual ~IndependentEditor2D() = default;
+	TestingSandbox2D();
+	virtual ~TestingSandbox2D() = default;
 
 	virtual void OnAttach() override;
 	virtual void OnDetach() override;
@@ -19,9 +19,9 @@ public:
 private:
 	Independent::OrthographicCameraController m_CameraController;
 
-	// Temp
-	Independent::SharedPtr<Independent::VertexArray> m_SquareVAO;
-	Independent::SharedPtr<Independent::Shader> m_FlatColorShader;
-	
+	Independent::SharedPtr<Independent::Texture2D> m_SpruceTreeTexture;
+	Independent::SharedPtr<Independent::Texture2D> m_WitcherLogoTexture;
+	Independent::SharedPtr<Independent::Texture2D> m_CheckerboardTexture;
+
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f};
 };

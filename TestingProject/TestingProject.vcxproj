@@ -15,10 +15,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5AF205AD-C608-0443-0F80-8F647BD5D4CA}</ProjectGuid>
+    <ProjectGuid>{FA00CB1D-E6CE-BE23-CF62-2F4ABBCF9A88}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>IndependentEditor</RootNamespace>
+    <RootNamespace>TestingProject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -55,23 +55,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Debug-windows-x86_64\IndependentEditor\</OutDir>
-    <IntDir>..\bin-intermediate\Debug-windows-x86_64\IndependentEditor\</IntDir>
-    <TargetName>IndependentEditor</TargetName>
+    <OutDir>..\bin\Debug-windows-x86_64\TestingProject\</OutDir>
+    <IntDir>..\bin-intermediate\Debug-windows-x86_64\TestingProject\</IntDir>
+    <TargetName>TestingProject</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Release-windows-x86_64\IndependentEditor\</OutDir>
-    <IntDir>..\bin-intermediate\Release-windows-x86_64\IndependentEditor\</IntDir>
-    <TargetName>IndependentEditor</TargetName>
+    <OutDir>..\bin\Release-windows-x86_64\TestingProject\</OutDir>
+    <IntDir>..\bin-intermediate\Release-windows-x86_64\TestingProject\</IntDir>
+    <TargetName>TestingProject</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Dist-windows-x86_64\IndependentEditor\</OutDir>
-    <IntDir>..\bin-intermediate\Dist-windows-x86_64\IndependentEditor\</IntDir>
-    <TargetName>IndependentEditor</TargetName>
+    <OutDir>..\bin\Dist-windows-x86_64\TestingProject\</OutDir>
+    <IntDir>..\bin-intermediate\Dist-windows-x86_64\TestingProject\</IntDir>
+    <TargetName>TestingProject</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -137,16 +137,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\IndependentEditor2D.cpp" />
-    <ClCompile Include="src\IndependentEditorApp.cpp" />
+    <ClInclude Include="src\TestingSandbox2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\TestingSandbox2D.cpp" />
+    <ClCompile Include="src\TestingSandboxApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Independent\Independent.vcxproj">
       <Project>{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\IndependentEditor2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

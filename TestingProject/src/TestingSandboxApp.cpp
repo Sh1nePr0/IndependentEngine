@@ -5,7 +5,7 @@
 #include "Platform/OpenGL/include/OpenGLShader.h"
 #include <glm/gtc/type_ptr.hpp>
 
-#include "IndependentEditor2D.h"
+#include "TestingSandbox2D.h"
 
 class ExampleLayer : public Independent::Layer
 {
@@ -226,16 +226,16 @@ private:
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };
 
-class IndependentEditor : public Independent::Application
+class TestingSandbox : public Independent::Application
 {
 public:
-	IndependentEditor()
+	TestingSandbox()
 	{
 		//PushLayer(new ExampleLayer());
-		PushLayer(new IndependentEditor2D());
+		PushLayer(new TestingSandbox2D());
 	}
 
-	~IndependentEditor()
+	~TestingSandbox()
 	{
 
 	}
@@ -245,5 +245,5 @@ public:
 
 Independent::Application* Independent::CreateApplication()
 {
-	return new IndependentEditor();
+	return new TestingSandbox();
 }
