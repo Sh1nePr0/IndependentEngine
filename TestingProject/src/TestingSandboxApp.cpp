@@ -6,6 +6,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "TestingSandbox2D.h"
+#include "FlappyBirdClone/GameLayer.h"
 
 class ExampleLayer : public Independent::Layer
 {
@@ -196,7 +197,7 @@ public:
 		Independent::Renderer::EndScene();
 	}
 
-	virtual void OnImGuiRenderer() override
+	virtual void OnImGuiRender() override
 	{
 		ImGui::Begin("Settings");
 
@@ -233,6 +234,7 @@ public:
 	{
 		//PushLayer(new ExampleLayer());
 		PushLayer(new TestingSandbox2D());
+		//PushLayer(new GameLayer());
 	}
 
 	~TestingSandbox()

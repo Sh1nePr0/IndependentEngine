@@ -21,6 +21,8 @@ namespace Independent {
 
 	OpenGLShader::OpenGLShader(const String& filepath)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		String source = ReadFile(filepath);
 		auto shaderSources = PreProcess(source);
 		Compile(shaderSources);
@@ -36,6 +38,8 @@ namespace Independent {
 	OpenGLShader::OpenGLShader(const String& name, const String& vertexSrc, const String& fragmentSrc)
 		: m_Name(name)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		UnorderedMap<GLenum, String> sources;
 		sources[GL_VERTEX_SHADER] = vertexSrc;
 		sources[GL_FRAGMENT_SHADER] = fragmentSrc;
@@ -44,11 +48,15 @@ namespace Independent {
 
 	OpenGLShader::~OpenGLShader()
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		glDeleteProgram(m_RendererID);
 	}
 
 	String OpenGLShader::ReadFile(const String& filepath)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		String result;
 		std::ifstream input(filepath, std::ios::in | std::ios::binary);
 		if (input)
@@ -69,6 +77,8 @@ namespace Independent {
 
 	UnorderedMap<GLenum, String> OpenGLShader::PreProcess(const String& source)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		UnorderedMap<GLenum, String> shaderSources;
 
 		const char* typeToken = "#type";
@@ -94,6 +104,8 @@ namespace Independent {
 
 	void OpenGLShader::Compile(const UnorderedMap<GLenum, String>& shaderSources)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		GLuint program = glCreateProgram();
 
 		IDPD_CORE_ASSERT(shaderSources.size() <= 2, "Unly support 2 shaders for now");
@@ -171,31 +183,57 @@ namespace Independent {
 
 	void OpenGLShader::Bind() const
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		glUseProgram(m_RendererID);
 	}
 
 	void OpenGLShader::UnBind() const
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		glUseProgram(0);
 	}
 
 	void OpenGLShader::SetInt(const String& name, int value)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		UploadUniformInt(name, value);
+	}
+
+	void OpenGLShader::SetFloat(const String& name, float value)
+	{
+		IDPD_PROFILE_FUNCTION();
+
+		UploadUniformFloat(name, value);
+	}
+
+	void OpenGLShader::SetFloat2(const String& name, const glm::vec2& value)
+	{
+		IDPD_PROFILE_FUNCTION();
+
+		UploadUniformFloat2(name, value);
 	}
 
 	void OpenGLShader::SetFloat3(const String& name, const glm::vec3& value)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		UploadUniformFloat3(name, value);
 	}
 
 	void OpenGLShader::SetFloat4(const String& name, const glm::vec4& value)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		UploadUniformFloat4(name, value);
 	}
 
 	void OpenGLShader::SetMat4(const String& name, const glm::mat4& value)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		UploadUniformMat4(name, value);
 	}
 

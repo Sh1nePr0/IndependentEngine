@@ -15,6 +15,8 @@ namespace Independent {
 
 	void OpenGLContext::Init()
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		IDPD_CORE_ASSERT(status, "Failed to initialize Glad!");
@@ -36,6 +38,8 @@ namespace Independent {
 
 	void OpenGLContext::SwapBuffers()
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 

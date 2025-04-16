@@ -21,6 +21,8 @@ namespace Independent {
 		virtual void UnBind() const override;
 
 		virtual void SetInt(const String& name, int value) override;
+		virtual void SetFloat(const String& name, float value) override;
+		virtual void SetFloat2(const String& name, const glm::vec2& value) override;
 		virtual void SetFloat3(const String& name, const glm::vec3& value) override;
 		virtual void SetFloat4(const String& name, const glm::vec4& value) override;
 		virtual void SetMat4(const String& name, const glm::mat4& value) override;

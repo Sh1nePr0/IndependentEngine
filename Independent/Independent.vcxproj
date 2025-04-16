@@ -159,6 +159,7 @@
     <ClInclude Include="src\Independent\Core\include\containers\UnorderedMap.h" />
     <ClInclude Include="src\Independent\Core\include\containers\UnorderedSet.h" />
     <ClInclude Include="src\Independent\Core\include\containers\Vector.h" />
+    <ClInclude Include="src\Independent\Core\include\debug\Instrumentor.h" />
     <ClInclude Include="src\Independent\Core\include\memory\BaseMemoryResource.h" />
     <ClInclude Include="src\Independent\Core\include\utils\Timestep.h" />
     <ClInclude Include="src\Independent\Render\include\GraphicsContext.h" />

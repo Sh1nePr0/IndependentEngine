@@ -13,7 +13,7 @@ public:
 	virtual void OnDetach() override;
 
 	void OnUpdate(Independent::Timestep ts) override;
-	virtual void OnImGuiRenderer() override;
+	virtual void OnImGuiRender() override;
 	void OnEvent(Independent::Event& e) override;
 
 private:

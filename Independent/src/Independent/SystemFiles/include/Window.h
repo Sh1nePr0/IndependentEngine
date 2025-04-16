@@ -43,7 +43,7 @@ namespace Independent {
 
 		virtual void* GetNativeWindow() const = 0;
 
-		static Window* Create(const WindowsProps& props = WindowsProps());
+		static UniquePtr<Window> Create(const WindowsProps& props = WindowsProps());
 	};
 
 }

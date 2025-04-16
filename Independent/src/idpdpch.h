@@ -27,6 +27,8 @@
 #include "Independent/Core/include/containers/UnorderedSet.h"
 #include "Independent/Core/include/containers/Vector.h"
 
+#include "Independent/Core/include/debug/Instrumentor.h"
+
 #include "Independent/SystemFiles/include/Log.h"
 
 #ifdef IDPD_PLATFORM_WINDOWS
