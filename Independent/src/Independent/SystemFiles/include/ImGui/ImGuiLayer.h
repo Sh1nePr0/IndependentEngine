@@ -15,7 +15,6 @@ namespace Independent {
 
 		virtual void OnAttach() override;
 		virtual void OnDetach() override;
-		virtual void OnImGuiRenderer() override;
 		
 		void Begin();
 		void End();

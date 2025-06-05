@@ -11,10 +11,14 @@ namespace Independent {
 	class Renderer
 	{
 	public:
+		static void Init();
+		static void Shutdown();
+		static void OnWindowResize(uint32_t width, uint32_t height);
+
 		static void BeginScene(const SharedPtr<CameraBase>& camera);
 		static void EndScene();
 
-		static void Submit(const SharedPtr<Shader>& shader, const SharedPtr<VertexArray>& vertexArray);//, const glm::mat4& transform);
+		static void Submit(const SharedPtr<Shader>& shader, const SharedPtr<VertexArray>& vertexArray, const glm::mat4& transform = glm::mat4(1.0f));//, const glm::mat4& transform);
 
 		inline static RendererAPI::API GetAPI() { return RendererAPI::GetAPI(); }
 
@@ -24,6 +28,6 @@ namespace Independent {
 			glm::mat4 ViewProjectionMatrix;
 		};
 
-		static SceneData* s_SceneData;
+		static UniquePtr<SceneData> s_SceneData;
 	};
 }

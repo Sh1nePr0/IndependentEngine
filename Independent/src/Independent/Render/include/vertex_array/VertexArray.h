@@ -22,7 +22,7 @@ namespace Independent {
 		virtual const Vector<SharedPtr<VertexBuffer>>& GetVertexBuffers() const = 0;
 		virtual const SharedPtr<IndexBuffer>& GetIndexBuffer() const = 0;
 
-		static VertexArray* Create();
+		static SharedPtr<VertexArray> Create();
 	};
 
 }

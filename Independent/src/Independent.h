@@ -18,21 +18,21 @@
 
 // --Render------------------------------
 #include "Independent/Render/include/Renderer.h"
+#include "Independent/Render/include/Renderer2D.h"
 #include "Independent/Render/include/RenderCommand.h"
 
 #include "Independent/Render/include/shader/Shader.h"
+#include "Independent/Render/include/texture/Texture.h"
 #include "Independent/Render/include/buffer/Buffer.h"
 #include "Independent/Render/include/vertex_array/VertexArray.h"
 
-#include "Independent/Render/include/camera/CameraManager.h"
 #include "Independent/Render/include/camera/OrthographicCamera.h"
+#include "Independent/Render/include/camera/OrthographicCameraController.h"
 // --------------------------------------
 
 // --Core--------------------------------
+#include "Independent/Core/include/utils/Timestep.h"
+
 #include "Independent/Core/include/containers/UniquePtr.h"
 #include "Independent/Core/include/containers/SharedPtr.h"
-// --------------------------------------
-
-// --Entry Point-------------------------
-#include "Independent/SystemFiles/include/EntryPoint.h"
 // --------------------------------------

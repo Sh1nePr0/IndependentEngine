@@ -77,7 +77,7 @@
       <PrecompiledHeaderFile>idpdpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;IDPD_PLATFORM_WINDOWS;IDPD_BUILD_DLL;GLFW_INCLUDE_NONE;IDPD_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -99,7 +99,7 @@
       <PrecompiledHeaderFile>idpdpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;IDPD_PLATFORM_WINDOWS;IDPD_BUILD_DLL;GLFW_INCLUDE_NONE;IDPD_Release;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -125,7 +125,7 @@
       <PrecompiledHeaderFile>idpdpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;IDPD_PLATFORM_WINDOWS;IDPD_BUILD_DLL;GLFW_INCLUDE_NONE;IDPD_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;src;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -159,16 +159,20 @@
     <ClInclude Include="src\Independent\Core\include\containers\UnorderedMap.h" />
     <ClInclude Include="src\Independent\Core\include\containers\UnorderedSet.h" />
     <ClInclude Include="src\Independent\Core\include\containers\Vector.h" />
+    <ClInclude Include="src\Independent\Core\include\debug\Instrumentor.h" />
     <ClInclude Include="src\Independent\Core\include\memory\BaseMemoryResource.h" />
+    <ClInclude Include="src\Independent\Core\include\utils\Timestep.h" />
     <ClInclude Include="src\Independent\Render\include\GraphicsContext.h" />
     <ClInclude Include="src\Independent\Render\include\RenderCommand.h" />
     <ClInclude Include="src\Independent\Render\include\Renderer.h" />
+    <ClInclude Include="src\Independent\Render\include\Renderer2D.h" />
     <ClInclude Include="src\Independent\Render\include\RendererAPI.h" />
     <ClInclude Include="src\Independent\Render\include\buffer\Buffer.h" />
     <ClInclude Include="src\Independent\Render\include\camera\CameraBase.h" />
-    <ClInclude Include="src\Independent\Render\include\camera\CameraManager.h" />
     <ClInclude Include="src\Independent\Render\include\camera\OrthographicCamera.h" />
+    <ClInclude Include="src\Independent\Render\include\camera\OrthographicCameraController.h" />
     <ClInclude Include="src\Independent\Render\include\shader\Shader.h" />
+    <ClInclude Include="src\Independent\Render\include\texture\Texture.h" />
     <ClInclude Include="src\Independent\Render\include\vertex_array\VertexArray.h" />
     <ClInclude Include="src\Independent\SystemFiles\include\Core.h" />
     <ClInclude Include="src\Independent\SystemFiles\include\EntryPoint.h" />
@@ -187,6 +191,8 @@
     <ClInclude Include="src\Platform\OpenGL\include\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\include\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\include\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Platform\OpenGL\include\OpenGLShader.h" />
+    <ClInclude Include="src\Platform\OpenGL\include\OpenGLTexture.h" />
     <ClInclude Include="src\Platform\OpenGL\include\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\Windows\include\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\include\WindowsWindow.h" />
@@ -609,16 +615,19 @@
     <ClInclude Include="vendor\glm\glm\vec3.hpp" />
     <ClInclude Include="vendor\glm\glm\vec4.hpp" />
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
+    <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Independent\Application.cpp" />
     <ClCompile Include="src\Independent\Render\src\RenderCommand.cpp" />
     <ClCompile Include="src\Independent\Render\src\Renderer.cpp" />
+    <ClCompile Include="src\Independent\Render\src\Renderer2D.cpp" />
     <ClCompile Include="src\Independent\Render\src\RendererAPI.cpp" />
     <ClCompile Include="src\Independent\Render\src\buffer\Buffer.cpp" />
-    <ClCompile Include="src\Independent\Render\src\camera\CameraManager.cpp" />
     <ClCompile Include="src\Independent\Render\src\camera\OrthographicCamera.cpp" />
+    <ClCompile Include="src\Independent\Render\src\camera\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Independent\Render\src\shader\Shader.cpp" />
+    <ClCompile Include="src\Independent\Render\src\texture\Texture.cpp" />
     <ClCompile Include="src\Independent\Render\src\vertex_array\VertexArray.cpp" />
     <ClCompile Include="src\Independent\SystemFiles\src\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Independent\SystemFiles\src\ImGui\ImGuiLayer.cpp" />
@@ -628,12 +637,15 @@
     <ClCompile Include="src\Platform\OpenGL\src\OpenGLBuffer.cpp" />
     <ClCompile Include="src\Platform\OpenGL\src\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\OpenGL\src\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\src\OpenGLShader.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\src\OpenGLTexture.cpp" />
     <ClCompile Include="src\Platform\OpenGL\src\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Platform\Windows\src\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\src\WindowsWindow.cpp" />
     <ClCompile Include="src\idpdpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

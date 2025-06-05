@@ -19,6 +19,9 @@
     <Filter Include="src\Independent\Core\include\memory">
       <UniqueIdentifier>{DDB3F7FD-496D-62A8-D2CC-7C823E851818}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Independent\Core\include\utils">
+      <UniqueIdentifier>{35C3F5B2-21FF-F81C-8A11-1114766CA137}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Independent\Render">
       <UniqueIdentifier>{19B1D17C-05AB-FACE-EE17-91DFDAB0603B}</UniqueIdentifier>
     </Filter>
@@ -34,6 +37,9 @@
     <Filter Include="src\Independent\Render\include\shader">
       <UniqueIdentifier>{D26FC331-3E34-C221-079A-F2EB731D5E57}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Independent\Render\include\texture">
+      <UniqueIdentifier>{0C6BD5B1-F8BC-ACA1-E1DB-E9B1CDCCC58A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Independent\Render\include\vertex_array">
       <UniqueIdentifier>{376F721F-A3D4-05A6-2CAD-A77E9811FB14}</UniqueIdentifier>
     </Filter>
@@ -48,6 +54,9 @@
     </Filter>
     <Filter Include="src\Independent\Render\src\shader">
       <UniqueIdentifier>{7691EC02-E2FF-4182-2BE9-FC819796371E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Independent\Render\src\texture">
+      <UniqueIdentifier>{30C122A8-1CFD-2512-850F-3E09716ACE2C}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Independent\Render\src\vertex_array">
       <UniqueIdentifier>{DB3B7FFD-47CB-40E8-50C7-2100BCD57BF4}</UniqueIdentifier>
@@ -112,6 +121,9 @@
     <Filter Include="vendor\glm\glm\gtx">
       <UniqueIdentifier>{B3A6A76B-9F8A-68C1-08EB-6214F4ED5243}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Independent.h">
@@ -156,6 +168,9 @@
     <ClInclude Include="src\Independent\Core\include\memory\BaseMemoryResource.h">
       <Filter>src\Independent\Core\include\memory</Filter>
     </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\utils\Timestep.h">
+      <Filter>src\Independent\Core\include\utils</Filter>
+    </ClInclude>
     <ClInclude Include="src\Independent\Render\include\GraphicsContext.h">
       <Filter>src\Independent\Render\include</Filter>
     </ClInclude>
@@ -163,6 +178,9 @@
       <Filter>src\Independent\Render\include</Filter>
     </ClInclude>
     <ClInclude Include="src\Independent\Render\include\Renderer.h">
+      <Filter>src\Independent\Render\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Render\include\Renderer2D.h">
       <Filter>src\Independent\Render\include</Filter>
     </ClInclude>
     <ClInclude Include="src\Independent\Render\include\RendererAPI.h">
@@ -174,14 +192,17 @@
     <ClInclude Include="src\Independent\Render\include\camera\CameraBase.h">
       <Filter>src\Independent\Render\include\camera</Filter>
     </ClInclude>
-    <ClInclude Include="src\Independent\Render\include\camera\CameraManager.h">
+    <ClInclude Include="src\Independent\Render\include\camera\OrthographicCamera.h">
       <Filter>src\Independent\Render\include\camera</Filter>
     </ClInclude>
-    <ClInclude Include="src\Independent\Render\include\camera\OrthographicCamera.h">
+    <ClInclude Include="src\Independent\Render\include\camera\OrthographicCameraController.h">
       <Filter>src\Independent\Render\include\camera</Filter>
     </ClInclude>
     <ClInclude Include="src\Independent\Render\include\shader\Shader.h">
       <Filter>src\Independent\Render\include\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Render\include\texture\Texture.h">
+      <Filter>src\Independent\Render\include\texture</Filter>
     </ClInclude>
     <ClInclude Include="src\Independent\Render\include\vertex_array\VertexArray.h">
       <Filter>src\Independent\Render\include\vertex_array</Filter>
@@ -235,6 +256,12 @@
       <Filter>src\Platform\OpenGL\include</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\include\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\include\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\include\OpenGLTexture.h">
       <Filter>src\Platform\OpenGL\include</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\include\OpenGLVertexArray.h">
@@ -1503,6 +1530,10 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Independent\Core\include\debug\Instrumentor.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Independent\Application.cpp">
@@ -1514,20 +1545,26 @@
     <ClCompile Include="src\Independent\Render\src\Renderer.cpp">
       <Filter>src\Independent\Render\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Independent\Render\src\Renderer2D.cpp">
+      <Filter>src\Independent\Render\src</Filter>
+    </ClCompile>
     <ClCompile Include="src\Independent\Render\src\RendererAPI.cpp">
       <Filter>src\Independent\Render\src</Filter>
     </ClCompile>
     <ClCompile Include="src\Independent\Render\src\buffer\Buffer.cpp">
       <Filter>src\Independent\Render\src\buffer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Independent\Render\src\camera\CameraManager.cpp">
+    <ClCompile Include="src\Independent\Render\src\camera\OrthographicCamera.cpp">
       <Filter>src\Independent\Render\src\camera</Filter>
     </ClCompile>
-    <ClCompile Include="src\Independent\Render\src\camera\OrthographicCamera.cpp">
+    <ClCompile Include="src\Independent\Render\src\camera\OrthographicCameraController.cpp">
       <Filter>src\Independent\Render\src\camera</Filter>
     </ClCompile>
     <ClCompile Include="src\Independent\Render\src\shader\Shader.cpp">
       <Filter>src\Independent\Render\src\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Independent\Render\src\texture\Texture.cpp">
+      <Filter>src\Independent\Render\src\texture</Filter>
     </ClCompile>
     <ClCompile Include="src\Independent\Render\src\vertex_array\VertexArray.cpp">
       <Filter>src\Independent\Render\src\vertex_array</Filter>
@@ -1556,6 +1593,12 @@
     <ClCompile Include="src\Platform\OpenGL\src\OpenGLRendererAPI.cpp">
       <Filter>src\Platform\OpenGL\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\src\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\src\OpenGLTexture.cpp">
+      <Filter>src\Platform\OpenGL\src</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\src\OpenGLVertexArray.cpp">
       <Filter>src\Platform\OpenGL\src</Filter>
     </ClCompile>
@@ -1567,6 +1610,9 @@
     </ClCompile>
     <ClCompile Include="src\idpdpch.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

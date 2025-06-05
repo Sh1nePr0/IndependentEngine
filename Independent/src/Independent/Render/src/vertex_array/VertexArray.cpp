@@ -6,12 +6,12 @@
 
 namespace Independent {
 
-	VertexArray* VertexArray::Create()
+	SharedPtr<VertexArray> VertexArray::Create()
 	{
 		switch (Renderer::GetAPI())
 		{
 		case RendererAPI::API::None:     IDPD_CORE_ASSERT(false, "RendererAPI::None is currrently not supported"); return nullptr;
-		case RendererAPI::API::OpenGL:   return new OpenGLVertexArray();
+		case RendererAPI::API::OpenGL:   return std::make_shared<OpenGLVertexArray>();
 		}
 
 		IDPD_CORE_ASSERT(false, "Unknown RendereAPI");

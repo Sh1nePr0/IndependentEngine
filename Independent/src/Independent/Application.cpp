@@ -2,28 +2,29 @@
 #include "Application.h"
 
 #include "Independent/SystemFiles/include/Log.h"
-
 #include "Independent/SystemFiles/include/Input.h"
 
 #include "Render/include/Renderer.h"
 
 #include "Independent/Core/include/containers/String.h"
 
+#include <glfw/glfw3.h>
 
 namespace Independent {
 
-#define BIND_EVENT_FUNCTION(x) std::bind(&x, this, std::placeholders::_1)\
-
 	Application* Application::s_Instance = nullptr;
 
-	Application::Application()
-		
+	Application::Application()	
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		IDPD_CORE_ASSERT(!s_Instance, "Application already exist!");
 		s_Instance = this;
 
 		m_Window = UniquePtr<Window>(Window::Create());
-		m_Window->SetEventCallback(BIND_EVENT_FUNCTION(Application::OnEvent));
+		m_Window->SetEventCallback(IDPD_BIND_EVENT_FN(Application::OnEvent));
+
+		Renderer::Init();
 
 		m_ImGuiLayer = new ImGuiLayer();
 		PushOverlay(m_ImGuiLayer);
@@ -31,24 +32,45 @@ namespace Independent {
 
 	Application::~Application()
 	{
+		IDPD_PROFILE_FUNCTION();
 
+		Renderer::Shutdown();
 	}
 
 	void Application::Run() 
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		while (m_Running)
 		{
-			for (Layer* layer : m_LayerStack)
-			{
-				layer->OnUpdate();
-			}
+			IDPD_PROFILE_SCOPE("RunLoop");
 
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
+			float time = (float)glfwGetTime(); // TODO: Should be something like Platform::GetTime()
+
+			Timestep timestep = time - m_LastFrameTime; 
+			m_LastFrameTime = time;
+
+			if (!m_Minimazed)
 			{
-				layer->OnImGuiRenderer();
+				{
+					IDPD_PROFILE_SCOPE("LayerStack: OnUpdate");
+
+					for (Layer* layer : m_LayerStack)
+					{
+						layer->OnUpdate(timestep);
+					}
+				}
+
+				m_ImGuiLayer->Begin();
+				{
+					IDPD_PROFILE_SCOPE("LayerStack: OnImGuiRender");
+					for (Layer* layer : m_LayerStack)
+					{
+						layer->OnImGuiRender();
+					}
+				}
+				m_ImGuiLayer->End();
 			}
-			m_ImGuiLayer->End();
 
 			m_Window->OnUpdate();
 		}
@@ -56,8 +78,11 @@ namespace Independent {
 
 	void Application::OnEvent(Event& e)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FUNCTION(Application::OnWindowClose));
+		dispatcher.Dispatch<WindowCloseEvent>(IDPD_BIND_EVENT_FN(Application::OnWindowClose));
+		dispatcher.Dispatch<WindowResizeEvent>(IDPD_BIND_EVENT_FN(Application::OnWindowResize));
 
 		IDPD_CORE_TRACE("{0}", e.ToString());
 
@@ -73,12 +98,16 @@ namespace Independent {
 
 	void Application::PushLayer(Layer* layer)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
 		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
+		IDPD_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(overlay);
 		overlay->OnAttach();
 	}
@@ -88,6 +117,23 @@ namespace Independent {
 		m_Running = false;
 		return true;
 	}
+
+	bool Application::OnWindowResize(WindowResizeEvent& e)
+	{
+		IDPD_PROFILE_FUNCTION();
+
+		if (e.GetWidth() == 0 || e.GetHeight() == 0)
+		{
+			m_Minimazed = true;
+			return false;
+		}
+
+		m_Minimazed = false;
+		Renderer::OnWindowResize(e.GetWidth(), e.GetHeight());
+
+		return false;
+	}
+
 }
 
 
