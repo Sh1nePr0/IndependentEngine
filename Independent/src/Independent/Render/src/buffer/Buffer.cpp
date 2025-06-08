@@ -7,6 +7,18 @@
 
 namespace Independent {
 
+	SharedPtr<VertexBuffer> VertexBuffer::Create(uint32_t size)
+	{
+		switch (Renderer::GetAPI())
+		{
+		case RendererAPI::API::None:     IDPD_CORE_ASSERT(false, "RendererAPI::None is currrently not supported"); return nullptr;
+		case RendererAPI::API::OpenGL:   return std::make_shared<OpenGLVertexBuffer>(size);
+		}
+
+		IDPD_CORE_ASSERT(false, "Unknown RendereAPI");
+		return nullptr;
+	}
+
 	SharedPtr<VertexBuffer> VertexBuffer::Create(float* vertices, uint32_t size)
 	{
 		switch (Renderer::GetAPI())

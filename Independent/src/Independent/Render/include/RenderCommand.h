@@ -28,9 +28,9 @@ namespace Independent {
 			s_RendererAPI->SetClearColor(color);
 		}
 
-		inline static void DrawIndexed(const SharedPtr<VertexArray>& vertexArray)
+		inline static void DrawIndexed(const SharedPtr<VertexArray>& vertexArray, uint32_t indexCount)
 		{
-			s_RendererAPI->DrawIndexed(vertexArray);
+			s_RendererAPI->DrawIndexed(vertexArray, indexCount);
 		}
 	private:
 		static RendererAPI* s_RendererAPI;

@@ -21,6 +21,7 @@ namespace Independent {
 		virtual void UnBind() const override;
 
 		virtual void SetInt(const String& name, int value) override;
+		virtual void SetIntArray(const String& name, int* values, uint32_t count) override;
 		virtual void SetFloat(const String& name, float value) override;
 		virtual void SetFloat2(const String& name, const glm::vec2& value) override;
 		virtual void SetFloat3(const String& name, const glm::vec3& value) override;
@@ -30,6 +31,7 @@ namespace Independent {
 		virtual const String& GetName() const override { return m_Name; }
 
 		void UploadUniformInt(const String& name, int value);
+		void UploadUniformIntArray(const String& name, int* values, uint32_t count);
 
 		void UploadUniformFloat(const String& name, float value);
 		void UploadUniformFloat2(const String& name, const glm::vec2& value);

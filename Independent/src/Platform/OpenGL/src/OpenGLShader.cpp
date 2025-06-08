@@ -202,6 +202,11 @@ namespace Independent {
 		UploadUniformInt(name, value);
 	}
 
+	void OpenGLShader::SetIntArray(const String& name, int* values, uint32_t count)
+	{
+		UploadUniformIntArray(name, values, count);
+	}
+
 	void OpenGLShader::SetFloat(const String& name, float value)
 	{
 		IDPD_PROFILE_FUNCTION();
@@ -241,6 +246,12 @@ namespace Independent {
 	{
 		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
 		glUniform1i(location, value);
+	}
+
+	void OpenGLShader::UploadUniformIntArray(const String& name, int* values, uint32_t count)
+	{
+		GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniform1iv(location, count, values);
 	}
 
 	void OpenGLShader::UploadUniformFloat(const String& name, float value)
