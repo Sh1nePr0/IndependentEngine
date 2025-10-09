@@ -233,8 +233,8 @@ public:
 	TestingSandbox()
 	{
 		//PushLayer(new ExampleLayer());
-		PushLayer(new TestingSandbox2D());
-		//PushLayer(new GameLayer());
+		//PushLayer(new TestingSandbox2D());
+		PushLayer(new GameLayer());
 	}
 
 	~TestingSandbox()
