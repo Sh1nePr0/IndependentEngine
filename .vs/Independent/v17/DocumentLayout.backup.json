@@ -3,32 +3,88 @@
   "WorkspaceRootPath": "C:\\dev\\Independent\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\src\\Renderer2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Render\\src\\Renderer2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA00CB1D-E6CE-BE23-CF62-2F4ABBCF9A88}|TestingProject\\TestingProject.vcxproj|C:\\dev\\Independent\\TestingProject\\src\\TestingSandbox2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA00CB1D-E6CE-BE23-CF62-2F4ABBCF9A88}|TestingProject\\TestingProject.vcxproj|solutionrelative:TestingProject\\src\\TestingSandbox2D.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA00CB1D-E6CE-BE23-CF62-2F4ABBCF9A88}|TestingProject\\TestingProject.vcxproj|C:\\dev\\Independent\\TestingProject\\assets\\shaders\\Texture.glsl||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FA00CB1D-E6CE-BE23-CF62-2F4ABBCF9A88}|TestingProject\\TestingProject.vcxproj|solutionrelative:TestingProject\\assets\\shaders\\Texture.glsl||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA00CB1D-E6CE-BE23-CF62-2F4ABBCF9A88}|TestingProject\\TestingProject.vcxproj|C:\\dev\\Independent\\TestingProject\\src\\TestingSandbox2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA00CB1D-E6CE-BE23-CF62-2F4ABBCF9A88}|TestingProject\\TestingProject.vcxproj|solutionrelative:TestingProject\\src\\TestingSandbox2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLShader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Platform\\OpenGL\\include\\OpenGLShader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\src\\OpenGLShader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Platform\\OpenGL\\src\\OpenGLShader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\shader\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Render\\include\\shader\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLTexture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Platform\\OpenGL\\include\\OpenGLTexture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\texture\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Render\\include\\texture\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLRendererAPI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Platform\\OpenGL\\include\\OpenGLRendererAPI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\src\\OpenGLRendererAPI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Platform\\OpenGL\\src\\OpenGLRendererAPI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Render\\include\\Renderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\Renderer2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Render\\include\\Renderer2D.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\src\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Render\\src\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Platform\\Windows\\WindowsWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Platform\\Windows\\WindowsWindow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\RenderCommand.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Render\\include\\RenderCommand.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Platform\\Windows\\WindowsWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Platform\\Windows\\WindowsWindow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\RendererAPI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Render\\include\\RendererAPI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\src\\OpenGLBuffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Platform\\OpenGL\\src\\OpenGLBuffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\idpdpch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\idpdpch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLBuffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Platform\\OpenGL\\include\\OpenGLBuffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\dev\\Independent\\premake5.lua||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:premake5.lua||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\src\\buffer\\Buffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Render\\src\\buffer\\Buffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\buffer\\Buffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{53AA0B07-BF5F-84FC-4854-7ED3B4087B00}|Independent\\Independent.vcxproj|solutionrelative:Independent\\src\\Independent\\Render\\include\\buffer\\Buffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,8 +93,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "DockedWidth": 238,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,93 +106,275 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WindowsWindow.h",
-              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Platform\\Windows\\WindowsWindow.h",
-              "RelativeDocumentMoniker": "Independent\\src\\Platform\\Windows\\WindowsWindow.h",
-              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Platform\\Windows\\WindowsWindow.h",
-              "RelativeToolTip": "Independent\\src\\Platform\\Windows\\WindowsWindow.h",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAswCQAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-11T21:09:43.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WindowsWindow.cpp",
-              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Platform\\Windows\\WindowsWindow.cpp",
-              "RelativeDocumentMoniker": "Independent\\src\\Platform\\Windows\\WindowsWindow.cpp",
-              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Platform\\Windows\\WindowsWindow.cpp",
-              "RelativeToolTip": "Independent\\src\\Platform\\Windows\\WindowsWindow.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "OpenGLShader.cpp",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\src\\OpenGLShader.cpp",
+              "RelativeDocumentMoniker": "Independent\\src\\Platform\\OpenGL\\src\\OpenGLShader.cpp",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\src\\OpenGLShader.cpp",
+              "RelativeToolTip": "Independent\\src\\Platform\\OpenGL\\src\\OpenGLShader.cpp",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAAAP0AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-11T21:09:58.447Z",
+              "WhenOpened": "2025-06-08T21:51:20.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Window.h",
-              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Window.h",
-              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Window.h",
-              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Window.h",
-              "RelativeToolTip": "Independent\\src\\Independent\\Window.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAvwCsAAAARAAAAAAAAAA==",
+              "Title": "OpenGLShader.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLShader.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Platform\\OpenGL\\include\\OpenGLShader.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLShader.h",
+              "RelativeToolTip": "Independent\\src\\Platform\\OpenGL\\include\\OpenGLShader.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-11T20:55:56.457Z",
+              "WhenOpened": "2025-06-08T21:50:27.335Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "idpdpch.h",
-              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\idpdpch.h",
-              "RelativeDocumentMoniker": "Independent\\src\\idpdpch.h",
-              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\idpdpch.h",
-              "RelativeToolTip": "Independent\\src\\idpdpch.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "OpenGLTexture.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLTexture.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Platform\\OpenGL\\include\\OpenGLTexture.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLTexture.h",
+              "RelativeToolTip": "Independent\\src\\Platform\\OpenGL\\include\\OpenGLTexture.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-10T21:33:33.48Z",
+              "WhenOpened": "2025-06-08T21:34:10.768Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "premake5.lua",
-              "DocumentMoniker": "C:\\dev\\Independent\\premake5.lua",
-              "RelativeDocumentMoniker": "premake5.lua",
-              "ToolTip": "C:\\dev\\Independent\\premake5.lua",
-              "RelativeToolTip": "premake5.lua",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAACAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "Texture.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\texture\\Texture.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Render\\include\\texture\\Texture.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\texture\\Texture.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Render\\include\\texture\\Texture.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-08T21:33:08.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Renderer.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\Renderer.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Render\\include\\Renderer.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\Renderer.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Render\\include\\Renderer.h",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAwBQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-14T16:39:26.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RenderCommand.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\RenderCommand.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Render\\include\\RenderCommand.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\RenderCommand.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Render\\include\\RenderCommand.h",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAhwBwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-08T21:00:14.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Texture.glsl",
+              "DocumentMoniker": "C:\\dev\\Independent\\TestingProject\\assets\\shaders\\Texture.glsl",
+              "RelativeDocumentMoniker": "TestingProject\\assets\\shaders\\Texture.glsl",
+              "ToolTip": "C:\\dev\\Independent\\TestingProject\\assets\\shaders\\Texture.glsl",
+              "RelativeToolTip": "TestingProject\\assets\\shaders\\Texture.glsl",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-10T21:39:04.011Z",
+              "WhenOpened": "2025-06-08T20:44:29.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OpenGLRendererAPI.cpp",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\src\\OpenGLRendererAPI.cpp",
+              "RelativeDocumentMoniker": "Independent\\src\\Platform\\OpenGL\\src\\OpenGLRendererAPI.cpp",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\src\\OpenGLRendererAPI.cpp",
+              "RelativeToolTip": "Independent\\src\\Platform\\OpenGL\\src\\OpenGLRendererAPI.cpp",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwCcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-08T20:41:20.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OpenGLRendererAPI.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLRendererAPI.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Platform\\OpenGL\\include\\OpenGLRendererAPI.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLRendererAPI.h",
+              "RelativeToolTip": "Independent\\src\\Platform\\OpenGL\\include\\OpenGLRendererAPI.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-08T20:41:08.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "RendererAPI.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\RendererAPI.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Render\\include\\RendererAPI.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\RendererAPI.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Render\\include\\RendererAPI.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-08T20:40:10.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OpenGLBuffer.cpp",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\src\\OpenGLBuffer.cpp",
+              "RelativeDocumentMoniker": "Independent\\src\\Platform\\OpenGL\\src\\OpenGLBuffer.cpp",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\src\\OpenGLBuffer.cpp",
+              "RelativeToolTip": "Independent\\src\\Platform\\OpenGL\\src\\OpenGLBuffer.cpp",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAADUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-08T20:08:00.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OpenGLBuffer.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLBuffer.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Platform\\OpenGL\\include\\OpenGLBuffer.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Platform\\OpenGL\\include\\OpenGLBuffer.h",
+              "RelativeToolTip": "Independent\\src\\Platform\\OpenGL\\include\\OpenGLBuffer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-08T20:07:43.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Application.h",
-              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Application.h",
-              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Application.h",
-              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Application.h",
-              "RelativeToolTip": "Independent\\src\\Independent\\Application.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAQAAAAAAAAAA==",
+              "Title": "TestingSandbox2D.cpp",
+              "DocumentMoniker": "C:\\dev\\Independent\\TestingProject\\src\\TestingSandbox2D.cpp",
+              "RelativeDocumentMoniker": "TestingProject\\src\\TestingSandbox2D.cpp",
+              "ToolTip": "C:\\dev\\Independent\\TestingProject\\src\\TestingSandbox2D.cpp",
+              "RelativeToolTip": "TestingProject\\src\\TestingSandbox2D.cpp",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADAAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-11T14:11:59.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TestingSandbox2D.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\TestingProject\\src\\TestingSandbox2D.h",
+              "RelativeDocumentMoniker": "TestingProject\\src\\TestingSandbox2D.h",
+              "ToolTip": "C:\\dev\\Independent\\TestingProject\\src\\TestingSandbox2D.h",
+              "RelativeToolTip": "TestingProject\\src\\TestingSandbox2D.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-10T18:12:29.459Z",
+              "WhenOpened": "2025-04-11T14:12:00.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Buffer.cpp",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\src\\buffer\\Buffer.cpp",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Render\\src\\buffer\\Buffer.cpp",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\src\\buffer\\Buffer.cpp",
+              "RelativeToolTip": "Independent\\src\\Independent\\Render\\src\\buffer\\Buffer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-08T20:05:43.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Buffer.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\buffer\\Buffer.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Render\\include\\buffer\\Buffer.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\buffer\\Buffer.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Render\\include\\buffer\\Buffer.h",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAvwHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-08T20:05:13.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Shader.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\shader\\Shader.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Render\\include\\shader\\Shader.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\shader\\Shader.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Render\\include\\shader\\Shader.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-16T16:12:38.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Renderer.cpp",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\src\\Renderer.cpp",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Render\\src\\Renderer.cpp",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\src\\Renderer.cpp",
+              "RelativeToolTip": "Independent\\src\\Independent\\Render\\src\\Renderer.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-14T16:39:06.698Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Renderer2D.cpp",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\src\\Renderer2D.cpp",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Render\\src\\Renderer2D.cpp",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\src\\Renderer2D.cpp",
+              "RelativeToolTip": "Independent\\src\\Independent\\Render\\src\\Renderer2D.cpp",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAhwIkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-11T14:23:39.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Renderer2D.h",
+              "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\Renderer2D.h",
+              "RelativeDocumentMoniker": "Independent\\src\\Independent\\Render\\include\\Renderer2D.h",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Render\\include\\Renderer2D.h",
+              "RelativeToolTip": "Independent\\src\\Independent\\Render\\include\\Renderer2D.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-11T14:23:41.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Application.cpp",
               "DocumentMoniker": "C:\\dev\\Independent\\Independent\\src\\Independent\\Application.cpp",
               "RelativeDocumentMoniker": "Independent\\src\\Independent\\Application.cpp",
-              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Application.cpp*",
-              "RelativeToolTip": "Independent\\src\\Independent\\Application.cpp*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAgAAAAAAAAAA==",
+              "ToolTip": "C:\\dev\\Independent\\Independent\\src\\Independent\\Application.cpp",
+              "RelativeToolTip": "Independent\\src\\Independent\\Application.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-10T18:12:28.635Z",
+              "WhenOpened": "2025-04-14T16:29:28.964Z",
               "EditorCaption": ""
             }
           ]
