@@ -14,7 +14,7 @@ namespace Independent {
 		case RendererAPI::API::OpenGL:   return std::make_shared<OpenGLShader>(filepath);
 		}
 
-		IDPD_CORE_ASSERT(false, "Unknown RendereAPI");
+		IDPD_CORE_ASSERT(false, "Unknown RendererAPI");
 		return nullptr;
 	}
 
@@ -26,7 +26,7 @@ namespace Independent {
 		case RendererAPI::API::OpenGL:   return std::make_shared<OpenGLShader>(name, vertexSrc, fragmentSrc);
 		}
 
-		IDPD_CORE_ASSERT(false, "Unknown RendereAPI");
+		IDPD_CORE_ASSERT(false, "Unknown RendererAPI");
 		return nullptr;
 	}
 	
