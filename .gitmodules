@@ -1,12 +1,1 @@
-[submodule "Independent/vendor/spdlog"]
-	path = Independent/vendor/spdlog
-	url = https://github.com/gabime/spdlog
-[submodule "Independent/vendor/GLFW"]
-	path = Independent/vendor/GLFW
-	url = https://github.com/TheCherno/glfw
-[submodule "Independent/vendor/imgui"]
-	path = Independent/vendor/imgui
-	url = https://github.com/TheCherno/imgui
-[submodule "Independent/vendor/glm"]
-	path = Independent/vendor/glm
-	url = https://github.com/g-truc/glm
+
