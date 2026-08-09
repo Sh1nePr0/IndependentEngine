@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CheckSourceCompiles &mdash; CMake 4.1.2 Documentation</title>
+  <title>CheckSourceCompiles &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -201,13 +201,13 @@ check verifies if the compiler supports <code class="docutils literal notranslat
 result is stored in the internal cache variable <code class="docutils literal notranslate"><span class="pre">HAVE_CXX11_LAMBDAS</span></code>:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">CheckSourceCompiles</span><span class="nf">)</span>
 
-<span class="nf">check_source_compiles(</span><span class="no">CXX</span><span class="w"> </span><span class="s">&quot;</span>
-<span class="s">  int main()</span>
-<span class="s">  {</span>
-<span class="s">    auto lambda = []() { return 42; };</span>
-<span class="s">    return lambda();</span>
-<span class="s">  }</span>
-<span class="s">&quot;</span><span class="w"> </span><span class="no">HAVE_CXX11_LAMBDAS</span><span class="nf">)</span>
+<span class="nf">check_source_compiles(</span><span class="no">CXX</span><span class="w"> </span><span class="s s-Multiline">[[</span>
+<span class="s s-Multiline">  int main()</span>
+<span class="s s-Multiline">  {</span>
+<span class="s s-Multiline">    auto lambda = []() { return 42; };</span>
+<span class="s s-Multiline">    return lambda();</span>
+<span class="s s-Multiline">  }</span>
+<span class="s s-Multiline">]]</span><span class="w"> </span><span class="no">HAVE_CXX11_LAMBDAS</span><span class="nf">)</span>
 </pre></div>
 </div>
 </section>
@@ -218,12 +218,12 @@ result is stored in the internal cache variable <code class="docutils literal no
 for easier embedded quotes handling:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">CheckSourceCompiles</span><span class="nf">)</span>
 
-<span class="nf">check_source_compiles(</span><span class="no">C</span><span class="w"> </span><span class="p">[[</span>
-<span class="w">  </span><span class="c">#if !__has_c_attribute(noreturn)</span>
-<span class="w">  </span><span class="c">#  error &quot;No noreturn attribute&quot;</span>
-<span class="w">  </span><span class="c">#endif</span>
-<span class="w">  </span><span class="nb">int</span><span class="w"> </span><span class="nf">main(</span><span class="nb">void</span><span class="nf">)</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="nb">return</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span><span class="err">}</span>
-<span class="p">]]</span><span class="w"> </span><span class="no">HAVE_NORETURN</span><span class="nf">)</span>
+<span class="nf">check_source_compiles(</span><span class="no">C</span><span class="w"> </span><span class="s s-Multiline">[[</span>
+<span class="s s-Multiline">  #if !__has_c_attribute(noreturn)</span>
+<span class="s s-Multiline">  #  error &quot;No noreturn attribute&quot;</span>
+<span class="s s-Multiline">  #endif</span>
+<span class="s s-Multiline">  int main(void) { return 0; }</span>
+<span class="s s-Multiline">]]</span><span class="w"> </span><span class="no">HAVE_NORETURN</span><span class="nf">)</span>
 </pre></div>
 </div>
 </section>
@@ -262,15 +262,15 @@ checking whether the PostgreSQL <code class="docutils literal notranslate"><span
 <span class="w">  </span><span class="nf">cmake_push_check_state(</span><span class="no">RESET</span><span class="nf">)</span>
 <span class="w">    </span><span class="nf">set(</span><span class="no">CMAKE_REQUIRED_LIBRARIES</span><span class="w"> </span><span class="nb">PostgreSQL</span><span class="o">::</span><span class="nb">PostgreSQL</span><span class="nf">)</span>
 
-<span class="w">    </span><span class="nf">check_source_compiles(</span><span class="no">C</span><span class="w"> </span><span class="s">&quot;</span>
-<span class="s">      #include &lt;libpq-fe.h&gt;</span>
-<span class="s">      int main(void)</span>
-<span class="s">      {</span>
-<span class="s">        PGVerbosity e = PQERRORS_SQLSTATE;</span>
-<span class="s">        (void)e;</span>
-<span class="s">        return 0;</span>
-<span class="s">      }</span>
-<span class="s">    &quot;</span><span class="w"> </span><span class="no">HAVE_PQERRORS_SQLSTATE</span><span class="nf">)</span>
+<span class="w">    </span><span class="nf">check_source_compiles(</span><span class="no">C</span><span class="w"> </span><span class="s s-Multiline">[[</span>
+<span class="s s-Multiline">      #include &lt;libpq-fe.h&gt;</span>
+<span class="s s-Multiline">      int main(void)</span>
+<span class="s s-Multiline">      {</span>
+<span class="s s-Multiline">        PGVerbosity e = PQERRORS_SQLSTATE;</span>
+<span class="s s-Multiline">        (void)e;</span>
+<span class="s s-Multiline">        return 0;</span>
+<span class="s s-Multiline">      }</span>
+<span class="s s-Multiline">    ]]</span><span class="w"> </span><span class="no">HAVE_PQERRORS_SQLSTATE</span><span class="nf">)</span>
 <span class="w">  </span><span class="nf">cmake_pop_check_state()</span>
 <span class="nf">endif()</span>
 </pre></div>
@@ -359,7 +359,7 @@ be built and also run.</p></li>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -372,8 +372,8 @@ be built and also run.</p></li>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

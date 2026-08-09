@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CPack NSIS Generator &mdash; CMake 4.1.2 Documentation</title>
+  <title>CPack NSIS Generator &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -388,6 +388,27 @@ The command that will be run is:</p>
 and <code class="docutils literal notranslate"><span class="pre">&lt;postArgs&gt;...</span></code>  is constructed from <code class="docutils literal notranslate"><span class="pre">CPACK_NSIS_EXECUTABLE_POST_ARGUMENTS</span></code>.</p>
 </dd></dl>
 
+<dl class="cmake variable">
+<dt class="sig sig-object cmake" id="variable:CPACK_NSIS_CRC_CHECK">
+<span class="sig-name descname"><span class="pre">CPACK_NSIS_CRC_CHECK</span></span><a class="headerlink" href="#variable:CPACK_NSIS_CRC_CHECK" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>Specifies whether or not the installer will perform a CRC on itself before
+allowing an install.
+Allowed values for this variable are <code class="docutils literal notranslate"><span class="pre">on</span></code>, <code class="docutils literal notranslate"><span class="pre">off</span></code>, and <code class="docutils literal notranslate"><span class="pre">force</span></code>.
+If not specified, the default behavior is <code class="docutils literal notranslate"><span class="pre">on</span></code>.</p>
+</dd></dl>
+
+<dl class="cmake variable">
+<dt class="sig sig-object cmake" id="variable:CPACK_NSIS_IGNORE_COMPONENTS_PAGE">
+<span class="sig-name descname"><span class="pre">CPACK_NSIS_IGNORE_COMPONENTS_PAGE</span></span><a class="headerlink" href="#variable:CPACK_NSIS_IGNORE_COMPONENTS_PAGE" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4.</span></p>
+</div>
+<p>If set, do not display the page containing the license during installation.</p>
+</dd></dl>
+
 </section>
 </section>
 
@@ -456,7 +477,7 @@ and <code class="docutils literal notranslate"><span class="pre">&lt;postArgs&gt
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -469,8 +490,8 @@ and <code class="docutils literal notranslate"><span class="pre">&lt;postArgs&gt
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindOpenSSL &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindOpenSSL &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -63,7 +63,10 @@
             
   <section id="findopenssl">
 <span id="module:FindOpenSSL"></span><h1>FindOpenSSL<a class="headerlink" href="#findopenssl" title="Link to this heading">¶</a></h1>
-<p>Finds the installed OpenSSL encryption library and determines its version.</p>
+<p>Finds the installed OpenSSL encryption library and determines its version:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">OpenSSL</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="no">COMPONENTS</span><span class="w"> </span><span class="nv">&lt;components&gt;...</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.20: </span>Support for specifying version range when calling the <span class="target" id="index-0-command:find_package"></span><a class="reference internal" href="../command/find_package.html#command:find_package" title="find_package"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">find_package()</span></code></a>
 command.  When a version is requested, it can be specified as a single value
@@ -145,9 +148,18 @@ standards place very few requirements on how linking should behave.</p>
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">OpenSSL_FOUND</span></code></dt><dd><p>Boolean indicating whether the OpenSSL library has been found.  For backward
-compatibility, the <code class="docutils literal notranslate"><span class="pre">OPENSSL_FOUND</span></code> variable is also set to the same value.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">OpenSSL_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.3.</span></p>
+</div>
+<p>Boolean indicating whether the (requested version of) OpenSSL library was
+found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">OpenSSL_VERSION</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The OpenSSL version found.  This is set to
+<code class="docutils literal notranslate"><span class="pre">&lt;major&gt;.&lt;minor&gt;.&lt;revision&gt;&lt;patch&gt;</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">0.9.8s</span></code>).</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">OPENSSL_INCLUDE_DIR</span></code></dt><dd><p>The OpenSSL include directory.</p>
 </dd>
@@ -160,9 +172,6 @@ compatibility, the <code class="docutils literal notranslate"><span class="pre">
 <dt><code class="docutils literal notranslate"><span class="pre">OPENSSL_SSL_LIBRARIES</span></code></dt><dd><p>The OpenSSL <code class="docutils literal notranslate"><span class="pre">ssl</span></code> library and its dependencies.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">OPENSSL_LIBRARIES</span></code></dt><dd><p>All OpenSSL libraries and their dependencies.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">OPENSSL_VERSION</span></code></dt><dd><p>The OpenSSL version found.  This is set to
-<code class="docutils literal notranslate"><span class="pre">&lt;major&gt;.&lt;minor&gt;.&lt;revision&gt;&lt;patch&gt;</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">0.9.8s</span></code>).</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">OPENSSL_APPLINK_SOURCE</span></code></dt><dd><p>The sources in the target <code class="docutils literal notranslate"><span class="pre">OpenSSL::applink</span></code> mentioned above.  This variable
 is only defined if found OpenSSL version is at least 0.9.8 and the platform is
@@ -191,6 +200,23 @@ runtime (MT).</p>
 <dt><code class="docutils literal notranslate"><span class="pre">ENV{PKG_CONFIG_PATH}</span></code></dt><dd><p>On UNIX-like systems, <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> is used to locate OpenSSL.  Set the
 <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_PATH</span></code> environment variable to specify alternate locations, which
 is useful on systems with multiple library installations.</p>
+</dd>
+</dl>
+</section>
+<section id="deprecated-variables">
+<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
+<p>The following variables are provided for backward compatibility:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">OPENSSL_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">OpenSSL_FOUND</span></code>, which has the same value.</p>
+</div>
+<p>Boolean indicating whether the (requested version of) OpenSSL library was
+found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">OPENSSL_VERSION</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Superseded by the <code class="docutils literal notranslate"><span class="pre">OpenSSL_VERSION</span></code>.</p>
+</div>
+<p>The version of OpenSSL found.</p>
 </dd>
 </dl>
 </section>
@@ -227,6 +253,7 @@ explicitly specified to ensure that the find module reports an error if the
 <li><a class="reference internal" href="#imported-targets">Imported Targets</a></li>
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
 <li><a class="reference internal" href="#hints">Hints</a></li>
+<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
@@ -281,7 +308,7 @@ explicitly specified to ensure that the find module reports an error if the
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -294,8 +321,8 @@ explicitly specified to ensure that the find module reports an error if the
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

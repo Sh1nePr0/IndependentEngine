@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Ninja &mdash; CMake 4.1.2 Documentation</title>
+  <title>Ninja &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -88,6 +88,25 @@ removes symbols information from generated binaries.</p>
 <div><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.30: </span>Created only if the <span class="target" id="index-0-prop_gbl:INSTALL_PARALLEL"></span><a class="reference internal" href="../prop_gbl/INSTALL_PARALLEL.html#prop_gbl:INSTALL_PARALLEL" title="INSTALL_PARALLEL"><code class="xref cmake cmake-prop_gbl docutils literal notranslate"><span class="pre">INSTALL_PARALLEL</span></code></a> global property is <code class="docutils literal notranslate"><span class="pre">ON</span></code>.
 Runs the install step for each subdirectory independently and in parallel.</p>
+</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">test_prep/&lt;test-name&gt;</span></code></p>
+<blockquote>
+<div><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4: </span>Created only if the <span class="target" id="index-0-variable:CMAKE_TEST_BUILD_DEPENDS"></span><a class="reference internal" href="../variable/CMAKE_TEST_BUILD_DEPENDS.html#variable:CMAKE_TEST_BUILD_DEPENDS" title="CMAKE_TEST_BUILD_DEPENDS"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_TEST_BUILD_DEPENDS</span></code></a> variable is
+enabled. Builds all known build dependencies for the named test, including
+the executable target invoked by the test, targets referenced by generator
+expressions in the test command, and explicit <code class="docutils literal notranslate"><span class="pre">BUILD_DEPENDS</span></code> entries.</p>
+<p>Tests with names that are not valid target names are excluded. If multiple
+tests in different directories share the same name, their dependencies are
+merged into one <code class="docutils literal notranslate"><span class="pre">test_prep/&lt;test-name&gt;</span></code> target.</p>
+</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">test_prep/all</span></code></p>
+<blockquote>
+<div><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4: </span>Created only if the <span class="target" id="index-1-variable:CMAKE_TEST_BUILD_DEPENDS"></span><a class="reference internal" href="../variable/CMAKE_TEST_BUILD_DEPENDS.html#variable:CMAKE_TEST_BUILD_DEPENDS" title="CMAKE_TEST_BUILD_DEPENDS"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_TEST_BUILD_DEPENDS</span></code></a> variable is
+enabled. Depends on every generated <code class="docutils literal notranslate"><span class="pre">test_prep/&lt;test-name&gt;</span></code> target.</p>
 </div>
 </div></blockquote>
 <p>For each subdirectory <code class="docutils literal notranslate"><span class="pre">sub/dir</span></code> of the project, additional targets
@@ -217,7 +236,7 @@ generator, but generates multiple configurations at once.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -230,8 +249,8 @@ generator, but generates multiple configurations at once.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindPerlLibs &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindPerlLibs &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -63,15 +63,28 @@
             
   <section id="findperllibs">
 <span id="module:FindPerlLibs"></span><h1>FindPerlLibs<a class="headerlink" href="#findperllibs" title="Link to this heading">¶</a></h1>
-<p>Finds Perl libraries.  Perl is a general-purpose, interpreted, dynamic
-programming language.  This module detects whether Perl is installed and
-determines the locations of include paths, libraries, and the library name.</p>
+<p>Finds Perl libraries:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">PerlLibs</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
+<p>Perl is a general-purpose, interpreted, dynamic programming language.</p>
+<p>This module detects whether Perl interpreter is installed via the
+<span class="target" id="index-0-module:FindPerl"></span><a class="reference internal" href="FindPerl.html#module:FindPerl" title="FindPerl"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FindPerl</span></code></a> module and determines the locations of Perl include paths,
+libraries, and the library name.</p>
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
-<p>This module sets the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">PerlLibs_FOUND</span></code></dt><dd><p>True if <code class="docutils literal notranslate"><span class="pre">perl.h</span></code> and <code class="docutils literal notranslate"><span class="pre">libperl</span></code> were found.  For backward compatibility,
-the <code class="docutils literal notranslate"><span class="pre">PERLLIBS_FOUND</span></code> variable is also set to the same value.</p>
+<p>This module defines the following variables:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">PerlLibs_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.3.</span></p>
+</div>
+<p>Boolean indicating whether (the requested version of) <code class="docutils literal notranslate"><span class="pre">&lt;perl.h&gt;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">libperl</span></code> were found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PerlLibs_VERSION</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The version of Perl library found.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">PERL_SITESEARCH</span></code></dt><dd><p>Path to the sitesearch install directory (<code class="docutils literal notranslate"><span class="pre">-V:installsitesearch</span></code>).</p>
 </dd>
@@ -107,12 +120,30 @@ the <code class="docutils literal notranslate"><span class="pre">PERLLIBS_FOUND<
 </dd>
 </dl>
 </section>
+<section id="deprecated-variables">
+<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
+<p>The following variables are provided for backward compatibility:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">PERLLIBS_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">PerlLibs_FOUND</span></code>, which has the same value.</p>
+</div>
+<p>Boolean indicating whether (the requested version of) <code class="docutils literal notranslate"><span class="pre">&lt;perl.h&gt;</span></code> and
+<code class="docutils literal notranslate"><span class="pre">libperl</span></code> were found.</p>
+</dd>
+</dl>
+</section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <p>Finding Perl libraries and specifying the minimum required version:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">PerlLibs</span><span class="w"> </span><span class="m">6.0</span><span class="nf">)</span>
 </pre></div>
 </div>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The <span class="target" id="index-1-module:FindPerl"></span><a class="reference internal" href="FindPerl.html#module:FindPerl" title="FindPerl"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FindPerl</span></code></a> module to find the Perl interpreter.</p></li>
+</ul>
 </section>
 </section>
 
@@ -129,7 +160,9 @@ the <code class="docutils literal notranslate"><span class="pre">PERLLIBS_FOUND<
 <li><a class="reference internal" href="#">FindPerlLibs</a><ul>
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
 <li><a class="reference internal" href="#cache-variables">Cache Variables</a></li>
+<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
 </ul>
@@ -183,7 +216,7 @@ the <code class="docutils literal notranslate"><span class="pre">PERLLIBS_FOUND<
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -196,8 +229,8 @@ the <code class="docutils literal notranslate"><span class="pre">PERLLIBS_FOUND<
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

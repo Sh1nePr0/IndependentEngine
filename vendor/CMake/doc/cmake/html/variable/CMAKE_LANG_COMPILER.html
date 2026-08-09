@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CMAKE_&lt;LANG&gt;_COMPILER &mdash; CMake 4.1.2 Documentation</title>
+  <title>CMAKE_&lt;LANG&gt;_COMPILER &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -64,11 +64,19 @@
   <section id="cmake-lang-compiler">
 <span id="variable:CMAKE_<LANG>_COMPILER"></span><h1>CMAKE_&lt;LANG&gt;_COMPILER<a class="headerlink" href="#cmake-lang-compiler" title="Link to this heading">¶</a></h1>
 <p>The full path to the compiler for <code class="docutils literal notranslate"><span class="pre">LANG</span></code>.</p>
-<p>This is the command that will be used as the <code class="docutils literal notranslate"><span class="pre">&lt;LANG&gt;</span></code> compiler.  Once
-set, you can not change this variable.</p>
+<p>This is the command that will be used as the <code class="docutils literal notranslate"><span class="pre">&lt;LANG&gt;</span></code> compiler.
+Once set, you can not change this variable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With <a class="reference internal" href="../manual/cmake-generators.7.html#ide-build-tool-generators"><span class="std std-ref">IDE Build Tool Generators</span></a>, including
+<a class="reference internal" href="../manual/cmake-generators.7.html#visual-studio-generators"><span class="std std-ref">Visual Studio Generators</span></a> and <span class="target" id="index-0-generator:Xcode"></span><a class="reference internal" href="../generator/Xcode.html#generator:Xcode" title="Xcode"><code class="xref cmake cmake-generator docutils literal notranslate"><span class="pre">Xcode</span></code></a>, this variable is
+computed automatically and should not be set.  Instead, specify a toolset
+using <a class="reference internal" href="../manual/cmake.1.html#cmdoption-cmake-T"><code class="xref std std-option docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">-T</span></code></a>.</p>
+</div>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
-<p>This variable can be set by the user during the first time a build tree is configured.</p>
+<p>With <a class="reference internal" href="../manual/cmake-generators.7.html#command-line-build-tool-generators"><span class="std std-ref">Command-Line Build Tool Generators</span></a> this variable can be
+set by the user during the first time a build tree is configured.</p>
 <p>If a non-full path value is supplied then CMake will resolve the full path of
 the compiler.</p>
 <p>The variable could be set in a user supplied toolchain file or via
@@ -154,7 +162,7 @@ as items in a list; they can not be changed.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -167,8 +175,8 @@ as items in a list; they can not be changed.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

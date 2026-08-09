@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>UsePkgConfig &mdash; CMake 4.1.2 Documentation</title>
+  <title>UsePkgConfig &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -66,16 +66,20 @@
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 3.0: </span>This module should no longer be used.  Instead, use the
 <span class="target" id="index-0-module:FindPkgConfig"></span><a class="reference internal" href="FindPkgConfig.html#module:FindPkgConfig" title="FindPkgConfig"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FindPkgConfig</span></code></a> module or the <span class="target" id="index-0-command:cmake_pkg_config"></span><a class="reference internal" href="../command/cmake_pkg_config.html#command:cmake_pkg_config" title="cmake_pkg_config"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">cmake_pkg_config()</span></code></a> command.</p>
-<p>This module provided a macro for finding external packages using
+<p>This module provided a command for finding external packages using
 <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> command-line utility.  It has been replaced by the more
 convenient <code class="docutils literal notranslate"><span class="pre">FindPkgConfig</span></code> module, which is commonly used in
 <a class="reference internal" href="../manual/cmake-developer.7.html#find-modules"><span class="std std-ref">Find Modules</span></a>.</p>
 <p>As of CMake 3.31, the built-in <span class="target" id="index-1-command:cmake_pkg_config"></span><a class="reference internal" href="../command/cmake_pkg_config.html#command:cmake_pkg_config" title="cmake_pkg_config"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">cmake_pkg_config()</span></code></a> command provides
 even more features to extract package information.</p>
 </div>
-<section id="macros">
-<h2>Macros<a class="headerlink" href="#macros" title="Link to this heading">¶</a></h2>
-<p>This module defines the following macro:</p>
+<p>Load this module in a CMake project with:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">UsePkgConfig</span><span class="nf">)</span>
+</pre></div>
+</div>
+<section id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Link to this heading">¶</a></h2>
+<p>This module provides the following command:</p>
 <dl class="cmake command">
 <dt class="sig sig-object cmake" id="command:pkgconfig">
 <span class="sig-name descname"><span class="pre">pkgconfig</span></span><a class="headerlink" href="#command:pkgconfig" title="Link to this definition">¶</a></dt>
@@ -83,9 +87,10 @@ even more features to extract package information.</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">pkgconfig(</span><span class="nv">&lt;package&gt;</span><span class="w"> </span><span class="nv">&lt;includedir&gt;</span><span class="w"> </span><span class="nv">&lt;libdir&gt;</span><span class="w"> </span><span class="nv">&lt;linkflags&gt;</span><span class="w"> </span><span class="nv">&lt;cflags&gt;</span><span class="nf">)</span>
 </pre></div>
 </div>
-<p>This macro invokes <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> command-line utility to retrieve the package
-information into specified variables.  If <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> or the specified
-package <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;</span></code> is NOT found, the result variables remain empty.</p>
+<p>This command invokes <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> command-line utility to retrieve the
+package information into specified variables.  If <code class="docutils literal notranslate"><span class="pre">pkg-config</span></code> or the
+specified package <code class="docutils literal notranslate"><span class="pre">&lt;package&gt;</span></code> is NOT found, the result variables remain
+empty.</p>
 <p>The arguments are:</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">&lt;package&gt;</span></code></dt><dd><p>Name of the package as defined in its PC metadata file (<code class="docutils literal notranslate"><span class="pre">&lt;package&gt;.pc</span></code>).</p>
@@ -117,7 +122,7 @@ package <code class="docutils literal notranslate"><span class="pre">&lt;package
 </div>
 <p>Migrating to the <span class="target" id="index-1-module:FindPkgConfig"></span><a class="reference internal" href="FindPkgConfig.html#module:FindPkgConfig" title="FindPkgConfig"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FindPkgConfig</span></code></a>  would look something like this:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">PkgConfig</span><span class="w"> </span><span class="no">QUIET</span><span class="nf">)</span>
-<span class="nf">if(</span><span class="no">PKG_CONFIG_FOUND</span><span class="nf">)</span>
+<span class="nf">if(</span><span class="nb">PkgConfig_FOUND</span><span class="nf">)</span>
 <span class="w">  </span><span class="nf">pkg_check_modules(</span><span class="no">LIBART</span><span class="w"> </span><span class="no">QUIET</span><span class="w"> </span><span class="nb">libart-2.0</span><span class="nf">)</span>
 <span class="nf">endif()</span>
 
@@ -141,7 +146,7 @@ package <code class="docutils literal notranslate"><span class="pre">&lt;package
     <h3>Table of Contents</h3>
     <ul>
 <li><a class="reference internal" href="#">UsePkgConfig</a><ul>
-<li><a class="reference internal" href="#macros">Macros</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
@@ -196,7 +201,7 @@ package <code class="docutils literal notranslate"><span class="pre">&lt;package
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -209,8 +214,8 @@ package <code class="docutils literal notranslate"><span class="pre">&lt;package
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

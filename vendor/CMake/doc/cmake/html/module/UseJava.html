@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>UseJava &mdash; CMake 4.1.2 Documentation</title>
+  <title>UseJava &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -66,6 +66,10 @@
 <p>This file provides support for <code class="docutils literal notranslate"><span class="pre">Java</span></code>.  It is assumed that
 <span class="target" id="index-0-module:FindJava"></span><a class="reference internal" href="FindJava.html#module:FindJava" title="FindJava"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FindJava</span></code></a> has already been loaded.  See <span class="target" id="index-1-module:FindJava"></span><a class="reference internal" href="FindJava.html#module:FindJava" title="FindJava"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FindJava</span></code></a> for
 information on how to load Java into your CMake project.</p>
+<p>Load this module in a CMake project with:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">UseJava</span><span class="nf">)</span>
+</pre></div>
+</div>
 <section id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Link to this heading">¶</a></h2>
 <pre class="literal-block"><a class="reference internal" href="#creating-and-installing-jars">Creating and Installing JARS</a>
@@ -96,6 +100,7 @@ information on how to load Java into your CMake project.</p>
 <span class="w">        </span><span class="p">[</span><span class="no">SOURCES</span><span class="p">]</span><span class="w"> </span><span class="nv">&lt;source1&gt;</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;source2&gt;...</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;resource1&gt;...</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">RESOURCES</span><span class="w"> </span><span class="no">NAMESPACE</span><span class="w"> </span><span class="nv">&lt;ns1&gt;</span><span class="w"> </span><span class="nv">&lt;resource1&gt;...</span><span class="w"> </span><span class="p">[</span><span class="no">NAMESPACE</span><span class="w"> </span><span class="nv">&lt;nsX&gt;</span><span class="w"> </span><span class="nv">&lt;resourceX&gt;...</span><span class="p">]...</span><span class="w"> </span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">INCLUDE_JARS</span><span class="w"> </span><span class="nv">&lt;jar1&gt;</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;jar2&gt;...</span><span class="p">]]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">INCLUDE_MODULES</span><span class="w"> </span><span class="nv">&lt;jar1&gt;</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;jar2&gt;...</span><span class="p">]]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">ENTRY_POINT</span><span class="w"> </span><span class="nv">&lt;entry&gt;</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">VERSION</span><span class="w"> </span><span class="nv">&lt;version&gt;</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">MANIFEST</span><span class="w"> </span><span class="nv">&lt;manifest&gt;</span><span class="p">]</span>
@@ -148,6 +153,13 @@ and also to the dependencies of the target. <code class="docutils literal notran
 other target names created by <code class="docutils literal notranslate"><span class="pre">add_jar()</span></code>. For backwards compatibility,
 jar files listed as sources are ignored (as they have been since the first
 version of this module).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">INCLUDE_MODULES</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The list of jars are added to the module path when building the java sources
+and also to the dependencies of the target. <code class="docutils literal notranslate"><span class="pre">INCLUDE_MODULES</span></code> also
+accepts other target names created by <code class="docutils literal notranslate"><span class="pre">add_jar()</span></code>.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">ENTRY_POINT</span></code></dt><dd><p>Defines an entry point in the jar file.</p>
 </dd>
@@ -629,7 +641,7 @@ generated docs. Same behavior as option <code class="docutils literal notranslat
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -642,8 +654,8 @@ generated docs. Same behavior as option <code class="docutils literal notranslat
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

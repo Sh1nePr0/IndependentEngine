@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindCygwin &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindCygwin &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -64,7 +64,10 @@
   <section id="findcygwin">
 <span id="module:FindCygwin"></span><h1>FindCygwin<a class="headerlink" href="#findcygwin" title="Link to this heading">¶</a></h1>
 <p>Finds Cygwin, a POSIX-compatible environment that runs natively on Microsoft
-Windows.</p>
+Windows:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Cygwin</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This module is primarily intended for use in other <a class="reference internal" href="../manual/cmake-developer.7.html#find-modules"><span class="std std-ref">Find Modules</span></a> to help
@@ -76,7 +79,12 @@ installed via Cygwin and is usable from Windows.</p>
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
-<dl class="simple">
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Cygwin_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>Boolean indicating whether Cygwin was found.</p>
+</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">CYGWIN_INSTALL_PATH</span></code></dt><dd><p>The path to the Cygwin root installation directory.</p>
 </dd>
 </dl>
@@ -85,7 +93,7 @@ installed via Cygwin and is usable from Windows.</p>
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <p>Finding the Cygwin installation and using its path in a custom find module:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">FindFoo.cmake</span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">FindFoo.cmake</span></code></span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Cygwin</span><span class="nf">)</span>
 <span class="nf">find_program(</span><span class="nb">Foo_EXECUTABLE</span><span class="w"> </span><span class="no">NAMES</span><span class="w"> </span><span class="nb">foo</span><span class="w"> </span><span class="no">PATHS</span><span class="w"> </span><span class="o">${</span><span class="nt">CYGWIN_INSTALL_PATH</span><span class="o">}</span><span class="na">/bin</span><span class="nf">)</span>
 
@@ -170,7 +178,7 @@ installed via Cygwin and is usable from Windows.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -183,8 +191,8 @@ installed via Cygwin and is usable from Windows.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

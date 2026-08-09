@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindwxWindows &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindwxWindows &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -68,7 +68,10 @@
 </div>
 <p>Finds the wxWidgets (formerly known as wxWindows) installation and determines
 the locations of its include directories and libraries, as well as the name of
-the library.</p>
+the library:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">wxWindows</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
 <p>wxWidgets 2.6.x is supported for monolithic builds, such as those compiled in
 the <code class="docutils literal notranslate"><span class="pre">wx/build/msw</span></code> directory using:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nmake<span class="w"> </span>-f<span class="w"> </span>makefile.vc<span class="w"> </span><span class="nv">BUILD</span><span class="o">=</span>debug<span class="w"> </span><span class="nv">SHARED</span><span class="o">=</span><span class="m">0</span><span class="w"> </span><span class="nv">USE_OPENGL</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="nv">MONOLITHIC</span><span class="o">=</span><span class="m">1</span>
@@ -78,7 +81,7 @@ the <code class="docutils literal notranslate"><span class="pre">wx/build/msw</s
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">WXWINDOWS_FOUND</span></code></dt><dd><p>Boolean indicating whether the wxWidgets is found.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">WXWINDOWS_FOUND</span></code></dt><dd><p>Boolean indicating whether the wxWidgets was found.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">WXWINDOWS_LIBRARIES</span></code></dt><dd><p>Libraries needed to link against to use wxWidgets.  This includes paths to
 the wxWidgets libraries and any additional linker flags, typically derived
@@ -109,7 +112,7 @@ to the output of <code class="docutils literal notranslate"><span class="pre">wx
 </section>
 <section id="deprecated-variables">
 <h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
-<p>These variables are provided for backward compatibility:</p>
+<p>The following variables are provided for backward compatibility:</p>
 <dl>
 <dt><code class="docutils literal notranslate"><span class="pre">CMAKE_WX_CAN_COMPILE</span></code></dt><dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.8: </span>Replaced by the <code class="docutils literal notranslate"><span class="pre">WXWINDOWS_FOUND</span></code> variable with the same value.</p>
@@ -132,7 +135,7 @@ to the output of <code class="docutils literal notranslate"><span class="pre">wx
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <section id="example-finding-wxwidgets-in-earlier-cmake-versions">
-<h3>Example: Finding wxWidgets in earlier CMake versions<a class="headerlink" href="#example-finding-wxwidgets-in-earlier-cmake-versions" title="Link to this heading">¶</a></h3>
+<h3>Example: Finding wxWidgets in Earlier CMake Versions<a class="headerlink" href="#example-finding-wxwidgets-in-earlier-cmake-versions" title="Link to this heading">¶</a></h3>
 <p>In earlier versions of CMake, wxWidgets (wxWindows) could be found using:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">wxWindows</span><span class="nf">)</span>
 </pre></div>
@@ -176,7 +179,7 @@ appropriate libraries, include directories, and compiler flags:</p>
 <li><a class="reference internal" href="#hints">Hints</a></li>
 <li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a><ul>
-<li><a class="reference internal" href="#example-finding-wxwidgets-in-earlier-cmake-versions">Example: Finding wxWidgets in earlier CMake versions</a></li>
+<li><a class="reference internal" href="#example-finding-wxwidgets-in-earlier-cmake-versions">Example: Finding wxWidgets in Earlier CMake Versions</a></li>
 <li><a class="reference internal" href="#example-finding-wxwidgets-as-of-cmake-3-0">Example: Finding wxWidgets as of CMake 3.0</a></li>
 </ul>
 </li>
@@ -233,7 +236,7 @@ appropriate libraries, include directories, and compiler flags:</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -246,8 +249,8 @@ appropriate libraries, include directories, and compiler flags:</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

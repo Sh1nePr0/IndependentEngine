@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindODBC &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindODBC &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -66,11 +66,14 @@
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.12.</span></p>
 </div>
-<p>Finds the Open Database Connectivity (ODBC) library, which implements a standard
-API for accessing database systems.  ODBC enables applications to communicate
-with different database management systems (DBMS) using a common set of
-functions.  Communication with a specific database is handled through ODBC
-drivers, which the library loads at runtime.</p>
+<p>Finds the Open Database Connectivity (ODBC) library, which implements a
+standard API for accessing database systems:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="no">ODBC</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
+<p>ODBC enables applications to communicate with different database management
+systems (DBMS) using a common set of functions.  Communication with a specific
+database is handled through ODBC drivers, which the library loads at runtime.</p>
 <p>On Windows, when building with Visual Studio, this module assumes the ODBC
 library is provided by the available Windows SDK.</p>
 <p>On Unix-like systems, this module searches for ODBC library provided by unixODBC
@@ -90,7 +93,7 @@ ODBC header and library in standard locations.</p>
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">ODBC_FOUND</span></code></dt><dd><p>Boolean indicating whether ODBC is found.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">ODBC_FOUND</span></code></dt><dd><p>Boolean indicating whether ODBC was found.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">ODBC_INCLUDE_DIRS</span></code></dt><dd><p>Include directories containing headers needed to use ODBC.</p>
 </dd>
@@ -128,19 +131,19 @@ driver.</p></li>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
-<section id="finding-and-using-odbc">
-<h3>Finding and using ODBC<a class="headerlink" href="#finding-and-using-odbc" title="Link to this heading">¶</a></h3>
+<section id="example-finding-and-using-odbc">
+<h3>Example: Finding and Using ODBC<a class="headerlink" href="#example-finding-and-using-odbc" title="Link to this heading">¶</a></h3>
 <p>Finding ODBC and linking it to a project target:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">CMakeLists.txt</span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="no">ODBC</span><span class="nf">)</span>
 <span class="nf">target_link_libraries(</span><span class="nb">project_target</span><span class="w"> </span><span class="no">PRIVATE</span><span class="w"> </span><span class="no">ODBC</span><span class="o">::</span><span class="no">ODBC</span><span class="nf">)</span>
 </pre></div>
 </div>
 </div>
 </section>
-<section id="finding-a-custom-odbc-installation-on-unix-like-systems">
-<h3>Finding a custom ODBC installation on Unix-like systems<a class="headerlink" href="#finding-a-custom-odbc-installation-on-unix-like-systems" title="Link to this heading">¶</a></h3>
+<section id="example-finding-a-custom-odbc-installation">
+<h3>Example: Finding a Custom ODBC Installation<a class="headerlink" href="#example-finding-a-custom-odbc-installation" title="Link to this heading">¶</a></h3>
 <p>The following examples are for Unix-like systems and demonstrate how to set hint
 and cache variables during the CMake configuration phase to help this module
 find a custom ODBC implementation (e.g. one not supported by default).</p>
@@ -184,8 +187,8 @@ installation can be automatically determined based on the config tool:</p>
 <li><a class="reference internal" href="#cache-variables">Cache Variables</a></li>
 <li><a class="reference internal" href="#limitations">Limitations</a></li>
 <li><a class="reference internal" href="#examples">Examples</a><ul>
-<li><a class="reference internal" href="#finding-and-using-odbc">Finding and using ODBC</a></li>
-<li><a class="reference internal" href="#finding-a-custom-odbc-installation-on-unix-like-systems">Finding a custom ODBC installation on Unix-like systems</a></li>
+<li><a class="reference internal" href="#example-finding-and-using-odbc">Example: Finding and Using ODBC</a></li>
+<li><a class="reference internal" href="#example-finding-a-custom-odbc-installation">Example: Finding a Custom ODBC Installation</a></li>
 </ul>
 </li>
 </ul>
@@ -241,7 +244,7 @@ installation can be automatically determined based on the config tool:</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -254,8 +257,8 @@ installation can be automatically determined based on the config tool:</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

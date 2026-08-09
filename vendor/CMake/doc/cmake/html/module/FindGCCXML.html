@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindGCCXML &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindGCCXML &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -65,14 +65,27 @@
 <span id="module:FindGCCXML"></span><h1>FindGCCXML<a class="headerlink" href="#findgccxml" title="Link to this heading">¶</a></h1>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 4.1: </span>This module is available only if policy <span class="target" id="index-0-policy:CMP0188"></span><a class="reference internal" href="../policy/CMP0188.html#policy:CMP0188" title="CMP0188"><code class="xref cmake cmake-policy docutils literal notranslate"><span class="pre">CMP0188</span></code></a> is not set to <code class="docutils literal notranslate"><span class="pre">NEW</span></code>.
-Port projects to search for CastXML by calling <code class="docutils literal notranslate"><span class="pre">find_program</span></code> directly.</p>
+Port projects to search for CastXML by calling <span class="target" id="index-0-command:find_program"></span><a class="reference internal" href="../command/find_program.html#command:find_program" title="find_program"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">find_program()</span></code></a> directly.</p>
 </div>
-<p>Find the GCC-XML front-end executable.</p>
-<p>This module will define the following variables:</p>
+<p>Finds the GCC-XML front-end executable:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="no">GCCXML</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
+<section id="cache-variables">
+<h2>Cache Variables<a class="headerlink" href="#cache-variables" title="Link to this heading">¶</a></h2>
+<p>The following cache variables may also be set:</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">GCCXML</span></code></dt><dd><p>The GCC-XML front-end executable.</p>
 </dd>
 </dl>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
+<p>In new code, find CastXML with <span class="target" id="index-1-command:find_program"></span><a class="reference internal" href="../command/find_program.html#command:find_program" title="find_program"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">find_program()</span></code></a> instead:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_program(</span><span class="no">CASTXML_EXECUTABLE</span><span class="w"> </span><span class="nb">castxml</span><span class="nf">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -82,6 +95,17 @@ Port projects to search for CastXML by calling <code class="docutils literal not
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
+  <div>
+    <h3>Table of Contents</h3>
+    <ul>
+<li><a class="reference internal" href="#">FindGCCXML</a><ul>
+<li><a class="reference internal" href="#cache-variables">Cache Variables</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="FindDart.html"
@@ -130,7 +154,7 @@ Port projects to search for CastXML by calling <code class="docutils literal not
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -143,8 +167,8 @@ Port projects to search for CastXML by calling <code class="docutils literal not
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

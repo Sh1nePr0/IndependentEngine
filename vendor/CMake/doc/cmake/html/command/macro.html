@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>macro &mdash; CMake 4.1.2 Documentation</title>
+  <title>macro &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -105,9 +105,10 @@ invoke the macro.</p>
 </section>
 <section id="arguments">
 <h2>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">¶</a></h2>
-<p>When a macro is invoked, the commands recorded in the macro are
-first modified by replacing formal parameters (<code class="docutils literal notranslate"><span class="pre">${arg1}</span></code>, ...)
-with the arguments passed, and then invoked as normal commands.</p>
+<p>When a macro is invoked, first all commands recorded in the macro are
+modified by replacing formal parameters (<code class="docutils literal notranslate"><span class="pre">${arg1}</span></code>, ...)
+with the arguments passed. Then all modified commands are invoked as
+normal commands.</p>
 <p>In addition to referencing the formal parameters you can reference the
 values <code class="docutils literal notranslate"><span class="pre">${ARGC}</span></code> which will be set to the number of arguments passed
 into the macro as well as <code class="docutils literal notranslate"><span class="pre">${ARGV0}</span></code>, <code class="docutils literal notranslate"><span class="pre">${ARGV1}</span></code>, <code class="docutils literal notranslate"><span class="pre">${ARGV2}</span></code>,
@@ -261,7 +262,7 @@ should look at the function command.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -274,8 +275,8 @@ should look at the function command.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

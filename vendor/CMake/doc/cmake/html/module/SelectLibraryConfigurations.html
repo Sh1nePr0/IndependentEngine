@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>SelectLibraryConfigurations &mdash; CMake 4.1.2 Documentation</title>
+  <title>SelectLibraryConfigurations &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -63,12 +63,16 @@
             
   <section id="selectlibraryconfigurations">
 <span id="module:SelectLibraryConfigurations"></span><h1>SelectLibraryConfigurations<a class="headerlink" href="#selectlibraryconfigurations" title="Link to this heading">¶</a></h1>
-<p>This module is intended for use in <a class="reference internal" href="../manual/cmake-developer.7.html#find-modules"><span class="std std-ref">Find Modules</span></a> and provides a
-command to automatically set library variables when package is available
-with multiple <a class="reference internal" href="../manual/cmake-buildsystem.7.html#build-configurations"><span class="std std-ref">Build Configurations</span></a>.</p>
-<p>Load it in a CMake find module with:</p>
+<p>This module provides a command to automatically set library variables when
+package is available with multiple <a class="reference internal" href="../manual/cmake-buildsystem.7.html#build-configurations"><span class="std std-ref">Build Configurations</span></a>.  It is
+intended for use in <a class="reference internal" href="../manual/cmake-developer.7.html#find-modules"><span class="std std-ref">Find Modules</span></a> implementing
+<span class="target" id="index-0-command:find_package"></span><a class="reference internal" href="../command/find_package.html#command:find_package" title="find_package(&lt;packagename&gt;)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">find_package(&lt;PackageName&gt;)</span></code></a> calls.</p>
+<p>Load this module in a CMake find module with:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">FindFoo.cmake</span></code></span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">SelectLibraryConfigurations</span><span class="nf">)</span>
 </pre></div>
+</div>
 </div>
 <p>Supported build configurations are <code class="docutils literal notranslate"><span class="pre">Release</span></code> and <code class="docutils literal notranslate"><span class="pre">Debug</span></code> as these are
 the most common ones in such packages.</p>
@@ -149,8 +153,8 @@ handling standard find module arguments with
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <p>Setting library variables based on the build configuration inside a find module
 file:</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">FindFoo.cmake</span></code></span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">FindFoo.cmake</span></code></span><a class="headerlink" href="#id2" title="Link to this code">¶</a></div>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># Find release and debug build of the library</span>
 <span class="nf">find_library(</span><span class="nb">Foo_LIBRARY_RELEASE</span><span class="w"> </span><span class="p">...</span><span class="nf">)</span>
 <span class="nf">find_library(</span><span class="nb">Foo_LIBRARY_DEBUG</span><span class="w"> </span><span class="p">...</span><span class="nf">)</span>
@@ -169,8 +173,8 @@ file:</p>
 </div>
 </div>
 <p>When find module provides components with multiple build configurations:</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">FindFoo.cmake</span></code></span><a class="headerlink" href="#id2" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">FindFoo.cmake</span></code></span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">SelectLibraryConfigurations</span><span class="nf">)</span>
 <span class="nf">foreach(</span><span class="nb">component</span><span class="w"> </span><span class="no">IN</span><span class="w"> </span><span class="no">LISTS</span><span class="w"> </span><span class="nb">Foo_FIND_COMPONENTS</span><span class="nf">)</span>
 <span class="w">  </span><span class="c"># ...</span>
@@ -181,8 +185,8 @@ file:</p>
 </div>
 </div>
 <p>A project can then use this find module as follows:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></span><a class="headerlink" href="#id4" title="Link to this code">¶</a></div>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Foo</span><span class="nf">)</span>
 <span class="nf">target_link_libraries(</span><span class="nb">project_target</span><span class="w"> </span><span class="no">PRIVATE</span><span class="w"> </span><span class="o">${</span><span class="nt">Foo_LIBRARIES</span><span class="o">}</span><span class="nf">)</span>
 <span class="c"># ...</span>
@@ -258,7 +262,7 @@ file:</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -271,8 +275,8 @@ file:</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

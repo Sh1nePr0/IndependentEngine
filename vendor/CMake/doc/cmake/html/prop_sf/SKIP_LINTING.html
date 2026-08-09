@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>SKIP_LINTING &mdash; CMake 4.1.2 Documentation</title>
+  <title>SKIP_LINTING &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -69,11 +69,12 @@
 <p>This property allows you to exclude a specific source file
 from the linting process. The linting process involves running
 tools such as <span class="target" id="index-0-prop_tgt:&lt;LANG&gt;_CPPLINT"></span><a class="reference internal" href="../prop_tgt/LANG_CPPLINT.html#prop_tgt:&lt;LANG&gt;_CPPLINT" title="&lt;LANG&gt;_CPPLINT"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">&lt;LANG&gt;_CPPLINT</span></code></a>, <span class="target" id="index-0-prop_tgt:&lt;LANG&gt;_CLANG_TIDY"></span><a class="reference internal" href="../prop_tgt/LANG_CLANG_TIDY.html#prop_tgt:&lt;LANG&gt;_CLANG_TIDY" title="&lt;LANG&gt;_CLANG_TIDY"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">&lt;LANG&gt;_CLANG_TIDY</span></code></a>,
-<span class="target" id="index-0-prop_tgt:&lt;LANG&gt;_CPPCHECK"></span><a class="reference internal" href="../prop_tgt/LANG_CPPCHECK.html#prop_tgt:&lt;LANG&gt;_CPPCHECK" title="&lt;LANG&gt;_CPPCHECK"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">&lt;LANG&gt;_CPPCHECK</span></code></a>, <span class="target" id="index-0-prop_tgt:&lt;LANG&gt;_ICSTAT"></span><a class="reference internal" href="../prop_tgt/LANG_ICSTAT.html#prop_tgt:&lt;LANG&gt;_ICSTAT" title="&lt;LANG&gt;_ICSTAT"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">&lt;LANG&gt;_ICSTAT</span></code></a> and
-<span class="target" id="index-0-prop_tgt:&lt;LANG&gt;_INCLUDE_WHAT_YOU_USE"></span><a class="reference internal" href="../prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.html#prop_tgt:&lt;LANG&gt;_INCLUDE_WHAT_YOU_USE" title="&lt;LANG&gt;_INCLUDE_WHAT_YOU_USE"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">&lt;LANG&gt;_INCLUDE_WHAT_YOU_USE</span></code></a> on the source files, as well
-as compiling header files as part of <span class="target" id="index-0-prop_tgt:VERIFY_INTERFACE_HEADER_SETS"></span><a class="reference internal" href="../prop_tgt/VERIFY_INTERFACE_HEADER_SETS.html#prop_tgt:VERIFY_INTERFACE_HEADER_SETS" title="VERIFY_INTERFACE_HEADER_SETS"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">VERIFY_INTERFACE_HEADER_SETS</span></code></a>.
-By setting <code class="docutils literal notranslate"><span class="pre">SKIP_LINTING</span></code> on a source file, the mentioned linting tools
-will not be executed for that particular file.</p>
+<span class="target" id="index-0-prop_tgt:&lt;LANG&gt;_CPPCHECK"></span><a class="reference internal" href="../prop_tgt/LANG_CPPCHECK.html#prop_tgt:&lt;LANG&gt;_CPPCHECK" title="&lt;LANG&gt;_CPPCHECK"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">&lt;LANG&gt;_CPPCHECK</span></code></a>, <span class="target" id="index-0-prop_tgt:&lt;LANG&gt;_ICSTAT"></span><a class="reference internal" href="../prop_tgt/LANG_ICSTAT.html#prop_tgt:&lt;LANG&gt;_ICSTAT" title="&lt;LANG&gt;_ICSTAT"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">&lt;LANG&gt;_ICSTAT</span></code></a>,
+<span class="target" id="index-0-prop_tgt:&lt;LANG&gt;_PVS_STUDIO"></span><a class="reference internal" href="../prop_tgt/LANG_PVS_STUDIO.html#prop_tgt:&lt;LANG&gt;_PVS_STUDIO" title="&lt;LANG&gt;_PVS_STUDIO"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">&lt;LANG&gt;_PVS_STUDIO</span></code></a> and <span class="target" id="index-0-prop_tgt:&lt;LANG&gt;_INCLUDE_WHAT_YOU_USE"></span><a class="reference internal" href="../prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.html#prop_tgt:&lt;LANG&gt;_INCLUDE_WHAT_YOU_USE" title="&lt;LANG&gt;_INCLUDE_WHAT_YOU_USE"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">&lt;LANG&gt;_INCLUDE_WHAT_YOU_USE</span></code></a> on the
+source files, as well as compiling header files as part of
+<span class="target" id="index-0-prop_tgt:VERIFY_INTERFACE_HEADER_SETS"></span><a class="reference internal" href="../prop_tgt/VERIFY_INTERFACE_HEADER_SETS.html#prop_tgt:VERIFY_INTERFACE_HEADER_SETS" title="VERIFY_INTERFACE_HEADER_SETS"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">VERIFY_INTERFACE_HEADER_SETS</span></code></a>. By setting <code class="docutils literal notranslate"><span class="pre">SKIP_LINTING</span></code> on a
+source file, the mentioned linting tools will not be executed for that
+particular file.</p>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h2>
 <p>Consider a C++ project that includes multiple source files,
@@ -99,6 +100,15 @@ the <code class="docutils literal notranslate"><span class="pre">generatedBindin
 source files from the linting process. This allows you to focus the
 linting tools on the relevant parts of your project, enhancing the efficiency
 and effectiveness of the linting workflow.</p>
+<p>A convenient alternative, when multiple sources should be excluded from the
+linting process, is to use the file set's <span class="target" id="index-0-prop_fs:SKIP_LINTING"></span><a class="reference internal" href="../prop_fs/SKIP_LINTING.html#prop_fs:SKIP_LINTING" title="SKIP_LINTING"><code class="xref cmake cmake-prop_fs docutils literal notranslate"><span class="pre">SKIP_LINTING</span></code></a> property.</p>
+</section>
+<section id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><span class="target" id="index-1-prop_fs:SKIP_LINTING"></span><a class="reference internal" href="../prop_fs/SKIP_LINTING.html#prop_fs:SKIP_LINTING" title="SKIP_LINTING"><code class="xref cmake cmake-prop_fs docutils literal notranslate"><span class="pre">SKIP_LINTING</span></code></a> file set property</p></li>
+<li><p><span class="target" id="index-0-prop_tgt:SKIP_LINTING"></span><a class="reference internal" href="../prop_tgt/SKIP_LINTING.html#prop_tgt:SKIP_LINTING" title="SKIP_LINTING"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">SKIP_LINTING</span></code></a> target property</p></li>
+</ul>
 </section>
 </section>
 
@@ -114,6 +124,7 @@ and effectiveness of the linting workflow.</p>
     <ul>
 <li><a class="reference internal" href="#">SKIP_LINTING</a><ul>
 <li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
 </li>
 </ul>
@@ -167,7 +178,7 @@ and effectiveness of the linting workflow.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -180,8 +191,8 @@ and effectiveness of the linting workflow.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

@@ -50,7 +50,7 @@ Compilers
 Commands
 --------
 
-* The :ref:`add_custom_command(TARGET) <add_custom_command(TARGET)>`
+* The :command:`add_custom_command(TARGET)`
   signature now supports adding build events through :ref:`Alias Targets`.
 
 * The :command:`cmake_language(EXIT)` sub-command was added to terminate
@@ -133,7 +133,7 @@ Modules
 CTest
 -----
 
-* :manual:`ctest(1)` gained a :option:`--http-header <ctest --http-header>`
+* :manual:`ctest(1)` gained a :ctest-dashboard-option:`--http-header`
   option to add custom headers on submission to CDash.
 
 * :manual:`ctest(1)` gained the :option:`--tests-from-file <ctest

@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>get_property &mdash; CMake 4.1.2 Documentation</title>
+  <title>get_property &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -65,16 +65,17 @@
 <span id="command:get_property"></span><h1>get_property<a class="headerlink" href="#get-property" title="Link to this heading">¶</a></h1>
 <p>Get a property.</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">get_property(</span><span class="nv">&lt;variable&gt;</span>
-<span class="w">             </span><span class="o">&lt;</span><span class="no">GLOBAL</span><span class="w">             </span><span class="p">|</span>
-<span class="w">              </span><span class="no">DIRECTORY</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;dir&gt;</span><span class="p">]</span><span class="w">  </span><span class="p">|</span>
-<span class="w">              </span><span class="no">TARGET</span><span class="w">    </span><span class="nv">&lt;target&gt;</span><span class="w"> </span><span class="p">|</span>
+<span class="w">             </span><span class="p">&lt;</span><span class="no">GLOBAL</span><span class="w">                                                  </span><span class="p">|</span>
+<span class="w">              </span><span class="no">DIRECTORY</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;dir&gt;</span><span class="p">]</span><span class="w">                                       </span><span class="p">|</span>
+<span class="w">              </span><span class="no">TARGET</span><span class="w">    </span><span class="nv">&lt;target&gt;</span><span class="w">                                      </span><span class="p">|</span>
+<span class="w">              </span><span class="no">FILE_SET</span><span class="w">  </span><span class="nv">&lt;file_set&gt;</span><span class="w"> </span><span class="no">TARGET</span><span class="w"> </span><span class="nv">&lt;target&gt;</span><span class="w">                    </span><span class="p">|</span>
 <span class="w">              </span><span class="no">SOURCE</span><span class="w">    </span><span class="nv">&lt;source&gt;</span>
 <span class="w">                        </span><span class="p">[</span><span class="no">DIRECTORY</span><span class="w"> </span><span class="nv">&lt;dir&gt;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="no">TARGET_DIRECTORY</span><span class="w"> </span><span class="nv">&lt;target&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">|</span>
-<span class="w">              </span><span class="no">INSTALL</span><span class="w">   </span><span class="nv">&lt;file&gt;</span><span class="w">   </span><span class="p">|</span>
+<span class="w">              </span><span class="no">INSTALL</span><span class="w">   </span><span class="nv">&lt;file&gt;</span><span class="w">                                        </span><span class="p">|</span>
 <span class="w">              </span><span class="no">TEST</span><span class="w">      </span><span class="nv">&lt;test&gt;</span>
-<span class="w">                        </span><span class="p">[</span><span class="no">DIRECTORY</span><span class="w"> </span><span class="nv">&lt;dir&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">|</span>
-<span class="w">              </span><span class="no">CACHE</span><span class="w">     </span><span class="nv">&lt;entry&gt;</span><span class="w">  </span><span class="p">|</span>
-<span class="w">              </span><span class="no">VARIABLE</span><span class="w">           </span><span class="o">&gt;</span>
+<span class="w">                        </span><span class="p">[</span><span class="no">DIRECTORY</span><span class="w"> </span><span class="nv">&lt;dir&gt;</span><span class="p">]</span><span class="w">                             </span><span class="p">|</span>
+<span class="w">              </span><span class="no">CACHE</span><span class="w">     </span><span class="nv">&lt;entry&gt;</span><span class="w">                                       </span><span class="p">|</span>
+<span class="w">              </span><span class="no">VARIABLE</span><span class="p">&gt;</span>
 <span class="w">             </span><span class="no">PROPERTY</span><span class="w"> </span><span class="nv">&lt;name&gt;</span>
 <span class="w">             </span><span class="p">[</span><span class="no">SET</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="no">DEFINED</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="no">BRIEF_DOCS</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="no">FULL_DOCS</span><span class="p">]</span><span class="nf">)</span>
 </pre></div>
@@ -97,6 +98,16 @@ See also the <span class="target" id="index-0-command:get_directory_property"></
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">TARGET</span></code></dt><dd><p>Scope must name one existing target.
 See also the <span class="target" id="index-0-command:get_target_property"></span><a class="reference internal" href="get_target_property.html#command:get_target_property" title="get_target_property"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">get_target_property()</span></code></a> command.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FILE_SET</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>Scope must name one existing file set.</p>
+<p>The following option is required:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TARGET</span> <span class="pre">&lt;target&gt;</span></code></dt><dd><p>The target to which the file set is attached.</p>
+</dd>
+</dl>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">SOURCE</span></code></dt><dd><p>Scope must name one source file.  By default, the source file's property
 will be read from the current source directory's scope.</p>
@@ -236,7 +247,7 @@ See its documentation for details.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -249,8 +260,8 @@ See its documentation for details.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

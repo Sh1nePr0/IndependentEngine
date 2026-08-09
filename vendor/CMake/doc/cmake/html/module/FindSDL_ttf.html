@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindSDL_ttf &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindSDL_ttf &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -64,7 +64,10 @@
   <section id="findsdl-ttf">
 <span id="module:FindSDL_ttf"></span><h1>FindSDL_ttf<a class="headerlink" href="#findsdl-ttf" title="Link to this heading">¶</a></h1>
 <p>Finds the SDL_ttf library that provides support for rendering text with TrueType
-fonts in SDL (Simple DirectMedia Layer) applications.</p>
+fonts in SDL (Simple DirectMedia Layer) applications:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">SDL_ttf</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This module is specifically intended for SDL_ttf version 1.  Starting with
@@ -77,34 +80,21 @@ Refer to the official SDL documentation for more information.</p>
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">SDL_ttf_FOUND</span></code></dt><dd><p>Boolean indicating whether the (requested version of) SDL_ttf library is
-found.  For backward compatibility, the <code class="docutils literal notranslate"><span class="pre">SDL_TTF_FOUND</span></code> variable is also set
-to the same value.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">SDL_ttf_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.3.</span></p>
+</div>
+<p>Boolean indicating whether the (requested version of) SDL_ttf library was
+found.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">SDL_TTF_VERSION_STRING</span></code></dt><dd><p>The human-readable string containing the version of SDL_ttf found.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">SDL_ttf_VERSION</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The human-readable string containing the version of SDL_ttf found.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">SDL_TTF_INCLUDE_DIRS</span></code></dt><dd><p>Include directories containing headers needed to use SDL_ttf library.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">SDL_TTF_LIBRARIES</span></code></dt><dd><p>Libraries needed to link against to use SDL_ttf.</p>
-</dd>
-</dl>
-</section>
-<section id="deprecated-variables">
-<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
-<p>For backward compatibility the following variables are also set:</p>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">SDLTTF_FOUND</span></code></dt><dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 2.8.10: </span>Replaced with <code class="docutils literal notranslate"><span class="pre">SDL_ttf_FOUND</span></code>, which has the same value.</p>
-</div>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">SDLTTF_INCLUDE_DIR</span></code></dt><dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 2.8.10: </span>Replaced with <code class="docutils literal notranslate"><span class="pre">SDL_TTF_INCLUDE_DIRS</span></code>, which has the same value.</p>
-</div>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">SDLTTF_LIBRARY</span></code></dt><dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 2.8.10: </span>Replaced with <code class="docutils literal notranslate"><span class="pre">SDL_TTF_LIBRARIES</span></code>, which has the same value.</p>
-</div>
 </dd>
 </dl>
 </section>
@@ -116,6 +106,33 @@ to the same value.</p>
 in a custom location.  It should point to the installation destination that
 was used when configuring, building, and installing SDL library:
 <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--prefix=$SDLDIR</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="deprecated-variables">
+<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
+<p>The following variables are provided for backward compatibility:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">SDL_TTF_VERSION_STRING</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">SDL_ttf_VERSION</span></code>, which has the same value.</p>
+</div>
+<p>The human-readable string containing the version of SDL_ttf found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SDL_TTF_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">SDL_ttf_FOUND</span></code>, which has the same value.</p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SDLTTF_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.8.10: </span>Replaced with <code class="docutils literal notranslate"><span class="pre">SDL_ttf_FOUND</span></code>, which has the same value.</p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SDLTTF_INCLUDE_DIR</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.8.10: </span>Replaced with <code class="docutils literal notranslate"><span class="pre">SDL_TTF_INCLUDE_DIRS</span></code>, which has the same value.</p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SDLTTF_LIBRARY</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.8.10: </span>Replaced with <code class="docutils literal notranslate"><span class="pre">SDL_TTF_LIBRARIES</span></code>, which has the same value.</p>
+</div>
 </dd>
 </dl>
 </section>
@@ -171,8 +188,8 @@ without using this module:</p>
     <ul>
 <li><a class="reference internal" href="#">FindSDL_ttf</a><ul>
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
-<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#hints">Hints</a></li>
+<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
@@ -228,7 +245,7 @@ without using this module:</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -241,8 +258,8 @@ without using this module:</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

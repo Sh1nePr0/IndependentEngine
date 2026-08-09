@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindLATEX &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindLATEX &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -63,8 +63,12 @@
             
   <section id="findlatex">
 <span id="module:FindLATEX"></span><h1>FindLATEX<a class="headerlink" href="#findlatex" title="Link to this heading">¶</a></h1>
-<p>Finds LaTeX compiler and Latex-related software like BibTeX.  LaTeX is a
-typesetting system for the production of technical and scientific documentation.</p>
+<p>Finds LaTeX compiler and Latex-related software like BibTeX:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="no">LATEX</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
+<p>LaTeX is a typesetting system for the production of technical and scientific
+documentation.</p>
 <section id="components">
 <h2>Components<a class="headerlink" href="#components" title="Link to this heading">¶</a></h2>
 <div class="versionadded">
@@ -88,13 +92,13 @@ typesetting system for the production of technical and scientific documentation.
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">MAKEINDEX</span></code></dt><dd><p>Finds the MakeIndex compiler.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">XINDY</span></code></dt><dd><p>Find the xindy compiler.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">XINDY</span></code></dt><dd><p>Finds the xindy compiler.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">DVIPS</span></code></dt><dd><p>Finds the DVI-to-PostScript (DVIPS) converter.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">DVIPDF</span></code></dt><dd><p>Finds the DVIPDF converter.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">PS2PDF</span></code></dt><dd><p>Finds the the PS2PDF converter.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">PS2PDF</span></code></dt><dd><p>Finds the PS2PDF converter.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">PDFTOPS</span></code></dt><dd><p>Finds the PDF-to-PostScript converter.</p>
 </dd>
@@ -109,31 +113,43 @@ typesetting system for the production of technical and scientific documentation.
 <p>This module defines the following variables:</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">LATEX_FOUND</span></code></dt><dd><p>Boolean indicating whether the LaTex compiler and all its required components
-are found.</p>
+were found.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">LATEX_&lt;component&gt;_FOUND</span></code></dt><dd><p>Boolean indicating whether the LaTeX <code class="docutils literal notranslate"><span class="pre">&lt;component&gt;</span></code> is found.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">LATEX_&lt;component&gt;_FOUND</span></code></dt><dd><p>Boolean indicating whether the LaTeX <code class="docutils literal notranslate"><span class="pre">&lt;component&gt;</span></code> was found.</p>
 </dd>
 </dl>
 </section>
 <section id="cache-variables">
 <h2>Cache Variables<a class="headerlink" href="#cache-variables" title="Link to this heading">¶</a></h2>
 <p>The following cache variables may also be set:</p>
-<dl class="simple">
+<dl>
 <dt><code class="docutils literal notranslate"><span class="pre">LATEX_COMPILER</span></code></dt><dd><p>The path to the LaTeX compiler.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">PDFLATEX_COMPILER</span></code></dt><dd><p>The path to the PdfLaTeX compiler.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">XELATEX_COMPILER</span></code></dt><dd><p>The path to the XeLaTeX compiler.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">XELATEX_COMPILER</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.2.</span></p>
+</div>
+<p>The path to the XeLaTeX compiler.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">LUALATEX_COMPILER</span></code></dt><dd><p>The path to the LuaLaTeX compiler.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">LUALATEX_COMPILER</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.2.</span></p>
+</div>
+<p>The path to the LuaLaTeX compiler.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">BIBTEX_COMPILER</span></code></dt><dd><p>The path to the BibTeX compiler.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">BIBER_COMPILER</span></code></dt><dd><p>The path to the Biber compiler.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">BIBER_COMPILER</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.2.</span></p>
+</div>
+<p>The path to the Biber compiler.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">MAKEINDEX_COMPILER</span></code></dt><dd><p>The path to the MakeIndex compiler.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">XINDY_COMPILER</span></code></dt><dd><p>The path to the xindy compiler.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">XINDY_COMPILER</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.2.</span></p>
+</div>
+<p>The path to the xindy compiler.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">DVIPS_CONVERTER</span></code></dt><dd><p>The path to the DVIPS converter.</p>
 </dd>
@@ -141,11 +157,17 @@ are found.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">PS2PDF_CONVERTER</span></code></dt><dd><p>The path to the PS2PDF converter.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">PDFTOPS_CONVERTER</span></code></dt><dd><p>The path to the pdftops converter.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">PDFTOPS_CONVERTER</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.2.</span></p>
+</div>
+<p>The path to the pdftops converter.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">LATEX2HTML_CONVERTER</span></code></dt><dd><p>The path to the LaTeX2Html converter.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">HTLATEX_COMPILER</span></code></dt><dd><p>The path to the htlatex compiler.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">HTLATEX_COMPILER</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.2.</span></p>
+</div>
+<p>The path to the htlatex compiler.</p>
 </dd>
 </dl>
 </section>
@@ -244,7 +266,7 @@ required for LaTeX to be considered found:</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -257,8 +279,8 @@ required for LaTeX to be considered found:</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

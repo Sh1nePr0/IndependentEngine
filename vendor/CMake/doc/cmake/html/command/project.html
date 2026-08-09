@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>project &mdash; CMake 4.1.2 Documentation</title>
+  <title>project &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -70,7 +70,8 @@
 <span class="nf">project(</span><span class="nv">&lt;PROJECT-NAME&gt;</span>
 <span class="w">        </span><span class="p">[</span><span class="no">VERSION</span><span class="w"> </span><span class="nv">&lt;major&gt;</span><span class="p">[.</span><span class="nv">&lt;minor&gt;</span><span class="p">[.</span><span class="nv">&lt;patch&gt;</span><span class="p">[.</span><span class="nv">&lt;tweak&gt;</span><span class="p">]]]]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">COMPAT_VERSION</span><span class="w"> </span><span class="nv">&lt;major&gt;</span><span class="p">[.</span><span class="nv">&lt;minor&gt;</span><span class="p">[.</span><span class="nv">&lt;patch&gt;</span><span class="p">[.</span><span class="nv">&lt;tweak&gt;</span><span class="p">]]]]</span>
-<span class="w">        </span><span class="p">[</span><span class="no">DESCRIPTION</span><span class="w"> </span><span class="nv">&lt;project-description-string&gt;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">SPDX_LICENSE</span><span class="w"> </span><span class="nv">&lt;license-string&gt;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">DESCRIPTION</span><span class="w"> </span><span class="nv">&lt;description-string&gt;</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">HOMEPAGE_URL</span><span class="w"> </span><span class="nv">&lt;url-string&gt;</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">LANGUAGES</span><span class="w"> </span><span class="nv">&lt;language-name&gt;...</span><span class="p">]</span><span class="nf">)</span>
 </pre></div>
@@ -142,26 +143,51 @@ and sets the variables</p>
 </div>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">COMPAT_VERSION</span> <span class="pre">&lt;version&gt;</span></code></dt><dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 4.1.</span></p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Experimental. Gated by <code class="docutils literal notranslate"><span class="pre">CMAKE_EXPERIMENTAL_EXPORT_PACKAGE_INFO</span></code>.</p>
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
 </div>
 <p>Optional; requires <code class="docutils literal notranslate"><span class="pre">VERSION</span></code> also be set.</p>
 <p>Takes a <code class="docutils literal notranslate"><span class="pre">&lt;version&gt;</span></code> argument composed of non-negative integer components,
 i.e. <code class="docutils literal notranslate"><span class="pre">&lt;major&gt;[.&lt;minor&gt;[.&lt;patch&gt;[.&lt;tweak&gt;]]]</span></code>,
 and sets the variables</p>
-<ul>
+<ul class="simple">
 <li><p><span class="target" id="index-0-variable:PROJECT_COMPAT_VERSION"></span><a class="reference internal" href="../variable/PROJECT_COMPAT_VERSION.html#variable:PROJECT_COMPAT_VERSION" title="PROJECT_COMPAT_VERSION"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">PROJECT_COMPAT_VERSION</span></code></a>,
-<span class="target" id="index-0-variable:&lt;PROJECT-NAME&gt;_COMPAT_VERSION"></span><a class="reference internal" href="../variable/PROJECT-NAME_COMPAT_VERSION.html#variable:&lt;PROJECT-NAME&gt;_COMPAT_VERSION" title="&lt;PROJECT-NAME&gt;_COMPAT_VERSION"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">&lt;PROJECT-NAME&gt;_COMPAT_VERSION</span></code></a></p>
+<span class="target" id="index-0-variable:&lt;PROJECT-NAME&gt;_COMPAT_VERSION"></span><a class="reference internal" href="../variable/PROJECT-NAME_COMPAT_VERSION.html#variable:&lt;PROJECT-NAME&gt;_COMPAT_VERSION" title="&lt;PROJECT-NAME&gt;_COMPAT_VERSION"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">&lt;PROJECT-NAME&gt;_COMPAT_VERSION</span></code></a>.</p></li>
+</ul>
 <p>When the <code class="docutils literal notranslate"><span class="pre">project()</span></code> command is called from the top-level
 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>, then the compatibility version is also stored in the
 variable <span class="target" id="index-0-variable:CMAKE_PROJECT_COMPAT_VERSION"></span><a class="reference internal" href="../variable/CMAKE_PROJECT_COMPAT_VERSION.html#variable:CMAKE_PROJECT_COMPAT_VERSION" title="CMAKE_PROJECT_COMPAT_VERSION"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_PROJECT_COMPAT_VERSION</span></code></a>.</p>
-</li>
-</ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span> <span class="pre">&lt;project-description-string&gt;</span></code></dt><dd><div class="versionadded">
+<dt><code class="docutils literal notranslate"><span class="pre">SPDX_LICENSE</span> <span class="pre">&lt;license-string&gt;</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>Optional.
+Sets the variables</p>
+<ul class="simple">
+<li><p><span class="target" id="index-0-variable:PROJECT_SPDX_LICENSE"></span><a class="reference internal" href="../variable/PROJECT_SPDX_LICENSE.html#variable:PROJECT_SPDX_LICENSE" title="PROJECT_SPDX_LICENSE"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">PROJECT_SPDX_LICENSE</span></code></a>,
+<span class="target" id="index-0-variable:&lt;PROJECT-NAME&gt;_SPDX_LICENSE"></span><a class="reference internal" href="../variable/PROJECT-NAME_SPDX_LICENSE.html#variable:&lt;PROJECT-NAME&gt;_SPDX_LICENSE" title="&lt;PROJECT-NAME&gt;_SPDX_LICENSE"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">&lt;PROJECT-NAME&gt;_SPDX_LICENSE</span></code></a></p></li>
+</ul>
+<p>to <code class="docutils literal notranslate"><span class="pre">&lt;license-string&gt;</span></code>, which shall be a <a class="reference external" href="https://spdx.dev/">System Package Data Exchange</a> (SPDX)
+<a class="reference external" href="https://spdx.github.io/spdx-spec/v3.0.1/annexes/spdx-license-expressions/">License Expression</a> that describes the license(s) of the project as a
+whole, including documentation, resources, or other materials distributed
+with the project, in addition to software artifacts. See the SPDX
+<a class="reference external" href="https://spdx.org/licenses/">License List</a> for a list of commonly used licenses and their identifiers.
+See the <span class="target" id="index-0-prop_tgt:SPDX_LICENSE"></span><a class="reference internal" href="../prop_tgt/SPDX_LICENSE.html#prop_tgt:SPDX_LICENSE" title="SPDX_LICENSE"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">SPDX_LICENSE</span></code></a> property for specifying the license(s) on
+individual software artifacts.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The project license is <em>not</em> used to initialize the
+<span class="target" id="index-1-prop_tgt:SPDX_LICENSE"></span><a class="reference internal" href="../prop_tgt/SPDX_LICENSE.html#prop_tgt:SPDX_LICENSE" title="SPDX_LICENSE"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">SPDX_LICENSE</span></code></a> property of individual targets.  This allows the
+package license and default component license, which are specified when
+exporting package information, to be meaningful.  Only Common Package Specification exports make
+use of this information.</p>
+<p>The project license <em>is</em> inherited as the package license in some cases.
+Refer to the <code class="docutils literal notranslate"><span class="pre">PROJECT</span></code> option and related documentation of the
+<span class="target" id="index-0-command:export"></span><a class="reference internal" href="export.html#command:export" title="export"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">export()</span></code></a> and <span class="target" id="index-0-command:install"></span><a class="reference internal" href="install.html#command:install" title="install"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install()</span></code></a> commands for more information.</p>
+</div>
+</dd>
+</dl>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span> <span class="pre">&lt;description-string&gt;</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.9.</span></p>
 </div>
 <p>Optional.
@@ -169,7 +195,7 @@ Sets the variables</p>
 <ul class="simple">
 <li><p><span class="target" id="index-0-variable:PROJECT_DESCRIPTION"></span><a class="reference internal" href="../variable/PROJECT_DESCRIPTION.html#variable:PROJECT_DESCRIPTION" title="PROJECT_DESCRIPTION"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">PROJECT_DESCRIPTION</span></code></a>, <span class="target" id="index-0-variable:&lt;PROJECT-NAME&gt;_DESCRIPTION"></span><a class="reference internal" href="../variable/PROJECT-NAME_DESCRIPTION.html#variable:&lt;PROJECT-NAME&gt;_DESCRIPTION" title="&lt;PROJECT-NAME&gt;_DESCRIPTION"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">&lt;PROJECT-NAME&gt;_DESCRIPTION</span></code></a></p></li>
 </ul>
-<p>to <code class="docutils literal notranslate"><span class="pre">&lt;project-description-string&gt;</span></code>.
+<p>to <code class="docutils literal notranslate"><span class="pre">&lt;description-string&gt;</span></code>.
 It is recommended that this description is a relatively short string,
 usually no more than a few words.</p>
 <p>When the <code class="docutils literal notranslate"><span class="pre">project()</span></code> command is called from the top-level <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>,
@@ -193,40 +219,75 @@ then the URL also is stored in the variable <span class="target" id="index-0-var
 <dt><code class="docutils literal notranslate"><span class="pre">LANGUAGES</span> <span class="pre">&lt;language-name&gt;...</span></code></dt><dd><p>Optional.
 Can also be specified without <code class="docutils literal notranslate"><span class="pre">LANGUAGES</span></code> keyword per the first, short signature.</p>
 <p>Selects which programming languages are needed to build the project.</p>
+<p>The supported languages are:</p>
+<p><code class="docutils literal notranslate"><span class="pre">C</span></code></p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">CXX</span></code></dt><dd><p>C++</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">CSharp</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.8.</span></p>
+</div>
+<p>C#</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">CUDA</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.8.</span></p>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">OBJC</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.16.</span></p>
+</div>
+<p>Objective-C</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">OBJCXX</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.16.</span></p>
+</div>
+<p>Objective-C++</p>
 </dd>
 </dl>
-<p>Supported languages are <code class="docutils literal notranslate"><span class="pre">C</span></code>, <code class="docutils literal notranslate"><span class="pre">CXX</span></code> (i.e.  C++), <code class="docutils literal notranslate"><span class="pre">CSharp</span></code> (i.e.  C#), <code class="docutils literal notranslate"><span class="pre">CUDA</span></code>,
-<code class="docutils literal notranslate"><span class="pre">OBJC</span></code> (i.e. Objective-C), <code class="docutils literal notranslate"><span class="pre">OBJCXX</span></code> (i.e. Objective-C++), <code class="docutils literal notranslate"><span class="pre">Fortran</span></code>, <code class="docutils literal notranslate"><span class="pre">HIP</span></code>,
-<code class="docutils literal notranslate"><span class="pre">ISPC</span></code>, <code class="docutils literal notranslate"><span class="pre">Swift</span></code>, <code class="docutils literal notranslate"><span class="pre">ASM</span></code>, <code class="docutils literal notranslate"><span class="pre">ASM_NASM</span></code>, <code class="docutils literal notranslate"><span class="pre">ASM_MARMASM</span></code>, <code class="docutils literal notranslate"><span class="pre">ASM_MASM</span></code>, and <code class="docutils literal notranslate"><span class="pre">ASM-ATT</span></code>.</p>
-<blockquote>
-<div><div class="versionadded">
-<p><span class="versionmodified added">Added in version 3.8: </span>Added <code class="docutils literal notranslate"><span class="pre">CSharp</span></code> and <code class="docutils literal notranslate"><span class="pre">CUDA</span></code> support.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Fortran</span></code></p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">HIP</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.21.</span></p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 3.15: </span>Added <code class="docutils literal notranslate"><span class="pre">Swift</span></code> support.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ISPC</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.18.</span></p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 3.16: </span>Added <code class="docutils literal notranslate"><span class="pre">OBJC</span></code> and <code class="docutils literal notranslate"><span class="pre">OBJCXX</span></code> support.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Swift</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.15.</span></p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 3.18: </span>Added <code class="docutils literal notranslate"><span class="pre">ISPC</span></code> support.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ASM</span></code></dt><dd><p>Assembly language supported by the C compiler.</p>
+<p>If enabling <code class="docutils literal notranslate"><span class="pre">ASM</span></code>, list it last so that CMake can check
+whether the <code class="docutils literal notranslate"><span class="pre">C</span></code> or <code class="docutils literal notranslate"><span class="pre">CXX</span></code> compiler supports assembly.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ASM_NASM</span></code></dt><dd><p>Netwide Assembler</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ASM_MARMASM</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.26.</span></p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 3.21: </span>Added <code class="docutils literal notranslate"><span class="pre">HIP</span></code> support.</p>
+<p>Microsoft Assembler (ARM, ARM64)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ASM_MASM</span></code></dt><dd><p>Microsoft Assembler (x86, x64)</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ASM_POASM</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4.</span></p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">Added in version 3.26: </span>Added <code class="docutils literal notranslate"><span class="pre">ASM_MARMASM</span></code> support.</p>
-</div>
-</div></blockquote>
-<p>If enabling <code class="docutils literal notranslate"><span class="pre">ASM</span></code>, list it last so that CMake can check whether
-compilers for other languages like <code class="docutils literal notranslate"><span class="pre">C</span></code> work for assembly too.</p>
+<p>Pelles C toolchain assembler.</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">ASM-ATT</span></code></p>
+</dd>
+</dl>
 <p>By default <code class="docutils literal notranslate"><span class="pre">C</span></code> and <code class="docutils literal notranslate"><span class="pre">CXX</span></code> are enabled if no language options are given.
 Specify language <code class="docutils literal notranslate"><span class="pre">NONE</span></code>, or use the <code class="docutils literal notranslate"><span class="pre">LANGUAGES</span></code> keyword and list no languages,
 to skip enabling any languages.</p>
-<p>The variables set through the <code class="docutils literal notranslate"><span class="pre">VERSION</span></code>, <code class="docutils literal notranslate"><span class="pre">COMPAT_VERSION</span></code>, <code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span></code>
-and <code class="docutils literal notranslate"><span class="pre">HOMEPAGE_URL</span></code> options are intended for use as default values in package
-metadata and documentation. The <span class="target" id="index-0-command:export"></span><a class="reference internal" href="export.html#command:export" title="export"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">export()</span></code></a> and <span class="target" id="index-0-command:install"></span><a class="reference internal" href="install.html#command:install" title="install"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install()</span></code></a>
-commands use these accordingly when generating Common Package Specification package descriptions.</p>
+<p>The variables set through the <code class="docutils literal notranslate"><span class="pre">VERSION</span></code>, <code class="docutils literal notranslate"><span class="pre">COMPAT_VERSION</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SPDX_LICENSE</span></code>, <code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span></code> and <code class="docutils literal notranslate"><span class="pre">HOMEPAGE_URL</span></code> options are
+intended for use as default values in package metadata and documentation.
+The <span class="target" id="index-1-command:export"></span><a class="reference internal" href="export.html#command:export" title="export"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">export()</span></code></a> and <span class="target" id="index-1-command:install"></span><a class="reference internal" href="install.html#command:install" title="install"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install()</span></code></a> commands use these accordingly
+when generating Common Package Specification package descriptions.</p>
 </section>
 <section id="code-injection">
 <span id="id1"></span><h2>Code Injection<a class="headerlink" href="#code-injection" title="Link to this heading">¶</a></h2>
@@ -367,7 +428,7 @@ See also policy <span class="target" id="index-0-policy:CMP0000"></span><a class
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -380,8 +441,8 @@ See also policy <span class="target" id="index-0-policy:CMP0000"></span><a class
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

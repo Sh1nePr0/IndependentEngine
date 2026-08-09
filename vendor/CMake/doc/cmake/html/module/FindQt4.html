@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindQt4 &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindQt4 &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -63,9 +63,13 @@
             
   <section id="findqt4">
 <span id="module:FindQt4"></span><h1>FindQt4<a class="headerlink" href="#findqt4" title="Link to this heading">¶</a></h1>
-<p>This module finds Qt4, a cross-platform application development framework for
-creating graphical user interfaces and applications.  It defines a number of
-imported targets, macros, and variables to use Qt4 in the project.</p>
+<p>Finds Qt4, a cross-platform application development framework for creating
+graphical user interfaces and applications:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Qt4</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
+<p>This module defines a number of imported targets, macros, and variables to
+use Qt4 in the project.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This module is for Qt version 4.  As of Qt version 5, the Qt upstream also
@@ -93,7 +97,7 @@ are met.  See <span class="target" id="index-1-manual:cmake-qt(7)"></span><a cla
 <section id="imported-targets">
 <h2>Imported Targets<a class="headerlink" href="#imported-targets" title="Link to this heading">¶</a></h2>
 <p>Qt libraries can be linked using their corresponding
-<a class="reference internal" href="../manual/cmake-buildsystem.7.html#imported-targets"><span class="std std-ref">IMPORTED target</span></a> with the
+<a class="reference internal" href="../manual/cmake-buildsystem.7.html#imported-targets"><span class="std std-ref">Imported Target</span></a> with the
 <span class="target" id="index-0-command:target_link_libraries"></span><a class="reference internal" href="../command/target_link_libraries.html#command:target_link_libraries" title="target_link_libraries"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">target_link_libraries()</span></code></a> command:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">target_link_libraries(</span><span class="nb">myexe</span><span class="w"> </span><span class="nb">Qt4</span><span class="o">::</span><span class="nb">QtGui</span><span class="w"> </span><span class="nb">Qt4</span><span class="o">::</span><span class="nb">QtXml</span><span class="nf">)</span>
 </pre></div>
@@ -167,15 +171,13 @@ selects the appropriate one based on the
 </section>
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
-<p>This module sets the following variables:</p>
+<p>This module defines the following variables:</p>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">Qt4_FOUND</span></code></dt><dd><p>Boolean whether Qt4 has been found.  If false, don't try to use Qt4.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">Qt4_FOUND</span></code></dt><dd><p>Boolean indicating whether (the requested version of) Qt4 was found.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">QT_FOUND</span></code></dt><dd><p>Boolean whether Qt4 has been found.  If false, don't try to use Qt4.  This
-variable is for compatibility with other Qt find modules.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">QT4_FOUND</span></code></dt><dd><p>Boolean whether Qt4 has been found.  If false, don't try to use Qt4.  This
-variable is for backward compatibility only.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">QT_FOUND</span></code></dt><dd><p>Same as <code class="docutils literal notranslate"><span class="pre">Qt4_FOUND</span></code>.  Boolean indicating whether (the requested version
+of) Qt4 was found.  This variable is available for compatibility with
+other Qt find modules.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">QT_VERSION_MAJOR</span></code></dt><dd><p>The major version of Qt found.</p>
 </dd>
@@ -455,7 +457,7 @@ are passed to <code class="docutils literal notranslate"><span class="pre">moc</
 <p><span class="versionmodified deprecated">Deprecated since version 2.8.11: </span>Use <span class="target" id="index-1-command:target_link_libraries"></span><a class="reference internal" href="../command/target_link_libraries.html#command:target_link_libraries" title="target_link_libraries"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">target_link_libraries()</span></code></a> with <a class="reference internal" href="../manual/cmake-buildsystem.7.html#imported-targets"><span class="std std-ref">Imported Targets</span></a> instead.</p>
 </div>
 <p>Provides Qt modules to a project for linking them to a target:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">qt4_use_modules(</span><span class="nv">&lt;target&gt;</span><span class="w"> </span><span class="p">[</span><span class="o">&lt;</span><span class="no">LINK_PUBLIC</span><span class="p">|</span><span class="no">LINK_PRIVATE</span><span class="o">&gt;</span><span class="p">]</span><span class="w"> </span><span class="nv">&lt;modules&gt;...</span><span class="nf">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">qt4_use_modules(</span><span class="nv">&lt;target&gt;</span><span class="w"> </span><span class="p">[&lt;</span><span class="no">LINK_PUBLIC</span><span class="p">|</span><span class="no">LINK_PRIVATE</span><span class="p">&gt;]</span><span class="w"> </span><span class="nv">&lt;modules&gt;...</span><span class="nf">)</span>
 </pre></div>
 </div>
 <p>This function makes <code class="docutils literal notranslate"><span class="pre">&lt;target&gt;</span></code> use the <code class="docutils literal notranslate"><span class="pre">&lt;modules&gt;</span></code> from Qt.  Using a Qt
@@ -472,6 +474,16 @@ the <code class="docutils literal notranslate"><span class="pre">QtCore</span></
 target <code class="docutils literal notranslate"><span class="pre">myexe</span></code>.</p>
 </dd></dl>
 
+</section>
+<section id="deprecated-variables">
+<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
+<p>The following variables are provided for backward compatibility:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">QT4_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 2.8.11: </span>Use <code class="docutils literal notranslate"><span class="pre">Qt4_FOUND</span></code>, which has the same value.</p>
+</div>
+</dd>
+</dl>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
@@ -502,6 +514,7 @@ target <code class="docutils literal notranslate"><span class="pre">myexe</span>
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
 <li><a class="reference internal" href="#hints">Hints</a></li>
 <li><a class="reference internal" href="#macros">Macros</a></li>
+<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
@@ -556,7 +569,7 @@ target <code class="docutils literal notranslate"><span class="pre">myexe</span>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -569,8 +582,8 @@ target <code class="docutils literal notranslate"><span class="pre">myexe</span>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

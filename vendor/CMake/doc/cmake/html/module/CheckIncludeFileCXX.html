@@ -5,20 +5,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CheckIncludeFileCXX &mdash; CMake 4.1.2 Documentation</title>
+  <title>CheckIncludeFileCXX &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="CheckIncludeFile" href="CheckIncludeFile.html" />
-    <link rel="prev" title="CheckFunctionExists" href="CheckFunctionExists.html" />
+    <link rel="next" title="CheckIncludeFiles" href="CheckIncludeFiles.html" />
+    <link rel="prev" title="CheckIncludeFile" href="CheckIncludeFile.html" />
  
 
   </head><body>
@@ -34,17 +34,17 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="CheckIncludeFile.html" title="CheckIncludeFile"
+          <a href="CheckIncludeFiles.html" title="CheckIncludeFiles"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="CheckFunctionExists.html" title="CheckFunctionExists"
+          <a href="CheckIncludeFile.html" title="CheckIncludeFile"
              accesskey="P">previous</a> |</li>
   <li>
     <label class="sidebar-toggle" for="sidebar-check"></label>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -74,15 +74,23 @@
 <dl class="cmake command">
 <dt class="sig sig-object cmake" id="command:check_include_file_cxx">
 <span class="sig-name descname"><span class="pre">check_include_file_cxx</span></span><a class="headerlink" href="#command:check_include_file_cxx" title="Link to this definition">¶</a></dt>
-<dd><p>Checks once whether a header file can be included in C++ code:</p>
+<dd><p>Checks once whether a header file exists and can be included in C++ code:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">check_include_file_cxx(</span><span class="nv">&lt;include&gt;</span><span class="w"> </span><span class="nv">&lt;variable&gt;</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;flags&gt;</span><span class="p">]</span><span class="nf">)</span>
 </pre></div>
 </div>
-<p>This command checks once whether the given <code class="docutils literal notranslate"><span class="pre">&lt;include&gt;</span></code> header file
-exists and can be included in a <code class="docutils literal notranslate"><span class="pre">CXX</span></code> source file.  The result of the
-check is stored in an internal cache variable named <code class="docutils literal notranslate"><span class="pre">&lt;variable&gt;</span></code>.  The
-optional third argument may be used to add additional compilation flags
-to the check (or use the <code class="docutils literal notranslate"><span class="pre">CMAKE_REQUIRED_FLAGS</span></code> variable below).</p>
+<p class="rubric">The arguments are:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;include&gt;</span></code></dt><dd><p>A header file to be checked.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;variable&gt;</span></code></dt><dd><p>The name of the variable to store the result of the check.  This
+variable will be created as an internal cache variable.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;flags&gt;</span></code></dt><dd><p>(Optional) A space-separated string of
+additional compilation flags to be added to the check.  Alternatively,
+flags can be also specified with the <code class="docutils literal notranslate"><span class="pre">CMAKE_REQUIRED_FLAGS</span></code> variable
+below.</p>
+</dd>
+</dl>
 <p class="rubric">Variables Affecting the Check</p>
 <p>The following variables may be set before calling this command to modify
 the way the check is run:</p>
@@ -189,13 +197,13 @@ C++ headers at once.</p></li>
   </div>
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="CheckFunctionExists.html"
-                          title="previous chapter">CheckFunctionExists</a></p>
+    <p class="topless"><a href="CheckIncludeFile.html"
+                          title="previous chapter">CheckIncludeFile</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="CheckIncludeFile.html"
-                          title="next chapter">CheckIncludeFile</a></p>
+    <p class="topless"><a href="CheckIncludeFiles.html"
+                          title="next chapter">CheckIncludeFiles</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -225,17 +233,17 @@ C++ headers at once.</p></li>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="CheckIncludeFile.html" title="CheckIncludeFile"
+          <a href="CheckIncludeFiles.html" title="CheckIncludeFiles"
              >next</a> |</li>
         <li class="right" >
-          <a href="CheckFunctionExists.html" title="CheckFunctionExists"
+          <a href="CheckIncludeFile.html" title="CheckIncludeFile"
              >previous</a> |</li>
   <li>
     <label class="sidebar-toggle" for="sidebar-check"></label>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -248,8 +256,8 @@ C++ headers at once.</p></li>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

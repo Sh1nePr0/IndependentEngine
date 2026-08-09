@@ -71,7 +71,7 @@ The CMake tooling may report warnings which are intended
 for the provider of the software, not intended for the
 consumer of the software.  Such warnings end with "This
 warning is for project developers".  Users may disable
-such warnings by passing the :option:`-Wno-dev <cmake -Wno-dev>`
+such warnings by passing the :option:`-Wno-author <cmake -Wno->`
 flag to :manual:`cmake(1)`.
 
 cmake-gui tool
@@ -425,7 +425,7 @@ saving presets for commonly-used configure settings. These
 presets can set the build directory, generator, cache
 variables, environment variables, and other command-line
 options. All of these options can be overridden by the
-user. The full details of the ``CMakePresets.json`` format
+user. The full details of the CMake presets format
 are listed in the :manual:`cmake-presets(7)` manual.
 
 Using presets on the command-line

@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>try_run &mdash; CMake 4.1.2 Documentation</title>
+  <title>try_run &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -81,10 +81,10 @@
 <h2><a class="toc-backref" href="#id2" role="doc-backlink">Try Compiling and Running Source Files</a><a class="headerlink" href="#try-compiling-and-running-source-files" title="Link to this heading">¶</a></h2>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">try_run(</span><span class="nv">&lt;runResultVar&gt;</span><span class="w"> </span><span class="nv">&lt;compileResultVar&gt;</span>
 <span class="w">        </span><span class="p">[</span><span class="no">SOURCES_TYPE</span><span class="w"> </span><span class="nv">&lt;type&gt;</span><span class="p">]</span>
-<span class="w">        </span><span class="o">&lt;</span><span class="no">SOURCES</span><span class="w"> </span><span class="nv">&lt;srcfile...&gt;</span><span class="w">                 </span><span class="p">|</span>
+<span class="w">        </span><span class="p">{</span><span class="no">SOURCES</span><span class="w"> </span><span class="nv">&lt;srcfile&gt;...</span><span class="w">                 </span><span class="p">|</span>
 <span class="w">         </span><span class="no">SOURCE_FROM_CONTENT</span><span class="w"> </span><span class="nv">&lt;name&gt;</span><span class="w"> </span><span class="nv">&lt;content&gt;</span><span class="w"> </span><span class="p">|</span>
 <span class="w">         </span><span class="no">SOURCE_FROM_VAR</span><span class="w"> </span><span class="nv">&lt;name&gt;</span><span class="w"> </span><span class="nv">&lt;var&gt;</span><span class="w">         </span><span class="p">|</span>
-<span class="w">         </span><span class="no">SOURCE_FROM_FILE</span><span class="w"> </span><span class="nv">&lt;name&gt;</span><span class="w"> </span><span class="nv">&lt;path&gt;</span><span class="w">       </span><span class="o">&gt;</span><span class="p">...</span>
+<span class="w">         </span><span class="no">SOURCE_FROM_FILE</span><span class="w"> </span><span class="nv">&lt;name&gt;</span><span class="w"> </span><span class="nv">&lt;path&gt;</span><span class="w">       </span><span class="p">}...</span>
 <span class="w">        </span><span class="p">[</span><span class="no">LOG_DESCRIPTION</span><span class="w"> </span><span class="nv">&lt;text&gt;</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">NO_CACHE</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">NO_LOG</span><span class="p">]</span>
@@ -127,7 +127,7 @@ if the <code class="docutils literal notranslate"><span class="pre">NO_LOG</span
 <p>This command supports an alternate signature for CMake older than 3.25.
 The signature above is recommended for clarity.</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">try_run(</span><span class="nv">&lt;runResultVar&gt;</span><span class="w"> </span><span class="nv">&lt;compileResultVar&gt;</span>
-<span class="w">        </span><span class="nv">&lt;bindir&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="nb">srcfile</span><span class="p">|</span><span class="no">SOURCES</span><span class="w"> </span><span class="nb">srcfile...</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nv">&lt;bindir&gt;</span><span class="w"> </span><span class="p">{</span><span class="nv">&lt;srcfile&gt;</span><span class="p">|</span><span class="no">SOURCES</span><span class="w"> </span><span class="nv">&lt;srcfile&gt;...</span><span class="p">}</span>
 <span class="w">        </span><span class="p">[</span><span class="no">CMAKE_FLAGS</span><span class="w"> </span><span class="nv">&lt;flags&gt;...</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">COMPILE_DEFINITIONS</span><span class="w"> </span><span class="nv">&lt;defs&gt;...</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">LINK_OPTIONS</span><span class="w"> </span><span class="nv">&lt;options&gt;...</span><span class="p">]</span>
@@ -205,12 +205,26 @@ will create cache variables which must be filled by the user or by
 presetting them in some CMake script file to the values the executable
 would have produced if it had been run on its actual target platform.
 These cache entries are:</p>
-<dl class="simple">
+<dl>
 <dt><code class="docutils literal notranslate"><span class="pre">&lt;runResultVar&gt;</span></code></dt><dd><p>Exit code if the executable were to be run on the target platform.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">&lt;runResultVar&gt;__TRYRUN_OUTPUT</span></code></dt><dd><p>Output from stdout and stderr if the executable were to be run on
 the target platform.  This is created only if the
 <code class="docutils literal notranslate"><span class="pre">RUN_OUTPUT_VARIABLE</span></code> or <code class="docutils literal notranslate"><span class="pre">OUTPUT_VARIABLE</span></code> option was used.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;runResultVar&gt;__TRYRUN_OUTPUT_STDOUT</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.25.</span></p>
+</div>
+<p>Output from stdout if the executable were to be run on the target
+platform.  This is created only if the <code class="docutils literal notranslate"><span class="pre">RUN_OUTPUT_STDOUT_VARIABLE</span></code>
+or <code class="docutils literal notranslate"><span class="pre">RUN_OUTPUT_STDERR_VARIABLE</span></code> option was used.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">&lt;runResultVar&gt;__TRYRUN_OUTPUT_STDERR</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.25.</span></p>
+</div>
+<p>Output from stderr if the executable were to be run on the target
+platform.  This is created only if the <code class="docutils literal notranslate"><span class="pre">RUN_OUTPUT_STDOUT_VARIABLE</span></code>
+or <code class="docutils literal notranslate"><span class="pre">RUN_OUTPUT_STDERR_VARIABLE</span></code> option was used.</p>
 </dd>
 </dl>
 <p>In order to make cross compiling your project easier, use <code class="docutils literal notranslate"><span class="pre">try_run</span></code>
@@ -293,7 +307,7 @@ provide an easy-to-preset alternative for this case.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -306,8 +320,8 @@ provide an easy-to-preset alternative for this case.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

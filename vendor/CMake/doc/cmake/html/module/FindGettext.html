@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindGettext &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindGettext &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -65,7 +65,7 @@
 <span id="module:FindGettext"></span><h1>FindGettext<a class="headerlink" href="#findgettext" title="Link to this heading">¶</a></h1>
 <p>Finds the GNU gettext tools and provides commands for producing multi-lingual
 messages:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Gettext</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">...</span><span class="nf">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Gettext</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
 </pre></div>
 </div>
 <p>GNU gettext is a system for internationalization (i18n) and localization
@@ -86,12 +86,16 @@ translations.</p>
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">Gettext_FOUND</span></code></dt><dd><p>Boolean indicating whether (the requested version of) gettext is found.  For
-backward compatibility, the <code class="docutils literal notranslate"><span class="pre">GETTEXT_FOUND</span></code> variable is also set to the same
-value.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Gettext_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.3.</span></p>
+</div>
+<p>Boolean indicating whether (the requested version of) gettext was found.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">GETTEXT_VERSION_STRING</span></code></dt><dd><p>The version of gettext found.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">Gettext_VERSION</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The version of gettext found.</p>
 </dd>
 </dl>
 </section>
@@ -234,6 +238,22 @@ be interpreted relative to the current source directory
 </div>
 </dd></dl>
 
+</section>
+<section id="deprecated-variables">
+<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
+<p>The following variables are provided for backward compatibility:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">GETTEXT_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">Gettext_FOUND</span></code>, which has the same value.</p>
+</div>
+<p>Boolean indicating whether (the requested version of) gettext was found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">GETTEXT_VERSION_STRING</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Superseded by the <code class="docutils literal notranslate"><span class="pre">Gettext_VERSION</span></code>.</p>
+</div>
+<p>The version of gettext found.</p>
+</dd>
+</dl>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
@@ -427,6 +447,7 @@ files located in the current binary directory into <code class="docutils literal
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
 <li><a class="reference internal" href="#cache-variables">Cache Variables</a></li>
 <li><a class="reference internal" href="#commands">Commands</a></li>
+<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a><ul>
 <li><a class="reference internal" href="#examples-finding-gettext">Examples: Finding gettext</a></li>
 <li><a class="reference internal" href="#example-working-with-gettext-in-cmake">Example: Working With gettext in CMake</a></li>
@@ -488,7 +509,7 @@ files located in the current binary directory into <code class="docutils literal
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -501,8 +522,8 @@ files located in the current binary directory into <code class="docutils literal
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

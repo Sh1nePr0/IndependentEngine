@@ -1,4 +1,5 @@
-.\" Man page generated from reStructuredText.
+.\" Man page generated from reStructuredText
+.\" by the Docutils 0.22.4 manpage writer.
 .
 .
 .nr rst2man-indent-level 0
@@ -27,7 +28,7 @@ level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .in \\n[rst2man-indent\\n[rst2man-indent-level]]u
 ..
-.TH "CMAKE-CONFIGURE-LOG" "7" "Sep 30, 2025" "4.1.2" "CMake"
+.TH "CMAKE-CONFIGURE-LOG" "7" "Jul 31, 2026" "4.4.2" "CMake"
 .SH NAME
 cmake-configure-log \- CMake Configure Log
 .sp
@@ -40,7 +41,7 @@ of certain events that occur during the Configure step.
 The configure log does \fInot\fP contain a log of all output, errors,
 or messages printed while configuring a project.  It is a log of
 detailed information about specific events, such as toolchain inspection
-by \fI\%try_compile()\fP, meant for use in debugging the configuration
+by \fBtry_compile()\fP \%<#\:command:try_compile>, meant for use in debugging the configuration
 of a build tree.
 .sp
 For human use, this version of CMake writes the configure log to the file:
@@ -55,9 +56,9 @@ ${CMAKE_BINARY_DIR}/CMakeFiles/CMakeConfigureLog.yaml
 .sp
 However, the \fIlocation and name of the log file may change\fP in future
 versions of CMake.  Tools that read the configure log should get its
-location using a \fI\%configureLog\fP query to
-the \fI\%cmake\-file\-api(7)\fP\&.
-See the \fI\%Log Versioning\fP section below for details.
+location using a configureLog \%<#\:file-api-configurelog> query to
+the \fBcmake\-file\-api(7)\fP \%<#\:manual:cmake-file-api(7)>\&.
+See the Log Versioning section below for details.
 .SH LOG STRUCTURE
 .sp
 The configure log is designed to be both machine\- and human\-readable.
@@ -93,11 +94,11 @@ The keys of each document root mapping are:
 .B \fBevents\fP
 A YAML block sequence of nodes corresponding to events logged during
 one CMake \(dqconfigure\(dq step.  Each event is a YAML node containing one
-of the \fI\%Event Kinds\fP documented below.
+of the Event Kinds documented below.
 .UNINDENT
 .SS Log Versioning
 .sp
-Each of the \fI\%Event Kinds\fP is versioned independently.  The set of
+Each of the Event Kinds is versioned independently.  The set of
 keys an event\(aqs log entry provides is specific to its major version.
 When an event is logged, the latest version of its event kind that is
 known to the running version of CMake is always written to the log.
@@ -111,14 +112,14 @@ A future version of CMake may introduce a new event kind or version.
 If an existing build tree is re\-configured with a different version of
 CMake, the log may contain different versions of the same event kind.
 .IP \(bu 2
-If \fI\%cmake\-file\-api(7)\fP queries request one or more
-\fI\%configureLog\fP object versions,
+If \fBcmake\-file\-api(7)\fP \%<#\:manual:cmake-file-api(7)> queries request one or more
+configureLog \%<#\:file-api-configurelog> object versions,
 the log may contain multiple entries for the same event, each
 with a different version of its event kind.
 .UNINDENT
 .sp
-IDEs should write a \fI\%cmake\-file\-api(7)\fP query requesting a
-specific \fI\%configureLog\fP object version,
+IDEs should write a \fBcmake\-file\-api(7)\fP \%<#\:manual:cmake-file-api(7)> query requesting a
+specific configureLog \%<#\:file-api-configurelog> object version,
 before running CMake, and then read the configure log only as described
 by the file\-api reply.
 .SS Text Block Encoding
@@ -164,7 +165,7 @@ formatted as \fB<file>:<line> (<function>)\fP\&.
 .TP
 .B \fBchecks\fP
 An optional key that is present when the event occurred with
-at least one pending \fI\%message(CHECK_START)\fP\&.  Its value
+at least one pending \fBmessage(CHECK_START)\fP \%<#\:command:message>\&.  Its value
 is a YAML block sequence reporting the stack of pending checks,
 from most\-recent to least\-recent.  Each node is a string containing
 a pending check message.
@@ -174,7 +175,7 @@ Additional mapping keys are specific to each (versioned) event kind,
 described below.
 .SS Event Kind \fBmessage\fP
 .sp
-The \fI\%message(CONFIGURE_LOG)\fP command logs \fBmessage\fP events.
+The \fBmessage(CONFIGURE_LOG)\fP \%<#\:command:message> command logs \fBmessage\fP events.
 .sp
 There is only one \fBmessage\fP event major version, version 1.
 .SS \fBmessage\-v1\fP Event
@@ -200,11 +201,11 @@ The keys specific to \fBmessage\-v1\fP mappings are:
 .TP
 .B \fBmessage\fP
 A YAML literal block scalar containing the message text,
-represented using our \fI\%Text Block Encoding\fP\&.
+represented using our Text Block Encoding\&.
 .UNINDENT
 .SS Event Kind \fBtry_compile\fP
 .sp
-The \fI\%try_compile()\fP command logs \fBtry_compile\fP events.
+The \fBtry_compile()\fP \%<#\:command:try_compile> command logs \fBtry_compile\fP events.
 .sp
 There is only one \fBtry_compile\fP event major version, version 1.
 .SS \fBtry_compile\-v1\fP Event
@@ -249,11 +250,11 @@ compilation attempt.  It has the following keys:
 .TP
 .B \fBsource\fP
 String specifying the source directory of the
-\fI\%try_compile()\fP project.
+\fBtry_compile()\fP \%<#\:command:try_compile> project.
 .TP
 .B \fBbinary\fP
 String specifying the binary directory of the
-\fI\%try_compile()\fP project.
+\fBtry_compile()\fP \%<#\:command:try_compile> project.
 For non\-project invocations, this is often the same as
 the source directory.
 .UNINDENT
@@ -261,7 +262,7 @@ the source directory.
 .B \fBcmakeVariables\fP
 An optional key that is present when CMake propagates variables
 into the test project, either automatically or due to the
-\fI\%CMAKE_TRY_COMPILE_PLATFORM_VARIABLES\fP variable.
+\fBCMAKE_TRY_COMPILE_PLATFORM_VARIABLES\fP \%<#\:variable:CMAKE_TRY_COMPILE_PLATFORM_VARIABLES> variable.
 Its value is a mapping from variable names to their values.
 .TP
 .B \fBbuildResult\fP
@@ -279,7 +280,7 @@ is stored in the CMake cache.
 .TP
 .B \fBstdout\fP
 A YAML literal block scalar containing the output from building
-the test project, represented using our \fI\%Text Block Encoding\fP\&.
+the test project, represented using our Text Block Encoding\&.
 This contains build output from both stdout and stderr.
 .TP
 .B \fBexitCode\fP
@@ -289,7 +290,7 @@ to build the test project.
 .UNINDENT
 .SS Event Kind \fBtry_run\fP
 .sp
-The \fI\%try_run()\fP command logs \fBtry_run\fP events.
+The \fBtry_run()\fP \%<#\:command:try_run> command logs \fBtry_run\fP events.
 .sp
 There is only one \fBtry_run\fP event major version, version 1.
 .SS \fBtry_run\-v1\fP Event
@@ -327,7 +328,7 @@ runResult:
 .UNINDENT
 .sp
 The keys specific to \fBtry_run\-v1\fP mappings include those
-documented by the \fI\%try_compile\-v1 event\fP, plus:
+documented by the try_compile\-v1 event, plus:
 .INDENT 0.0
 .TP
 .B \fBrunResult\fP
@@ -346,7 +347,7 @@ is stored in the CMake cache.
 .B \fBstdout\fP
 An optional key that is present when the test project built successfully.
 Its value is a YAML literal block scalar containing output from running
-the test executable, represented using our \fI\%Text Block Encoding\fP\&.
+the test executable, represented using our Text Block Encoding\&.
 .sp
 If \fBRUN_OUTPUT_VARIABLE\fP was used, stdout and stderr are captured
 together, so this will contain both.  Otherwise, this will contain
@@ -356,7 +357,7 @@ only the stdout output.
 An optional key that is present when the test project built successfully
 and the \fBRUN_OUTPUT_VARIABLE\fP option was not used.
 Its value is a YAML literal block scalar containing output from running
-the test executable, represented using our \fI\%Text Block Encoding\fP\&.
+the test executable, represented using our Text Block Encoding\&.
 .sp
 If \fBRUN_OUTPUT_VARIABLE\fP was used, stdout and stderr are captured
 together in the \fBstdout\fP key, and this key will not be present.
@@ -370,8 +371,8 @@ an error message, from trying to run the test executable.
 .UNINDENT
 .SS Event Kind \fBfind\fP
 .sp
-The \fI\%find_file()\fP, \fI\%find_path()\fP, \fI\%find_library()\fP, and
-\fI\%find_program()\fP commands log \fBfind\fP events.
+The \fBfind_file()\fP \%<#\:command:find_file>, \fBfind_path()\fP \%<#\:command:find_path>, \fBfind_library()\fP \%<#\:command:find_library>, and
+\fBfind_program()\fP \%<#\:command:find_program> commands log \fBfind\fP events.
 .sp
 There is only one \fBfind\fP event major version, version 1.
 .SS \fBfind\-v1\fP Event
@@ -433,34 +434,34 @@ Search settings active for the search.
 .TP
 .B \fBSearchFramework\fP
 A string describing how framework search is performed. One of \fBFIRST\fP,
-\fBLAST\fP, \fBONLY\fP, or \fBNEVER\fP\&. See \fI\%CMAKE_FIND_FRAMEWORK\fP\&.
+\fBLAST\fP, \fBONLY\fP, or \fBNEVER\fP\&. See \fBCMAKE_FIND_FRAMEWORK\fP \%<#\:variable:CMAKE_FIND_FRAMEWORK>\&.
 .TP
 .B \fBSearchAppBundle\fP
 A string describing how application bundle search is performed. One of
 \fBFIRST\fP, \fBLAST\fP, \fBONLY\fP, or \fBNEVER\fP\&. See
-\fI\%CMAKE_FIND_APPBUNDLE\fP\&.
+\fBCMAKE_FIND_APPBUNDLE\fP \%<#\:variable:CMAKE_FIND_APPBUNDLE>\&.
 .TP
 .B \fBCMAKE_FIND_USE_CMAKE_PATH\fP
 A boolean indicating whether or not CMake\-specific cache variables are
-used when searching. See \fI\%CMAKE_FIND_USE_CMAKE_PATH\fP\&.
+used when searching. See \fBCMAKE_FIND_USE_CMAKE_PATH\fP \%<#\:variable:CMAKE_FIND_USE_CMAKE_PATH>\&.
 .TP
 .B \fBCMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH\fP
 A boolean indicating whether or not CMake\-specific environment variables
 are used when searching. See
-\fI\%CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH\fP\&.
+\fBCMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH\fP \%<#\:variable:CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH>\&.
 .TP
 .B \fBCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH\fP
 A boolean indicating whether or not platform\-specific environment
 variables are used when searching. See
-\fI\%CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH\fP\&.
+\fBCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH\fP \%<#\:variable:CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH>\&.
 .TP
 .B \fBCMAKE_FIND_USE_CMAKE_SYSTEM_PATH\fP
 A boolean indicating whether or not platform\-specific CMake variables are
-used when searching. See \fI\%CMAKE_FIND_USE_CMAKE_SYSTEM_PATH\fP\&.
+used when searching. See \fBCMAKE_FIND_USE_CMAKE_SYSTEM_PATH\fP \%<#\:variable:CMAKE_FIND_USE_CMAKE_SYSTEM_PATH>\&.
 .TP
 .B \fBCMAKE_FIND_USE_INSTALL_PREFIX\fP
 A boolean indicating whether or not the install prefix is used when
-searching. See \fI\%CMAKE_FIND_USE_INSTALL_PREFIX\fP\&.
+searching. See \fBCMAKE_FIND_USE_INSTALL_PREFIX\fP \%<#\:variable:CMAKE_FIND_USE_INSTALL_PREFIX>\&.
 .UNINDENT
 .TP
 .B \fBnames\fP
@@ -485,11 +486,11 @@ used. Only variables with any paths specified are used.
 .TP
 .B \fBpackage_stack\fP
 An array of objects with paths which come from the stack of paths made
-available by \fI\%find_package()\fP calls.
+available by \fBfind_package()\fP \%<#\:command:find_package> calls.
 .INDENT 7.0
 .TP
 .B \fBpackage_paths\fP
-The paths made available by \fI\%find_package()\fP commands in the call
+The paths made available by \fBfind_package()\fP \%<#\:command:find_package> commands in the call
 stack.
 .UNINDENT
 .UNINDENT
@@ -499,7 +500,7 @@ stack.
 Added in version 4.1.
 
 .sp
-The \fI\%find_package()\fP command logs \fBfind_package\fP events.
+The \fBfind_package()\fP \%<#\:command:find_package> command logs \fBfind_package\fP events.
 .sp
 There is only one \fBfind_package\fP event major version, version 1.
 .SS \fBfind_package\-v1\fP Event
@@ -674,34 +675,34 @@ Path settings active for the search.
 .TP
 .B \fBCMAKE_FIND_USE_CMAKE_PATH\fP
 A boolean indicating whether or not CMake\-specific cache variables are
-used when searching. See \fI\%CMAKE_FIND_USE_CMAKE_PATH\fP\&.
+used when searching. See \fBCMAKE_FIND_USE_CMAKE_PATH\fP \%<#\:variable:CMAKE_FIND_USE_CMAKE_PATH>\&.
 .TP
 .B \fBCMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH\fP
 A boolean indicating whether or not CMake\-specific environment variables
 are used when searching. See
-\fI\%CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH\fP\&.
+\fBCMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH\fP \%<#\:variable:CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH>\&.
 .TP
 .B \fBCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH\fP
 A boolean indicating whether or not platform\-specific environment
 variables are used when searching. See
-\fI\%CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH\fP\&.
+\fBCMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH\fP \%<#\:variable:CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH>\&.
 .TP
 .B \fBCMAKE_FIND_USE_CMAKE_SYSTEM_PATH\fP
 A boolean indicating whether or not platform\-specific CMake variables are
-used when searching. See \fI\%CMAKE_FIND_USE_CMAKE_SYSTEM_PATH\fP\&.
+used when searching. See \fBCMAKE_FIND_USE_CMAKE_SYSTEM_PATH\fP \%<#\:variable:CMAKE_FIND_USE_CMAKE_SYSTEM_PATH>\&.
 .TP
 .B \fBCMAKE_FIND_USE_INSTALL_PREFIX\fP
 A boolean indicating whether or not the install prefix is used when
-searching. See \fI\%CMAKE_FIND_USE_INSTALL_PREFIX\fP\&.
+searching. See \fBCMAKE_FIND_USE_INSTALL_PREFIX\fP \%<#\:variable:CMAKE_FIND_USE_INSTALL_PREFIX>\&.
 .TP
 .B \fBCMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY\fP
 A boolean indicating whether or not to search the CMake package registry
-for the package. See \fI\%CMAKE_FIND_USE_PACKAGE_REGISTRY\fP\&.
+for the package. See \fBCMAKE_FIND_USE_PACKAGE_REGISTRY\fP \%<#\:variable:CMAKE_FIND_USE_PACKAGE_REGISTRY>\&.
 .TP
 .B \fBCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY\fP
 A boolean indicating whether or not to search the system CMake package
 registry for the package. See
-\fI\%CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY\fP\&.
+\fBCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY\fP \%<#\:variable:CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY>\&.
 .TP
 .B \fBCMAKE_FIND_ROOT_PATH_MODE\fP
 A string indicating the root path mode in effect as selected by the
@@ -759,16 +760,15 @@ used. Only variables with any paths specified are used.
 .TP
 .B \fBpackage_stack\fP
 An array of objects with paths which come from the stack of paths made
-available by \fI\%find_package()\fP calls.
+available by \fBfind_package()\fP \%<#\:command:find_package> calls.
 .INDENT 7.0
 .TP
 .B \fBpackage_paths\fP
-The paths made available by \fI\%find_package()\fP commands in the call
+The paths made available by \fBfind_package()\fP \%<#\:command:find_package> commands in the call
 stack.
 .UNINDENT
 .UNINDENT
 .UNINDENT
-.SH COPYRIGHT
-2000-2025 Kitware, Inc. and Contributors
-.\" Generated by docutils manpage writer.
-.
+.SH Copyright
+2000-2026 Kitware, Inc. and Contributors
+.\" End of generated man page.

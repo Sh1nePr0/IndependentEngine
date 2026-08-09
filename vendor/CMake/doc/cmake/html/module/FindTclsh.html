@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindTclsh &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindTclsh &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -64,14 +64,24 @@
   <section id="findtclsh">
 <span id="module:FindTclsh"></span><h1>FindTclsh<a class="headerlink" href="#findtclsh" title="Link to this heading">¶</a></h1>
 <p>Finds the Tcl shell command-line executable (<code class="docutils literal notranslate"><span class="pre">tclsh</span></code>), which includes the Tcl
-(Tool Command Language) interpreter.</p>
+(Tool Command Language) interpreter:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Tclsh</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">Tclsh_FOUND</span></code></dt><dd><p>Boolean indicating whether the <code class="docutils literal notranslate"><span class="pre">tclsh</span></code> executable (and the requested
-version, if specified) is found.  For backward compatibility, the
-<code class="docutils literal notranslate"><span class="pre">TCLSH_FOUND</span></code> variable is also set to the same value.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Tclsh_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.3.</span></p>
+</div>
+<p>Boolean indicating whether the (requested version of) <code class="docutils literal notranslate"><span class="pre">tclsh</span></code> executable
+was found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Tclsh_VERSION</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The version of <code class="docutils literal notranslate"><span class="pre">tclsh</span></code> found.</p>
 </dd>
 </dl>
 </section>
@@ -83,10 +93,32 @@ version, if specified) is found.  For backward compatibility, the
 </dd>
 </dl>
 </section>
+<section id="deprecated-variables">
+<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
+<p>The following variables are provided for backward compatibility:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">TCLSH_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">Tclsh_FOUND</span></code>, which has the same value.</p>
+</div>
+<p>Boolean indicating whether the (requested version of) <code class="docutils literal notranslate"><span class="pre">tclsh</span></code> executable
+was found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">TCLSH_VERSION_STRING</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">Tclsh_VERSION</span></code>, which has the same value.</p>
+</div>
+<p>The version of <code class="docutils literal notranslate"><span class="pre">tclsh</span></code> found.</p>
+</dd>
+</dl>
+</section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
-<p>Finding the <code class="docutils literal notranslate"><span class="pre">tclsh</span></code> command-line executable:</p>
+<p>In the following example, this module is used to find the <code class="docutils literal notranslate"><span class="pre">tclsh</span></code>
+command-line executable, which is then executed in a process to evaluate
+TCL code from the script file located in the project source directory:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Tclsh</span><span class="nf">)</span>
+<span class="nf">if(</span><span class="nb">Tclsh_FOUND</span><span class="nf">)</span>
+<span class="w">  </span><span class="nf">execute_process(</span><span class="no">COMMAND</span><span class="w"> </span><span class="o">${</span><span class="nt">TCL_TCLSH</span><span class="o">}</span><span class="w"> </span><span class="nb">example-script.tcl</span><span class="nf">)</span>
+<span class="nf">endif()</span>
 </pre></div>
 </div>
 </section>
@@ -112,6 +144,7 @@ version, if specified) is found.  For backward compatibility, the
 <li><a class="reference internal" href="#">FindTclsh</a><ul>
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
 <li><a class="reference internal" href="#cache-variables">Cache Variables</a></li>
+<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
@@ -167,7 +200,7 @@ version, if specified) is found.  For backward compatibility, the
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -180,8 +213,8 @@ version, if specified) is found.  For backward compatibility, the
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

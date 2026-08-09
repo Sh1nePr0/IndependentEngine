@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>install &mdash; CMake 4.1.2 Documentation</title>
+  <title>install &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -97,7 +97,8 @@ install(<a class="reference internal" href="#script">SCRIPT</a> &lt;file&gt; [..
 install(<a class="reference internal" href="#code">CODE</a> &lt;code&gt; [...])
 install(<a class="reference internal" href="#export">EXPORT</a> &lt;export-name&gt; [...])
 install(<a class="reference internal" href="#package-info">PACKAGE_INFO</a> &lt;package-name&gt; [...])
-install(<a class="reference internal" href="#runtime-dependency-set">RUNTIME_DEPENDENCY_SET</a> &lt;set-name&gt; [...])</pre>
+install(<a class="reference internal" href="#runtime-dependency-set">RUNTIME_DEPENDENCY_SET</a> &lt;set-name&gt; [...])
+install(<a class="reference internal" href="#sbom">SBOM</a> &lt;sbom-name&gt; [...])</pre>
 </section>
 <section id="introduction">
 <h2><a class="toc-backref" href="#id3" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
@@ -131,6 +132,10 @@ signatures that specify them.  The common options are:</p>
 <dt><code class="docutils literal notranslate"><span class="pre">DESTINATION</span> <span class="pre">&lt;dir&gt;</span></code></dt><dd><p>Specify the directory on disk to which a file will be installed.
 <code class="docutils literal notranslate"><span class="pre">&lt;dir&gt;</span></code> should be a relative path.  An absolute path is allowed,
 but not recommended.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4: </span>The <span class="target" id="index-0-diagnostic:CMD_INSTALL_ABSOLUTE_DESTINATION"></span><a class="reference internal" href="../diagnostic/CMD_INSTALL_ABSOLUTE_DESTINATION.html#diagnostic:CMD_INSTALL_ABSOLUTE_DESTINATION" title="CMD_INSTALL_ABSOLUTE_DESTINATION"><code class="xref cmake cmake-diagnostic docutils literal notranslate"><span class="pre">CMD_INSTALL_ABSOLUTE_DESTINATION</span></code></a> diagnostic can be
+enabled to warn or error out when an absolute destination is provided.</p>
+</div>
 <p>When a relative path is given, it is interpreted relative to the value
 of the <span class="target" id="index-0-variable:CMAKE_INSTALL_PREFIX"></span><a class="reference internal" href="../variable/CMAKE_INSTALL_PREFIX.html#variable:CMAKE_INSTALL_PREFIX" title="CMAKE_INSTALL_PREFIX"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code></a> variable.
 The prefix can be relocated at install time using the <code class="docutils literal notranslate"><span class="pre">DESTDIR</span></code>
@@ -258,6 +263,7 @@ see below).</p></li>
 <li><p>on macOS when marked as <code class="docutils literal notranslate"><span class="pre">FRAMEWORK</span></code> (see below).</p></li>
 </ul>
 </li>
+<li><p><em>Module libraries</em></p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">RUNTIME</span></code></dt><dd><p>Target artifacts of this kind include:</p>
@@ -297,7 +303,10 @@ into the appropriate locations inside the framework folder. See
 </div>
 <p>File sets are defined by the <span class="target" id="index-0-command:target_sources"></span><a class="reference internal" href="target_sources.html#command:target_sources" title="target_sources(file_set)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">target_sources(FILE_SET)</span></code></a> command.
 If the file set <code class="docutils literal notranslate"><span class="pre">&lt;set-name&gt;</span></code> exists and is <code class="docutils literal notranslate"><span class="pre">PUBLIC</span></code> or <code class="docutils literal notranslate"><span class="pre">INTERFACE</span></code>,
-any files in the set are installed under the destination (see below).
+any files in the set of type <code class="docutils literal notranslate"><span class="pre">HEADERS</span></code> are installed under
+the destination (see below). Other types do not have any default
+destination, so <code class="docutils literal notranslate"><span class="pre">DESTINATION</span></code> option must be specified for each
+<code class="docutils literal notranslate"><span class="pre">FILE_SET</span></code>.
 The directory structure relative to the file set's base directories is
 preserved. For example, a file added to the file set as
 <code class="docutils literal notranslate"><span class="pre">/blah/include/myproj/here.h</span></code> with a base directory <code class="docutils literal notranslate"><span class="pre">/blah/include</span></code>
@@ -318,12 +327,13 @@ to suppress installing these files (for use in generic code).</p>
 <code class="docutils literal notranslate"><span class="pre">DESTINATION</span></code> is omitted, a default destination will be taken from the
 appropriate variable from <span class="target" id="index-0-module:GNUInstallDirs"></span><a class="reference internal" href="../module/GNUInstallDirs.html#module:GNUInstallDirs" title="GNUInstallDirs"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">GNUInstallDirs</span></code></a>, or set to a built-in
 default value if that variable is not defined.  The same is true for file
-sets, and the public and private headers associated with the installed
-targets through the <span class="target" id="index-2-prop_tgt:PUBLIC_HEADER"></span><a class="reference internal" href="../prop_tgt/PUBLIC_HEADER.html#prop_tgt:PUBLIC_HEADER" title="PUBLIC_HEADER"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">PUBLIC_HEADER</span></code></a> and <span class="target" id="index-1-prop_tgt:PRIVATE_HEADER"></span><a class="reference internal" href="../prop_tgt/PRIVATE_HEADER.html#prop_tgt:PRIVATE_HEADER" title="PRIVATE_HEADER"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">PRIVATE_HEADER</span></code></a>
-target properties. A destination must always be provided for module libraries,
-Apple bundles and frameworks.  A destination can be omitted for interface and
-object libraries, but they are handled differently (see the discussion of this
-topic toward the end of this section).</p>
+sets of type <code class="docutils literal notranslate"><span class="pre">HEADERS</span></code>, and the public and private headers associated with
+the installed targets through the <span class="target" id="index-2-prop_tgt:PUBLIC_HEADER"></span><a class="reference internal" href="../prop_tgt/PUBLIC_HEADER.html#prop_tgt:PUBLIC_HEADER" title="PUBLIC_HEADER"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">PUBLIC_HEADER</span></code></a> and
+<span class="target" id="index-1-prop_tgt:PRIVATE_HEADER"></span><a class="reference internal" href="../prop_tgt/PRIVATE_HEADER.html#prop_tgt:PRIVATE_HEADER" title="PRIVATE_HEADER"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">PRIVATE_HEADER</span></code></a> target properties. A destination must always be
+provided for module libraries, Apple bundles and frameworks.  A destination
+can be omitted for interface and object libraries, but they are handled
+differently (see the discussion of this topic toward the end of this
+section).</p>
 <p>For shared libraries on DLL platforms, if neither <code class="docutils literal notranslate"><span class="pre">RUNTIME</span></code> nor <code class="docutils literal notranslate"><span class="pre">ARCHIVE</span></code>
 destinations are specified, both the <code class="docutils literal notranslate"><span class="pre">RUNTIME</span></code> and <code class="docutils literal notranslate"><span class="pre">ARCHIVE</span></code> components are
 installed to their default destinations. If either a <code class="docutils literal notranslate"><span class="pre">RUNTIME</span></code> or <code class="docutils literal notranslate"><span class="pre">ARCHIVE</span></code>
@@ -555,7 +565,7 @@ subdirectory-specific install rules are run.</p>
 <span class="w">         </span><span class="p">[</span><span class="no">CONFIGURATIONS</span><span class="w"> </span><span class="nv">&lt;config&gt;...</span><span class="p">]</span>
 <span class="w">         </span><span class="p">[</span><span class="no">COMPONENT</span><span class="w"> </span><span class="nv">&lt;component&gt;</span><span class="p">]</span>
 <span class="w">         </span><span class="p">[</span><span class="no">OPTIONAL</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="no">EXCLUDE_FROM_ALL</span><span class="p">]</span>
-<span class="w">        </span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span>
+<span class="w">        </span><span class="p">]...</span>
 <span class="w">        </span><span class="nf">)</span>
 </pre></div>
 </div>
@@ -588,7 +598,7 @@ installed with an <span class="target" id="index-8-command:install"></span><a cl
 headers with a target and they install as part of the target.</p>
 </div>
 <p>Install files or programs:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">install(</span><span class="o">&lt;</span><span class="no">FILES</span><span class="p">|</span><span class="no">PROGRAMS</span><span class="o">&gt;</span><span class="w"> </span><span class="nv">&lt;file&gt;...</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">install(</span><span class="p">&lt;</span><span class="no">FILES</span><span class="p">|</span><span class="no">PROGRAMS</span><span class="p">&gt;</span><span class="w"> </span><span class="nv">&lt;file&gt;...</span>
 <span class="w">        </span><span class="no">TYPE</span><span class="w"> </span><span class="nv">&lt;type&gt;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="no">DESTINATION</span><span class="w"> </span><span class="nv">&lt;dir&gt;</span>
 <span class="w">        </span><span class="p">[</span><span class="no">PERMISSIONS</span><span class="w"> </span><span class="nv">&lt;permission&gt;...</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">CONFIGURATIONS</span><span class="w"> </span><span class="nv">&lt;config&gt;...</span><span class="p">]</span>
@@ -606,7 +616,7 @@ default permissions for the installed file also include <code class="docutils li
 <code class="docutils literal notranslate"><span class="pre">GROUP_EXECUTE</span></code>, and <code class="docutils literal notranslate"><span class="pre">WORLD_EXECUTE</span></code>.  This form is intended to install
 programs that are not targets, such as shell scripts.  Use the <code class="docutils literal notranslate"><span class="pre">TARGETS</span></code>
 form to install targets built within the project.</p>
-<p>The list of <code class="docutils literal notranslate"><span class="pre">files...</span></code> given to <code class="docutils literal notranslate"><span class="pre">FILES</span></code> or <code class="docutils literal notranslate"><span class="pre">PROGRAMS</span></code> may use
+<p>The list of files given to <code class="docutils literal notranslate"><span class="pre">FILES</span></code> or <code class="docutils literal notranslate"><span class="pre">PROGRAMS</span></code> may use
 &quot;generator expressions&quot; with the syntax <code class="docutils literal notranslate"><span class="pre">$&lt;...&gt;</span></code>.  See the
 <span class="target" id="index-1-manual:cmake-generator-expressions(7)"></span><a class="reference internal" href="../manual/cmake-generator-expressions.7.html#manual:cmake-generator-expressions(7)" title="cmake-generator-expressions(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">cmake-generator-expressions(7)</span></code></a> manual for available expressions.
 However, if any item begins in a generator expression it must evaluate
@@ -915,7 +925,7 @@ The match options are:</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">EXCLUDE</span></code></dt><dd><p>Exclude the matched file or directory from installation.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">PERMISSIONS</span> <span class="pre">&lt;permission&gt;...</span></code></dt><dd><p>Ovrerride the permissions setting for the matched file or directory.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">PERMISSIONS</span> <span class="pre">&lt;permission&gt;...</span></code></dt><dd><p>Override the permissions setting for the matched file or directory.</p>
 </dd>
 </dl>
 <p>For example, the code</p>
@@ -942,7 +952,7 @@ file permissions, the scripts will be given specific permissions, and any
 <dd><p>Invoke CMake scripts or code during installation:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">install(</span><span class="p">[[</span><span class="no">SCRIPT</span><span class="w"> </span><span class="nv">&lt;file&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="no">CODE</span><span class="w"> </span><span class="nv">&lt;code&gt;</span><span class="p">]]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">ALL_COMPONENTS</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="no">COMPONENT</span><span class="w"> </span><span class="nv">&lt;component&gt;</span><span class="p">]</span>
-<span class="w">        </span><span class="p">[</span><span class="no">EXCLUDE_FROM_ALL</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+<span class="w">        </span><span class="p">[</span><span class="no">EXCLUDE_FROM_ALL</span><span class="p">]</span><span class="nf">)</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">SCRIPT</span></code> form will invoke the given CMake script files during
@@ -1095,13 +1105,9 @@ executable from the installation tree using the imported target name
 <dt class="sig sig-object cmake" id="package-info">
 <span class="code cmake highlight sig-name descname"><span class="nf"><span class="pre">install(</span></span><span class="no"><span class="pre">PACKAGE_INFO</span></span><span class="w"> </span><span class="nv"><span class="pre">&lt;package-name&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">[...]</span></span><span class="nf"><span class="pre">)</span></span></span><a class="headerlink" href="#package-info" title="Link to this definition">¶</a></dt>
 <dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 3.31.</span></p>
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Experimental. Gated by <code class="docutils literal notranslate"><span class="pre">CMAKE_EXPERIMENTAL_EXPORT_PACKAGE_INFO</span></code>.</p>
-</div>
-<p>Installs a <a class="reference external" href="https://cps-org.github.io/cps/">Common Package Specification</a> file exporting targets for dependent projects:</p>
+<p>Installs a <a class="reference external" href="https://cps-org.github.io/cps/">Common Package Specification</a> (&quot;CPS&quot;) file exporting targets for dependent projects:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">install(</span><span class="no">PACKAGE_INFO</span><span class="w"> </span><span class="nv">&lt;package-name&gt;</span><span class="w"> </span><span class="no">EXPORT</span><span class="w"> </span><span class="nv">&lt;export-name&gt;</span>
 <span class="w">        </span><span class="p">[</span><span class="no">PROJECT</span><span class="w"> </span><span class="nv">&lt;project-name&gt;</span><span class="p">|</span><span class="no">NO_PROJECT_METADATA</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">APPENDIX</span><span class="w"> </span><span class="nv">&lt;appendix-name&gt;</span><span class="p">]</span>
@@ -1112,10 +1118,13 @@ executable from the installation tree using the imported target name
 <span class="w">         </span><span class="p">[</span><span class="no">VERSION_SCHEMA</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="p">]]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">DEFAULT_TARGETS</span><span class="w"> </span><span class="nv">&lt;target&gt;...</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">DEFAULT_CONFIGURATIONS</span><span class="w"> </span><span class="nv">&lt;config&gt;...</span><span class="p">]</span>
-<span class="w">        </span><span class="p">[</span><span class="no">DESCRIPTION</span><span class="w"> </span><span class="nv">&lt;project-description-string&gt;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">LICENSE</span><span class="w"> </span><span class="nv">&lt;license-string&gt;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">DEFAULT_LICENSE</span><span class="w"> </span><span class="nv">&lt;license-string&gt;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">DESCRIPTION</span><span class="w"> </span><span class="nv">&lt;description-string&gt;</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">HOMEPAGE_URL</span><span class="w"> </span><span class="nv">&lt;url-string&gt;</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">PERMISSIONS</span><span class="w"> </span><span class="nv">&lt;permission&gt;...</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">CONFIGURATIONS</span><span class="w"> </span><span class="nv">&lt;config&gt;...</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">CXX_MODULES_DIRECTORY</span><span class="w"> </span><span class="nv">&lt;directory&gt;</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">COMPONENT</span><span class="w"> </span><span class="nv">&lt;component&gt;</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">EXCLUDE_FROM_ALL</span><span class="p">]</span><span class="nf">)</span>
 </pre></div>
@@ -1167,7 +1176,24 @@ configurations exists.  If not specified, CMake will fall back to the
 package's available configurations in an unspecified order.</p>
 </div></blockquote>
 <dl>
-<dt><code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span> <span class="pre">&lt;project-description-string&gt;</span></code></dt><dd><div class="versionadded">
+<dt><code class="docutils literal notranslate"><span class="pre">LICENSE</span> <span class="pre">&lt;license-string&gt;</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>A <a class="reference external" href="https://spdx.dev/">System Package Data Exchange</a> (SPDX) <a class="reference external" href="https://spdx.github.io/spdx-spec/v3.0.1/annexes/spdx-license-expressions/">License Expression</a> that describes the license(s) of the
+project as a whole, including documentation, resources, or other materials
+distributed with the project, in addition to software artifacts.  See the
+SPDX <a class="reference external" href="https://spdx.org/licenses/">License List</a> for a list of commonly used licenses and their
+identifiers.</p>
+<p>The license of individual components is taken from the
+<span class="target" id="index-0-prop_tgt:SPDX_LICENSE"></span><a class="reference internal" href="../prop_tgt/SPDX_LICENSE.html#prop_tgt:SPDX_LICENSE" title="SPDX_LICENSE"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">SPDX_LICENSE</span></code></a> property of their respective targets.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DEFAULT_LICENSE</span> <span class="pre">&lt;license-string&gt;</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>A <a class="reference external" href="https://spdx.dev/">System Package Data Exchange</a> (SPDX) <a class="reference external" href="https://spdx.github.io/spdx-spec/v3.0.1/annexes/spdx-license-expressions/">License Expression</a> that describes the license(s) of any
+components which do not otherwise specify their license(s).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span> <span class="pre">&lt;description-string&gt;</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 4.1.</span></p>
 </div>
 <p>An informational description of the project.  It is recommended that this
@@ -1199,6 +1225,22 @@ none of <code class="docutils literal notranslate"><span class="pre">PROJECT</sp
 combination with <code class="docutils literal notranslate"><span class="pre">APPENDIX</span></code>.  Additionally, it is strongly recommended that
 use of <code class="docutils literal notranslate"><span class="pre">LOWER_CASE_FILE</span></code> should be consistent between the main package and
 any appendices.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because it is intended to be portable across multiple build tools, CPS
+may not support all features that are allowed in CMake-script exports.  In
+particular, support for generator expressions in interface properties is
+limited at this time to configuration-dependent expressions.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the recommended way to generate Common Package Specification package information for a
+project.  For distributors whose users may require CPS package information
+when making changes to the project's build files is not practical, the
+<span class="target" id="index-0-variable:CMAKE_INSTALL_EXPORTS_AS_PACKAGE_INFO"></span><a class="reference internal" href="../variable/CMAKE_INSTALL_EXPORTS_AS_PACKAGE_INFO.html#variable:CMAKE_INSTALL_EXPORTS_AS_PACKAGE_INFO" title="CMAKE_INSTALL_EXPORTS_AS_PACKAGE_INFO"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_INSTALL_EXPORTS_AS_PACKAGE_INFO</span></code></a> variable may be used to
+generate <code class="docutils literal notranslate"><span class="pre">.cps</span></code> files from <span class="target" id="index-12-command:install"></span><a class="reference internal" href="#export" title="install(export)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(EXPORT)</span></code></a> calls.  Refer to
+the variable's documentation for usage and caveats.</p>
+</div>
 </dd></dl>
 
 <dl class="cmake signature">
@@ -1216,7 +1258,7 @@ any appendices.</p>
 <span class="w">         </span><span class="p">[</span><span class="no">COMPONENT</span><span class="w"> </span><span class="nv">&lt;component&gt;</span><span class="p">]</span>
 <span class="w">         </span><span class="p">[</span><span class="no">NAMELINK_COMPONENT</span><span class="w"> </span><span class="nv">&lt;component&gt;</span><span class="p">]</span>
 <span class="w">         </span><span class="p">[</span><span class="no">OPTIONAL</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="no">EXCLUDE_FROM_ALL</span><span class="p">]</span>
-<span class="w">        </span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span>
+<span class="w">        </span><span class="p">]...</span>
 <span class="w">        </span><span class="p">[</span><span class="no">PRE_INCLUDE_REGEXES</span><span class="w"> </span><span class="nv">&lt;regex&gt;...</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">PRE_EXCLUDE_REGEXES</span><span class="w"> </span><span class="nv">&lt;regex&gt;...</span><span class="p">]</span>
 <span class="w">        </span><span class="p">[</span><span class="no">POST_INCLUDE_REGEXES</span><span class="w"> </span><span class="nv">&lt;regex&gt;...</span><span class="p">]</span>
@@ -1228,14 +1270,14 @@ any appendices.</p>
 </pre></div>
 </div>
 <p>Installs a runtime dependency set previously created by one or more
-<span class="target" id="index-12-command:install"></span><a class="reference internal" href="#targets" title="install(targets)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(TARGETS)</span></code></a> or <span class="target" id="index-13-command:install"></span><a class="reference internal" href="#imported-runtime-artifacts" title="install(imported_runtime_artifacts)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(IMPORTED_RUNTIME_ARTIFACTS)</span></code></a>
+<span class="target" id="index-13-command:install"></span><a class="reference internal" href="#targets" title="install(targets)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(TARGETS)</span></code></a> or <span class="target" id="index-14-command:install"></span><a class="reference internal" href="#imported-runtime-artifacts" title="install(imported_runtime_artifacts)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(IMPORTED_RUNTIME_ARTIFACTS)</span></code></a>
 commands.  The dependencies of targets belonging to a runtime dependency set
 are installed in the <code class="docutils literal notranslate"><span class="pre">RUNTIME</span></code> destination and component on DLL platforms,
 and in the <code class="docutils literal notranslate"><span class="pre">LIBRARY</span></code> destination and component on non-DLL platforms.
 macOS frameworks are installed in the <code class="docutils literal notranslate"><span class="pre">FRAMEWORK</span></code> destination and component.
 Targets built within the build tree will never be installed as runtime
 dependencies, nor will their own dependencies, unless the targets themselves
-are installed with <span class="target" id="index-14-command:install"></span><a class="reference internal" href="#targets" title="install(targets)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(TARGETS)</span></code></a>.</p>
+are installed with <span class="target" id="index-15-command:install"></span><a class="reference internal" href="#targets" title="install(targets)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(TARGETS)</span></code></a>.</p>
 <p>The generated install script calls <span class="target" id="index-0-command:file"></span><a class="reference internal" href="file.html#get-runtime-dependencies" title="file(get_runtime_dependencies)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">file(GET_RUNTIME_DEPENDENCIES)</span></code></a>
 on the build-tree files to calculate the runtime dependencies. The build-tree
 executable files are passed as the <code class="docutils literal notranslate"><span class="pre">EXECUTABLES</span></code> argument, the build-tree
@@ -1274,6 +1316,90 @@ those generated by <span class="target" id="index-1-command:install_targets"></s
 <span class="target" id="index-1-command:install_files"></span><a class="reference internal" href="install_files.html#command:install_files" title="install_files"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install_files()</span></code></a>, and <span class="target" id="index-1-command:install_programs"></span><a class="reference internal" href="install_programs.html#command:install_programs" title="install_programs"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install_programs()</span></code></a> commands
 is not defined.</p>
 </div>
+<dl class="cmake signature">
+<dt class="sig sig-object cmake" id="sbom">
+<span class="code cmake highlight sig-name descname"><span class="nf"><span class="pre">install(</span></span><span class="no"><span class="pre">SBOM</span></span><span class="w"> </span><span class="nv"><span class="pre">&lt;sbom-name&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">[...]</span></span><span class="nf"><span class="pre">)</span></span></span><a class="headerlink" href="#sbom" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Experimental. Gated by <code class="docutils literal notranslate"><span class="pre">CMAKE_EXPERIMENTAL_GENERATE_SBOM</span></code>.</p>
+</div>
+<p>Installs a Software Bill of Material or &quot;SBOM&quot; which describes the project:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">install(</span><span class="no">SBOM</span><span class="w"> </span><span class="nv">&lt;sbom-name&gt;</span><span class="w"> </span><span class="no">EXPORTS</span><span class="w"> </span><span class="nv">&lt;export-names&gt;...</span>
+<span class="w">        </span><span class="p">[</span><span class="no">PROJECT</span><span class="w"> </span><span class="nv">&lt;project-name&gt;</span><span class="p">|</span><span class="no">NO_PROJECT_METADATA</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">DESTINATION</span><span class="w"> </span><span class="nv">&lt;dir&gt;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">VERSION</span><span class="w"> </span><span class="nv">&lt;major&gt;</span><span class="p">[.</span><span class="nv">&lt;minor&gt;</span><span class="p">[.</span><span class="nv">&lt;patch&gt;</span><span class="p">[.</span><span class="nv">&lt;tweak&gt;</span><span class="p">]]]]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">LICENSE</span><span class="w"> </span><span class="nv">&lt;license-string&gt;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">DESCRIPTION</span><span class="w"> </span><span class="nv">&lt;description-string&gt;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">HOMEPAGE_URL</span><span class="w"> </span><span class="nv">&lt;url-string&gt;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">PACKAGE_URL</span><span class="w"> </span><span class="nv">&lt;url-string&gt;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">[</span><span class="no">FORMAT</span><span class="w"> </span><span class="nv">&lt;string&gt;</span><span class="p">]</span><span class="nf">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">SBOM</span></code> form generates a Software Bill of Material or &quot;SBOM&quot; file for a given project
+and installs it as part of the project installation.  A Software Bill of Material is a
+machine-readable description of the project's targets, linked libraries,
+and related metadata, such as versions and license information.  CMake
+currently generates SBOM files using the <a class="reference external" href="https://spdx.dev/">System Package Data Exchange</a> 3.0 specification in
+its JSON-LD representation, as selected by the <code class="docutils literal notranslate"><span class="pre">FORMAT</span></code> option, but
+the interface is designed to allow additional SBOM formats or schema
+versions to be supported in future CMake releases.</p>
+<p>Target installations are associated with each export <code class="docutils literal notranslate"><span class="pre">&lt;export-names&gt;</span></code>
+in the <code class="docutils literal notranslate"><span class="pre">EXPORTS</span></code> list using the <code class="docutils literal notranslate"><span class="pre">EXPORTS</span></code> option of the
+<span class="target" id="index-16-command:install"></span><a class="reference internal" href="#targets" title="install(targets)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(TARGETS)</span></code></a> signature documented above.  A single SBOM may
+cover multiple export sets; targets from all listed exports are aggregated
+into one document.  If <code class="docutils literal notranslate"><span class="pre">DESTINATION</span></code> is not specified, a platform-specific
+default is used.</p>
+<p>Several options may be used to specify package metadata:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">VERSION</span> <span class="pre">&lt;version&gt;</span></code></dt><dd><p>The package version, specified as a series of non-negative  integer components,
+i.e. &lt;major&gt;[.&lt;minor&gt;[.&lt;patch&gt;[.&lt;tweak&gt;]]].  See <span class="target" id="index-0-command:project"></span><a class="reference internal" href="project.html#command:project" title="project(version)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">project(VERSION)</span></code></a> for
+more information.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FORMAT</span> <span class="pre">&lt;string&gt;</span></code></dt><dd><p>The format in which the SBOM should be exported, which must be an expression of
+the form <code class="docutils literal notranslate"><span class="pre">&lt;format&gt;[-&lt;version&gt;][+&lt;representation&gt;]</span></code>.  CMake currently supports
+the JSON-LD serialization of <a class="reference external" href="https://spdx.dev/">System Package Data Exchange</a> v3.0.1 (<code class="docutils literal notranslate"><span class="pre">spdx</span></code> or <code class="docutils literal notranslate"><span class="pre">spdx-3.0.1+json</span></code>),
+which is also the default if <code class="docutils literal notranslate"><span class="pre">FORMAT</span></code> is not specified.</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">HOMEPAGE_URL</span> <span class="pre">&lt;url-string&gt;</span></code></p>
+<blockquote>
+<div><p>An informational canonical home URL for the project.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PACKAGE_URL</span> <span class="pre">&lt;url-string&gt;</span></code></p>
+<blockquote>
+<div><p>An informational canonical package URL for the project.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">LICENSE</span> <span class="pre">&lt;license-string&gt;</span></code></p>
+<blockquote>
+<div><p>A <a class="reference external" href="https://spdx.dev/">System Package Data Exchange</a> (SPDX) <a class="reference external" href="https://spdx.github.io/spdx-spec/v3.0.1/annexes/spdx-license-expressions/">License Expression</a> that describes the license(s) of the
+project as a whole, including documentation, resources, or other materials
+distributed with the project, in addition to software artifacts.  See the
+SPDX <a class="reference external" href="https://spdx.org/licenses/">License List</a> for a list of commonly used licenses and their
+identifiers.</p>
+<p>The license of individual components is taken from the
+<span class="target" id="index-1-prop_tgt:SPDX_LICENSE"></span><a class="reference internal" href="../prop_tgt/SPDX_LICENSE.html#prop_tgt:SPDX_LICENSE" title="SPDX_LICENSE"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">SPDX_LICENSE</span></code></a> property of their respective targets.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span> <span class="pre">&lt;description-string&gt;</span></code></p>
+<blockquote>
+<div><p>An informational description of the project.  It is recommended that this
+description is a relatively short string, usually no more than a few words.</p>
+</div></blockquote>
+<p>By default, if the specified <code class="docutils literal notranslate"><span class="pre">&lt;sbom-name&gt;</span></code> matches the current CMake
+<span class="target" id="index-1-variable:PROJECT_NAME"></span><a class="reference internal" href="../variable/PROJECT_NAME.html#variable:PROJECT_NAME" title="PROJECT_NAME"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">PROJECT_NAME</span></code></a>, sbom metadata will be inherited from the
+project.  The <code class="docutils literal notranslate"><span class="pre">PROJECT</span> <span class="pre">&lt;project-name&gt;</span></code> option may be used to specify a
+different project from which to inherit metadata.  If <code class="docutils literal notranslate"><span class="pre">NO_PROJECT_METADATA</span></code>
+is specified, automatic inheritance of sbom metadata will be disabled.
+In any case, any metadata values specified in the <code class="docutils literal notranslate"><span class="pre">install</span></code> command will
+take precedence.</p>
+<p>Note that an SBOM file cannot be generated for targets with generator
+expressions contained in their <span class="target" id="index-0-prop_tgt:LINK_LIBRARIES"></span><a class="reference internal" href="../prop_tgt/LINK_LIBRARIES.html#prop_tgt:LINK_LIBRARIES" title="LINK_LIBRARIES"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">LINK_LIBRARIES</span></code></a> or
+<span class="target" id="index-0-prop_tgt:INTERFACE_LINK_LIBRARIES"></span><a class="reference internal" href="../prop_tgt/INTERFACE_LINK_LIBRARIES.html#prop_tgt:INTERFACE_LINK_LIBRARIES" title="INTERFACE_LINK_LIBRARIES"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">INTERFACE_LINK_LIBRARIES</span></code></a> properties, unless the generator
+expressions are guarded by <span class="target" id="index-0-genex:LINK_ONLY"></span><a class="reference internal" href="../manual/cmake-generator-expressions.7.html#genex:LINK_ONLY" title="LINK_ONLY"><code class="xref cmake cmake-genex docutils literal notranslate"><span class="pre">LINK_ONLY</span></code></a>.</p>
+</dd></dl>
+
 </section>
 <section id="examples">
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
@@ -1288,7 +1414,7 @@ is not defined.</p>
 <span class="nf">set_property(</span><span class="no">TARGET</span><span class="w"> </span><span class="nb">mySharedLib</span><span class="w"> </span><span class="no">PROPERTY</span><span class="w"> </span><span class="no">SOVERSION</span><span class="w"> </span><span class="m">1</span><span class="nf">)</span>
 </pre></div>
 </div>
-<p>We may call <span class="target" id="index-15-command:install"></span><a class="reference internal" href="#targets" title="install(targets)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(TARGETS)</span></code></a> with <a class="reference internal" href="#artifact-kind">&lt;artifact-kind&gt;</a> arguments
+<p>We may call <span class="target" id="index-17-command:install"></span><a class="reference internal" href="#targets" title="install(targets)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(TARGETS)</span></code></a> with <a class="reference internal" href="#artifact-kind">&lt;artifact-kind&gt;</a> arguments
 to specify different options for each kind of artifact:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">install(</span><span class="no">TARGETS</span>
 <span class="w">          </span><span class="nb">myExe</span>
@@ -1337,7 +1463,7 @@ the default destination for a file set of type HEADERS, as part of the
 </section>
 <section id="example-install-targets-to-per-config-destinations">
 <h3><a class="toc-backref" href="#id8" role="doc-backlink">Example: Install Targets to Per-Config Destinations</a><a class="headerlink" href="#example-install-targets-to-per-config-destinations" title="Link to this heading">¶</a></h3>
-<p>Each <span class="target" id="index-16-command:install"></span><a class="reference internal" href="#targets" title="install(targets)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(TARGETS)</span></code></a> call installs a given target
+<p>Each <span class="target" id="index-18-command:install"></span><a class="reference internal" href="#targets" title="install(targets)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">install(TARGETS)</span></code></a> call installs a given target
 <a class="reference internal" href="../manual/cmake-buildsystem.7.html#output-artifacts"><span class="std std-ref">output artifact</span></a> to at most one <code class="docutils literal notranslate"><span class="pre">DESTINATION</span></code>,
 but the install rule itself may be filtered by the <code class="docutils literal notranslate"><span class="pre">CONFIGURATIONS</span></code> option.
 In order to install to a different destination for each configuration, one
@@ -1462,7 +1588,7 @@ details.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -1475,8 +1601,8 @@ details.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

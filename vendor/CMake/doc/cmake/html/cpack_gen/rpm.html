@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CPack RPM Generator &mdash; CMake 4.1.2 Documentation</title>
+  <title>CPack RPM Generator &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -417,13 +417,13 @@ Using this, one can specify a specific compression type to be used.</p>
 <p>Possible values are:</p>
 <blockquote>
 <div><dl>
-<dt><code class="docutils literal notranslate"><span class="pre">lzma</span></code></dt><dd><p>Lempel–Ziv–Markov chain algorithm</p>
+<dt><code class="docutils literal notranslate"><span class="pre">lzma</span></code></dt><dd><p>Lempel-Ziv-Markov chain algorithm</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">xz</span></code></dt><dd><p>XZ Utils compression</p>
+<dt><code class="docutils literal notranslate"><span class="pre">xz</span></code></dt><dd><p>XZ Utils LZMA2 (Lempel-Ziv-Markov chain algorithm, version 2) compression</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">bzip2</span></code></dt><dd><p>bzip2 Burrows–Wheeler algorithm</p>
+<dt><code class="docutils literal notranslate"><span class="pre">bzip2</span></code></dt><dd><p>bzip2 Burrows-Wheeler algorithm</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">gzip</span></code></dt><dd><p>GNU Gzip compression</p>
+<dt><code class="docutils literal notranslate"><span class="pre">gzip</span></code></dt><dd><p>GNU Gzip Deflate compression</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">zstd</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.31.</span></p>
@@ -825,6 +825,10 @@ example of its use is to prevent stripping of executables (but note that
 this may also disable other default post install processing):</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">set(</span><span class="no">CPACK_RPM_SPEC_MORE_DEFINE</span><span class="w"> </span><span class="s">&quot;%define __spec_install_post /bin/true&quot;</span><span class="nf">)</span>
 </pre></div>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4: </span>If the variable is a list, its string elements will be concatenated using
+<code class="docutils literal notranslate"><span class="pre">\n</span></code> before being substituted into the spec template.</p>
 </div>
 </dd></dl>
 
@@ -1705,7 +1709,7 @@ expression that matches all of the directories or files, for example:</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -1718,8 +1722,8 @@ expression that matches all of the directories or files, for example:</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

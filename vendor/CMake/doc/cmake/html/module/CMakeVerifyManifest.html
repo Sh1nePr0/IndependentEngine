@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CMakeVerifyManifest &mdash; CMake 4.1.2 Documentation</title>
+  <title>CMakeVerifyManifest &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -63,26 +63,46 @@
             
   <section id="cmakeverifymanifest">
 <span id="module:CMakeVerifyManifest"></span><h1>CMakeVerifyManifest<a class="headerlink" href="#cmakeverifymanifest" title="Link to this heading">¶</a></h1>
-<p>Use this script to verify that embedded manifests and side-by-side
-manifests for a project match.</p>
-<p>This script first recursively globs <code class="docutils literal notranslate"><span class="pre">*.manifest</span></code> files from
-the current directory and creates a list of allowed version.
-Additional versions can be passed by setting <code class="docutils literal notranslate"><span class="pre">allow_versions</span></code>
-from the invocation command.
-Next, the script globs <code class="docutils literal notranslate"><span class="pre">*.exe</span></code> and <code class="docutils literal notranslate"><span class="pre">*.dll</span></code> files.  Each
-<code class="docutils literal notranslate"><span class="pre">.exe</span></code> and <code class="docutils literal notranslate"><span class="pre">.dll</span></code> file is scanned for embedded manifests and
-the versions of CRT are checked to be in the list of allowed
-version.</p>
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h2>
-<p>To run this script, navigate to a directory and run the script
-with <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">-P</span></code>.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cmake -Dallow_versions=8.0.50608.0 -PCMakeVerifyManifest.cmake
+<p>This module is intended to be used in command-line mode using the
+<a class="reference internal" href="../manual/cmake.1.html#script-processing-mode"><span class="std std-ref">cmake -P</span></a> to verify that embedded manifests
+and side-by-side manifests for a project match.</p>
+<p>Load this module in a CMake script with:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">CMakeVerifyManifest</span><span class="nf">)</span>
 </pre></div>
 </div>
-<p>This call allows an embedded manifest of 8.0.50608.0 to be used
-in a project, even if that version was not found in a
-<code class="docutils literal notranslate"><span class="pre">.manifest</span></code> file.</p>
+<p>This module first recursively globs <code class="docutils literal notranslate"><span class="pre">*.manifest</span></code> files from
+the current source directory and creates a list of allowed versions.</p>
+<p>Next, the script globs all <code class="docutils literal notranslate"><span class="pre">*.exe</span></code> and <code class="docutils literal notranslate"><span class="pre">*.dll</span></code> files.  Each
+<code class="docutils literal notranslate"><span class="pre">.exe</span></code> and <code class="docutils literal notranslate"><span class="pre">.dll</span></code> file is scanned for embedded manifests and
+the versions of CRT are checked to be in the list of allowed
+versions.</p>
+<section id="input-variables">
+<h2>Input Variables<a class="headerlink" href="#input-variables" title="Link to this heading">¶</a></h2>
+<p>This module accepts the following variables:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">allow_versions</span></code></dt><dd><p>Additional versions can be passed by setting the <code class="docutils literal notranslate"><span class="pre">allow_versions</span></code>
+variable from the invocation command.  This enables using additional
+embedded manifest versions in a project, even if that version was not
+found in a <code class="docutils literal notranslate"><span class="pre">.manifest</span></code> file.</p>
+</dd>
+</dl>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
+<p>To use this module in the project, create a local command-line script (for
+example, in the project's subdirectory <code class="docutils literal notranslate"><span class="pre">cmake/scripts</span></code>) and include the
+module:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">cmake/scripts/verify-manifest.cmake</span></code></span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">CMakeVerifyManifest</span><span class="nf">)</span>
+</pre></div>
+</div>
+</div>
+<p>Then run the local script in command-line and, for example, specify
+additional embedded manifest of <code class="docutils literal notranslate"><span class="pre">8.0.50608.0</span></code> to be used in a project:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cmake<span class="w"> </span>-Dallow_versions<span class="o">=</span><span class="m">8</span>.0.50608.0<span class="w"> </span>-Pcmake/scripts/verify-manifest.cmake
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -97,7 +117,8 @@ in a project, even if that version was not found in a
     <h3>Table of Contents</h3>
     <ul>
 <li><a class="reference internal" href="#">CMakeVerifyManifest</a><ul>
-<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#input-variables">Input Variables</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -151,7 +172,7 @@ in a project, even if that version was not found in a
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -164,8 +185,8 @@ in a project, even if that version was not found in a
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

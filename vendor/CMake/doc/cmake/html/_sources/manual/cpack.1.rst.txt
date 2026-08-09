@@ -26,11 +26,11 @@ All supported generators are specified in the :manual:`cpack-generators
 <cpack-generators(7)>` manual.  The command ``cpack --help`` prints a
 list of generators supported for the target platform.  Which of them are
 to be used can be selected through the :variable:`CPACK_GENERATOR` variable
-or through the command-line option :option:`-G <cpack -G>`.
+or through the command-line option :cpack-option:`-G`.
 
 The :program:`cpack` program is steered by a configuration file written in the
 :manual:`CMake language <cmake-language(7)>`. Unless chosen differently
-through the command-line option :option:`--config <cpack --config>`, the
+through the command-line option :cpack-option:`--config`, the
 file ``CPackConfig.cmake`` in the current directory is used.
 
 In the standard CMake workflow, the file ``CPackConfig.cmake`` is generated
@@ -120,13 +120,37 @@ Options
 
   Override/define :variable:`CPACK_PACKAGE_VENDOR`.
 
-.. option:: --preset <presetName>
+.. option:: --preset <preset>, --preset=<preset>
 
-  Use a preset from :manual:`cmake-presets(7)`.
+  Use a package :manual:`preset <cmake-presets(7)>` to specify package
+  options. The project binary directory is inferred from the
+  :preset:`packagePresets.configurePreset` key.
+
+  .. versionchanged:: 4.4
+    If :cpack-option:`--presets-file` is specified, neither of
+    ``CMakePresets.json`` nor ``CMakeUserPresets.json`` are required to be
+    present.  Otherwise, they are required to be present in the top level
+    source directory.  In prior versions, this was strictly required.
+
+.. option:: --presets-file <file>, --presets-file=<file>
+
+  .. versionadded:: 4.4
+
+  Reads :manual:`presets <cmake-presets(7)>` from the given ``<file>``. The
+  specified path may be absolute or relative to the current working directory.
+  If ``--presets-file`` is given, presets defined in ``CMakePresets.json`` and
+  ``CMakeUserPresets.json`` will be ignored.
 
 .. option:: --list-presets
 
-  List presets from :manual:`cmake-presets(7)`.
+  Lists the available package presets.
+
+  .. versionchanged:: 4.4
+    If :cpack-option:`--presets-file` is specified, neither of
+    ``CMakePresets.json`` nor ``CMakeUserPresets.json`` are required to be
+    present, and only presets defined in the given ``<file>`` will be listed.
+    Otherwise, they are required to be present in the top level source
+    directory.  In prior versions, this was strictly required.
 
 .. include:: include/OPTIONS_HELP.rst
 

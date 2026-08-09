@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindProtobuf &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindProtobuf &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -128,8 +128,11 @@ requirements, available if Protobuf and <code class="docutils literal notranslat
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
 <dl>
-<dt><code class="docutils literal notranslate"><span class="pre">Protobuf_FOUND</span></code></dt><dd><p>Boolean indicating whether (the requested version of) Protobuf library is
-found.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">Protobuf_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.3.</span></p>
+</div>
+<p>Boolean indicating whether the (requested version of) Protobuf library
+was found.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">Protobuf_VERSION</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.6.</span></p>
@@ -525,7 +528,7 @@ source files added to a target into C++ source files:</p>
 <span class="nf">protobuf_generate(</span>
 <span class="w">  </span><span class="no">TARGET</span><span class="w"> </span><span class="nb">ProtoExample</span>
 <span class="w">  </span><span class="no">LANGUAGE</span><span class="w"> </span><span class="nb">grpc</span>
-<span class="w">  </span><span class="no">PLUGIN</span><span class="w"> </span><span class="nb">protoc-gen-grpc</span><span class="p">=</span><span class="o">$&lt;</span><span class="no">TARGET_FILE</span><span class="o">:</span><span class="nb">gRPC</span><span class="o">::</span><span class="nb">grpc_cpp_plugin</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="no">PLUGIN</span><span class="w"> </span><span class="nb">protoc-gen-grpc</span><span class="p">=</span><span class="o">$&lt;</span><span class="no">TARGET_FILE</span><span class="o">:</span><span class="nb">gRPC</span><span class="o">::</span><span class="nb">grpc_cpp_plugin</span><span class="p">&gt;</span>
 <span class="w">  </span><span class="no">PLUGIN_OPTIONS</span><span class="w"> </span><span class="nb">generate_mock_code</span><span class="p">=</span><span class="nb">true</span>
 <span class="w">  </span><span class="no">GENERATE_EXTENSIONS</span><span class="w"> </span><span class="p">.</span><span class="nb">grpc.pb.h</span><span class="w"> </span><span class="p">.</span><span class="nb">grpc.pb.cc</span>
 <span class="nf">)</span>
@@ -696,7 +699,7 @@ using a deprecated command and its modern replacement:</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -709,8 +712,8 @@ using a deprecated command and its modern replacement:</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

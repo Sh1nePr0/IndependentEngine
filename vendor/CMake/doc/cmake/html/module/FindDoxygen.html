@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindDoxygen &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindDoxygen &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -66,7 +66,7 @@
 <p>Finds <a class="reference external" href="https://www.doxygen.nl">Doxygen</a>, a source code documentation
 generator, along with some optional supporting tools, and provides a command
 for integrating Doxygen-based documentation into CMake projects:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Doxygen</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="w"> </span><span class="p">[</span><span class="no">COMPONENTS</span><span class="w"> </span><span class="nv">&lt;components&gt;...</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Doxygen</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="no">COMPONENTS</span><span class="w"> </span><span class="nv">&lt;components&gt;...</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
 </pre></div>
 </div>
 <section id="components">
@@ -142,13 +142,17 @@ and are preferred over the older, now-deprecated variables like
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">Doxygen_FOUND</span></code></dt><dd><p>Boolean indicating whether (the requested version of) <code class="docutils literal notranslate"><span class="pre">doxygen</span></code> executable
-and all requested required components are found.  For backward compatibility,
-the <code class="docutils literal notranslate"><span class="pre">DOXYGEN_FOUND</span></code> variable is also set, except it has boolean value of
-<code class="docutils literal notranslate"><span class="pre">YES</span></code> or <code class="docutils literal notranslate"><span class="pre">NO</span></code>.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Doxygen_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.3.</span></p>
+</div>
+<p>Boolean indicating whether the (requested version of) <code class="docutils literal notranslate"><span class="pre">doxygen</span></code> executable
+and all requested required components were found.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">DOXYGEN_VERSION</span></code></dt><dd><p>The version of Doxygen found (as reported by <code class="docutils literal notranslate"><span class="pre">doxygen</span> <span class="pre">--version</span></code>).</p>
+<dt><code class="docutils literal notranslate"><span class="pre">Doxygen_VERSION</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The version of Doxygen found (as reported by <code class="docutils literal notranslate"><span class="pre">doxygen</span> <span class="pre">--version</span></code>).</p>
 </dd>
 </dl>
 </section>
@@ -515,6 +519,13 @@ ALIASES       = somealias=&quot;@some_command param&quot; anotherAlias=@foobar
 <p>For compatibility with previous versions of CMake, the following variables
 are also defined but they are deprecated and should no longer be used:</p>
 <dl>
+<dt><code class="docutils literal notranslate"><span class="pre">DOXYGEN_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">Doxygen_FOUND</span></code>.</p>
+</div>
+<p>Boolean indicating whether the (requested version of) <code class="docutils literal notranslate"><span class="pre">doxygen</span></code> executable
+and all requested required components were found.  It has a boolean value
+of <code class="docutils literal notranslate"><span class="pre">YES</span></code> or <code class="docutils literal notranslate"><span class="pre">NO</span></code>.</p>
+</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">DOXYGEN_EXECUTABLE</span></code></dt><dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 3.9: </span>Use <code class="docutils literal notranslate"><span class="pre">Doxygen::doxygen</span></code> imported target instead of referring to the
 <code class="docutils literal notranslate"><span class="pre">doxygen</span></code> executable directly.</p>
@@ -522,9 +533,9 @@ are also defined but they are deprecated and should no longer be used:</p>
 <p>Cache variable containing the path to the <code class="docutils literal notranslate"><span class="pre">doxygen</span></code> command.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">DOXYGEN_DOT_FOUND</span></code></dt><dd><div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 3.9.</span></p>
+<p><span class="versionmodified deprecated">Deprecated since version 3.9: </span>Use <code class="docutils literal notranslate"><span class="pre">Doxygen_dot_FOUND</span></code>.</p>
 </div>
-<p>Boolean result variable indicating whether <code class="docutils literal notranslate"><span class="pre">dot</span></code> executable is found.</p>
+<p>Boolean result variable indicating whether <code class="docutils literal notranslate"><span class="pre">dot</span></code> executable was found.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">DOXYGEN_DOT_EXECUTABLE</span></code></dt><dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 3.9: </span>Use <code class="docutils literal notranslate"><span class="pre">Doxygen::dot</span></code> imported target instead of referring to the <code class="docutils literal notranslate"><span class="pre">dot</span></code>
@@ -551,6 +562,11 @@ the path for a Doxygen configuration file.</p>
 <code class="docutils literal notranslate"><span class="pre">find_package(Doxygen</span> <span class="pre">COMPONENTS</span> <span class="pre">...)</span></code>.  In backward-compatibility mode
 (i.e. without specifying components) it prevents this find module from
 searching for Graphviz's <code class="docutils literal notranslate"><span class="pre">dot</span></code> utility.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DOXYGEN_VERSION</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Superseded by the <code class="docutils literal notranslate"><span class="pre">Doxygen_VERSION</span></code>.</p>
+</div>
+<p>The version of Doxygen found.</p>
 </dd>
 </dl>
 </section>
@@ -667,7 +683,7 @@ main page, and disables warnings about undocumented code:</p>
 <h3>Example: Custom Configuration File<a class="headerlink" href="#example-custom-configuration-file" title="Link to this heading">¶</a></h3>
 <p>In the following example, a custom <code class="docutils literal notranslate"><span class="pre">Doxyfile</span></code> configuration file is created
 in the current binary directory (<span class="target" id="index-2-variable:CMAKE_CURRENT_BINARY_DIR"></span><a class="reference internal" href="../variable/CMAKE_CURRENT_BINARY_DIR.html#variable:CMAKE_CURRENT_BINARY_DIR" title="CMAKE_CURRENT_BINARY_DIR"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_CURRENT_BINARY_DIR</span></code></a>) prior
-to calling the <code class="docutils literal notranslate"><span class="pre">doxygen_add_doxs()</span></code>.  This allows project-specific
+to calling the <code class="docutils literal notranslate"><span class="pre">doxygen_add_docs()</span></code>.  This allows project-specific
 configuration tags to be customized as needed:</p>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></span><a class="headerlink" href="#id10" title="Link to this code">¶</a></div>
@@ -676,7 +692,7 @@ configuration tags to be customized as needed:</p>
 <span class="nf">if(</span><span class="nb">Doxygen_FOUND</span><span class="nf">)</span>
 <span class="w">  </span><span class="nf">configure_file(</span><span class="nb">Doxyfile.in</span><span class="w"> </span><span class="nb">Doxyfile</span><span class="nf">)</span>
 
-<span class="w">  </span><span class="nf">doxygen_add_doxs(</span>
+<span class="w">  </span><span class="nf">doxygen_add_docs(</span>
 <span class="w">    </span><span class="nb">example_docs</span>
 <span class="w">    </span><span class="nb">foo.c</span><span class="w"> </span><span class="nb">bar.c</span>
 <span class="w">    </span><span class="no">ALL</span>
@@ -776,7 +792,7 @@ OUTPUT_DIRECTORY       = &quot;@CMAKE_CURRENT_BINARY_DIR@&quot;
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -789,8 +805,8 @@ OUTPUT_DIRECTORY       = &quot;@CMAKE_CURRENT_BINARY_DIR@&quot;
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

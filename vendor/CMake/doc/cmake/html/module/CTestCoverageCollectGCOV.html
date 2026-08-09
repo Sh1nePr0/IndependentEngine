@@ -5,19 +5,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CTestCoverageCollectGCOV &mdash; CMake 4.1.2 Documentation</title>
+  <title>CTestCoverageCollectGCOV &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="CTestScriptMode" href="CTestScriptMode.html" />
+    <link rel="next" title="CTestUseLaunchers" href="CTestUseLaunchers.html" />
     <link rel="prev" title="CTest" href="CTest.html" />
  
 
@@ -34,7 +34,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="CTestScriptMode.html" title="CTestScriptMode"
+          <a href="CTestUseLaunchers.html" title="CTestUseLaunchers"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="CTest.html" title="CTest"
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -116,13 +116,59 @@ to the top-level build directory.</p>
 </div>
 <p>Specify a compression algorithm for the
 <code class="docutils literal notranslate"><span class="pre">TARBALL</span></code> data file.  Using this option reduces the size of the data file
-before it is submitted to CDash.  <code class="docutils literal notranslate"><span class="pre">&lt;compression&gt;</span></code> must be one of <code class="docutils literal notranslate"><span class="pre">GZIP</span></code>,
-<code class="docutils literal notranslate"><span class="pre">BZIP2</span></code>, <code class="docutils literal notranslate"><span class="pre">XZ</span></code>, <code class="docutils literal notranslate"><span class="pre">ZSTD</span></code>, <code class="docutils literal notranslate"><span class="pre">FROM_EXT</span></code>, or an expression that CMake
-evaluates as <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.  The default value is <code class="docutils literal notranslate"><span class="pre">BZIP2</span></code>.</p>
+before it is submitted to CDash.
+<code class="docutils literal notranslate"><span class="pre">&lt;compression&gt;</span></code> should be one of the following:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">GZIP</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BZIP2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LZMA</span></code></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LZMA2</span></code></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>This is an alias for <code class="docutils literal notranslate"><span class="pre">XZ</span></code>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">XZ</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ZSTD</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FROM_EXT</span></code></p></li>
+<li><p>An expression that CMake evaluates as <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></p></li>
+</ul>
+<p>The default value is <code class="docutils literal notranslate"><span class="pre">BZIP2</span></code>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">FROM_EXT</span></code> is specified, the resulting file will be compressed based on
 the file extension of the <code class="docutils literal notranslate"><span class="pre">&lt;tar-file&gt;</span></code> (i.e. <code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code> will use <code class="docutils literal notranslate"><span class="pre">GZIP</span></code>
-compression). File extensions that will produce compressed output include
-<code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code>, <code class="docutils literal notranslate"><span class="pre">.tgz</span></code>, <code class="docutils literal notranslate"><span class="pre">.tar.bzip2</span></code>, <code class="docutils literal notranslate"><span class="pre">.tbz</span></code>, <code class="docutils literal notranslate"><span class="pre">.tar.xz</span></code>, and <code class="docutils literal notranslate"><span class="pre">.txz</span></code>.</p>
+compression). File extensions that will produce compressed output include:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.tar.gz</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.tgz</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.tar.bzip2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.tbz</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.tar.xz</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.txz</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.tar.lzma</span></code></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.tlzma</span></code></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.tar.zst</span></code></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.tzst</span></code></p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+</li>
+</ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">SOURCE</span> <span class="pre">&lt;source-dir&gt;</span></code></dt><dd><p>Specify the top-level source directory for the build.
 Default is the value of <span class="target" id="index-0-variable:CTEST_SOURCE_DIRECTORY"></span><a class="reference internal" href="../variable/CTEST_SOURCE_DIRECTORY.html#variable:CTEST_SOURCE_DIRECTORY" title="CTEST_SOURCE_DIRECTORY"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CTEST_SOURCE_DIRECTORY</span></code></a>.</p>
@@ -202,8 +248,8 @@ printed out by this command.</p>
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="CTestScriptMode.html"
-                          title="next chapter">CTestScriptMode</a></p>
+    <p class="topless"><a href="CTestUseLaunchers.html"
+                          title="next chapter">CTestUseLaunchers</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -233,7 +279,7 @@ printed out by this command.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="CTestScriptMode.html" title="CTestScriptMode"
+          <a href="CTestUseLaunchers.html" title="CTestUseLaunchers"
              >next</a> |</li>
         <li class="right" >
           <a href="CTest.html" title="CTest"
@@ -243,7 +289,7 @@ printed out by this command.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -256,8 +302,8 @@ printed out by this command.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

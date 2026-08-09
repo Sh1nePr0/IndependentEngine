@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindWish &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindWish &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -63,15 +63,29 @@
             
   <section id="findwish">
 <span id="module:FindWish"></span><h1>FindWish<a class="headerlink" href="#findwish" title="Link to this heading">¶</a></h1>
-<p>Finds <code class="docutils literal notranslate"><span class="pre">wish</span></code>, a simple windowing shell command-line executable.</p>
+<p>Finds <code class="docutils literal notranslate"><span class="pre">wish</span></code>, a simple windowing shell command-line executable:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Wish</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
 <p>This module is commonly used in conjunction with finding a TCL installation (see
 the <span class="target" id="index-0-module:FindTCL"></span><a class="reference internal" href="FindTCL.html#module:FindTCL" title="FindTCL"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FindTCL</span></code></a> module).  It helps determine where the TCL include paths
 and libraries are, as well as identifying the name of the TCL library.</p>
 <p>If the <span class="target" id="index-0-variable:UNIX"></span><a class="reference internal" href="../variable/UNIX.html#variable:UNIX" title="UNIX"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">UNIX</span></code></a> variable is defined, the module will prioritize looking
 for the Cygwin version of <code class="docutils literal notranslate"><span class="pre">wish</span></code> executable.</p>
+<section id="result-variables">
+<h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
+<p>This module defines the following variables:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Wish_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>Boolean indicating whether the <code class="docutils literal notranslate"><span class="pre">wish</span></code> executable was found.</p>
+</dd>
+</dl>
+</section>
 <section id="cache-variables">
 <h2>Cache Variables<a class="headerlink" href="#cache-variables" title="Link to this heading">¶</a></h2>
-<p>The following cache variables may be set:</p>
+<p>The following cache variables may also be set:</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">TK_WISH</span></code></dt><dd><p>The path to the <code class="docutils literal notranslate"><span class="pre">wish</span></code> executable.</p>
 </dd>
@@ -98,6 +112,7 @@ for the Cygwin version of <code class="docutils literal notranslate"><span class
     <h3>Table of Contents</h3>
     <ul>
 <li><a class="reference internal" href="#">FindWish</a><ul>
+<li><a class="reference internal" href="#result-variables">Result Variables</a></li>
 <li><a class="reference internal" href="#cache-variables">Cache Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
@@ -153,7 +168,7 @@ for the Cygwin version of <code class="docutils literal notranslate"><span class
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -166,8 +181,8 @@ for the Cygwin version of <code class="docutils literal notranslate"><span class
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

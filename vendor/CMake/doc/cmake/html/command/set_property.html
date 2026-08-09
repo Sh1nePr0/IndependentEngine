@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>set_property &mdash; CMake 4.1.2 Documentation</title>
+  <title>set_property &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -64,18 +64,19 @@
   <section id="set-property">
 <span id="command:set_property"></span><h1>set_property<a class="headerlink" href="#set-property" title="Link to this heading">¶</a></h1>
 <p>Set a named property in a given scope.</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">set_property(</span><span class="o">&lt;</span><span class="no">GLOBAL</span><span class="w">                      </span><span class="p">|</span>
-<span class="w">              </span><span class="no">DIRECTORY</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;dir&gt;</span><span class="p">]</span><span class="w">           </span><span class="p">|</span>
-<span class="w">              </span><span class="no">TARGET</span><span class="w">    </span><span class="p">[</span><span class="nv">&lt;target1&gt;</span><span class="w"> </span><span class="p">...]</span><span class="w">   </span><span class="p">|</span>
-<span class="w">              </span><span class="no">SOURCE</span><span class="w">    </span><span class="p">[</span><span class="nv">&lt;src1&gt;</span><span class="w"> </span><span class="p">...]</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">set_property(</span><span class="p">{</span><span class="no">GLOBAL</span><span class="w">                                    </span><span class="p">|</span>
+<span class="w">              </span><span class="no">DIRECTORY</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;dir&gt;</span><span class="p">]</span><span class="w">                         </span><span class="p">|</span>
+<span class="w">              </span><span class="no">TARGET</span><span class="w">    </span><span class="nv">&lt;target&gt;...</span><span class="w">                     </span><span class="p">|</span>
+<span class="w">              </span><span class="no">FILE_SET</span><span class="w">  </span><span class="nv">&lt;file_set&gt;...</span><span class="w"> </span><span class="no">TARGET</span><span class="w"> </span><span class="nv">&lt;target&gt;</span><span class="w">   </span><span class="p">|</span>
+<span class="w">              </span><span class="no">SOURCE</span><span class="w">    </span><span class="nv">&lt;source&gt;...</span>
 <span class="w">                        </span><span class="p">[</span><span class="no">DIRECTORY</span><span class="w"> </span><span class="nv">&lt;dirs&gt;</span><span class="w"> </span><span class="p">...]</span>
-<span class="w">                        </span><span class="p">[</span><span class="no">TARGET_DIRECTORY</span><span class="w"> </span><span class="nv">&lt;targets&gt;</span><span class="w"> </span><span class="p">...]</span><span class="w"> </span><span class="p">|</span>
-<span class="w">              </span><span class="no">INSTALL</span><span class="w">   </span><span class="p">[</span><span class="nv">&lt;file1&gt;</span><span class="w"> </span><span class="p">...]</span><span class="w">     </span><span class="p">|</span>
-<span class="w">              </span><span class="no">TEST</span><span class="w">      </span><span class="p">[</span><span class="nv">&lt;test1&gt;</span><span class="w"> </span><span class="p">...]</span>
-<span class="w">                        </span><span class="p">[</span><span class="no">DIRECTORY</span><span class="w"> </span><span class="nv">&lt;dir&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">|</span>
-<span class="w">              </span><span class="no">CACHE</span><span class="w">     </span><span class="p">[</span><span class="nv">&lt;entry1&gt;</span><span class="w"> </span><span class="p">...]</span><span class="w">    </span><span class="o">&gt;</span>
+<span class="w">                        </span><span class="p">[</span><span class="no">TARGET_DIRECTORY</span><span class="w"> </span><span class="nv">&lt;targets&gt;...</span><span class="p">]</span><span class="w"> </span><span class="p">|</span>
+<span class="w">              </span><span class="no">INSTALL</span><span class="w">   </span><span class="nv">&lt;file&gt;...</span><span class="w">                       </span><span class="p">|</span>
+<span class="w">              </span><span class="no">TEST</span><span class="w">      </span><span class="nv">&lt;test&gt;...</span>
+<span class="w">                        </span><span class="p">[</span><span class="no">DIRECTORY</span><span class="w"> </span><span class="nv">&lt;dir&gt;</span><span class="p">]</span><span class="w">               </span><span class="p">|</span>
+<span class="w">              </span><span class="no">CACHE</span><span class="w">     </span><span class="nv">&lt;entry&gt;...</span><span class="p">}</span>
 <span class="w">             </span><span class="p">[</span><span class="no">APPEND</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="no">APPEND_STRING</span><span class="p">]</span>
-<span class="w">             </span><span class="no">PROPERTY</span><span class="w"> </span><span class="nv">&lt;name&gt;</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;value1&gt;</span><span class="w"> </span><span class="p">...]</span><span class="nf">)</span>
+<span class="w">             </span><span class="no">PROPERTY</span><span class="w"> </span><span class="nv">&lt;name&gt;</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;value&gt;...</span><span class="p">]</span><span class="nf">)</span>
 </pre></div>
 </div>
 <p>Sets one property on zero or more objects of a scope.</p>
@@ -95,6 +96,16 @@ See also the <span class="target" id="index-0-command:set_directory_properties">
 <dt><code class="docutils literal notranslate"><span class="pre">TARGET</span></code></dt><dd><p>Scope may name zero or more existing targets.
 See also the <span class="target" id="index-0-command:set_target_properties"></span><a class="reference internal" href="set_target_properties.html#command:set_target_properties" title="set_target_properties"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">set_target_properties()</span></code></a> command.</p>
 <p><a class="reference internal" href="../manual/cmake-buildsystem.7.html#alias-targets"><span class="std std-ref">Alias Targets</span></a> do not support setting target properties.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FILE_SET</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>Scope may name zero or more existing file sets.</p>
+<p>The following option is required:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">TARGET</span> <span class="pre">&lt;target&gt;</span></code></dt><dd><p>The target to which the file set is attached.</p>
+</dd>
+</dl>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">SOURCE</span></code></dt><dd><p>Scope may name zero or more source files.  By default, source file properties
 are only visible to targets added in the same directory (<code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>).</p>
@@ -247,7 +258,7 @@ in each scope.</p></li>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -260,8 +271,8 @@ in each scope.</p></li>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

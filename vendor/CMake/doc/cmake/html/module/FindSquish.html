@@ -5,20 +5,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindSquish &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindSquish &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="icon" href="../_static/cmake-favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="FindSQLite3" href="FindSQLite3.html" />
-    <link rel="prev" title="FindSelfPackers" href="FindSelfPackers.html" />
+    <link rel="next" title="FindSubversion" href="FindSubversion.html" />
+    <link rel="prev" title="FindSQLite3" href="FindSQLite3.html" />
  
 
   </head><body>
@@ -34,17 +34,17 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="FindSQLite3.html" title="FindSQLite3"
+          <a href="FindSubversion.html" title="FindSubversion"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="FindSelfPackers.html" title="FindSelfPackers"
+          <a href="FindSQLite3.html" title="FindSQLite3"
              accesskey="P">previous</a> |</li>
   <li>
     <label class="sidebar-toggle" for="sidebar-check"></label>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -63,30 +63,32 @@
             
   <section id="findsquish">
 <span id="module:FindSquish"></span><h1>FindSquish<a class="headerlink" href="#findsquish" title="Link to this heading">¶</a></h1>
-<p>Finds Squish, a cross-platform automated GUI testing framework for applications
-built on various GUI technologies.  Squish supports testing of both native and
-cross-platform toolkits, such as Qt, Java, and Tk.</p>
+<p>Finds Squish, a cross-platform automated GUI testing framework for
+applications built on various GUI technologies:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">Squish</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
+<p>Squish supports testing of both native and cross-platform toolkits, such as
+Qt, Java, and Tk.</p>
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">Squish_FOUND</span></code></dt><dd><p>Boolean indicating whether the (requested version of) Squish is found.  For
-backward compatibility, the <code class="docutils literal notranslate"><span class="pre">SQUISH_FOUND</span></code> variable is also set to the same
-value.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Squish_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.3.</span></p>
+</div>
+<p>Boolean indicating whether (the requested version of) Squish was found.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_VERSION</span></code></dt><dd><p>The full version of the Squish found.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">Squish_VERSION</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.2.</span></p>
+</div>
+<p>The full version of the Squish found.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_VERSION_MAJOR</span></code></dt><dd><p>The major version of the Squish found.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_INSTALL_DIR_FOUND</span></code></dt><dd><p>Boolean indicating whether the Squish installation directory was found.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_VERSION_MINOR</span></code></dt><dd><p>The minor version of the Squish found.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_SERVER_EXECUTABLE_FOUND</span></code></dt><dd><p>Boolean indicating whether the Squish server executable was found.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_VERSION_PATCH</span></code></dt><dd><p>The patch version of the Squish found.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_INSTALL_DIR_FOUND</span></code></dt><dd><p>Boolean indicating whether the Squish installation directory is found.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_SERVER_EXECUTABLE_FOUND</span></code></dt><dd><p>Boolean indicating whether the Squish server executable is found.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_CLIENT_EXECUTABLE_FOUND</span></code></dt><dd><p>Boolean indicating whether the Squish client executable is found.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_CLIENT_EXECUTABLE_FOUND</span></code></dt><dd><p>Boolean indicating whether the Squish client executable was found.</p>
 </dd>
 </dl>
 </section>
@@ -200,6 +202,37 @@ the test case.</p>
 </dd></dl>
 
 </section>
+<section id="deprecated-variables">
+<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
+<p>The following variables are provided for backward compatibility:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">Squish_FOUND</span></code>, which has the same value.</p>
+</div>
+<p>Boolean indicating whether (the requested version of) Squish was found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_VERSION</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Superseded by the <code class="docutils literal notranslate"><span class="pre">Squish_VERSION</span></code>.</p>
+</div>
+<p>The full version of the Squish found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_VERSION_MAJOR</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Superseded by the <code class="docutils literal notranslate"><span class="pre">Squish_VERSION</span></code>.</p>
+</div>
+<p>The major version of the Squish found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_VERSION_MINOR</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Superseded by the <code class="docutils literal notranslate"><span class="pre">Squish_VERSION</span></code>.</p>
+</div>
+<p>The minor version of the Squish found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">SQUISH_VERSION_PATCH</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Superseded by the <code class="docutils literal notranslate"><span class="pre">Squish_VERSION</span></code>.</p>
+</div>
+<p>The patch version of the Squish found.</p>
+</dd>
+</dl>
+</section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <p>Finding Squish and specifying a minimum required version:</p>
@@ -227,7 +260,7 @@ the test case.</p>
 <span class="nf">if(</span><span class="nb">Squish_FOUND</span><span class="nf">)</span>
 <span class="w">  </span><span class="nf">squish_v3_add_test(</span>
 <span class="w">    </span><span class="nb">projectTestName</span>
-<span class="w">    </span><span class="o">$&lt;</span><span class="no">TARGET_FILE</span><span class="o">:</span><span class="nb">projectApp</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">$&lt;</span><span class="no">TARGET_FILE</span><span class="o">:</span><span class="nb">projectApp</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="nb">someSquishTest</span>
 <span class="w">    </span><span class="s">&quot;FOO=1;BAR=2&quot;</span>
 <span class="w">    </span><span class="nb">testWrapper</span>
@@ -252,6 +285,7 @@ the test case.</p>
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
 <li><a class="reference internal" href="#cache-variables">Cache Variables</a></li>
 <li><a class="reference internal" href="#commands">Commands</a></li>
+<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
@@ -260,13 +294,13 @@ the test case.</p>
   </div>
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="FindSelfPackers.html"
-                          title="previous chapter">FindSelfPackers</a></p>
+    <p class="topless"><a href="FindSQLite3.html"
+                          title="previous chapter">FindSQLite3</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="FindSQLite3.html"
-                          title="next chapter">FindSQLite3</a></p>
+    <p class="topless"><a href="FindSubversion.html"
+                          title="next chapter">FindSubversion</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -296,17 +330,17 @@ the test case.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="FindSQLite3.html" title="FindSQLite3"
+          <a href="FindSubversion.html" title="FindSubversion"
              >next</a> |</li>
         <li class="right" >
-          <a href="FindSelfPackers.html" title="FindSelfPackers"
+          <a href="FindSQLite3.html" title="FindSQLite3"
              >previous</a> |</li>
   <li>
     <label class="sidebar-toggle" for="sidebar-check"></label>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -319,8 +353,8 @@ the test case.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

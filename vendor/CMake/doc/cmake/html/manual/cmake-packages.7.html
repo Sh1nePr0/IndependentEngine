@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>cmake-packages(7) &mdash; CMake 4.1.2 Documentation</title>
+  <title>cmake-packages(7) &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cmake-policies(7)" href="cmake-policies.7.html" />
-    <link rel="prev" title="CPackWIX" href="../module/CPackWIX.html" />
+    <link rel="prev" title="SquishTestScript" href="../module/SquishTestScript.html" />
  
 
   </head><body>
@@ -37,14 +37,14 @@
           <a href="cmake-policies.7.html" title="cmake-policies(7)"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../module/CPackWIX.html" title="CPackWIX"
+          <a href="../module/SquishTestScript.html" title="SquishTestScript"
              accesskey="P">previous</a> |</li>
   <li>
     <label class="sidebar-toggle" for="sidebar-check"></label>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -512,12 +512,12 @@ directories should be specified as relative paths which are relative to the
 <span class="target" id="index-1-variable:CMAKE_INSTALL_PREFIX"></span><a class="reference internal" href="../variable/CMAKE_INSTALL_PREFIX.html#variable:CMAKE_INSTALL_PREFIX" title="CMAKE_INSTALL_PREFIX"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code></a>:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">target_include_directories(</span><span class="nb">tgt</span><span class="w"> </span><span class="no">INTERFACE</span>
 <span class="w">  </span><span class="c"># Wrong, not relocatable:</span>
-<span class="w">  </span><span class="o">$&lt;</span><span class="no">INSTALL_INTERFACE</span><span class="o">:${</span><span class="nt">CMAKE_INSTALL_PREFIX</span><span class="o">}</span><span class="na">/include/TgtName</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="o">$&lt;</span><span class="no">INSTALL_INTERFACE</span><span class="o">:${</span><span class="nt">CMAKE_INSTALL_PREFIX</span><span class="o">}</span><span class="na">/include/TgtName</span><span class="p">&gt;</span>
 <span class="nf">)</span>
 
 <span class="nf">target_include_directories(</span><span class="nb">tgt</span><span class="w"> </span><span class="no">INTERFACE</span>
 <span class="w">  </span><span class="c"># Ok, relocatable:</span>
-<span class="w">  </span><span class="o">$&lt;</span><span class="no">INSTALL_INTERFACE</span><span class="o">:</span><span class="na">include/TgtName</span><span class="o">&gt;</span>
+<span class="w">  </span><span class="o">$&lt;</span><span class="no">INSTALL_INTERFACE</span><span class="o">:</span><span class="na">include/TgtName</span><span class="p">&gt;</span>
 <span class="nf">)</span>
 </pre></div>
 </div>
@@ -527,7 +527,7 @@ a placeholder for the install prefix without resulting in a non-relocatable
 package.  This is necessary if complex generator expressions are used:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">target_include_directories(</span><span class="nb">tgt</span><span class="w"> </span><span class="no">INTERFACE</span>
 <span class="w">  </span><span class="c"># Ok, relocatable:</span>
-<span class="w">  </span><span class="o">$&lt;</span><span class="no">INSTALL_INTERFACE</span><span class="o">:$&lt;$&lt;</span><span class="no">CONFIG</span><span class="o">:</span><span class="nb">Debug</span><span class="o">&gt;:$&lt;</span><span class="no">INSTALL_PREFIX</span><span class="o">&gt;</span><span class="na">/include/TgtName</span><span class="o">&gt;&gt;</span>
+<span class="w">  </span><span class="o">$&lt;</span><span class="no">INSTALL_INTERFACE</span><span class="o">:$&lt;$&lt;</span><span class="no">CONFIG</span><span class="o">:</span><span class="nb">Debug</span><span class="p">&gt;</span><span class="o">:$&lt;</span><span class="no">INSTALL_PREFIX</span><span class="p">&gt;</span><span class="na">/include/TgtName</span><span class="p">&gt;&gt;</span>
 <span class="nf">)</span>
 </pre></div>
 </div>
@@ -759,8 +759,8 @@ tree then the entry referencing the location will be considered stale.</p>
   </div>
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="../module/CPackWIX.html"
-                          title="previous chapter">CPackWIX</a></p>
+    <p class="topless"><a href="../module/SquishTestScript.html"
+                          title="previous chapter">SquishTestScript</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
@@ -798,14 +798,14 @@ tree then the entry referencing the location will be considered stale.</p>
           <a href="cmake-policies.7.html" title="cmake-policies(7)"
              >next</a> |</li>
         <li class="right" >
-          <a href="../module/CPackWIX.html" title="CPackWIX"
+          <a href="../module/SquishTestScript.html" title="SquishTestScript"
              >previous</a> |</li>
   <li>
     <label class="sidebar-toggle" for="sidebar-check"></label>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -817,8 +817,8 @@ tree then the entry referencing the location will be considered stale.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>AUTOMOC &mdash; CMake 4.1.2 Documentation</title>
+  <title>AUTOMOC &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -255,8 +255,8 @@ defining file name filters in this target property.</p>
 Compiler pre definitions for <code class="docutils literal notranslate"><span class="pre">moc</span></code> are written to the <code class="docutils literal notranslate"><span class="pre">moc_predefs.h</span></code> file.
 The generation of this file can be enabled or disabled in this target property.</p>
 <p><span class="target" id="index-1-prop_tgt:AUTOMOC_INCLUDE_DIRECTORIES"></span><a class="reference internal" href="AUTOMOC_INCLUDE_DIRECTORIES.html#prop_tgt:AUTOMOC_INCLUDE_DIRECTORIES" title="AUTOMOC_INCLUDE_DIRECTORIES"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">AUTOMOC_INCLUDE_DIRECTORIES</span></code></a>:
-Specifies one or more include directories for <code class="docutils literal notranslate"><span class="pre">AUTOMOC</span></code> to pass explicitly to <code class="docutils literal notranslate"><span class="pre">moc</span></code>
-instead of automatically discovering a target’s include directories.</p>
+Specifies one or more include directories for <code class="docutils literal notranslate"><span class="pre">AUTOMOC</span></code> to pass explicitly
+to <code class="docutils literal notranslate"><span class="pre">moc</span></code> instead of automatically discovering a target's include directories.</p>
 <p><span class="target" id="index-0-prop_sf:SKIP_AUTOMOC"></span><a class="reference internal" href="../prop_sf/SKIP_AUTOMOC.html#prop_sf:SKIP_AUTOMOC" title="SKIP_AUTOMOC"><code class="xref cmake cmake-prop_sf docutils literal notranslate"><span class="pre">SKIP_AUTOMOC</span></code></a>:
 Sources and headers can be excluded from <code class="docutils literal notranslate"><span class="pre">AUTOMOC</span></code> processing by
 setting this source file property.</p>
@@ -273,8 +273,8 @@ This global property can be used to group <code class="docutils literal notransl
 e.g.  in MSVS.</p>
 <p><span class="target" id="index-0-variable:CMAKE_GLOBAL_AUTOGEN_TARGET"></span><a class="reference internal" href="../variable/CMAKE_GLOBAL_AUTOGEN_TARGET.html#variable:CMAKE_GLOBAL_AUTOGEN_TARGET" title="CMAKE_GLOBAL_AUTOGEN_TARGET"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_GLOBAL_AUTOGEN_TARGET</span></code></a>:
 A global <code class="docutils literal notranslate"><span class="pre">autogen</span></code> target, that depends on all <code class="docutils literal notranslate"><span class="pre">AUTOMOC</span></code> or
-<span class="target" id="index-2-prop_tgt:AUTOUIC"></span><a class="reference internal" href="AUTOUIC.html#prop_tgt:AUTOUIC" title="AUTOUIC"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">AUTOUIC</span></code></a> generated <a class="reference internal" href="../manual/cmake-qt.7.html#origin-autogen"><span class="std std-ref">The &lt;ORIGIN&gt;_autogen target</span></a> targets in the project,
-will be generated when this variable is <code class="docutils literal notranslate"><span class="pre">ON</span></code>.</p>
+<span class="target" id="index-2-prop_tgt:AUTOUIC"></span><a class="reference internal" href="AUTOUIC.html#prop_tgt:AUTOUIC" title="AUTOUIC"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">AUTOUIC</span></code></a> generated <a class="reference internal" href="../manual/cmake-qt.7.html#origin-autogen"><span class="std std-ref">&lt;ORIGIN&gt;_autogen</span></a>
+targets in the project, will be generated when this variable is <code class="docutils literal notranslate"><span class="pre">ON</span></code>.</p>
 <p><span class="target" id="index-0-prop_tgt:AUTOGEN_PARALLEL"></span><a class="reference internal" href="AUTOGEN_PARALLEL.html#prop_tgt:AUTOGEN_PARALLEL" title="AUTOGEN_PARALLEL"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">AUTOGEN_PARALLEL</span></code></a>:
 This target property controls the number of <code class="docutils literal notranslate"><span class="pre">moc</span></code> or <code class="docutils literal notranslate"><span class="pre">uic</span></code> processes to
 start in parallel during builds.</p>
@@ -362,7 +362,7 @@ with Qt.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -375,8 +375,8 @@ with Qt.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

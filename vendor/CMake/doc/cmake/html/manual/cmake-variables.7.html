@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>cmake-variables(7) &mdash; CMake 4.1.2 Documentation</title>
+  <title>cmake-variables(7) &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -127,6 +127,7 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_CURRENT_LIST_FILE.html">CMAKE_CURRENT_LIST_FILE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_CURRENT_LIST_LINE.html">CMAKE_CURRENT_LIST_LINE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_CURRENT_SOURCE_DIR.html">CMAKE_CURRENT_SOURCE_DIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_CXX_STDLIB_MODULES_JSON.html">CMAKE_CXX_STDLIB_MODULES_JSON</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_DEBUG_TARGET_PROPERTIES.html">CMAKE_DEBUG_TARGET_PROPERTIES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_DIRECTORY_LABELS.html">CMAKE_DIRECTORY_LABELS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_DL_LIBS.html">CMAKE_DL_LIBS</a></li>
@@ -137,6 +138,21 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXECUTABLE_SUFFIX.html">CMAKE_EXECUTABLE_SUFFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXECUTABLE_SUFFIX_LANG.html">CMAKE_EXECUTABLE_SUFFIX_&lt;LANG&gt;</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXTRA_SHARED_LIBRARY_SUFFIXES.html">CMAKE_EXTRA_SHARED_LIBRARY_SUFFIXES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_ALLOW_RESPONSE_FILE.html">CMAKE_FASTBUILD_ALLOW_RESPONSE_FILE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_CACHE_PATH.html">CMAKE_FASTBUILD_CACHE_PATH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_CAPTURE_SYSTEM_ENV.html">CMAKE_FASTBUILD_CAPTURE_SYSTEM_ENV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_CLANG_GCC_UPDATE_XLANG_ARG.html">CMAKE_FASTBUILD_CLANG_GCC_UPDATE_XLANG_ARG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_CLANG_REWRITE_INCLUDES.html">CMAKE_FASTBUILD_CLANG_REWRITE_INCLUDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_COMPILER_EXTRA_FILES.html">CMAKE_FASTBUILD_COMPILER_EXTRA_FILES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_ENV_OVERRIDES.html">CMAKE_FASTBUILD_ENV_OVERRIDES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_FORCE_RESPONSE_FILE.html">CMAKE_FASTBUILD_FORCE_RESPONSE_FILE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_IDE_ARGS.html">CMAKE_FASTBUILD_IDE_ARGS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_SOURCE_MAPPING.html">CMAKE_FASTBUILD_SOURCE_MAPPING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_TRACK_BYPRODUCTS_AS_OUTPUT.html">CMAKE_FASTBUILD_TRACK_BYPRODUCTS_AS_OUTPUT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_USE_DETERMINISTIC_PATHS.html">CMAKE_FASTBUILD_USE_DETERMINISTIC_PATHS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_USE_LIGHTCACHE.html">CMAKE_FASTBUILD_USE_LIGHTCACHE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_USE_RELATIVE_PATHS.html">CMAKE_FASTBUILD_USE_RELATIVE_PATHS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FASTBUILD_VERBOSE_GENERATOR.html">CMAKE_FASTBUILD_VERBOSE_GENERATOR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FIND_DEBUG_MODE.html">CMAKE_FIND_DEBUG_MODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FIND_DEBUG_MODE_NO_IMPLICIT_CONFIGURE_LOG.html">CMAKE_FIND_DEBUG_MODE_NO_IMPLICIT_CONFIGURE_LOG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FIND_PACKAGE_NAME.html">CMAKE_FIND_PACKAGE_NAME</a></li>
@@ -180,22 +196,23 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_OBJDUMP.html">CMAKE_OBJDUMP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PARENT_LIST_FILE.html">CMAKE_PARENT_LIST_FILE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PATCH_VERSION.html">CMAKE_PATCH_VERSION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_COMPAT_VERSION.html">CMAKE_PROJECT_COMPAT_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_DESCRIPTION.html">CMAKE_PROJECT_DESCRIPTION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_HOMEPAGE_URL.html">CMAKE_PROJECT_HOMEPAGE_URL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_NAME.html">CMAKE_PROJECT_NAME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_SPDX_LICENSE.html">CMAKE_PROJECT_SPDX_LICENSE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_VERSION.html">CMAKE_PROJECT_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_VERSION_MAJOR.html">CMAKE_PROJECT_VERSION_MAJOR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_VERSION_MINOR.html">CMAKE_PROJECT_VERSION_MINOR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_VERSION_PATCH.html">CMAKE_PROJECT_VERSION_PATCH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_VERSION_TWEAK.html">CMAKE_PROJECT_VERSION_TWEAK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_PROJECT_COMPAT_VERSION.html">CMAKE_PROJECT_COMPAT_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_RANLIB.html">CMAKE_RANLIB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ROOT.html">CMAKE_ROOT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_RULE_MESSAGES.html">CMAKE_RULE_MESSAGES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SCRIPT_MODE_FILE.html">CMAKE_SCRIPT_MODE_FILE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SHARED_LIBRARY_ARCHIVE_SUFFIX.html">CMAKE_SHARED_LIBRARY_ARCHIVE_SUFFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SHARED_LIBRARY_PREFIX.html">CMAKE_SHARED_LIBRARY_PREFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SHARED_LIBRARY_SUFFIX.html">CMAKE_SHARED_LIBRARY_SUFFIX</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SHARED_LIBRARY_ARCHIVE_SUFFIX.html">CMAKE_SHARED_LIBRARY_ARCHIVE_SUFFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SHARED_MODULE_PREFIX.html">CMAKE_SHARED_MODULE_PREFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SHARED_MODULE_SUFFIX.html">CMAKE_SHARED_MODULE_SUFFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SIZEOF_VOID_P.html">CMAKE_SIZEOF_VOID_P</a></li>
@@ -207,6 +224,8 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_Swift_COMPILATION_MODE.html">CMAKE_Swift_COMPILATION_MODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_Swift_MODULE_DIRECTORY.html">CMAKE_Swift_MODULE_DIRECTORY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_Swift_NUM_THREADS.html">CMAKE_Swift_NUM_THREADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_Swift_SEPARATE_MODULE_EMISSION.html">CMAKE_Swift_SEPARATE_MODULE_EMISSION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_TEST_BUILD_DEPENDS.html">CMAKE_TEST_BUILD_DEPENDS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_TEST_LAUNCHER.html">CMAKE_TEST_LAUNCHER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_TOOLCHAIN_FILE.html">CMAKE_TOOLCHAIN_FILE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_TWEAK_VERSION.html">CMAKE_TWEAK_VERSION</a></li>
@@ -236,28 +255,30 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_BUILD_SYSTEM.html">CMAKE_XCODE_BUILD_SYSTEM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_PLATFORM_TOOLSET.html">CMAKE_XCODE_PLATFORM_TOOLSET</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_BINARY_DIR.html">&lt;PROJECT-NAME&gt;_BINARY_DIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_COMPAT_VERSION.html">&lt;PROJECT-NAME&gt;_COMPAT_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_DESCRIPTION.html">&lt;PROJECT-NAME&gt;_DESCRIPTION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_HOMEPAGE_URL.html">&lt;PROJECT-NAME&gt;_HOMEPAGE_URL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_IS_TOP_LEVEL.html">&lt;PROJECT-NAME&gt;_IS_TOP_LEVEL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_SOURCE_DIR.html">&lt;PROJECT-NAME&gt;_SOURCE_DIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_SPDX_LICENSE.html">&lt;PROJECT-NAME&gt;_SPDX_LICENSE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_VERSION.html">&lt;PROJECT-NAME&gt;_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_VERSION_MAJOR.html">&lt;PROJECT-NAME&gt;_VERSION_MAJOR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_VERSION_MINOR.html">&lt;PROJECT-NAME&gt;_VERSION_MINOR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_VERSION_PATCH.html">&lt;PROJECT-NAME&gt;_VERSION_PATCH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_VERSION_TWEAK.html">&lt;PROJECT-NAME&gt;_VERSION_TWEAK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT-NAME_COMPAT_VERSION.html">&lt;PROJECT-NAME&gt;_COMPAT_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_BINARY_DIR.html">PROJECT_BINARY_DIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_COMPAT_VERSION.html">PROJECT_COMPAT_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_DESCRIPTION.html">PROJECT_DESCRIPTION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_HOMEPAGE_URL.html">PROJECT_HOMEPAGE_URL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_IS_TOP_LEVEL.html">PROJECT_IS_TOP_LEVEL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_NAME.html">PROJECT_NAME</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_SOURCE_DIR.html">PROJECT_SOURCE_DIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_SPDX_LICENSE.html">PROJECT_SPDX_LICENSE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_VERSION.html">PROJECT_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_VERSION_MAJOR.html">PROJECT_VERSION_MAJOR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_VERSION_MINOR.html">PROJECT_VERSION_MINOR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_VERSION_PATCH.html">PROJECT_VERSION_PATCH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_VERSION_TWEAK.html">PROJECT_VERSION_TWEAK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/PROJECT_COMPAT_VERSION.html">PROJECT_COMPAT_VERSION</a></li>
 </ul>
 </div>
 </section>
@@ -270,6 +291,7 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ABSOLUTE_DESTINATION_FILES.html">CMAKE_ABSOLUTE_DESTINATION_FILES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ADD_CUSTOM_COMMAND_DEPENDS_EXPLICIT_ONLY.html">CMAKE_ADD_CUSTOM_COMMAND_DEPENDS_EXPLICIT_ONLY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_APPBUNDLE_PATH.html">CMAKE_APPBUNDLE_PATH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOGEN_INTERMEDIATE_DIR_STRATEGY.html">CMAKE_AUTOGEN_INTERMEDIATE_DIR_STRATEGY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_BUILD_TYPE.html">CMAKE_BUILD_TYPE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_CLANG_VFS_OVERLAY.html">CMAKE_CLANG_VFS_OVERLAY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_CODEBLOCKS_COMPILER_ID.html">CMAKE_CODEBLOCKS_COMPILER_ID</a></li>
@@ -285,15 +307,14 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ECLIPSE_MAKE_ARGUMENTS.html">CMAKE_ECLIPSE_MAKE_ARGUMENTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ECLIPSE_RESOURCE_ENCODING.html">CMAKE_ECLIPSE_RESOURCE_ENCODING</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ECLIPSE_VERSION.html">CMAKE_ECLIPSE_VERSION</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ERROR_DEPRECATED.html">CMAKE_ERROR_DEPRECATED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION.html">CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXECUTE_PROCESS_COMMAND_ECHO.html">CMAKE_EXECUTE_PROCESS_COMMAND_ECHO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXECUTE_PROCESS_COMMAND_ERROR_IS_FATAL.html">CMAKE_EXECUTE_PROCESS_COMMAND_ERROR_IS_FATAL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXPORT_BUILD_DATABASE.html">CMAKE_EXPORT_BUILD_DATABASE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXPORT_COMPILE_COMMANDS.html">CMAKE_EXPORT_COMPILE_COMMANDS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXPORT_SARIF.html">CMAKE_EXPORT_SARIF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXPORT_PACKAGE_REGISTRY.html">CMAKE_EXPORT_PACKAGE_REGISTRY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXPORT_NO_PACKAGE_REGISTRY.html">CMAKE_EXPORT_NO_PACKAGE_REGISTRY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXPORT_PACKAGE_REGISTRY.html">CMAKE_EXPORT_PACKAGE_REGISTRY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXPORT_SARIF.html">CMAKE_EXPORT_SARIF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FIND_APPBUNDLE.html">CMAKE_FIND_APPBUNDLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FIND_FRAMEWORK.html">CMAKE_FIND_FRAMEWORK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FIND_LIBRARY_CUSTOM_LIB_SUFFIX.html">CMAKE_FIND_LIBRARY_CUSTOM_LIB_SUFFIX</a></li>
@@ -325,9 +346,11 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INCLUDE_PATH.html">CMAKE_INCLUDE_PATH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_DEFAULT_COMPONENT_NAME.html">CMAKE_INSTALL_DEFAULT_COMPONENT_NAME</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS.html">CMAKE_INSTALL_DEFAULT_DIRECTORY_PERMISSIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_EXPORTS_AS_PACKAGE_INFO.html">CMAKE_INSTALL_EXPORTS_AS_PACKAGE_INFO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_MESSAGE.html">CMAKE_INSTALL_MESSAGE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_PREFIX.html">CMAKE_INSTALL_PREFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT.html">CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INTERMEDIATE_DIR_STRATEGY.html">CMAKE_INTERMEDIATE_DIR_STRATEGY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_KATE_FILES_MODE.html">CMAKE_KATE_FILES_MODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_KATE_MAKE_ARGUMENTS.html">CMAKE_KATE_MAKE_ARGUMENTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LIBRARY_PATH.html">CMAKE_LIBRARY_PATH</a></li>
@@ -377,7 +400,6 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_TLS_VERIFY.html">CMAKE_TLS_VERIFY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_TLS_VERSION.html">CMAKE_TLS_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_USER_MAKE_RULES_OVERRIDE.html">CMAKE_USER_MAKE_RULES_OVERRIDE</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_WARN_DEPRECATED.html">CMAKE_WARN_DEPRECATED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION.html">CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_GENERATE_SCHEME.html">CMAKE_XCODE_GENERATE_SCHEME</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_GENERATE_TOP_LEVEL_PROJECT_ONLY.html">CMAKE_XCODE_GENERATE_TOP_LEVEL_PROJECT_ONLY</a></li>
@@ -394,13 +416,13 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_ENVIRONMENT.html">CMAKE_XCODE_SCHEME_ENVIRONMENT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_GUARD_MALLOC.html">CMAKE_XCODE_SCHEME_GUARD_MALLOC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_LAUNCH_CONFIGURATION.html">CMAKE_XCODE_SCHEME_LAUNCH_CONFIGURATION</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_TEST_CONFIGURATION.html">CMAKE_XCODE_SCHEME_TEST_CONFIGURATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_LAUNCH_MODE.html">CMAKE_XCODE_SCHEME_LAUNCH_MODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_LLDB_INIT_FILE.html">CMAKE_XCODE_SCHEME_LLDB_INIT_FILE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP.html">CMAKE_XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_MALLOC_GUARD_EDGES.html">CMAKE_XCODE_SCHEME_MALLOC_GUARD_EDGES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_MALLOC_SCRIBBLE.html">CMAKE_XCODE_SCHEME_MALLOC_SCRIBBLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_MALLOC_STACK.html">CMAKE_XCODE_SCHEME_MALLOC_STACK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_TEST_CONFIGURATION.html">CMAKE_XCODE_SCHEME_TEST_CONFIGURATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_THREAD_SANITIZER.html">CMAKE_XCODE_SCHEME_THREAD_SANITIZER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_THREAD_SANITIZER_STOP.html">CMAKE_XCODE_SCHEME_THREAD_SANITIZER_STOP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_XCODE_SCHEME_UNDEFINED_BEHAVIOUR_SANITIZER.html">CMAKE_XCODE_SCHEME_UNDEFINED_BEHAVIOUR_SANITIZER</a></li>
@@ -424,8 +446,8 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ANDROID_NDK_VERSION.html">CMAKE_ANDROID_NDK_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_CL_64.html">CMAKE_CL_64</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_COMPILER_2005.html">CMAKE_COMPILER_2005</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_HOST_APPLE.html">CMAKE_HOST_APPLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_HOST_AIX.html">CMAKE_HOST_AIX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_HOST_APPLE.html">CMAKE_HOST_APPLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_HOST_BSD.html">CMAKE_HOST_BSD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_HOST_EXECUTABLE_SUFFIX.html">CMAKE_HOST_EXECUTABLE_SUFFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_HOST_LINUX.html">CMAKE_HOST_LINUX</a></li>
@@ -469,8 +491,8 @@ section in the cmake-language manual.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ADSP_ROOT.html">CMAKE_ADSP_ROOT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AIX_SHARED_LIBRARY_ARCHIVE.html">CMAKE_AIX_SHARED_LIBRARY_ARCHIVE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AIX_EXPORT_ALL_SYMBOLS.html">CMAKE_AIX_EXPORT_ALL_SYMBOLS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AIX_SHARED_LIBRARY_ARCHIVE.html">CMAKE_AIX_SHARED_LIBRARY_ARCHIVE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ANDROID_ANT_ADDITIONAL_OPTIONS.html">CMAKE_ANDROID_ANT_ADDITIONAL_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ANDROID_API.html">CMAKE_ANDROID_API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ANDROID_API_MIN.html">CMAKE_ANDROID_API_MIN</a></li>
@@ -510,18 +532,18 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOMOC.html">CMAKE_AUTOMOC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOMOC_COMPILER_PREDEFINES.html">CMAKE_AUTOMOC_COMPILER_PREDEFINES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOMOC_DEPEND_FILTERS.html">CMAKE_AUTOMOC_DEPEND_FILTERS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOMOC_EXECUTABLE.html">CMAKE_AUTOMOC_EXECUTABLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOMOC_INCLUDE_DIRECTORIES.html">CMAKE_AUTOMOC_INCLUDE_DIRECTORIES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOMOC_MACRO_NAMES.html">CMAKE_AUTOMOC_MACRO_NAMES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOMOC_MOC_OPTIONS.html">CMAKE_AUTOMOC_MOC_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOMOC_PATH_PREFIX.html">CMAKE_AUTOMOC_PATH_PREFIX</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOMOC_EXECUTABLE.html">CMAKE_AUTOMOC_EXECUTABLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTORCC.html">CMAKE_AUTORCC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTORCC_OPTIONS.html">CMAKE_AUTORCC_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTORCC_EXECUTABLE.html">CMAKE_AUTORCC_EXECUTABLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTORCC_OPTIONS.html">CMAKE_AUTORCC_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOUIC.html">CMAKE_AUTOUIC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOUIC_EXECUTABLE.html">CMAKE_AUTOUIC_EXECUTABLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOUIC_OPTIONS.html">CMAKE_AUTOUIC_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOUIC_SEARCH_PATHS.html">CMAKE_AUTOUIC_SEARCH_PATHS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOUIC_EXECUTABLE.html">CMAKE_AUTOUIC_EXECUTABLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_BUILD_RPATH.html">CMAKE_BUILD_RPATH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_BUILD_RPATH_USE_ORIGIN.html">CMAKE_BUILD_RPATH_USE_ORIGIN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_BUILD_WITH_INSTALL_NAME_DIR.html">CMAKE_BUILD_WITH_INSTALL_NAME_DIR</a></li>
@@ -544,7 +566,6 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_DEPENDS_USE_COMPILER.html">CMAKE_DEPENDS_USE_COMPILER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_DISABLE_PRECOMPILE_HEADERS.html">CMAKE_DISABLE_PRECOMPILE_HEADERS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_DLL_NAME_WITH_SOVERSION.html">CMAKE_DLL_NAME_WITH_SOVERSION</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ENABLE_EXPORTS.html">CMAKE_ENABLE_EXPORTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXECUTABLE_ENABLE_EXPORTS.html">CMAKE_EXECUTABLE_ENABLE_EXPORTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXE_LINKER_FLAGS.html">CMAKE_EXE_LINKER_FLAGS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_EXE_LINKER_FLAGS_CONFIG.html">CMAKE_EXE_LINKER_FLAGS_&lt;CONFIG&gt;</a></li>
@@ -566,6 +587,8 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INCLUDE_CURRENT_DIR.html">CMAKE_INCLUDE_CURRENT_DIR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INCLUDE_CURRENT_DIR_IN_INTERFACE.html">CMAKE_INCLUDE_CURRENT_DIR_IN_INTERFACE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_NAME_DIR.html">CMAKE_INSTALL_NAME_DIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_OBJECT_NAME_STRATEGY.html">CMAKE_INSTALL_OBJECT_NAME_STRATEGY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_OBJECT_ONLY_USE_DESTINATION.html">CMAKE_INSTALL_OBJECT_ONLY_USE_DESTINATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_REMOVE_ENVIRONMENT_RPATH.html">CMAKE_INSTALL_REMOVE_ENVIRONMENT_RPATH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_RPATH.html">CMAKE_INSTALL_RPATH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_INSTALL_RPATH_USE_LINK_PATH.html">CMAKE_INSTALL_RPATH_USE_LINK_PATH</a></li>
@@ -576,9 +599,9 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_COMPILER_LAUNCHER.html">CMAKE_&lt;LANG&gt;_COMPILER_LAUNCHER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_CPPCHECK.html">CMAKE_&lt;LANG&gt;_CPPCHECK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_CPPLINT.html">CMAKE_&lt;LANG&gt;_CPPLINT</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINK_DEF_FILE_FLAG.html">CMAKE_&lt;LANG&gt;_LINK_DEF_FILE_FLAG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_ICSTAT.html">CMAKE_&lt;LANG&gt;_ICSTAT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_INCLUDE_WHAT_YOU_USE.html">CMAKE_&lt;LANG&gt;_INCLUDE_WHAT_YOU_USE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINK_DEF_FILE_FLAG.html">CMAKE_&lt;LANG&gt;_LINK_DEF_FILE_FLAG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINK_GROUP_USING_FEATURE.html">CMAKE_&lt;LANG&gt;_LINK_GROUP_USING_&lt;FEATURE&gt;</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINK_GROUP_USING_FEATURE_SUPPORTED.html">CMAKE_&lt;LANG&gt;_LINK_GROUP_USING_&lt;FEATURE&gt;_SUPPORTED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINK_LIBRARY_FEATURE_ATTRIBUTES.html">CMAKE_&lt;LANG&gt;_LINK_LIBRARY_&lt;FEATURE&gt;_ATTRIBUTES</a></li>
@@ -588,6 +611,7 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINK_LIBRARY_USING_FEATURE_SUPPORTED.html">CMAKE_&lt;LANG&gt;_LINK_LIBRARY_USING_&lt;FEATURE&gt;_SUPPORTED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINK_WHAT_YOU_USE_FLAG.html">CMAKE_&lt;LANG&gt;_LINK_WHAT_YOU_USE_FLAG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINKER_LAUNCHER.html">CMAKE_&lt;LANG&gt;_LINKER_LAUNCHER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_PVS_STUDIO.html">CMAKE_&lt;LANG&gt;_PVS_STUDIO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_USING_LINKER_TYPE.html">CMAKE_&lt;LANG&gt;_USING_LINKER_&lt;TYPE&gt;</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_VISIBILITY_PRESET.html">CMAKE_&lt;LANG&gt;_VISIBILITY_PRESET</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LIBRARY_OUTPUT_DIRECTORY.html">CMAKE_LIBRARY_OUTPUT_DIRECTORY</a></li>
@@ -635,6 +659,7 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_POSITION_INDEPENDENT_CODE.html">CMAKE_POSITION_INDEPENDENT_CODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_RUNTIME_OUTPUT_DIRECTORY.html">CMAKE_RUNTIME_OUTPUT_DIRECTORY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_RUNTIME_OUTPUT_DIRECTORY_CONFIG.html">CMAKE_RUNTIME_OUTPUT_DIRECTORY_&lt;CONFIG&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_Rust_EDITION.html">CMAKE_Rust_EDITION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SHARED_LIBRARY_ENABLE_EXPORTS.html">CMAKE_SHARED_LIBRARY_ENABLE_EXPORTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SHARED_LINKER_FLAGS.html">CMAKE_SHARED_LINKER_FLAGS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SHARED_LINKER_FLAGS_CONFIG.html">CMAKE_SHARED_LINKER_FLAGS_&lt;CONFIG&gt;</a></li>
@@ -642,6 +667,7 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SHARED_LINKER_FLAGS_INIT.html">CMAKE_SHARED_LINKER_FLAGS_INIT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SKIP_BUILD_RPATH.html">CMAKE_SKIP_BUILD_RPATH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SKIP_INSTALL_RPATH.html">CMAKE_SKIP_INSTALL_RPATH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_SKIP_LINTING.html">CMAKE_SKIP_LINTING</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_STATIC_LINKER_FLAGS.html">CMAKE_STATIC_LINKER_FLAGS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_STATIC_LINKER_FLAGS_CONFIG.html">CMAKE_STATIC_LINKER_FLAGS_&lt;CONFIG&gt;</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_STATIC_LINKER_FLAGS_CONFIG_INIT.html">CMAKE_STATIC_LINKER_FLAGS_&lt;CONFIG&gt;_INIT</a></li>
@@ -656,6 +682,7 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_UNITY_BUILD_RELOCATABLE.html">CMAKE_UNITY_BUILD_RELOCATABLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_UNITY_BUILD_UNIQUE_ID.html">CMAKE_UNITY_BUILD_UNIQUE_ID</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_VERIFY_INTERFACE_HEADER_SETS.html">CMAKE_VERIFY_INTERFACE_HEADER_SETS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_VERIFY_PRIVATE_HEADER_SETS.html">CMAKE_VERIFY_PRIVATE_HEADER_SETS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_VISIBILITY_INLINES_HIDDEN.html">CMAKE_VISIBILITY_INLINES_HIDDEN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_VS_DEBUGGER_COMMAND.html">CMAKE_VS_DEBUGGER_COMMAND</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_VS_DEBUGGER_COMMAND_ARGUMENTS.html">CMAKE_VS_DEBUGGER_COMMAND_ARGUMENTS</a></li>
@@ -760,6 +787,8 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_IMPLICIT_LINK_LIBRARIES.html">CMAKE_&lt;LANG&gt;_IMPLICIT_LINK_LIBRARIES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LIBRARY_ARCHITECTURE.html">CMAKE_&lt;LANG&gt;_LIBRARY_ARCHITECTURE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINK_EXECUTABLE.html">CMAKE_&lt;LANG&gt;_LINK_EXECUTABLE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINK_FLAGS.html">CMAKE_&lt;LANG&gt;_LINK_FLAGS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINK_FLAGS_CONFIG.html">CMAKE_&lt;LANG&gt;_LINK_FLAGS_&lt;CONFIG&gt;</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINKER_WRAPPER_FLAG.html">CMAKE_&lt;LANG&gt;_LINKER_WRAPPER_FLAG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_LINKER_WRAPPER_FLAG_SEP.html">CMAKE_&lt;LANG&gt;_LINKER_WRAPPER_FLAG_SEP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_OUTPUT_EXTENSION.html">CMAKE_&lt;LANG&gt;_OUTPUT_EXTENSION</a></li>
@@ -792,12 +821,14 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_BINARY_DIRECTORY.html">CTEST_BINARY_DIRECTORY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_BUILD_COMMAND.html">CTEST_BUILD_COMMAND</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_BUILD_NAME.html">CTEST_BUILD_NAME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_BUILD_PRESET.html">CTEST_BUILD_PRESET</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_BZR_COMMAND.html">CTEST_BZR_COMMAND</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_BZR_UPDATE_OPTIONS.html">CTEST_BZR_UPDATE_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_CHANGE_ID.html">CTEST_CHANGE_ID</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_CHECKOUT_COMMAND.html">CTEST_CHECKOUT_COMMAND</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_CONFIGURATION_TYPE.html">CTEST_CONFIGURATION_TYPE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_CONFIGURE_COMMAND.html">CTEST_CONFIGURE_COMMAND</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_CONFIGURE_PRESET.html">CTEST_CONFIGURE_PRESET</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_COVERAGE_COMMAND.html">CTEST_COVERAGE_COMMAND</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_COVERAGE_EXTRA_FLAGS.html">CTEST_COVERAGE_EXTRA_FLAGS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_CUSTOM_COVERAGE_EXCLUDE.html">CTEST_CUSTOM_COVERAGE_EXCLUDE</a></li>
@@ -846,18 +877,23 @@ section in the cmake-language manual.</p>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_P4_COMMAND.html">CTEST_P4_COMMAND</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_P4_OPTIONS.html">CTEST_P4_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_P4_UPDATE_OPTIONS.html">CTEST_P4_UPDATE_OPTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_PRESET.html">CTEST_PRESET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_PRESETS_FILE.html">CTEST_PRESETS_FILE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_RESOURCE_SPEC_FILE.html">CTEST_RESOURCE_SPEC_FILE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_RUN_CURRENT_SCRIPT.html">CTEST_RUN_CURRENT_SCRIPT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_SCRIPT_DIRECTORY.html">CTEST_SCRIPT_DIRECTORY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_SITE.html">CTEST_SITE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_SOURCE_DIRECTORY.html">CTEST_SOURCE_DIRECTORY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_SUBMIT_INACTIVITY_TIMEOUT.html">CTEST_SUBMIT_INACTIVITY_TIMEOUT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_SUBMIT_PARTS.html">CTEST_SUBMIT_PARTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_SUBMIT_URL.html">CTEST_SUBMIT_URL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_SVN_COMMAND.html">CTEST_SVN_COMMAND</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_SVN_OPTIONS.html">CTEST_SVN_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_SVN_UPDATE_OPTIONS.html">CTEST_SVN_UPDATE_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_TEST_LOAD.html">CTEST_TEST_LOAD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_TEST_PRESET.html">CTEST_TEST_PRESET</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_TEST_TIMEOUT.html">CTEST_TEST_TIMEOUT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_TEST_COVERAGE_TOOL.html">CTEST_TEST_COVERAGE_TOOL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_TLS_VERIFY.html">CTEST_TLS_VERIFY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_TLS_VERSION.html">CTEST_TLS_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CTEST_UPDATE_COMMAND.html">CTEST_UPDATE_COMMAND</a></li>
@@ -928,8 +964,10 @@ are subject to change, and not recommended for use in project code.</p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_AUTOMOC_RELAXED_MODE.html">CMAKE_AUTOMOC_RELAXED_MODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_BACKWARDS_COMPATIBILITY.html">CMAKE_BACKWARDS_COMPATIBILITY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ERROR_DEPRECATED.html">CMAKE_ERROR_DEPRECATED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY.html">CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY.html">CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_WARN_DEPRECATED.html">CMAKE_WARN_DEPRECATED</a></li>
 </ul>
 </div>
 </section>
@@ -953,6 +991,7 @@ are subject to change, and not recommended for use in project code.</p>
 <h2><a class="toc-backref" href="#id14" role="doc-backlink">Deprecated Variables that Control the Build</a><a class="headerlink" href="#deprecated-variables-that-control-the-build" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_ENABLE_EXPORTS.html">CMAKE_ENABLE_EXPORTS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_IOS_INSTALL_COMBINED.html">CMAKE_IOS_INSTALL_COMBINED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_LANG_USING_LINKER_MODE.html">CMAKE_&lt;LANG&gt;_USING_LINKER_MODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../variable/CMAKE_USE_RELATIVE_PATHS.html">CMAKE_USE_RELATIVE_PATHS</a></li>
@@ -1061,7 +1100,7 @@ are subject to change, and not recommended for use in project code.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -1073,8 +1112,8 @@ are subject to change, and not recommended for use in project code.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

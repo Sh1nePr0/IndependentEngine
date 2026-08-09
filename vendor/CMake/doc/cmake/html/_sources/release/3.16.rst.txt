@@ -113,7 +113,7 @@ Variables
   :prop_tgt:`CUDA_RESOLVE_DEVICE_SYMBOLS` target property.
 
 * The :variable:`CMAKE_ECLIPSE_RESOURCE_ENCODING` variable was added to
-  specify the resource encoding for the the :generator:`Eclipse CDT4` extra
+  specify the resource encoding for the :generator:`Eclipse CDT4` extra
   generator.
 
 * The :variable:`CMAKE_UNITY_BUILD` variable was added to initialize the
@@ -165,7 +165,7 @@ Modules
   a new ``REASON_FAILURE_MESSAGE`` option to specify a message
   giving the reason for the failure.
 
-* The :module:`FindPkgConfig` module :command:`pkg_search_module` macro
+* The :module:`FindPkgConfig` module :command:`pkg_search_module` command
   now defines a ``<prefix>_MODULE_NAME`` result variable containing the
   first matching module name.
 

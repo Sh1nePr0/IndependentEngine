@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>add_test &mdash; CMake 4.1.2 Documentation</title>
+  <title>add_test &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -67,7 +67,8 @@
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">add_test(</span><span class="no">NAME</span><span class="w"> </span><span class="nv">&lt;name&gt;</span><span class="w"> </span><span class="no">COMMAND</span><span class="w"> </span><span class="nv">&lt;command&gt;</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;arg&gt;...</span><span class="p">]</span>
 <span class="w">         </span><span class="p">[</span><span class="no">CONFIGURATIONS</span><span class="w"> </span><span class="nv">&lt;config&gt;...</span><span class="p">]</span>
 <span class="w">         </span><span class="p">[</span><span class="no">WORKING_DIRECTORY</span><span class="w"> </span><span class="nv">&lt;dir&gt;</span><span class="p">]</span>
-<span class="w">         </span><span class="p">[</span><span class="no">COMMAND_EXPAND_LISTS</span><span class="p">]</span><span class="nf">)</span>
+<span class="w">         </span><span class="p">[</span><span class="no">COMMAND_EXPAND_LISTS</span><span class="p">]</span>
+<span class="w">         </span><span class="p">[</span><span class="no">BUILD_DEPENDS</span><span class="w"> </span><span class="nv">&lt;dependencies&gt;...</span><span class="p">]</span><span class="nf">)</span>
 </pre></div>
 </div>
 <p>Adds a test called <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code>.  The test name may contain arbitrary
@@ -114,6 +115,21 @@ used to launch the command:</p>
 </div>
 </div>
 </li>
+<li><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4: </span>When the <span class="target" id="index-0-variable:CMAKE_TEST_BUILD_DEPENDS"></span><a class="reference internal" href="../variable/CMAKE_TEST_BUILD_DEPENDS.html#variable:CMAKE_TEST_BUILD_DEPENDS" title="CMAKE_TEST_BUILD_DEPENDS"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_TEST_BUILD_DEPENDS</span></code></a> variable is enabled,
+the <a class="reference internal" href="../manual/cmake-generators.7.html#ninja-generators"><span class="std std-ref">Ninja Generators</span></a> generate a convenience build target named
+<code class="docutils literal notranslate"><span class="pre">test_prep/&lt;name&gt;</span></code> that depends on the test executable target. Building
+this target ensures the executable is up-to-date before the test runs.</p>
+<p>Additionally, targets referenced by the test command via generator
+expressions are added as dependencies of the <code class="docutils literal notranslate"><span class="pre">test_prep/&lt;name&gt;</span></code> target.</p>
+<p>If multiple tests in different directories share the same name, their
+dependencies are merged into a single <code class="docutils literal notranslate"><span class="pre">test_prep/&lt;name&gt;</span></code> target.</p>
+<p>Tests with names that are not valid target names are excluded from this
+behavior.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">BUILD_DEPENDS</span></code> keyword can be used to add explicit build
+dependencies.</p>
+</div>
+</li>
 </ul>
 <p>The command may be specified using
 <span class="target" id="index-1-manual:cmake-generator-expressions(7)"></span><a class="reference internal" href="../manual/cmake-generator-expressions.7.html#manual:cmake-generator-expressions(7)" title="cmake-generator-expressions(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">generator</span> <span class="pre">expressions</span></code></a>.</p>
@@ -124,6 +140,15 @@ used to launch the command:</p>
 test. If not specified, the test will be run in
 <span class="target" id="index-0-variable:CMAKE_CURRENT_BINARY_DIR"></span><a class="reference internal" href="../variable/CMAKE_CURRENT_BINARY_DIR.html#variable:CMAKE_CURRENT_BINARY_DIR" title="CMAKE_CURRENT_BINARY_DIR"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_CURRENT_BINARY_DIR</span></code></a>. The working directory may be specified
 using <span class="target" id="index-2-manual:cmake-generator-expressions(7)"></span><a class="reference internal" href="../manual/cmake-generator-expressions.7.html#manual:cmake-generator-expressions(7)" title="cmake-generator-expressions(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">generator</span> <span class="pre">expressions</span></code></a>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">BUILD_DEPENDS</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4.</span></p>
+</div>
+<p>Specify a list of targets or files that must be built before the test can
+run. Each dependency is added to the <code class="docutils literal notranslate"><span class="pre">test_prep/&lt;name&gt;</span></code> build target
+described above when <span class="target" id="index-1-variable:CMAKE_TEST_BUILD_DEPENDS"></span><a class="reference internal" href="../variable/CMAKE_TEST_BUILD_DEPENDS.html#variable:CMAKE_TEST_BUILD_DEPENDS" title="CMAKE_TEST_BUILD_DEPENDS"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CMAKE_TEST_BUILD_DEPENDS</span></code></a> is enabled
+with the <a class="reference internal" href="../manual/cmake-generators.7.html#ninja-generators"><span class="std std-ref">Ninja Generators</span></a>. The test name must be a valid target name
+in order to list build dependencies with this keyword.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">COMMAND_EXPAND_LISTS</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.16.</span></p>
@@ -145,8 +170,8 @@ test properties.</p>
 </div>
 <p>Example usage:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">add_test(</span><span class="no">NAME</span><span class="w"> </span><span class="nb">mytest</span>
-<span class="w">         </span><span class="no">COMMAND</span><span class="w"> </span><span class="nb">testDriver</span><span class="w"> </span><span class="p">--</span><span class="nb">config</span><span class="w"> </span><span class="o">$&lt;</span><span class="no">CONFIG</span><span class="o">&gt;</span>
-<span class="w">                            </span><span class="p">--</span><span class="nb">exe</span><span class="w"> </span><span class="o">$&lt;</span><span class="no">TARGET_FILE</span><span class="o">:</span><span class="nb">myexe</span><span class="o">&gt;</span><span class="nf">)</span>
+<span class="w">         </span><span class="no">COMMAND</span><span class="w"> </span><span class="nb">testDriver</span><span class="w"> </span><span class="p">--</span><span class="nb">config</span><span class="w"> </span><span class="o">$&lt;</span><span class="no">CONFIG</span><span class="p">&gt;</span>
+<span class="w">                            </span><span class="p">--</span><span class="nb">exe</span><span class="w"> </span><span class="o">$&lt;</span><span class="no">TARGET_FILE</span><span class="o">:</span><span class="nb">myexe</span><span class="p">&gt;</span><span class="nf">)</span>
 </pre></div>
 </div>
 <p>This creates a test <code class="docutils literal notranslate"><span class="pre">mytest</span></code> whose command runs a <code class="docutils literal notranslate"><span class="pre">testDriver</span></code> tool
@@ -161,7 +186,8 @@ file produced by target <code class="docutils literal notranslate"><span class="
 <p>Unlike the above <code class="docutils literal notranslate"><span class="pre">NAME</span></code> signature, target names are not supported
 in the command-line.  Furthermore, tests added with this signature do not
 support <span class="target" id="index-4-manual:cmake-generator-expressions(7)"></span><a class="reference internal" href="../manual/cmake-generator-expressions.7.html#manual:cmake-generator-expressions(7)" title="cmake-generator-expressions(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">generator</span> <span class="pre">expressions</span></code></a>
-in the command-line or test properties.</p>
+in the command-line or test properties, and the <span class="target" id="index-1-prop_tgt:TEST_LAUNCHER"></span><a class="reference internal" href="../prop_tgt/TEST_LAUNCHER.html#prop_tgt:TEST_LAUNCHER" title="TEST_LAUNCHER"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">TEST_LAUNCHER</span></code></a>
+and <span class="target" id="index-2-prop_tgt:CROSSCOMPILING_EMULATOR"></span><a class="reference internal" href="../prop_tgt/CROSSCOMPILING_EMULATOR.html#prop_tgt:CROSSCOMPILING_EMULATOR" title="CROSSCOMPILING_EMULATOR"><code class="xref cmake cmake-prop_tgt docutils literal notranslate"><span class="pre">CROSSCOMPILING_EMULATOR</span></code></a> target properties are not supported.</p>
 </section>
 
 
@@ -219,7 +245,7 @@ in the command-line or test properties.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -232,8 +258,8 @@ in the command-line or test properties.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

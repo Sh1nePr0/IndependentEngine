@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindOpenAL &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindOpenAL &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -63,7 +63,10 @@
             
   <section id="findopenal">
 <span id="module:FindOpenAL"></span><h1>FindOpenAL<a class="headerlink" href="#findopenal" title="Link to this heading">¶</a></h1>
-<p>Finds the Open Audio Library (OpenAL).</p>
+<p>Finds the Open Audio Library (OpenAL):</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">OpenAL</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
 <p>OpenAL is a cross-platform 3D audio API designed for efficient rendering of
 multichannel three-dimensional positional audio.  It is commonly used in games
 and multimedia applications to provide immersive and spatialized sound.</p>
@@ -87,11 +90,11 @@ the OpenAL library is found.</p>
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">OpenAL_FOUND</span></code></dt><dd><p>Boolean indicating whether the OpenAL is found.  For backward compatibility,
-the <code class="docutils literal notranslate"><span class="pre">OPENAL_FOUND</span></code> variable is also set to the same value.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">OPENAL_VERSION_STRING</span></code></dt><dd><p>Human-readable string containing the version of OpenAL found.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">OpenAL_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.3.</span></p>
+</div>
+<p>Boolean indicating whether OpenAL was found.</p>
 </dd>
 </dl>
 </section>
@@ -125,6 +128,17 @@ the <span class="target" id="index-0-variable:CMAKE_FIND_FRAMEWORK"></span><a cl
 </dd>
 </dl>
 </section>
+<section id="deprecated-variables">
+<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
+<p>The following variables are provided for backward compatibility:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">OPENAL_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">OpenAL_FOUND</span></code>, which has the same value.</p>
+</div>
+<p>Boolean indicating whether OpenAL was found.</p>
+</dd>
+</dl>
+</section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <p>Finding the OpenAL library and linking it to a project target:</p>
@@ -150,6 +164,7 @@ the <span class="target" id="index-0-variable:CMAKE_FIND_FRAMEWORK"></span><a cl
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
 <li><a class="reference internal" href="#cache-variables">Cache Variables</a></li>
 <li><a class="reference internal" href="#hints">Hints</a></li>
+<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
@@ -204,7 +219,7 @@ the <span class="target" id="index-0-variable:CMAKE_FIND_FRAMEWORK"></span><a cl
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -217,8 +232,8 @@ the <span class="target" id="index-0-variable:CMAKE_FIND_FRAMEWORK"></span><a cl
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

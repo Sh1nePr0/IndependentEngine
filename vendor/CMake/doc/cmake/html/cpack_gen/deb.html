@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CPack DEB Generator &mdash; CMake 4.1.2 Documentation</title>
+  <title>CPack DEB Generator &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -438,13 +438,13 @@ will be emitted.</p>
 <p>Possible values are:</p>
 <blockquote>
 <div><dl>
-<dt><code class="docutils literal notranslate"><span class="pre">lzma</span></code></dt><dd><p>Lempel–Ziv–Markov chain algorithm</p>
+<dt><code class="docutils literal notranslate"><span class="pre">lzma</span></code></dt><dd><p>Lempel-Ziv-Markov chain algorithm</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">xz</span></code></dt><dd><p>XZ Utils compression</p>
+<dt><code class="docutils literal notranslate"><span class="pre">xz</span></code></dt><dd><p>XZ Utils LZMA2 (Lempel-Ziv-Markov chain algorithm, version 2) compression</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">bzip2</span></code></dt><dd><p>bzip2 Burrows–Wheeler algorithm</p>
+<dt><code class="docutils literal notranslate"><span class="pre">bzip2</span></code></dt><dd><p>bzip2 Burrows-Wheeler algorithm</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">gzip</span></code></dt><dd><p>GNU Gzip compression</p>
+<dt><code class="docutils literal notranslate"><span class="pre">gzip</span></code></dt><dd><p>GNU Gzip Deflate compression</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">zstd</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.22.</span></p>
@@ -453,6 +453,45 @@ will be emitted.</p>
 </dd>
 </dl>
 </div></blockquote>
+</dd></dl>
+
+<dl class="cmake variable">
+<dt class="sig sig-object cmake" id="variable:CPACK_DEBIAN_COMPRESSION_LEVEL">
+<span class="sig-name descname"><span class="pre">CPACK_DEBIAN_COMPRESSION_LEVEL</span></span><a class="headerlink" href="#variable:CPACK_DEBIAN_COMPRESSION_LEVEL" title="Link to this definition">¶</a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The compression level used for creating the Debian package.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mandatory<span class="colon">:</span></dt>
+<dd class="field-odd"><p>No</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>value of <span class="target" id="index-0-variable:CPACK_COMPRESSION_LEVEL"></span><a class="reference internal" href="../module/CPack.html#variable:CPACK_COMPRESSION_LEVEL" title="CPACK_COMPRESSION_LEVEL"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CPACK_COMPRESSION_LEVEL</span></code></a></p>
+</dd>
+</dl>
+<p>This variable allows fine-tuning of the compression ratio and speed for the
+Debian package archive. It controls the numeric compression level passed to
+the compressor defined by <span class="target" id="index-0-variable:CPACK_DEBIAN_COMPRESSION_TYPE"></span><a class="reference internal" href="#variable:CPACK_DEBIAN_COMPRESSION_TYPE" title="CPACK_DEBIAN_COMPRESSION_TYPE"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CPACK_DEBIAN_COMPRESSION_TYPE</span></code></a>.
+If <code class="docutils literal notranslate"><span class="pre">CPACK_DEBIAN_COMPRESSION_LEVEL</span></code> is not set, or is set to <code class="docutils literal notranslate"><span class="pre">0</span></code>,
+the default value will be used.</p>
+<p>The valid range and interpretation depend on the selected compression type:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">gzip</span></code>  - level 1-9</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bzip2</span></code> - level 1-9</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xz</span></code>    - level 1-9</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lzma</span></code>  - level 1-9</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zstd</span></code>  - level 1-19</p></li>
+</ul>
+</div></blockquote>
+<p>Example usage:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">set(</span><span class="no">CPACK_DEBIAN_COMPRESSION_TYPE</span><span class="w"> </span><span class="s">&quot;xz&quot;</span><span class="nf">)</span>
+<span class="nf">set(</span><span class="no">CPACK_DEBIAN_COMPRESSION_LEVEL</span><span class="w"> </span><span class="m">9</span><span class="nf">)</span>
+
+<span class="nf">include(</span><span class="nb">CPack</span><span class="nf">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="cmake variable">
@@ -1101,7 +1140,7 @@ use its value for timestamps in the package.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -1114,8 +1153,8 @@ use its value for timestamps in the package.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

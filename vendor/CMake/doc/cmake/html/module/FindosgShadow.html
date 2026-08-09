@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindosgShadow &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindosgShadow &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -97,10 +97,12 @@ also be required.</p>
 <section id="result-variables">
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
-<dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">osgShadow_FOUND</span></code></dt><dd><p>Boolean indicating whether the osgShadow NodeKit of the OpenSceneGraph
-toolkit is found.  For backward compatibility, the <code class="docutils literal notranslate"><span class="pre">OSGSHADOW_FOUND</span></code>
-variable is also set to the same value.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">osgShadow_FOUND</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.3.</span></p>
+</div>
+<p>Boolean indicating whether the osgShadow NodeKit of the OpenSceneGraph
+toolkit was found.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">OSGSHADOW_LIBRARIES</span></code></dt><dd><p>The libraries needed to link against to use osgShadow.</p>
 </dd>
@@ -127,6 +129,18 @@ variable.</p>
 toolkit, including its osgShadow NodeKit, when installed in a custom
 location.  It should point to the OpenSceneGraph installation prefix used when
 it was configured, built, and installed: <code class="docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">--prefix=$OSGDIR</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="deprecated-variables">
+<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
+<p>The following variables are provided for backward compatibility:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">OSGSHADOW_FOUND</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 4.2: </span>Use <code class="docutils literal notranslate"><span class="pre">osgShadow_FOUND</span></code>, which has the same value.</p>
+</div>
+<p>Boolean indicating whether the osgShadow NodeKit of the OpenSceneGraph
+toolkit was found.</p>
 </dd>
 </dl>
 </section>
@@ -173,6 +187,7 @@ requirements for linking it to a project target:</p>
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
 <li><a class="reference internal" href="#cache-variables">Cache Variables</a></li>
 <li><a class="reference internal" href="#hints">Hints</a></li>
+<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 <li><a class="reference internal" href="#see-also">See Also</a></li>
 </ul>
@@ -228,7 +243,7 @@ requirements for linking it to a project target:</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -241,8 +256,8 @@ requirements for linking it to a project target:</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

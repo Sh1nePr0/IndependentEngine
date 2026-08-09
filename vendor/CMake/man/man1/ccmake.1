@@ -1,4 +1,5 @@
-.\" Man page generated from reStructuredText.
+.\" Man page generated from reStructuredText
+.\" by the Docutils 0.22.4 manpage writer.
 .
 .
 .nr rst2man-indent-level 0
@@ -27,7 +28,7 @@ level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
 .in \\n[rst2man-indent\\n[rst2man-indent-level]]u
 ..
-.TH "CCMAKE" "1" "Sep 30, 2025" "4.1.2" "CMake"
+.TH "CCMAKE" "1" "Jul 31, 2026" "4.4.2" "CMake"
 .SH NAME
 ccmake \- CMake Curses Dialog Command-Line Reference
 .SH SYNOPSIS
@@ -76,10 +77,10 @@ the project.  This option may be used to specify a file from which
 to load cache entries before the first pass through the project\(aqs
 CMake listfiles.  The loaded entries take priority over the
 project\(aqs default values.  The given file should be a CMake script
-containing \fI\%set()\fP commands that use the \fBCACHE\fP option, not a
+containing \fBset()\fP \%<#\:command:set> commands that use the \fBCACHE\fP option, not a
 cache\-format file.
 .sp
-References to \fI\%CMAKE_SOURCE_DIR\fP and \fI\%CMAKE_BINARY_DIR\fP
+References to \fBCMAKE_SOURCE_DIR\fP \%<#\:variable:CMAKE_SOURCE_DIR> and \fBCMAKE_BINARY_DIR\fP \%<#\:variable:CMAKE_BINARY_DIR>
 within the script evaluate to the top\-level source and build tree.
 .UNINDENT
 .INDENT 0.0
@@ -94,7 +95,7 @@ takes priority over the project\(aqs default value.  The option may be
 repeated for as many \fBCACHE\fP entries as desired.
 .sp
 If the \fB:<type>\fP portion is given it must be one of the types
-specified by the \fI\%set()\fP command documentation for its
+specified by the \fBset()\fP \%<#\:command:set> command documentation for its
 \fBCACHE\fP signature.
 If the \fB:<type>\fP portion is omitted the entry will be created
 with no type if it does not exist with a type already.  If a
@@ -103,6 +104,19 @@ then the \fB<value>\fP will be converted to an absolute path.
 .sp
 This option may also be given as a single argument:
 \fB\-D<var>:<type>=<value>\fP or \fB\-D<var>=<value>\fP\&.
+.sp
+The cache \fBHELPSTRING\fP \%<#\:prop_cache:HELPSTRING> is populated as follows:
+.INDENT 7.0
+.IP \(bu 2
+If the cache entry is known to CMake, its help string is
+set to a one\-line description of the variable.
+.sp
+Added in version 4.4.
+
+.IP \(bu 2
+Otherwise, its help string is set to the generic default
+\fBNo help, variable specified on the command line.\fP
+.UNINDENT
 .sp
 It\(aqs important to note that the order of \fB\-C\fP and \fB\-D\fP arguments is
 significant. They will be carried out in the order they are listed, with the
@@ -147,9 +161,9 @@ Specify a build system generator.
 CMake may support multiple native build systems on certain
 platforms.  A generator is responsible for generating a particular
 build system.  Possible generator names are specified in the
-\fI\%cmake\-generators(7)\fP manual.
+\fBcmake\-generators(7)\fP \%<#\:manual:cmake-generators(7)> manual.
 .sp
-If not specified, CMake checks the \fI\%CMAKE_GENERATOR\fP environment
+If not specified, CMake checks the \fBCMAKE_GENERATOR\fP \%<#\:envvar:CMAKE_GENERATOR> environment
 variable and otherwise falls back to a builtin default selection.
 .UNINDENT
 .INDENT 0.0
@@ -159,7 +173,7 @@ Toolset specification for the generator, if supported.
 .sp
 Some CMake generators support a toolset specification to tell
 the native build system how to choose a compiler.  See the
-\fI\%CMAKE_GENERATOR_TOOLSET\fP variable for details.
+\fBCMAKE_GENERATOR_TOOLSET\fP \%<#\:variable:CMAKE_GENERATOR_TOOLSET> variable for details.
 .UNINDENT
 .INDENT 0.0
 .TP
@@ -168,7 +182,7 @@ Specify platform name if supported by generator.
 .sp
 Some CMake generators support a platform name to be given to the
 native build system to choose a compiler or SDK.  See the
-\fI\%CMAKE_GENERATOR_PLATFORM\fP variable for details.
+\fBCMAKE_GENERATOR_PLATFORM\fP \%<#\:variable:CMAKE_GENERATOR_PLATFORM> variable for details.
 .UNINDENT
 .INDENT 0.0
 .TP
@@ -177,7 +191,7 @@ Added in version 3.21.
 
 .sp
 Specify the cross compiling toolchain file, equivalent to setting
-\fI\%CMAKE_TOOLCHAIN_FILE\fP variable. Relative paths are interpreted as
+\fBCMAKE_TOOLCHAIN_FILE\fP \%<#\:variable:CMAKE_TOOLCHAIN_FILE> variable. Relative paths are interpreted as
 relative to the build directory, and if not found, relative to the source
 directory.
 .UNINDENT
@@ -188,7 +202,7 @@ Added in version 3.21.
 
 .sp
 Specify the installation directory, used by the
-\fI\%CMAKE_INSTALL_PREFIX\fP variable. Must be an absolute path.
+\fBCMAKE_INSTALL_PREFIX\fP \%<#\:variable:CMAKE_INSTALL_PREFIX> variable. Must be an absolute path.
 .UNINDENT
 .INDENT 0.0
 .TP
@@ -199,13 +213,13 @@ Added in version 4.0.
 Specify an alternate project file name.
 .sp
 This determines the top\-level file processed by CMake when configuring a
-project, and the file processed by \fI\%add_subdirectory()\fP\&.
+project, and the file processed by \fBadd_subdirectory()\fP \%<#\:command:add_subdirectory>\&.
 .sp
 By default, this is \fBCMakeLists.txt\fP\&. If set to anything else,
 \fBCMakeLists.txt\fP will be used as a fallback whenever the specified file
 cannot be found within a project subdirectory.
 .sp
-\fBNOTE:\fP
+\fBNote:\fP
 .INDENT 7.0
 .INDENT 3.5
 This feature is intended for temporary use by developers during an incremental
@@ -216,76 +230,53 @@ a warning when the project file is anything other than \fBCMakeLists.txt\fP\&.
 .UNINDENT
 .INDENT 0.0
 .TP
-.B \-Wno\-dev
-Suppress developer warnings.
+.B \-W<category>
+Promote the specified diagnostic category (and any children) to at least
+\fBWARN\fP severity.  Note that this has no effect on diagnostics already set to
+a higher severity.
 .sp
-Suppress warnings that are meant for the author of the
-\fBCMakeLists.txt\fP files. By default this will also turn off
-deprecation warnings.
+See the \fBcmake\-diagnostics(7)\fP \%<#\:manual:cmake-diagnostics(7)> manual for a list of accepted values
+for \fB<category>\fP\&.
 .UNINDENT
 .INDENT 0.0
 .TP
-.B \-Wdev
-Enable developer warnings.
-.sp
-Enable warnings that are meant for the author of the \fBCMakeLists.txt\fP
-files. By default this will also turn on deprecation warnings.
+.B \-Wno\-<category>
+Disable (ignore) all diagnostics of the specified category, including any
+child categories.
 .UNINDENT
 .INDENT 0.0
 .TP
-.B \-Wdeprecated
-Enable deprecated functionality warnings.
-.sp
-Enable warnings for usage of deprecated functionality, that are meant
-for the author of the \fBCMakeLists.txt\fP files.
+.B \-Werror=<category>
+Promote the specified diagnostic category (and any children) to at least
+\fBSEND_ERROR\fP severity.  Note that this has no effect on diagnostics already
+set to a higher severity.
 .UNINDENT
 .INDENT 0.0
 .TP
-.B \-Wno\-deprecated
-Suppress deprecated functionality warnings.
-.sp
-Suppress warnings for usage of deprecated functionality, that are meant
-for the author of the \fBCMakeLists.txt\fP files.
+.B \-Wno\-error=<category>
+Demote the specified diagnostic category (and any children) to at most
+\fBWARN\fP severity.  Note that this has no effect on diagnostics already
+set to a lower severity.
 .UNINDENT
 .INDENT 0.0
 .TP
-.B \-Werror=<what>
-Treat CMake warnings as errors. \fB<what>\fP must be one of the following:
-.INDENT 7.0
-.TP
-.B \fBdev\fP
-Make developer warnings errors.
+.B \-Wdev, \-Wno\-dev
+Deprecated since version 4.4.
+
 .sp
-Make warnings that are meant for the author of the \fBCMakeLists.txt\fP files
-errors. By default this will also turn on deprecated warnings as errors.
-.TP
-.B \fBdeprecated\fP
-Make deprecated macro and function warnings errors.
-.sp
-Make warnings for usage of deprecated macros and functions, that are meant
-for the author of the \fBCMakeLists.txt\fP files, errors.
-.UNINDENT
+Compatibility synonyms for \fB\-Wauthor\fP / \fB\-Wno\-author\fP\&.
 .UNINDENT
 .INDENT 0.0
 .TP
-.B \-Wno\-error=<what>
-Do not treat CMake warnings as errors. \fB<what>\fP must be one of the following:
-.INDENT 7.0
-.TP
-.B \fBdev\fP
-Make warnings that are meant for the author of the \fBCMakeLists.txt\fP files not
-errors. By default this will also turn off deprecated warnings as errors.
-.TP
-.B \fBdeprecated\fP
-Make warnings for usage of deprecated macros and functions, that are meant
-for the author of the \fBCMakeLists.txt\fP files, not errors.
-.UNINDENT
-.UNINDENT
-.INDENT 0.0
-.TP
-.B \-version [<file>], \-\-version [<file>], /V [<file>]
-Show program name/version banner and exit.
+.B \-version[=json\-v1] [<file>], \-\-version[=json\-v1] [<file>], /V[=json\-v1] [<file>], /version[=json\-v1] [<file>]
+Show program name/version banner and exit. If \fBjson\-v1\fP is
+specified, print extended version information in JSON format.
+The JSON output contains the versions for the CMake and its
+dependencies.
 The output is printed to a named \fB<file>\fP if given.
+.sp
+The JSON output format is described in machine\-readable form by
+\fBthis JSON schema\fP\&.
 .UNINDENT
 .INDENT 0.0
 .TP
@@ -339,7 +330,7 @@ The output is printed to a named \fB<file>\fP if given.
 .B \-\-help\-command <cmd> [<file>]
 Print help for one command and exit.
 .sp
-The \fI\%cmake\-commands(7)\fP manual entry for \fB<cmd>\fP is
+The \fBcmake\-commands(7)\fP \%<#\:manual:cmake-commands(7)> manual entry for \fB<cmd>\fP is
 printed in a human\-readable text format.
 The output is printed to a named \fB<file>\fP if given.
 .UNINDENT
@@ -357,7 +348,7 @@ The output is printed to a named \fB<file>\fP if given.
 .B \-\-help\-commands [<file>]
 Print cmake\-commands manual and exit.
 .sp
-The \fI\%cmake\-commands(7)\fP manual is printed in a
+The \fBcmake\-commands(7)\fP \%<#\:manual:cmake-commands(7)> manual is printed in a
 human\-readable text format.
 The output is printed to a named \fB<file>\fP if given.
 .UNINDENT
@@ -366,7 +357,7 @@ The output is printed to a named \fB<file>\fP if given.
 .B \-\-help\-module <mod> [<file>]
 Print help for one module and exit.
 .sp
-The \fI\%cmake\-modules(7)\fP manual entry for \fB<mod>\fP is printed
+The \fBcmake\-modules(7)\fP \%<#\:manual:cmake-modules(7)> manual entry for \fB<mod>\fP is printed
 in a human\-readable text format.
 The output is printed to a named \fB<file>\fP if given.
 .UNINDENT
@@ -384,7 +375,7 @@ The output is printed to a named \fB<file>\fP if given.
 .B \-\-help\-modules [<file>]
 Print cmake\-modules manual and exit.
 .sp
-The \fI\%cmake\-modules(7)\fP manual is printed in a human\-readable
+The \fBcmake\-modules(7)\fP \%<#\:manual:cmake-modules(7)> manual is printed in a human\-readable
 text format.
 The output is printed to a named \fB<file>\fP if given.
 .UNINDENT
@@ -393,7 +384,7 @@ The output is printed to a named \fB<file>\fP if given.
 .B \-\-help\-policy <cmp> [<file>]
 Print help for one policy and exit.
 .sp
-The \fI\%cmake\-policies(7)\fP manual entry for \fB<cmp>\fP is
+The \fBcmake\-policies(7)\fP \%<#\:manual:cmake-policies(7)> manual entry for \fB<cmp>\fP is
 printed in a human\-readable text format.
 The output is printed to a named \fB<file>\fP if given.
 .UNINDENT
@@ -411,7 +402,7 @@ The output is printed to a named \fB<file>\fP if given.
 .B \-\-help\-policies [<file>]
 Print cmake\-policies manual and exit.
 .sp
-The \fI\%cmake\-policies(7)\fP manual is printed in a
+The \fBcmake\-policies(7)\fP \%<#\:manual:cmake-policies(7)> manual is printed in a
 human\-readable text format.
 The output is printed to a named \fB<file>\fP if given.
 .UNINDENT
@@ -420,7 +411,7 @@ The output is printed to a named \fB<file>\fP if given.
 .B \-\-help\-property <prop> [<file>]
 Print help for one property and exit.
 .sp
-The \fI\%cmake\-properties(7)\fP manual entries for \fB<prop>\fP are
+The \fBcmake\-properties(7)\fP \%<#\:manual:cmake-properties(7)> manual entries for \fB<prop>\fP are
 printed in a human\-readable text format.
 The output is printed to a named \fB<file>\fP if given.
 .UNINDENT
@@ -438,7 +429,7 @@ The output is printed to a named \fB<file>\fP if given.
 .B \-\-help\-properties [<file>]
 Print cmake\-properties manual and exit.
 .sp
-The \fI\%cmake\-properties(7)\fP manual is printed in a
+The \fBcmake\-properties(7)\fP \%<#\:manual:cmake-properties(7)> manual is printed in a
 human\-readable text format.
 The output is printed to a named \fB<file>\fP if given.
 .UNINDENT
@@ -447,7 +438,7 @@ The output is printed to a named \fB<file>\fP if given.
 .B \-\-help\-variable <var> [<file>]
 Print help for one variable and exit.
 .sp
-The \fI\%cmake\-variables(7)\fP manual entry for \fB<var>\fP is
+The \fBcmake\-variables(7)\fP \%<#\:manual:cmake-variables(7)> manual entry for \fB<var>\fP is
 printed in a human\-readable text format.
 The output is printed to a named \fB<file>\fP if given.
 .UNINDENT
@@ -465,7 +456,7 @@ The output is printed to a named \fB<file>\fP if given.
 .B \-\-help\-variables [<file>]
 Print cmake\-variables manual and exit.
 .sp
-The \fI\%cmake\-variables(7)\fP manual is printed in a
+The \fBcmake\-variables(7)\fP \%<#\:manual:cmake-variables(7)> manual is printed in a
 human\-readable text format.
 The output is printed to a named \fB<file>\fP if given.
 .UNINDENT
@@ -475,22 +466,21 @@ The following resources are available to get help using CMake:
 .INDENT 0.0
 .TP
 .B Home Page
-\X'tty: link https://cmake.org'\fI\%https://cmake.org\fP\X'tty: link'
+\%<https://\:cmake\:.org>
 .sp
 The primary starting point for learning about CMake.
 .TP
 .B Online Documentation and Community Resources
-\X'tty: link https://cmake.org/documentation'\fI\%https://cmake.org/documentation\fP\X'tty: link'
+\%<https://\:cmake\:.org/\:documentation>
 .sp
 Links to available documentation and community resources may be
 found on this web page.
 .TP
 .B Discourse Forum
-\X'tty: link https://discourse.cmake.org'\fI\%https://discourse.cmake.org\fP\X'tty: link'
+\%<https://\:discourse\:.cmake\:.org>
 .sp
 The Discourse Forum hosts discussion and questions about CMake.
 .UNINDENT
-.SH COPYRIGHT
-2000-2025 Kitware, Inc. and Contributors
-.\" Generated by docutils manpage writer.
-.
+.SH Copyright
+2000-2026 Kitware, Inc. and Contributors
+.\" End of generated man page.

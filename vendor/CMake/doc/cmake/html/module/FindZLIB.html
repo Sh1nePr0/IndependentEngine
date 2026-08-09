@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>FindZLIB &mdash; CMake 4.1.2 Documentation</title>
+  <title>FindZLIB &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -63,7 +63,10 @@
             
   <section id="findzlib">
 <span id="module:FindZLIB"></span><h1>FindZLIB<a class="headerlink" href="#findzlib" title="Link to this heading">¶</a></h1>
-<p>Finds the native zlib data compression library.</p>
+<p>Finds the native zlib data compression library:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="no">ZLIB</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;version&gt;</span><span class="p">]</span><span class="w"> </span><span class="p">[...]</span><span class="nf">)</span>
+</pre></div>
+</div>
 <section id="imported-targets">
 <h2>Imported Targets<a class="headerlink" href="#imported-targets" title="Link to this heading">¶</a></h2>
 <p>This module provides the following <a class="reference internal" href="../manual/cmake-buildsystem.7.html#imported-targets"><span class="std std-ref">Imported Targets</span></a>:</p>
@@ -80,6 +83,13 @@ when zlib is found.</p>
 <h2>Result Variables<a class="headerlink" href="#result-variables" title="Link to this heading">¶</a></h2>
 <p>This module defines the following variables:</p>
 <dl>
+<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_FOUND</span></code></dt><dd><p>Boolean indicating whether (the requested version of) zlib was found.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.26.</span></p>
+</div>
+<p>The version of zlib found.</p>
+</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">ZLIB_INCLUDE_DIRS</span></code></dt><dd><p>Include directories containing <code class="docutils literal notranslate"><span class="pre">zlib.h</span></code> and other headers needed to use
 zlib.</p>
 </dd>
@@ -87,50 +97,6 @@ zlib.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 3.4: </span>Debug and Release library variants can be now found separately.</p>
 </div>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_FOUND</span></code></dt><dd><p>True if zlib is found.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code></dt><dd><div class="versionadded">
-<p><span class="versionmodified added">Added in version 3.26.</span></p>
-</div>
-<p>The version of zlib found.</p>
-</dd>
-</dl>
-</section>
-<section id="legacy-variables">
-<h2>Legacy Variables<a class="headerlink" href="#legacy-variables" title="Link to this heading">¶</a></h2>
-<p>The following variables are provided for backward compatibility:</p>
-<dl>
-<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_MAJOR</span></code></dt><dd><p>The major version of zlib.</p>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
-</div>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_MINOR</span></code></dt><dd><p>The minor version of zlib.</p>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
-</div>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_PATCH</span></code></dt><dd><p>The patch version of zlib.</p>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
-</div>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_TWEAK</span></code></dt><dd><p>The tweak version of zlib.</p>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
-</div>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_STRING</span></code></dt><dd><p>The version of zlib found (x.y.z).</p>
-<div class="versionchanged">
-<p><span class="versionmodified changed">Changed in version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
-</div>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_MAJOR_VERSION</span></code></dt><dd><p>The major version of zlib.  Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_MAJOR</span></code>.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_MINOR_VERSION</span></code></dt><dd><p>The minor version of zlib.  Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_MINOR</span></code>.</p>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_PATCH_VERSION</span></code></dt><dd><p>The patch version of zlib.  Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_PATCH</span></code>.</p>
 </dd>
 </dl>
 </section>
@@ -146,6 +112,52 @@ in custom installation paths.</p>
 </div>
 <p>Set this variable to <code class="docutils literal notranslate"><span class="pre">ON</span></code> before calling <code class="docutils literal notranslate"><span class="pre">find_package(ZLIB)</span></code> to look for
 static libraries.  Default is <code class="docutils literal notranslate"><span class="pre">OFF</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="deprecated-variables">
+<h2>Deprecated Variables<a class="headerlink" href="#deprecated-variables" title="Link to this heading">¶</a></h2>
+<p>The following variables are provided for backward compatibility:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_MAJOR</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
+</div>
+<p>The major version of zlib.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_MINOR</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
+</div>
+<p>The minor version of zlib.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_PATCH</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
+</div>
+<p>The patch version of zlib.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_TWEAK</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
+</div>
+<p>The tweak version of zlib.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION_STRING</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
+</div>
+<p>The version of zlib found (x.y.z).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_MAJOR_VERSION</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
+</div>
+<p>The major version of zlib.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_MINOR_VERSION</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
+</div>
+<p>The minor version of zlib.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ZLIB_PATCH_VERSION</span></code></dt><dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 3.26: </span>Superseded by <code class="docutils literal notranslate"><span class="pre">ZLIB_VERSION</span></code>.</p>
+</div>
+<p>The patch version of zlib.</p>
 </dd>
 </dl>
 </section>
@@ -172,8 +184,8 @@ static libraries.  Default is <code class="docutils literal notranslate"><span c
 <li><a class="reference internal" href="#">FindZLIB</a><ul>
 <li><a class="reference internal" href="#imported-targets">Imported Targets</a></li>
 <li><a class="reference internal" href="#result-variables">Result Variables</a></li>
-<li><a class="reference internal" href="#legacy-variables">Legacy Variables</a></li>
 <li><a class="reference internal" href="#hints">Hints</a></li>
+<li><a class="reference internal" href="#deprecated-variables">Deprecated Variables</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
@@ -228,7 +240,7 @@ static libraries.  Default is <code class="docutils literal notranslate"><span c
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -241,8 +253,8 @@ static libraries.  Default is <code class="docutils literal notranslate"><span c
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CMAKE_&lt;LANG&gt;_COMPILER_LINKER_ID &mdash; CMake 4.1.2 Documentation</title>
+  <title>CMAKE_&lt;LANG&gt;_COMPILER_LINKER_ID &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -76,31 +76,37 @@ include:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AppleClang</span></code></p></td>
-<td><p>Apple Clang</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">LLD</span></code></p></td>
-<td><p><a class="reference external" href="https://lld.llvm.org">LLVM LLD</a></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GNU</span></code></p></td>
-<td><p><a class="reference external" href="https://sourceware.org/binutils">GNU Binutils - ld linker</a> (also known as
-<code class="docutils literal notranslate"><span class="pre">bfd</span></code>)</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GNUgold</span></code></p></td>
-<td><p><a class="reference external" href="https://sourceware.org/binutils">GNU Binutils - gold linker</a></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MSVC</span></code></p></td>
-<td><p><a class="reference external" href="https://visualstudio.microsoft.com">Microsoft Visual Studio</a></p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MOLD</span></code></p></td>
-<td><p><a class="reference external" href="https://github.com/rui314/mold">mold: A Modern Linker</a>, or on Apple the
-<a class="reference external" href="https://github.com/bluewhalesystems/sold">sold</a> linker</p></td>
-</tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AIX</span></code></p></td>
 <td><p>AIX system linker</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">AppleClang</span></code></p></td>
+<td><p>Apple Clang</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">LLD</span></code></p></td>
+<td><p><a class="reference external" href="https://lld.llvm.org">LLVM LLD</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">GNU</span></code></p></td>
+<td><p><a class="reference external" href="https://sourceware.org/binutils">GNU Binutils - ld linker</a> (also known as
+<code class="docutils literal notranslate"><span class="pre">bfd</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">GNUgold</span></code></p></td>
+<td><p><a class="reference external" href="https://sourceware.org/binutils">GNU Binutils - gold linker</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">MSVC</span></code></p></td>
+<td><p><a class="reference external" href="https://visualstudio.microsoft.com">Microsoft Visual Studio</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">MOLD</span></code></p></td>
+<td><p><a class="reference external" href="https://github.com/rui314/mold">mold: A Modern Linker</a>, or on Apple the
+<a class="reference external" href="https://github.com/bluewhalesystems/sold">sold</a> linker</p></td>
+</tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Solaris</span></code></p></td>
 <td><p>SunOS system linker</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">WILD</span></code></p></td>
+<td><p><a class="reference external" href="https://github.com/wild-linker/wild">wild</a> linker</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">OpenWatcom</span></code></p></td>
+<td><p><a class="reference external" href="https://www.openwatcom.com/">OpenWatcom wlink</a> linker</p></td>
 </tr>
 </tbody>
 </table>
@@ -162,7 +168,7 @@ include:</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -175,8 +181,8 @@ include:</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

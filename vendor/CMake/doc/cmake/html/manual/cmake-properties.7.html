@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>cmake-properties(7) &mdash; CMake 4.1.2 Documentation</title>
+  <title>cmake-properties(7) &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -70,13 +70,14 @@
 <li><p><a class="reference internal" href="#properties-of-global-scope" id="id2">Properties of Global Scope</a></p></li>
 <li><p><a class="reference internal" href="#properties-on-directories" id="id3">Properties on Directories</a></p></li>
 <li><p><a class="reference internal" href="#properties-on-targets" id="id4">Properties on Targets</a></p></li>
-<li><p><a class="reference internal" href="#properties-on-tests" id="id5">Properties on Tests</a></p></li>
-<li><p><a class="reference internal" href="#properties-on-source-files" id="id6">Properties on Source Files</a></p></li>
-<li><p><a class="reference internal" href="#properties-on-cache-entries" id="id7">Properties on Cache Entries</a></p></li>
-<li><p><a class="reference internal" href="#properties-on-installed-files" id="id8">Properties on Installed Files</a></p></li>
-<li><p><a class="reference internal" href="#deprecated-properties-on-directories" id="id9">Deprecated Properties on Directories</a></p></li>
-<li><p><a class="reference internal" href="#deprecated-properties-on-targets" id="id10">Deprecated Properties on Targets</a></p></li>
-<li><p><a class="reference internal" href="#deprecated-properties-on-source-files" id="id11">Deprecated Properties on Source Files</a></p></li>
+<li><p><a class="reference internal" href="#properties-on-file-sets" id="id5">Properties on File Sets</a></p></li>
+<li><p><a class="reference internal" href="#properties-on-tests" id="id6">Properties on Tests</a></p></li>
+<li><p><a class="reference internal" href="#properties-on-source-files" id="id7">Properties on Source Files</a></p></li>
+<li><p><a class="reference internal" href="#properties-on-cache-entries" id="id8">Properties on Cache Entries</a></p></li>
+<li><p><a class="reference internal" href="#properties-on-installed-files" id="id9">Properties on Installed Files</a></p></li>
+<li><p><a class="reference internal" href="#deprecated-properties-on-directories" id="id10">Deprecated Properties on Directories</a></p></li>
+<li><p><a class="reference internal" href="#deprecated-properties-on-targets" id="id11">Deprecated Properties on Targets</a></p></li>
+<li><p><a class="reference internal" href="#deprecated-properties-on-source-files" id="id12">Deprecated Properties on Source Files</a></p></li>
 </ul>
 </li>
 </ul>
@@ -110,8 +111,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_gbl/GENERATOR_IS_MULTI_CONFIG.html">GENERATOR_IS_MULTI_CONFIG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_gbl/GLOBAL_DEPENDS_DEBUG_MODE.html">GLOBAL_DEPENDS_DEBUG_MODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_gbl/GLOBAL_DEPENDS_NO_CYCLES.html">GLOBAL_DEPENDS_NO_CYCLES</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../prop_gbl/INSTALL_PARALLEL.html">INSTALL_PARALLEL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_gbl/IN_TRY_COMPILE.html">IN_TRY_COMPILE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_gbl/INSTALL_PARALLEL.html">INSTALL_PARALLEL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_gbl/JOB_POOLS.html">JOB_POOLS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_gbl/PACKAGES_FOUND.html">PACKAGES_FOUND</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_gbl/PACKAGES_NOT_FOUND.html">PACKAGES_NOT_FOUND</a></li>
@@ -152,7 +153,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/LINK_DIRECTORIES.html">LINK_DIRECTORIES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/LINK_OPTIONS.html">LINK_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/LISTFILE_STACK.html">LISTFILE_STACK</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../prop_dir/MACROS.html">MACROS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/PARENT_DIRECTORY.html">PARENT_DIRECTORY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/RULE_LAUNCH_COMPILE.html">RULE_LAUNCH_COMPILE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/RULE_LAUNCH_CUSTOM.html">RULE_LAUNCH_CUSTOM</a></li>
@@ -292,6 +292,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/EXPORT_NAME.html">EXPORT_NAME</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/EXPORT_NO_SYSTEM.html">EXPORT_NO_SYSTEM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/EXPORT_PROPERTIES.html">EXPORT_PROPERTIES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/FASTBUILD_CACHING.html">FASTBUILD_CACHING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/FASTBUILD_DISTRIBUTION.html">FASTBUILD_DISTRIBUTION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/FOLDER.html">FOLDER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/Fortran_BUILDING_INTRINSIC_MODULES.html">Fortran_BUILDING_INTRINSIC_MODULES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/Fortran_FORMAT.html">Fortran_FORMAT</a></li>
@@ -321,6 +323,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/IMPORTED_CXX_MODULES_COMPILE_DEFINITIONS.html">IMPORTED_CXX_MODULES_COMPILE_DEFINITIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/IMPORTED_CXX_MODULES_COMPILE_FEATURES.html">IMPORTED_CXX_MODULES_COMPILE_FEATURES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/IMPORTED_CXX_MODULES_COMPILE_OPTIONS.html">IMPORTED_CXX_MODULES_COMPILE_OPTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/IMPORTED_CXX_MODULES_CONFIG.html">IMPORTED_CXX_MODULES_&lt;CONFIG&gt;</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/IMPORTED_CXX_MODULES_INCLUDE_DIRECTORIES.html">IMPORTED_CXX_MODULES_INCLUDE_DIRECTORIES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/IMPORTED_CXX_MODULES_LINK_LIBRARIES.html">IMPORTED_CXX_MODULES_LINK_LIBRARIES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/IMPORTED_GLOBAL.html">IMPORTED_GLOBAL</a></li>
@@ -348,6 +351,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/IMPORT_SUFFIX.html">IMPORT_SUFFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INCLUDE_DIRECTORIES.html">INCLUDE_DIRECTORIES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INSTALL_NAME_DIR.html">INSTALL_NAME_DIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INSTALL_OBJECT_NAME_STRATEGY.html">INSTALL_OBJECT_NAME_STRATEGY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INSTALL_OBJECT_ONLY_USE_DESTINATION.html">INSTALL_OBJECT_ONLY_USE_DESTINATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INSTALL_REMOVE_ENVIRONMENT_RPATH.html">INSTALL_REMOVE_ENVIRONMENT_RPATH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INSTALL_RPATH.html">INSTALL_RPATH</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INSTALL_RPATH_USE_LINK_PATH.html">INSTALL_RPATH_USE_LINK_PATH</a></li>
@@ -368,6 +373,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INTERFACE_LINK_OPTIONS.html">INTERFACE_LINK_OPTIONS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INTERFACE_POSITION_INDEPENDENT_CODE.html">INTERFACE_POSITION_INDEPENDENT_CODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INTERFACE_PRECOMPILE_HEADERS.html">INTERFACE_PRECOMPILE_HEADERS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INTERFACE_SOURCE_SETS.html">INTERFACE_SOURCE_SETS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INTERFACE_SOURCES.html">INTERFACE_SOURCES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INTERFACE_SYSTEM_INCLUDE_DIRECTORIES.html">INTERFACE_SYSTEM_INCLUDE_DIRECTORIES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/INTERPROCEDURAL_OPTIMIZATION.html">INTERPROCEDURAL_OPTIMIZATION</a></li>
@@ -388,6 +394,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LANG_ICSTAT.html">&lt;LANG&gt;_ICSTAT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LANG_INCLUDE_WHAT_YOU_USE.html">&lt;LANG&gt;_INCLUDE_WHAT_YOU_USE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LANG_LINKER_LAUNCHER.html">&lt;LANG&gt;_LINKER_LAUNCHER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LANG_PVS_STUDIO.html">&lt;LANG&gt;_PVS_STUDIO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LANG_STANDARD.html">&lt;LANG&gt;_STANDARD</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LANG_STANDARD_REQUIRED.html">&lt;LANG&gt;_STANDARD_REQUIRED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LANG_VISIBILITY_PRESET.html">&lt;LANG&gt;_VISIBILITY_PRESET</a></li>
@@ -395,7 +402,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LIBRARY_OUTPUT_DIRECTORY_CONFIG.html">LIBRARY_OUTPUT_DIRECTORY_&lt;CONFIG&gt;</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LIBRARY_OUTPUT_NAME.html">LIBRARY_OUTPUT_NAME</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LIBRARY_OUTPUT_NAME_CONFIG.html">LIBRARY_OUTPUT_NAME_&lt;CONFIG&gt;</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SPDX_LICENSE.html">SPDX_LICENSE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LINK_DEPENDS.html">LINK_DEPENDS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LINK_DEPENDS_NO_SHARED.html">LINK_DEPENDS_NO_SHARED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/LINK_DIRECTORIES.html">LINK_DIRECTORIES</a></li>
@@ -455,6 +461,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/PRECOMPILE_HEADERS_REUSE_FROM.html">PRECOMPILE_HEADERS_REUSE_FROM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/PREFIX.html">PREFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/PRIVATE_HEADER.html">PRIVATE_HEADER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/PRIVATE_HEADER_SETS_TO_VERIFY.html">PRIVATE_HEADER_SETS_TO_VERIFY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/PROJECT_LABEL.html">PROJECT_LABEL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/PUBLIC_HEADER.html">PUBLIC_HEADER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/RESOURCE.html">RESOURCE</a></li>
@@ -465,10 +472,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/RUNTIME_OUTPUT_DIRECTORY_CONFIG.html">RUNTIME_OUTPUT_DIRECTORY_&lt;CONFIG&gt;</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/RUNTIME_OUTPUT_NAME.html">RUNTIME_OUTPUT_NAME</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/RUNTIME_OUTPUT_NAME_CONFIG.html">RUNTIME_OUTPUT_NAME_&lt;CONFIG&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/Rust_EDITION.html">Rust_EDITION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SKIP_BUILD_RPATH.html">SKIP_BUILD_RPATH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SKIP_LINTING.html">SKIP_LINTING</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SOURCE_DIR.html">SOURCE_DIR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SOURCE_DIRS.html">SOURCE_DIRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SOURCE_DIRS_NAME.html">SOURCE_DIRS_&lt;NAME&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SOURCE_SET.html">SOURCE_SET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SOURCE_SET_NAME.html">SOURCE_SET_&lt;NAME&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SOURCE_SETS.html">SOURCE_SETS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SOURCES.html">SOURCES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SOVERSION.html">SOVERSION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SPDX_LICENSE.html">SPDX_LICENSE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/STATIC_LIBRARY_FLAGS.html">STATIC_LIBRARY_FLAGS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/STATIC_LIBRARY_FLAGS_CONFIG.html">STATIC_LIBRARY_FLAGS_&lt;CONFIG&gt;</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/STATIC_LIBRARY_OPTIONS.html">STATIC_LIBRARY_OPTIONS</a></li>
@@ -478,6 +493,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/Swift_LANGUAGE_VERSION.html">Swift_LANGUAGE_VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/Swift_MODULE_DIRECTORY.html">Swift_MODULE_DIRECTORY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/Swift_MODULE_NAME.html">Swift_MODULE_NAME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/Swift_PACKAGE_NAME.html">Swift_PACKAGE_NAME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/Swift_SEPARATE_MODULE_EMISSION.html">Swift_SEPARATE_MODULE_EMISSION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SYMBOLIC.html">SYMBOLIC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/SYSTEM.html">SYSTEM</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/TEST_LAUNCHER.html">TEST_LAUNCHER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/TRANSITIVE_COMPILE_PROPERTIES.html">TRANSITIVE_COMPILE_PROPERTIES</a></li>
@@ -487,10 +505,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/UNITY_BUILD_BATCH_SIZE.html">UNITY_BUILD_BATCH_SIZE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/UNITY_BUILD_CODE_AFTER_INCLUDE.html">UNITY_BUILD_CODE_AFTER_INCLUDE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/UNITY_BUILD_CODE_BEFORE_INCLUDE.html">UNITY_BUILD_CODE_BEFORE_INCLUDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/UNITY_BUILD_FILENAME_PREFIX.html">UNITY_BUILD_FILENAME_PREFIX</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/UNITY_BUILD_MODE.html">UNITY_BUILD_MODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/UNITY_BUILD_RELOCATABLE.html">UNITY_BUILD_RELOCATABLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/UNITY_BUILD_UNIQUE_ID.html">UNITY_BUILD_UNIQUE_ID</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/VERIFY_INTERFACE_HEADER_SETS.html">VERIFY_INTERFACE_HEADER_SETS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/VERIFY_PRIVATE_HEADER_SETS.html">VERIFY_PRIVATE_HEADER_SETS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/VERSION.html">VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/VISIBILITY_INLINES_HIDDEN.html">VISIBILITY_INLINES_HIDDEN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/VS_CONFIGURATION_TYPE.html">VS_CONFIGURATION_TYPE</a></li>
@@ -564,13 +584,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_EXECUTABLE.html">XCODE_SCHEME_EXECUTABLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_GUARD_MALLOC.html">XCODE_SCHEME_GUARD_MALLOC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_LAUNCH_CONFIGURATION.html">XCODE_SCHEME_LAUNCH_CONFIGURATION</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_TEST_CONFIGURATION.html">XCODE_SCHEME_TEST_CONFIGURATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_LAUNCH_MODE.html">XCODE_SCHEME_LAUNCH_MODE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_LLDB_INIT_FILE.html">XCODE_SCHEME_LLDB_INIT_FILE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP.html">XCODE_SCHEME_MAIN_THREAD_CHECKER_STOP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_MALLOC_GUARD_EDGES.html">XCODE_SCHEME_MALLOC_GUARD_EDGES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_MALLOC_SCRIBBLE.html">XCODE_SCHEME_MALLOC_SCRIBBLE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_MALLOC_STACK.html">XCODE_SCHEME_MALLOC_STACK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_TEST_CONFIGURATION.html">XCODE_SCHEME_TEST_CONFIGURATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_THREAD_SANITIZER.html">XCODE_SCHEME_THREAD_SANITIZER</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_THREAD_SANITIZER_STOP.html">XCODE_SCHEME_THREAD_SANITIZER_STOP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/XCODE_SCHEME_UNDEFINED_BEHAVIOUR_SANITIZER.html">XCODE_SCHEME_UNDEFINED_BEHAVIOUR_SANITIZER</a></li>
@@ -582,8 +602,32 @@
 </ul>
 </div>
 </section>
+<section id="properties-on-file-sets">
+<span id="file-set-properties"></span><h2><a class="toc-backref" href="#id5" role="doc-backlink">Properties on File Sets</a><a class="headerlink" href="#properties-on-file-sets" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/BASE_DIRS.html">BASE_DIRS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/COMPILE_DEFINITIONS.html">COMPILE_DEFINITIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/COMPILE_OPTIONS.html">COMPILE_OPTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/CXX_SCAN_FOR_MODULES.html">CXX_SCAN_FOR_MODULES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/JOB_POOL_COMPILE.html">JOB_POOL_COMPILE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/INCLUDE_DIRECTORIES.html">INCLUDE_DIRECTORIES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/INDEPENDENT_FILES.html">INDEPENDENT_FILES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/INTERFACE_COMPILE_DEFINITIONS.html">INTERFACE_COMPILE_DEFINITIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/INTERFACE_COMPILE_OPTIONS.html">INTERFACE_COMPILE_OPTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/INTERFACE_INCLUDE_DIRECTORIES.html">INTERFACE_INCLUDE_DIRECTORIES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/INTERFACE_SOURCES.html">INTERFACE_SOURCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/SCOPE.html">SCOPE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/SKIP_LINTING.html">SKIP_LINTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/SKIP_PRECOMPILE_HEADERS.html">SKIP_PRECOMPILE_HEADERS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/SKIP_UNITY_BUILD_INCLUSION.html">SKIP_UNITY_BUILD_INCLUSION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/SOURCES.html">SOURCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_fs/TYPE.html">TYPE</a></li>
+</ul>
+</div>
+</section>
 <section id="properties-on-tests">
-<span id="test-properties"></span><h2><a class="toc-backref" href="#id5" role="doc-backlink">Properties on Tests</a><a class="headerlink" href="#properties-on-tests" title="Link to this heading">¶</a></h2>
+<span id="test-properties"></span><h2><a class="toc-backref" href="#id6" role="doc-backlink">Properties on Tests</a><a class="headerlink" href="#properties-on-tests" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../prop_test/ATTACHED_FILES.html">ATTACHED_FILES</a></li>
@@ -619,7 +663,7 @@
 </div>
 </section>
 <section id="properties-on-source-files">
-<span id="source-file-properties"></span><h2><a class="toc-backref" href="#id6" role="doc-backlink">Properties on Source Files</a><a class="headerlink" href="#properties-on-source-files" title="Link to this heading">¶</a></h2>
+<span id="source-file-properties"></span><h2><a class="toc-backref" href="#id7" role="doc-backlink">Properties on Source Files</a><a class="headerlink" href="#properties-on-source-files" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/ABSTRACT.html">ABSTRACT</a></li>
@@ -635,13 +679,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/GENERATED.html">GENERATED</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/HEADER_FILE_ONLY.html">HEADER_FILE_ONLY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/INCLUDE_DIRECTORIES.html">INCLUDE_DIRECTORIES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_sf/INSTALL_OBJECT_NAME.html">INSTALL_OBJECT_NAME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_sf/JOB_POOL_COMPILE.html">JOB_POOL_COMPILE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/KEEP_EXTENSION.html">KEEP_EXTENSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/LABELS.html">LABELS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/LANGUAGE.html">LANGUAGE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/LOCATION.html">LOCATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/MACOSX_PACKAGE_LOCATION.html">MACOSX_PACKAGE_LOCATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/OBJECT_DEPENDS.html">OBJECT_DEPENDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_sf/OBJECT_NAME.html">OBJECT_NAME</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/OBJECT_OUTPUTS.html">OBJECT_OUTPUTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_sf/Rust_EMIT.html">Rust_EMIT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/SKIP_AUTOGEN.html">SKIP_AUTOGEN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/SKIP_AUTOMOC.html">SKIP_AUTOMOC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/SKIP_AUTORCC.html">SKIP_AUTORCC</a></li>
@@ -680,7 +728,7 @@
 </div>
 </section>
 <section id="properties-on-cache-entries">
-<span id="cache-entry-properties"></span><h2><a class="toc-backref" href="#id7" role="doc-backlink">Properties on Cache Entries</a><a class="headerlink" href="#properties-on-cache-entries" title="Link to this heading">¶</a></h2>
+<span id="cache-entry-properties"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">Properties on Cache Entries</a><a class="headerlink" href="#properties-on-cache-entries" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../prop_cache/ADVANCED.html">ADVANCED</a></li>
@@ -693,7 +741,7 @@
 </div>
 </section>
 <section id="properties-on-installed-files">
-<span id="installed-file-properties"></span><h2><a class="toc-backref" href="#id8" role="doc-backlink">Properties on Installed Files</a><a class="headerlink" href="#properties-on-installed-files" title="Link to this heading">¶</a></h2>
+<span id="installed-file-properties"></span><h2><a class="toc-backref" href="#id9" role="doc-backlink">Properties on Installed Files</a><a class="headerlink" href="#properties-on-installed-files" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../prop_inst/CPACK_DESKTOP_SHORTCUTS.html">CPACK_DESKTOP_SHORTCUTS</a></li>
@@ -706,19 +754,20 @@
 </div>
 </section>
 <section id="deprecated-properties-on-directories">
-<h2><a class="toc-backref" href="#id9" role="doc-backlink">Deprecated Properties on Directories</a><a class="headerlink" href="#deprecated-properties-on-directories" title="Link to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Deprecated Properties on Directories</a><a class="headerlink" href="#deprecated-properties-on-directories" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/ADDITIONAL_MAKE_CLEAN_FILES.html">ADDITIONAL_MAKE_CLEAN_FILES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/COMPILE_DEFINITIONS_CONFIG.html">COMPILE_DEFINITIONS_&lt;CONFIG&gt;</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/INTERPROCEDURAL_OPTIMIZATION.html">INTERPROCEDURAL_OPTIMIZATION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/INTERPROCEDURAL_OPTIMIZATION_CONFIG.html">INTERPROCEDURAL_OPTIMIZATION_&lt;CONFIG&gt;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prop_dir/MACROS.html">MACROS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prop_dir/TEST_INCLUDE_FILE.html">TEST_INCLUDE_FILE</a></li>
 </ul>
 </div>
 </section>
 <section id="deprecated-properties-on-targets">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">Deprecated Properties on Targets</a><a class="headerlink" href="#deprecated-properties-on-targets" title="Link to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Deprecated Properties on Targets</a><a class="headerlink" href="#deprecated-properties-on-targets" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../prop_tgt/COMPILE_DEFINITIONS_CONFIG.html">COMPILE_DEFINITIONS_&lt;CONFIG&gt;</a></li>
@@ -732,7 +781,7 @@
 </div>
 </section>
 <section id="deprecated-properties-on-source-files">
-<h2><a class="toc-backref" href="#id11" role="doc-backlink">Deprecated Properties on Source Files</a><a class="headerlink" href="#deprecated-properties-on-source-files" title="Link to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Deprecated Properties on Source Files</a><a class="headerlink" href="#deprecated-properties-on-source-files" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../prop_sf/COMPILE_DEFINITIONS_CONFIG.html">COMPILE_DEFINITIONS_&lt;CONFIG&gt;</a></li>
@@ -755,6 +804,7 @@
 <li><a class="reference internal" href="#properties-of-global-scope">Properties of Global Scope</a></li>
 <li><a class="reference internal" href="#properties-on-directories">Properties on Directories</a></li>
 <li><a class="reference internal" href="#properties-on-targets">Properties on Targets</a></li>
+<li><a class="reference internal" href="#properties-on-file-sets">Properties on File Sets</a></li>
 <li><a class="reference internal" href="#properties-on-tests">Properties on Tests</a></li>
 <li><a class="reference internal" href="#properties-on-source-files">Properties on Source Files</a></li>
 <li><a class="reference internal" href="#properties-on-cache-entries">Properties on Cache Entries</a></li>
@@ -815,7 +865,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -827,8 +877,8 @@
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>ctest_test &mdash; CMake 4.1.2 Documentation</title>
+  <title>ctest_test &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -80,13 +80,15 @@
 <span class="w">           </span><span class="p">[</span><span class="no">PARALLEL_LEVEL</span><span class="w"> </span><span class="p">[</span><span class="nv">&lt;level&gt;</span><span class="p">]]</span>
 <span class="w">           </span><span class="p">[</span><span class="no">RESOURCE_SPEC_FILE</span><span class="w"> </span><span class="nv">&lt;file&gt;</span><span class="p">]</span>
 <span class="w">           </span><span class="p">[</span><span class="no">TEST_LOAD</span><span class="w"> </span><span class="nv">&lt;threshold&gt;</span><span class="p">]</span>
-<span class="w">           </span><span class="p">[</span><span class="no">SCHEDULE_RANDOM</span><span class="w"> </span><span class="o">&lt;</span><span class="no">ON</span><span class="p">|</span><span class="no">OFF</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="w">           </span><span class="p">[</span><span class="no">SCHEDULE_RANDOM</span><span class="w"> </span><span class="p">&lt;</span><span class="no">ON</span><span class="p">|</span><span class="no">OFF</span><span class="p">&gt;]</span>
 <span class="w">           </span><span class="p">[</span><span class="no">STOP_ON_FAILURE</span><span class="p">]</span>
 <span class="w">           </span><span class="p">[</span><span class="no">STOP_TIME</span><span class="w"> </span><span class="nv">&lt;time-of-day&gt;</span><span class="p">]</span>
 <span class="w">           </span><span class="p">[</span><span class="no">RETURN_VALUE</span><span class="w"> </span><span class="nv">&lt;result-var&gt;</span><span class="p">]</span>
 <span class="w">           </span><span class="p">[</span><span class="no">CAPTURE_CMAKE_ERROR</span><span class="w"> </span><span class="nv">&lt;result-var&gt;</span><span class="p">]</span>
 <span class="w">           </span><span class="p">[</span><span class="no">REPEAT</span><span class="w"> </span><span class="nv">&lt;mode&gt;</span><span class="o">:</span><span class="nv">&lt;n&gt;</span><span class="p">]</span>
 <span class="w">           </span><span class="p">[</span><span class="no">OUTPUT_JUNIT</span><span class="w"> </span><span class="nv">&lt;file&gt;</span><span class="p">]</span>
+<span class="w">           </span><span class="p">[</span><span class="no">PRESET</span><span class="w"> </span><span class="nv">&lt;preset&gt;</span><span class="p">]</span>
+<span class="w">           </span><span class="p">[</span><span class="no">PRESETS_FILE</span><span class="w"> </span><span class="nv">&lt;file&gt;</span><span class="p">]</span>
 <span class="w">           </span><span class="p">[</span><span class="no">QUIET</span><span class="p">]</span>
 <span class="w">           </span><span class="nf">)</span>
 </pre></div>
@@ -152,8 +154,8 @@ setup tests that fail.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">PARALLEL_LEVEL</span> <span class="pre">[&lt;level&gt;]</span></code></dt><dd><p>Run tests in parallel, limited to a given level of parallelism.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">Added in version 3.29: </span>The <code class="docutils literal notranslate"><span class="pre">&lt;level&gt;</span></code> may be omitted, or <code class="docutils literal notranslate"><span class="pre">0</span></code>, to let ctest use a default
-level of parallelism, or unbounded parallelism, respectively, as
+<p><span class="versionmodified added">Added in version 3.29: </span>The <code class="docutils literal notranslate"><span class="pre">&lt;level&gt;</span></code> may be omitted, or <code class="docutils literal notranslate"><span class="pre">0</span></code>, to let <span class="target" id="index-0-manual:ctest(1)"></span><a class="reference internal" href="../manual/ctest.1.html#manual:ctest(1)" title="ctest(1)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">ctest(1)</span></code></a> use a
+default level of parallelism, or unbounded parallelism, respectively, as
 documented by the <a class="reference internal" href="../manual/ctest.1.html#cmdoption-ctest-j"><code class="xref std std-option docutils literal notranslate"><span class="pre">ctest</span> <span class="pre">--parallel</span></code></a> option.</p>
 </div>
 </dd>
@@ -171,7 +173,7 @@ documented by the <a class="reference internal" href="../manual/ctest.1.html#cmd
 may cause the CPU load to pass above a given threshold.  If not
 specified the <span class="target" id="index-0-variable:CTEST_TEST_LOAD"></span><a class="reference internal" href="../variable/CTEST_TEST_LOAD.html#variable:CTEST_TEST_LOAD" title="CTEST_TEST_LOAD"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CTEST_TEST_LOAD</span></code></a> variable will be checked,
 and then the <a class="reference internal" href="../manual/ctest.1.html#cmdoption-ctest-test-load"><code class="xref std std-option docutils literal notranslate"><span class="pre">--test-load</span></code></a> command-line
-argument to <span class="target" id="index-0-manual:ctest(1)"></span><a class="reference internal" href="../manual/ctest.1.html#manual:ctest(1)" title="ctest(1)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">ctest(1)</span></code></a>. See also the <code class="docutils literal notranslate"><span class="pre">TestLoad</span></code> setting
+argument to <span class="target" id="index-1-manual:ctest(1)"></span><a class="reference internal" href="../manual/ctest.1.html#manual:ctest(1)" title="ctest(1)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">ctest(1)</span></code></a>. See also the <code class="docutils literal notranslate"><span class="pre">TestLoad</span></code> setting
 in the <a class="reference internal" href="../manual/ctest.1.html#ctest-test-step"><span class="std std-ref">CTest Test Step</span></a>.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">REPEAT</span> <span class="pre">&lt;mode&gt;:&lt;n&gt;</span></code></dt><dd><div class="versionadded">
@@ -210,8 +212,9 @@ Store non-zero if anything went wrong.</p>
 <dt><code class="docutils literal notranslate"><span class="pre">CAPTURE_CMAKE_ERROR</span> <span class="pre">&lt;result-var&gt;</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.7.</span></p>
 </div>
-<p>Store in the <code class="docutils literal notranslate"><span class="pre">&lt;result-var&gt;</span></code> variable -1 if there are any errors running
-the command and prevent ctest from returning non-zero if an error occurs.</p>
+<p>Store in the <code class="docutils literal notranslate"><span class="pre">&lt;result-var&gt;</span></code> variable <code class="docutils literal notranslate"><span class="pre">-1</span></code> if there are any errors running
+the command and prevent <span class="target" id="index-2-manual:ctest(1)"></span><a class="reference internal" href="../manual/ctest.1.html#manual:ctest(1)" title="ctest(1)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">ctest(1)</span></code></a> from returning non-zero if an
+error occurs.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">OUTPUT_JUNIT</span> <span class="pre">&lt;file&gt;</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.21.</span></p>
@@ -221,6 +224,37 @@ relative path, it will be placed in the build directory. If <code class="docutil
 already exists, it will be overwritten. Note that the resulting JUnit XML
 file is <strong>not</strong> uploaded to CDash because it would be redundant with
 CTest's <code class="docutils literal notranslate"><span class="pre">Test.xml</span></code> file.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">COVERAGE_TOOL</span> <span class="pre">&lt;tool&gt;</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4.</span></p>
+</div>
+<p>Specify the <code class="docutils literal notranslate"><span class="pre">&lt;tool&gt;</span></code> used for collecting coverage during the running
+of the tests.  See the CTest <a class="reference internal" href="../manual/ctest.1.html#ctest-coveragetool"><span class="std std-ref">CoverageTool</span></a>
+setting for details.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PRESET</span> <span class="pre">&lt;preset&gt;</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4.</span></p>
+</div>
+<p>Specify a <span class="target" id="index-0-manual:cmake-presets(7)"></span><a class="reference internal" href="../manual/cmake-presets.7.html#manual:cmake-presets(7)" title="cmake-presets(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">preset</span></code></a> to use when running tests.
+Any value set in the CTest script will take priority over a corresponding
+setting from the preset.  For example, the <code class="docutils literal notranslate"><span class="pre">INCLUDE</span></code> argument will override
+the <a class="reference internal" href="../manual/cmake-presets.7.html#cmakepresets-testpresets-filter-include-name" title="cmakepresets.testpresets.filter.include.name"><code class="docutils literal notranslate"><span class="pre">filter.include.name</span></code></a> setting
+from the chosen preset.</p>
+<p>This option also applies to the <span class="target" id="index-0-command:ctest_memcheck"></span><a class="reference internal" href="ctest_memcheck.html#command:ctest_memcheck" title="ctest_memcheck"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">ctest_memcheck()</span></code></a> command.
+See also the <span class="target" id="index-0-variable:CTEST_TEST_PRESET"></span><a class="reference internal" href="../variable/CTEST_TEST_PRESET.html#variable:CTEST_TEST_PRESET" title="CTEST_TEST_PRESET"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CTEST_TEST_PRESET</span></code></a> and
+<span class="target" id="index-0-variable:CTEST_PRESET"></span><a class="reference internal" href="../variable/CTEST_PRESET.html#variable:CTEST_PRESET" title="CTEST_PRESET"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CTEST_PRESET</span></code></a> variables.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PRESETS_FILE</span> <span class="pre">&lt;file&gt;</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.4.</span></p>
+</div>
+<p>Specify a <span class="target" id="index-1-manual:cmake-presets(7)"></span><a class="reference internal" href="../manual/cmake-presets.7.html#manual:cmake-presets(7)" title="cmake-presets(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">presets</span></code></a> file to use instead of the
+default <code class="docutils literal notranslate"><span class="pre">CMakePresets.json</span></code> in the source directory.
+A relative path is interpreted relative to the source directory.
+Has no effect unless a preset is selected via the <code class="docutils literal notranslate"><span class="pre">PRESET</span></code> argument
+or the <span class="target" id="index-1-variable:CTEST_TEST_PRESET"></span><a class="reference internal" href="../variable/CTEST_TEST_PRESET.html#variable:CTEST_TEST_PRESET" title="CTEST_TEST_PRESET"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CTEST_TEST_PRESET</span></code></a> or <span class="target" id="index-1-variable:CTEST_PRESET"></span><a class="reference internal" href="../variable/CTEST_PRESET.html#variable:CTEST_PRESET" title="CTEST_PRESET"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CTEST_PRESET</span></code></a>
+variables.</p>
+<p>This option also applies to the <span class="target" id="index-1-command:ctest_memcheck"></span><a class="reference internal" href="ctest_memcheck.html#command:ctest_memcheck" title="ctest_memcheck"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">ctest_memcheck()</span></code></a> command.
+See also the <span class="target" id="index-0-variable:CTEST_PRESETS_FILE"></span><a class="reference internal" href="../variable/CTEST_PRESETS_FILE.html#variable:CTEST_PRESETS_FILE" title="CTEST_PRESETS_FILE"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CTEST_PRESETS_FILE</span></code></a> variable.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">QUIET</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.3.</span></p>
@@ -234,7 +268,7 @@ unaffected by the <code class="docutils literal notranslate"><span class="pre">Q
 <p>See also the <span class="target" id="index-0-variable:CTEST_CUSTOM_MAXIMUM_PASSED_TEST_OUTPUT_SIZE"></span><a class="reference internal" href="../variable/CTEST_CUSTOM_MAXIMUM_PASSED_TEST_OUTPUT_SIZE.html#variable:CTEST_CUSTOM_MAXIMUM_PASSED_TEST_OUTPUT_SIZE" title="CTEST_CUSTOM_MAXIMUM_PASSED_TEST_OUTPUT_SIZE"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CTEST_CUSTOM_MAXIMUM_PASSED_TEST_OUTPUT_SIZE</span></code></a>,
 <span class="target" id="index-0-variable:CTEST_CUSTOM_MAXIMUM_FAILED_TEST_OUTPUT_SIZE"></span><a class="reference internal" href="../variable/CTEST_CUSTOM_MAXIMUM_FAILED_TEST_OUTPUT_SIZE.html#variable:CTEST_CUSTOM_MAXIMUM_FAILED_TEST_OUTPUT_SIZE" title="CTEST_CUSTOM_MAXIMUM_FAILED_TEST_OUTPUT_SIZE"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CTEST_CUSTOM_MAXIMUM_FAILED_TEST_OUTPUT_SIZE</span></code></a> and
 <span class="target" id="index-0-variable:CTEST_CUSTOM_TEST_OUTPUT_TRUNCATION"></span><a class="reference internal" href="../variable/CTEST_CUSTOM_TEST_OUTPUT_TRUNCATION.html#variable:CTEST_CUSTOM_TEST_OUTPUT_TRUNCATION" title="CTEST_CUSTOM_TEST_OUTPUT_TRUNCATION"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">CTEST_CUSTOM_TEST_OUTPUT_TRUNCATION</span></code></a> variables, along with their
-corresponding <span class="target" id="index-1-manual:ctest(1)"></span><a class="reference internal" href="../manual/ctest.1.html#manual:ctest(1)" title="ctest(1)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">ctest(1)</span></code></a> command line options
+corresponding <span class="target" id="index-3-manual:ctest(1)"></span><a class="reference internal" href="../manual/ctest.1.html#manual:ctest(1)" title="ctest(1)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">ctest(1)</span></code></a> command line options
 <a class="reference internal" href="../manual/ctest.1.html#cmdoption-ctest-test-output-size-passed"><code class="xref std std-option docutils literal notranslate"><span class="pre">--test-output-size-passed</span></code></a>,
 <a class="reference internal" href="../manual/ctest.1.html#cmdoption-ctest-test-output-size-failed"><code class="xref std std-option docutils literal notranslate"><span class="pre">--test-output-size-failed</span></code></a>, and
 <a class="reference internal" href="../manual/ctest.1.html#cmdoption-ctest-test-output-truncation"><code class="xref std std-option docutils literal notranslate"><span class="pre">--test-output-truncation</span></code></a>.</p>
@@ -246,6 +280,11 @@ to CDash.</p>
 measurements in the <code class="docutils literal notranslate"><span class="pre">Test.xml</span></code> file that gets uploaded to CDash.</p>
 <p>Check the <a class="reference external" href="https://github.com/Kitware/CDash/blob/master/docs/test_measurements.md">CDash test measurement documentation</a>
 for more information on the types of test measurements that CDash recognizes.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 3.22: </span>CTest can parse custom measurements from tags named
+<code class="docutils literal notranslate"><span class="pre">&lt;CTestMeasurement&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">&lt;CTestMeasurementFile&gt;</span></code>. The older names
+<code class="docutils literal notranslate"><span class="pre">&lt;DartMeasurement&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;DartMeasurementFile&gt;</span></code> are still supported.</p>
+</div>
 <p>The following example demonstrates how to output a variety of custom test
 measurements.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span>
@@ -417,7 +456,7 @@ determined at configure time.</p>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -430,8 +469,8 @@ determined at configure time.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

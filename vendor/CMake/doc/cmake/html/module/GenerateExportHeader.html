@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>GenerateExportHeader &mdash; CMake 4.1.2 Documentation</title>
+  <title>GenerateExportHeader &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -65,7 +65,7 @@
 <span id="module:GenerateExportHeader"></span><h1>GenerateExportHeader<a class="headerlink" href="#generateexportheader" title="Link to this heading">¶</a></h1>
 <p>This module provides commands for generating a header file containing
 preprocessor macro definitions to control C/C++ symbol visibility.</p>
-<p>Load this module in CMake project with:</p>
+<p>Load this module in a CMake project with:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">GenerateExportHeader</span><span class="nf">)</span>
 </pre></div>
 </div>
@@ -293,11 +293,9 @@ library's other public headers:</p>
 <span class="w">      </span><span class="no">FILES</span><span class="w"> </span><span class="nb">example.h</span>
 <span class="w">    </span><span class="no">FILE_SET</span><span class="w"> </span><span class="nb">generated_headers</span>
 <span class="w">      </span><span class="no">TYPE</span><span class="w"> </span><span class="no">HEADERS</span>
-<span class="w">      </span><span class="no">BASE_DIRS</span><span class="w"> </span><span class="o">$&lt;</span><span class="no">TARGET_PROPERTY</span><span class="o">:</span><span class="nb">example</span><span class="p">,</span><span class="no">BINARY_DIR</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="no">BASE_DIRS</span><span class="w"> </span><span class="o">${</span><span class="nt">CMAKE_CURRENT_BINARY_DIR</span><span class="o">}</span>
 <span class="w">      </span><span class="no">FILES</span><span class="w"> </span><span class="o">${</span><span class="nt">CMAKE_CURRENT_BINARY_DIR</span><span class="o">}</span><span class="na">/example_export.h</span>
 <span class="nf">)</span>
-
-<span class="nf">target_include_directories(</span><span class="nb">example</span><span class="w"> </span><span class="no">PRIVATE</span><span class="w"> </span><span class="o">${</span><span class="nt">CMAKE_CURRENT_BINARY_DIR</span><span class="o">}</span><span class="nf">)</span>
 
 <span class="nf">install(</span>
 <span class="w">  </span><span class="no">TARGETS</span><span class="w"> </span><span class="nb">example</span>
@@ -430,7 +428,7 @@ with some prefix.  For example, the following will generate macros such as
 <p>Appending additional content to generated header can be done with the
 <code class="docutils literal notranslate"><span class="pre">CUSTOM_CONTENT_FROM_VARIABLE</span></code> argument:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">GenerateExportHeader</span><span class="nf">)</span>
-<span class="nf">set(</span><span class="nb">content</span><span class="w"> </span><span class="p">[[</span><span class="c">#include &quot;project_api.h&quot;]])</span>
+<span class="nf">set(</span><span class="nb">content</span><span class="w"> </span><span class="s s-Multiline">[[#include &quot;project_api.h&quot;]]</span><span class="nf">)</span>
 <span class="nf">generate_export_header(</span><span class="nb">example</span><span class="w"> </span><span class="no">CUSTOM_CONTENT_FROM_VARIABLE</span><span class="w"> </span><span class="nb">content</span><span class="nf">)</span>
 </pre></div>
 </div>
@@ -580,7 +578,7 @@ or when it is used by another project (e.g., after installation).</p></li>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -593,8 +591,8 @@ or when it is used by another project (e.g., after installation).</p></li>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

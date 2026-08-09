@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>cmake_host_system_information &mdash; CMake 4.1.2 Documentation</title>
+  <title>cmake_host_system_information &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cmake_language" href="cmake_language.html" />
-    <link rel="prev" title="break" href="break.html" />
+    <link rel="prev" title="cmake_diagnostic" href="cmake_diagnostic.html" />
  
 
   </head><body>
@@ -37,14 +37,14 @@
           <a href="cmake_language.html" title="cmake_language"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="break.html" title="break"
+          <a href="cmake_diagnostic.html" title="cmake_diagnostic"
              accesskey="P">previous</a> |</li>
   <li>
     <label class="sidebar-toggle" for="sidebar-check"></label>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -67,16 +67,18 @@
 <section id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Link to this heading">¶</a></h2>
 <pre class="literal-block"><a class="reference internal" href="#query-host-system-specific-information">Query host system specific information</a>
-  cmake_host_system_information(RESULT &lt;variable&gt; QUERY &lt;key&gt; ...)
+  cmake_host_system_information(RESULT &lt;variable&gt; <a class="reference internal" href="#query">QUERY</a> &lt;key&gt; ...)
 
-<a class="reference internal" href="#query-windows-registry">Query Windows registry</a>
-  cmake_host_system_information(RESULT &lt;variable&gt; QUERY WINDOWS_REGISTRY &lt;key&gt; ...)</pre>
+<a class="reference internal" href="#query-the-windows-registry">Query the Windows registry</a>
+  cmake_host_system_information(RESULT &lt;variable&gt; <a class="reference internal" href="#query-windows-registry">QUERY WINDOWS_REGISTRY</a> &lt;key&gt; ...)</pre>
 </section>
 <section id="query-host-system-specific-information">
 <h2>Query host system specific information<a class="headerlink" href="#query-host-system-specific-information" title="Link to this heading">¶</a></h2>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">cmake_host_system_information(</span><span class="no">RESULT</span><span class="w"> </span><span class="nv">&lt;variable&gt;</span><span class="w"> </span><span class="no">QUERY</span><span class="w"> </span><span class="nv">&lt;key&gt;</span><span class="w"> </span><span class="p">...</span><span class="nf">)</span>
-</pre></div>
-</div>
+<dl class="cmake signature">
+<dt class="sig sig-object cmake" id="query">
+<span class="code cmake highlight sig-name descname"><span class="nf"><span class="pre">cmake_host_system_information(</span></span><span class="no"><span class="pre">RESULT</span></span><span class="w"> </span><span class="nv"><span class="pre">&lt;variable&gt;</span></span><span class="w"> </span><span class="no"><span class="pre">QUERY</span></span><span class="w"> </span><span class="nv"><span class="pre">&lt;key&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="nf"><span class="pre">)</span></span></span><a class="headerlink" href="#query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <p>Queries system information of the host system on which cmake runs.
 One or more <code class="docutils literal notranslate"><span class="pre">&lt;key&gt;</span></code> can be provided to select the information to be
 queried.  The list of queried values is stored in <code class="docutils literal notranslate"><span class="pre">&lt;variable&gt;</span></code>.</p>
@@ -158,6 +160,16 @@ queried.  The list of queried values is stored in <code class="docutils literal 
 </div>
 <p>One if processor has serial number</p>
 </dd>
+<dt><code class="docutils literal notranslate"><span class="pre">HAS_APIC</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>One if processor supports APIC</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">HAS_L1_CACHE</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>One if processor has L1 cache</p>
+</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">PROCESSOR_SERIAL_NUMBER</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.10.</span></p>
 </div>
@@ -172,6 +184,17 @@ queried.  The list of queried values is stored in <code class="docutils literal 
 <p><span class="versionmodified added">Added in version 3.10.</span></p>
 </div>
 <p>Human readable full processor description</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">LOCALE_CHARSET</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The locale's character set, if known, otherwise empty.</p>
+<p>This is the <a class="reference internal" href="../manual/cmake-language.7.html#cmake-language-encoding"><span class="std std-ref">encoding</span></a> expected
+in <span class="target" id="index-0-manual:cmake-language(7)"></span><a class="reference internal" href="../manual/cmake-language.7.html#manual:cmake-language(7)" title="cmake-language(7)"><code class="xref cmake cmake-manual docutils literal notranslate"><span class="pre">cmake-language(7)</span></code></a> files and scripts:</p>
+<ul class="simple">
+<li><p>On Windows, this is always <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code>.</p></li>
+<li><p>On UNIX and macOS, this is based on the current locale.</p></li>
+</ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">OS_NAME</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.10.</span></p>
@@ -205,6 +228,46 @@ queried.  The list of queried values is stored in <code class="docutils literal 
 <p>Available only on Windows hosts.  In a MSYS or MinGW development
 environment that sets the <code class="docutils literal notranslate"><span class="pre">MSYSTEM</span></code> environment variable, this
 is its installation prefix.  Otherwise, this is the empty string.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">FAMILY_ID</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The processor family name</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">MODEL_ID</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The processor model ID</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">MODEL_NAME</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The processor model name</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PROCESSOR_APIC_ID</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The processor APIC ID</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PROCESSOR_CACHE_SIZE</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The processor L1 cache size</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PROCESSOR_CLOCK_FREQUENCY</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The processor clock frequency</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">VENDOR_ID</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The processor vendor ID</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">VENDOR_STRING</span></code></dt><dd><div class="versionadded">
+<p><span class="versionmodified added">Added in version 4.3.</span></p>
+</div>
+<p>The processor vendor string</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">DISTRIB_INFO</span></code></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.22.</span></p>
@@ -336,18 +399,16 @@ system information:</p>
 </aside>
 </section>
 </section>
-<section id="query-windows-registry">
-<span id="id5"></span><h2>Query Windows registry<a class="headerlink" href="#query-windows-registry" title="Link to this heading">¶</a></h2>
+<section id="query-the-windows-registry">
+<h2>Query the Windows registry<a class="headerlink" href="#query-the-windows-registry" title="Link to this heading">¶</a></h2>
 <div class="versionadded">
 <p><span class="versionmodified added">Added in version 3.24.</span></p>
 </div>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">cmake_host_system_information(</span><span class="no">RESULT</span><span class="w"> </span><span class="nv">&lt;variable&gt;</span>
-<span class="w">                              </span><span class="no">QUERY</span><span class="w"> </span><span class="no">WINDOWS_REGISTRY</span><span class="w"> </span><span class="nv">&lt;key&gt;</span><span class="w"> </span><span class="p">[</span><span class="no">VALUE_NAMES</span><span class="p">|</span><span class="no">SUBKEYS</span><span class="p">|</span><span class="no">VALUE</span><span class="w"> </span><span class="nv">&lt;name&gt;</span><span class="p">]</span>
-<span class="w">                              </span><span class="p">[</span><span class="nf">VIEW</span> <span class="nf">(</span><span class="m">64</span><span class="p">|</span><span class="m">32</span><span class="p">|</span><span class="m">64</span><span class="nb">_32</span><span class="p">|</span><span class="m">32</span><span class="nb">_64</span><span class="p">|</span><span class="no">HOST</span><span class="p">|</span><span class="no">TARGET</span><span class="p">|</span><span class="no">BOTH</span><span class="nf">)</span><span class="p">]</span>
-<span class="w">                              </span><span class="p">[</span><span class="no">SEPARATOR</span><span class="w"> </span><span class="nv">&lt;separator&gt;</span><span class="p">]</span>
-<span class="w">                              </span><span class="p">[</span><span class="no">ERROR_VARIABLE</span><span class="w"> </span><span class="nv">&lt;result&gt;</span><span class="p">]</span><span class="nf">)</span>
-</pre></div>
-</div>
+<dl class="cmake signature">
+<dt class="sig sig-object cmake" id="query-windows-registry">
+<span class="code cmake highlight sig-name descname"><span class="nf"><span class="pre">cmake_host_system_information(</span></span><span class="no"><span class="pre">RESULT</span></span><span class="w"> </span><span class="nv"><span class="pre">&lt;variable&gt;</span></span><span class="w"> </span><span class="no"><span class="pre">QUERY</span></span><span class="w"> </span><span class="no"><span class="pre">WINDOWS_REGISTRY</span></span><span class="w"> </span><span class="nv"><span class="pre">&lt;key&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">[</span></span><span class="no"><span class="pre">VALUE_NAMES</span></span><span class="p"><span class="pre">|</span></span><span class="no"><span class="pre">SUBKEYS</span></span><span class="p"><span class="pre">|</span></span><span class="no"><span class="pre">VALUE</span></span><span class="nbsp"> </span><span class="nv"><span class="pre">&lt;name&gt;</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">[</span></span><span class="no"><span class="pre">VIEW</span></span><span class="nbsp"> </span><span class="nf"><span class="pre">(</span></span><span class="m"><span class="pre">64</span></span><span class="p"><span class="pre">|</span></span><span class="m"><span class="pre">32</span></span><span class="p"><span class="pre">|</span></span><span class="m"><span class="pre">64</span></span><span class="nb"><span class="pre">_32</span></span><span class="p"><span class="pre">|</span></span><span class="m"><span class="pre">32</span></span><span class="nb"><span class="pre">_64</span></span><span class="p"><span class="pre">|</span></span><span class="no"><span class="pre">HOST</span></span><span class="p"><span class="pre">|</span></span><span class="no"><span class="pre">TARGET</span></span><span class="p"><span class="pre">|</span></span><span class="no"><span class="pre">BOTH</span></span><span class="nf"><span class="pre">)</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">[</span></span><span class="no"><span class="pre">SEPARATOR</span></span><span class="nbsp"> </span><span class="nv"><span class="pre">&lt;separator&gt;</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">[</span></span><span class="no"><span class="pre">ERROR_VARIABLE</span></span><span class="nbsp"> </span><span class="nv"><span class="pre">&lt;result&gt;</span></span><span class="p"><span class="pre">]</span></span><span class="nf"><span class="pre">)</span></span></span><a class="headerlink" href="#query-windows-registry" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <p>Performs query operations on local computer registry subkey. Returns a list of
 subkeys or value names that are located under the specified subkey in the
 registry or the data of the specified value name. The result of the queried
@@ -473,7 +534,7 @@ variable holds an empty string.</p>
 <li><a class="reference internal" href="#fallback-interface-variables">Fallback Interface Variables</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#query-windows-registry">Query Windows registry</a></li>
+<li><a class="reference internal" href="#query-the-windows-registry">Query the Windows registry</a></li>
 </ul>
 </li>
 </ul>
@@ -481,8 +542,8 @@ variable holds an empty string.</p>
   </div>
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="break.html"
-                          title="previous chapter">break</a></p>
+    <p class="topless"><a href="cmake_diagnostic.html"
+                          title="previous chapter">cmake_diagnostic</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
@@ -520,14 +581,14 @@ variable holds an empty string.</p>
           <a href="cmake_language.html" title="cmake_language"
              >next</a> |</li>
         <li class="right" >
-          <a href="break.html" title="break"
+          <a href="cmake_diagnostic.html" title="cmake_diagnostic"
              >previous</a> |</li>
   <li>
     <label class="sidebar-toggle" for="sidebar-check"></label>
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -540,8 +601,8 @@ variable holds an empty string.</p>
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {

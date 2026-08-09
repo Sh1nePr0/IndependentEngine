@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CMakePrintSystemInformation &mdash; CMake 4.1.2 Documentation</title>
+  <title>CMakePrintSystemInformation &mdash; CMake 4.4.2 Documentation</title>
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a2c47e09" />
-    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=4d06bd55" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a3862c66" />
+    <link rel="stylesheet" type="text/css" href="../_static/cmake.css?v=d27bb136" />
     
-    <script src="../_static/documentation_options.js?v=d151bdce"></script>
+    <script src="../_static/documentation_options.js?v=bca0d8b2"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -44,7 +44,7 @@
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -64,13 +64,24 @@
   <section id="cmakeprintsysteminformation">
 <span id="module:CMakePrintSystemInformation"></span><h1>CMakePrintSystemInformation<a class="headerlink" href="#cmakeprintsysteminformation" title="Link to this heading">¶</a></h1>
 <p>This module can be used for diagnostics to print system information.</p>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
-<p>Including this module in a project:</p>
+<p>Load this module in a CMake project with:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">include(</span><span class="nb">CMakePrintSystemInformation</span><span class="nf">)</span>
 </pre></div>
 </div>
-<p>prints various internal CMake variables.  For example:</p>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
+<p>For example, including this module in a project:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code></span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">project(</span><span class="nb">Example</span><span class="nf">)</span>
+
+<span class="c"># ...</span>
+
+<span class="nf">include(</span><span class="nb">CMakePrintSystemInformation</span><span class="nf">)</span>
+</pre></div>
+</div>
+</div>
+<p>prints various CMake variables:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CMAKE_SYSTEM is Linux-6.11.0-17-generic Linux 6.11.0-17-generic x86_64
 CMAKE_SYSTEM file is Platform/Linux
 CMAKE_C_COMPILER is /usr/bin/cc
@@ -148,7 +159,7 @@ CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS is -shared
   </li>
   <li class="rootlink">
     <img src="../_static/cmake-logo-16.png" width="16" height="16" alt=""/>
-    <a href="https://cmake.org/">CMake 4.1.2</a>
+    <a href="https://cmake.org/">CMake 4.4.2</a>
     <span class="reldelim1"> &#187;</span>
   </li>
   <li>
@@ -161,8 +172,8 @@ CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS is -shared
     </div>
 
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2000-2025 Kitware, Inc. and Contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    &#169; Copyright 2000-2026 Kitware, Inc. and Contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     </div>
 <script type="text/javascript">
 (function() {
