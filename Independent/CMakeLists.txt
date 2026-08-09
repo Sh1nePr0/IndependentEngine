@@ -3,8 +3,15 @@ project(Independent LANGUAGES CXX)
 add_subdirectory(vendor)
 
 file(GLOB_RECURSE INDEPENDENT_SRC
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Independent/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Independent/*.h
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Platform/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Platform/*.h
+
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/idpdpch.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/idpdpch.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Independent.h
 )
 
 file(GLOB_RECURSE INDEPENDENT_VENDOR_SRC
@@ -46,3 +53,6 @@ target_compile_definitions(Independent PRIVATE
     $<$<CONFIG:Release>:IDPD_RELEASE>
     $<$<CONFIG:Dist>:IDPD_DIST>
 )
+
+add_subdirectory(src/ForgeQt)
+add_subdirectory(src/Forge)

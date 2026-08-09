@@ -5,6 +5,8 @@
 *.suo
 *.VC.db
 *.VC.VC.opendb
+.vs/
+**/.vs/
 
 # ----------------------------------------
 # CMake build directories
@@ -41,3 +43,10 @@ Makefile
 .idea/
 *.vscode/
 *.userprefs
+
+# Qt SDK
+Independent/vendor/Qt/
+
+# CMake build directories
+_build_vs*/
+**/_build_vs*/
