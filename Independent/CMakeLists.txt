@@ -45,6 +45,13 @@ target_link_libraries(Independent
     PRIVATE glfw Glad ImGui opengl32
 )
 
+if(WIN32)
+    target_link_libraries(Independent PRIVATE
+        d3d12
+        dxgi
+    )
+endif()
+
 target_compile_definitions(Independent PRIVATE
     _CRT_SECURE_NO_WARNINGS
     IDPD_BUILD_DLL

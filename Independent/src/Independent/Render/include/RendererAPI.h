@@ -15,11 +15,13 @@ namespace Independent {
 		{
 			None = 0,
 			OpenGL = 1,
-			Direct3D = 2,
+			Direct3D12 = 2,
 			Vulkan = 3,
 			Metal = 4
 		};
 	public:
+		virtual ~RendererAPI() = default;
+
 		virtual void Init() = 0;
 		virtual void SetViewport(uint32_t x, uint32_t y, uint32_t width, uint32_t height) = 0;
 		virtual void Clear() = 0;

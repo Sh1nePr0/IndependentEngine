@@ -42,6 +42,7 @@ source_group(
     FILES
         include/ForgeQt/Core/Application.h
         include/ForgeQt/UI/EditorWindow.h
+        include/ForgeQt/UI/DockArea.h
 )
 
 source_group(
